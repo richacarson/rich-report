@@ -420,6 +420,51 @@ async function fetchJSON(url) {
   return res.json();
 }
 
+// Split array into chunks
+function chunk(arr, size) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
+
+// Small delay to avoid rate limits
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// Fetch quotes in small batches (FMP free tier limits batch size)
+async function fetchQuotesBatched(tickers, batchSize = 5) {
+  const batches = chunk(tickers, batchSize);
+  const all = [];
+  let errors = [];
+  for (let i = 0; i < batches.length; i++) {
+    const batch = batches[i];
+    const pct = Math.round(5 + (i / batches.length) * 50);
+    setProgress(pct);
+    log(`Fetching quotes batch ${i + 1}/${batches.length}: ${batch.join(', ')}...`);
+    try {
+      const data = await fmpFetch('quote/' + batch.join(','));
+      if (Array.isArray(data)) all.push(...data);
+      else if (data && data.symbol) all.push(data); // single ticker returns object
+    } catch(e) {
+      errors.push(batch.join(','));
+      console.warn('Batch failed:', batch, e.message);
+      // Try individually as fallback
+      for (const sym of batch) {
+        try {
+          const single = await fmpFetch('quote/' + sym);
+          if (Array.isArray(single) && single.length) all.push(...single);
+          else if (single && single.symbol) all.push(single);
+        } catch(e2) {
+          console.warn('Single failed:', sym, e2.message);
+        }
+        await delay(200);
+      }
+    }
+    if (i < batches.length - 1) await delay(300); // rate limit buffer
+  }
+  if (errors.length) console.warn('Batch errors on:', errors);
+  return all;
+}
+
 // ═══════════════════════════════════════════
 // MAIN FETCH
 // ═══════════════════════════════════════════
@@ -434,28 +479,23 @@ async function fetchAll() {
   DATA = {};
 
   try {
-    // 1) Batch quotes — all equity tickers
-    log('Fetching equity quotes (51 holdings + indices + sectors + commodities)...');
-    setProgress(10);
-    const tickers = ALL_TICKERS.join(',');
-    const quotes = await fmpFetch('quote/' + tickers);
+    // 1) Batch quotes — all equity tickers in chunks of 5
+    log('Fetching equity quotes...');
+    setProgress(5);
+    const allQuotes = await fetchQuotesBatched(ALL_TICKERS, 5);
     DATA.quotes = {};
-    quotes.forEach(q => { DATA.quotes[q.symbol] = q; });
-    setProgress(30);
+    allQuotes.forEach(q => { if (q && q.symbol) DATA.quotes[q.symbol] = q; });
+    log(`Got ${Object.keys(DATA.quotes).length} of ${ALL_TICKERS.length} tickers`);
+    setProgress(55);
 
-    // 2) Try VIX
-    log('Fetching VIX...');
+    // 2) Try VIX via UVXY proxy (^VIX often blocked on free tier)
+    log('Fetching VIX proxy...');
     try {
-      const vixData = await fmpFetch('quote/%5EVIX');
-      if (vixData && vixData.length) DATA.vix = vixData[0];
-    } catch(e) {
-      // Try alternate VIX endpoint
-      try {
-        const vixAlt = await fmpFetch('quote/UVXY');
-        if (vixAlt && vixAlt.length) DATA.vixProxy = vixAlt[0];
-      } catch(e2) { /* no VIX data */ }
-    }
-    setProgress(40);
+      const vixAlt = await fmpFetch('quote/UVXY');
+      if (Array.isArray(vixAlt) && vixAlt.length) DATA.vixProxy = vixAlt[0];
+      else if (vixAlt && vixAlt.symbol) DATA.vixProxy = vixAlt;
+    } catch(e) { /* no VIX data */ }
+    setProgress(60);
 
     // 3) Earnings calendar
     log('Fetching earnings calendar...');
@@ -464,19 +504,19 @@ async function fetchAll() {
       const earnings = await fmpFetch('earning_calendar', `&from=${today}&to=${today}`);
       DATA.earnings = earnings || [];
     } catch(e) { DATA.earnings = []; }
-    setProgress(50);
+    setProgress(65);
 
     // 4) Gainers & Losers
     log('Fetching market movers...');
     try {
-      const [gainers, losers] = await Promise.all([
-        fmpFetch('stock_market/gainers'),
-        fmpFetch('stock_market/losers')
-      ]);
+      const gainers = await fmpFetch('stock_market/gainers');
       DATA.gainers = (gainers || []).slice(0, 10);
+    } catch(e) { DATA.gainers = []; }
+    try {
+      const losers = await fmpFetch('stock_market/losers');
       DATA.losers = (losers || []).slice(0, 10);
-    } catch(e) { DATA.gainers = []; DATA.losers = []; }
-    setProgress(60);
+    } catch(e) { DATA.losers = []; }
+    setProgress(72);
 
     // 5) Sector performance
     log('Fetching sector performance...');
@@ -484,7 +524,7 @@ async function fetchAll() {
       const sectors = await fmpFetch('sector-performance');
       DATA.sectorPerf = sectors || [];
     } catch(e) { DATA.sectorPerf = []; }
-    setProgress(70);
+    setProgress(78);
 
     // 6) Crypto — CoinGecko (no key)
     log('Fetching crypto (CoinGecko)...');
@@ -495,14 +535,14 @@ async function fetchAll() {
       DATA.crypto = {};
       crypto.forEach(c => { DATA.crypto[c.id] = c; });
     } catch(e) { DATA.crypto = {}; }
-    setProgress(80);
+    setProgress(84);
 
     // 7) Crypto global data (dominance)
     try {
-      const global = await fetchJSON('https://api.coingecko.com/api/v3/global');
-      DATA.cryptoGlobal = global.data || {};
+      const globalData = await fetchJSON('https://api.coingecko.com/api/v3/global');
+      DATA.cryptoGlobal = globalData.data || {};
     } catch(e) { DATA.cryptoGlobal = {}; }
-    setProgress(85);
+    setProgress(90);
 
     // 8) Fear & Greed
     log('Fetching Fear & Greed Index...');
@@ -517,7 +557,10 @@ async function fetchAll() {
     buildOutput();
     buildDashboard();
     setProgress(100);
-    log('Done ✓ — ' + new Date().toLocaleTimeString());
+    const missing = ALL_TICKERS.filter(t => !DATA.quotes[t]);
+    const doneMsg = `Done ✓ — ${new Date().toLocaleTimeString()} | ${Object.keys(DATA.quotes).length}/${ALL_TICKERS.length} tickers`;
+    if (missing.length) log(doneMsg + ` | Missing: ${missing.join(', ')}`);
+    else log(doneMsg);
 
   } catch(err) {
     log('ERROR: ' + err.message);

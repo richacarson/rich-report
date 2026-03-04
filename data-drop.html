@@ -7,325 +7,100 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gd: #3D4A2E;
-    --gm: #5B7A3D;
-    --gl: #7A8F5A;
-    --gb: #F4F7F0;
-    --ink: #1A1A1A;
-    --accent: #8B3A3A;
-    --mgray: #8A8A84;
-    --lrule: #BCBCB4;
-    --cream: #FAFAF5;
+    --gd: #3D4A2E; --gm: #5B7A3D; --gl: #7A8F5A; --gb: #F4F7F0;
+    --ink: #1A1A1A; --accent: #8B3A3A; --mgray: #8A8A84; --lrule: #BCBCB4; --cream: #FAFAF5;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'EB Garamond', Georgia, serif;
-    background: var(--gb);
-    color: var(--ink);
-    min-height: 100vh;
-  }
-  .shell {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-  }
-
-  /* ── Header ── */
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--gb); color: var(--ink); min-height: 100vh; }
+  .shell { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
   .masthead {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 0.75rem;
-    border-bottom: 3px solid var(--ink);
-    margin-bottom: 0.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 0.75rem; border-bottom: 3px solid var(--ink); margin-bottom: 0.25rem;
   }
-  .masthead::after {
-    content: '';
-    display: block;
-    position: relative;
-  }
-  .masthead h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 1.75rem;
-    letter-spacing: 0.04em;
-    color: var(--gd);
-    text-transform: uppercase;
-  }
-  .masthead-sub {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--mgray);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding-top: 0.4rem;
-    border-top: 1px solid var(--ink);
-    margin-bottom: 2rem;
-  }
-  .masthead .tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: white;
-    background: var(--gm);
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  /* ── Key Setup ── */
-  .key-section {
-    background: white;
-    border: 1px solid var(--lrule);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .key-section label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--mgray);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .key-row {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-  }
-  .key-row input {
-    flex: 1;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.85rem;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--lrule);
-    background: var(--cream);
-    color: var(--ink);
-    outline: none;
-    transition: border 0.2s;
-  }
+  .masthead h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.75rem; letter-spacing: 0.04em; color: var(--gd); text-transform: uppercase; }
+  .masthead .tag { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: white; background: var(--gm); padding: 0.2rem 0.6rem; border-radius: 2px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .masthead-sub { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray); letter-spacing: 0.08em; text-transform: uppercase; padding-top: 0.4rem; border-top: 1px solid var(--ink); margin-bottom: 2rem; }
+  .key-section { background: white; border: 1px solid var(--lrule); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .key-section label { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 0.5rem; }
+  .key-row { display: flex; gap: 0.75rem; align-items: center; }
+  .key-row input { flex: 1; font-family: 'DM Mono', monospace; font-size: 0.85rem; padding: 0.5rem 0.75rem; border: 1px solid var(--lrule); background: var(--cream); color: var(--ink); outline: none; transition: border 0.2s; }
   .key-row input:focus { border-color: var(--gm); }
   .key-row input.saved { border-color: var(--gm); background: var(--gb); }
-  .key-status {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--gm);
-    margin-top: 0.35rem;
-  }
+  .key-status { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--gm); margin-top: 0.35rem; }
   .key-status.none { color: var(--accent); }
-
-  /* ── Buttons ── */
   .actions { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-  button {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    padding: 0.6rem 1.4rem;
-    border: none;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-transform: uppercase;
-  }
-  .btn-primary {
-    background: var(--gd);
-    color: white;
-  }
+  button { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.04em; padding: 0.6rem 1.4rem; border: none; cursor: pointer; transition: all 0.15s; text-transform: uppercase; }
+  .btn-primary { background: var(--gd); color: white; }
   .btn-primary:hover { background: var(--gm); }
   .btn-primary:disabled { background: var(--mgray); cursor: not-allowed; }
-  .btn-secondary {
-    background: transparent;
-    color: var(--gd);
-    border: 1px solid var(--gd);
-  }
+  .btn-secondary { background: transparent; color: var(--gd); border: 1px solid var(--gd); }
   .btn-secondary:hover { background: var(--gd); color: white; }
-  .btn-accent {
-    background: var(--accent);
-    color: white;
-  }
+  .btn-accent { background: var(--accent); color: white; }
   .btn-accent:hover { opacity: 0.85; }
-
-  /* ── Progress ── */
-  .progress-bar {
-    height: 3px;
-    background: var(--lrule);
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-    display: none;
-  }
+  .progress-bar { height: 3px; background: var(--lrule); margin-bottom: 0.5rem; overflow: hidden; display: none; }
   .progress-bar.active { display: block; }
-  .progress-fill {
-    height: 100%;
-    background: var(--gm);
-    width: 0%;
-    transition: width 0.3s ease;
-  }
-  .status-log {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--mgray);
-    margin-bottom: 1rem;
-    min-height: 1rem;
-  }
-
-  /* ── Output ── */
-  .output-wrap {
-    display: none;
-    margin-top: 1rem;
-  }
+  .progress-fill { height: 100%; background: var(--gm); width: 0%; transition: width 0.3s ease; }
+  .status-log { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray); margin-bottom: 0.5rem; min-height: 1rem; }
+  .ticker-progress { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--gl); margin-bottom: 1rem; line-height: 1.5; display: none; word-break: break-all; }
+  .ticker-progress.active { display: block; }
+  .tp-done { color: var(--gm); }
+  .tp-fail { color: var(--accent); }
+  .tp-wait { color: var(--lrule); }
+  .output-wrap { display: none; margin-top: 1rem; }
   .output-wrap.visible { display: block; }
-  .output-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--mgray);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.5rem;
-  }
-  .output-box {
-    background: var(--ink);
-    color: #C8D4B8;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    line-height: 1.55;
-    padding: 1.25rem 1.5rem;
-    white-space: pre-wrap;
-    word-break: break-word;
-    max-height: 70vh;
-    overflow-y: auto;
-    border-left: 3px solid var(--gm);
-  }
+  .output-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+  .output-box { background: var(--ink); color: #C8D4B8; font-family: 'DM Mono', monospace; font-size: 0.72rem; line-height: 1.55; padding: 1.25rem 1.5rem; white-space: pre-wrap; word-break: break-word; max-height: 70vh; overflow-y: auto; border-left: 3px solid var(--gm); }
   .output-box::selection { background: var(--gm); color: white; }
-  .copied-toast {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--gd);
-    color: white;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    padding: 0.6rem 1.5rem;
-    opacity: 0;
-    transition: all 0.3s;
-    pointer-events: none;
-    z-index: 100;
-  }
+  .copied-toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--gd); color: white; font-family: 'DM Mono', monospace; font-size: 0.8rem; padding: 0.6rem 1.5rem; opacity: 0; transition: all 0.3s; pointer-events: none; z-index: 100; }
   .copied-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-  /* ── Dashboard cards ── */
   .dashboard { display: none; margin-bottom: 1.5rem; }
   .dashboard.visible { display: block; }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  .card {
-    background: white;
-    border: 1px solid var(--lrule);
-    padding: 0.6rem 0.75rem;
-  }
-  .card-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--mgray);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .card-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-top: 0.1rem;
-  }
-  .card-change {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    margin-top: 0.1rem;
-  }
-  .up { color: var(--gm); }
-  .down { color: var(--accent); }
-  .flat { color: var(--mgray); }
-  .section-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--gd);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--lrule);
-    margin-bottom: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  /* ── Footer ── */
-  .foot {
-    margin-top: 2.5rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--lrule);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--mgray);
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; }
+  .card { background: white; border: 1px solid var(--lrule); padding: 0.6rem 0.75rem; }
+  .card-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.04em; }
+  .card-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-top: 0.1rem; }
+  .card-change { font-family: 'DM Mono', monospace; font-size: 0.7rem; margin-top: 0.1rem; }
+  .up { color: var(--gm); } .down { color: var(--accent); } .flat { color: var(--mgray); }
+  .section-title { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--gd); text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.3rem; border-bottom: 1px solid var(--lrule); margin-bottom: 0.5rem; margin-top: 1rem; }
+  .foot { margin-top: 2.5rem; padding-top: 0.75rem; border-top: 1px solid var(--lrule); font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray); text-align: center; letter-spacing: 0.05em; text-transform: uppercase; }
 </style>
 </head>
 <body>
 <div class="shell">
-
   <div class="masthead">
     <h1>IOWN Data Drop</h1>
     <span class="tag">Morning Brief Fuel</span>
   </div>
-  <div class="masthead-sub">
-    Intentional Ownership · Paradiem · 51 Holdings + Crypto + Commodities + Sentiment
-  </div>
+  <div class="masthead-sub">Intentional Ownership · Paradiem · 51 Holdings + Crypto + Commodities + Sentiment</div>
 
-  <!-- API Key -->
   <div class="key-section">
-    <label>FMP API Key (stored locally — enter once)</label>
+    <label>Finnhub API Key (stored locally — enter once)</label>
     <div class="key-row">
-      <input type="password" id="apiKey" placeholder="Paste your FMP key here..." />
+      <input type="password" id="apiKey" placeholder="Paste your Finnhub key here..." />
       <button class="btn-secondary" onclick="saveKey()">Save</button>
       <button class="btn-secondary" onclick="toggleKeyVis()" id="toggleBtn">Show</button>
     </div>
     <div class="key-status none" id="keyStatus">No key saved</div>
   </div>
 
-  <!-- Actions -->
   <div class="actions">
     <button class="btn-primary" id="fetchBtn" onclick="fetchAll()" disabled>Fetch All Data</button>
     <button class="btn-accent" id="copyBtn" onclick="copyOutput()" style="display:none">Copy Data Drop</button>
   </div>
 
-  <!-- Progress -->
   <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
   <div class="status-log" id="statusLog"></div>
-
-  <!-- Visual Dashboard -->
+  <div class="ticker-progress" id="tickerProgress"></div>
   <div class="dashboard" id="dashboard"></div>
-
-  <!-- Raw Output -->
   <div class="output-wrap" id="outputWrap">
     <div class="output-label">Formatted Data Drop — Copy & Paste into Claude</div>
     <div class="output-box" id="outputBox"></div>
   </div>
-
   <div class="foot">Confidential · IOWN · RIA · Paradiem</div>
 </div>
-
 <div class="copied-toast" id="toast">Copied to clipboard</div>
 
 <script>
-// ═══════════════════════════════════════════
-// CONFIGURATION
-// ═══════════════════════════════════════════
-
 const DIVIDEND = ['ABT','A','ADI','ATO','ADP','BKH','CAT','CHD','CL','FAST','GD','GPC','LRCX','LMT','MATX','NEE','ORI','PCAR','QCOM','DGX','SSNC','STLD','SYK','TEL','VLO'];
 const GROWTH = ['AMD','AEM','ATAT','CVX','CWAN','CNX','COIN','EIX','FINV','FTNT','GFI','SUPV','HRMY','HUT','KEYS','MARA','NVDA','NXPI','OKE','PDD','HOOD','SYF','TSM','TOL'];
 const DIGITAL_ETFS = ['IBIT','ETHA'];
@@ -334,140 +109,83 @@ const INDEX_PROXIES = ['SPY','DIA','QQQ','IWM'];
 const SECTOR_ETFS = ['XLE','XLK','XLF','XLV','XLI','XLB','XLU','XLRE','XLC','XLP','XLY'];
 const COMMODITY_PROXIES = ['GLD','SLV','USO','UNG','BNO'];
 const RATE_PROXIES = ['TLT'];
-const VIX_PROXY = ['^VIX']; // FMP supports this
+const VIX_TICKER = ['UVXY'];
 
-const ALL_TICKERS = [
-  ...DIVIDEND, ...GROWTH, ...DIGITAL_ETFS,
-  ...BENCHMARKS, ...INDEX_PROXIES, ...SECTOR_ETFS,
-  ...COMMODITY_PROXIES, ...RATE_PROXIES
-];
+const ALL_TICKERS = [...INDEX_PROXIES, ...VIX_TICKER, ...RATE_PROXIES, ...SECTOR_ETFS, ...COMMODITY_PROXIES, ...DIVIDEND, ...GROWTH, ...DIGITAL_ETFS, ...BENCHMARKS];
 
-const SECTOR_NAMES = {
-  XLE:'Energy', XLK:'Tech', XLF:'Financials', XLV:'Healthcare',
-  XLI:'Industrials', XLB:'Materials', XLU:'Utilities', XLRE:'Real Estate',
-  XLC:'Comm Svcs', XLP:'Staples', XLY:'Discret.'
-};
-
+const SECTOR_NAMES = { XLE:'Energy', XLK:'Tech', XLF:'Financials', XLV:'Healthcare', XLI:'Industrials', XLB:'Materials', XLU:'Utilities', XLRE:'Real Estate', XLC:'Comm Svcs', XLP:'Staples', XLY:'Discret.' };
 const INDEX_NAMES = { SPY:'S&P 500', DIA:'Dow', QQQ:'Nasdaq', IWM:'Russell 2K' };
 const COMMODITY_NAMES = { GLD:'Gold', SLV:'Silver', USO:'WTI Oil', UNG:'Nat Gas', BNO:'Brent Oil' };
 
-// ═══════════════════════════════════════════
-// KEY MANAGEMENT
-// ═══════════════════════════════════════════
-
+// Key management
 const keyInput = document.getElementById('apiKey');
 const keyStatus = document.getElementById('keyStatus');
 const fetchBtn = document.getElementById('fetchBtn');
 
 function loadKey() {
-  const k = localStorage.getItem('iown_fmp_key');
-  if (k) {
-    keyInput.value = k;
-    keyInput.classList.add('saved');
-    keyStatus.textContent = 'Key saved ✓';
-    keyStatus.classList.remove('none');
-    fetchBtn.disabled = false;
-  }
+  const k = localStorage.getItem('iown_finnhub_key');
+  if (k) { keyInput.value = k; keyInput.classList.add('saved'); keyStatus.textContent = 'Key saved ✓'; keyStatus.classList.remove('none'); fetchBtn.disabled = false; }
 }
-
 function saveKey() {
-  const k = keyInput.value.trim();
-  if (!k) return;
-  localStorage.setItem('iown_fmp_key', k);
-  keyInput.classList.add('saved');
-  keyStatus.textContent = 'Key saved ✓';
-  keyStatus.classList.remove('none');
-  fetchBtn.disabled = false;
+  const k = keyInput.value.trim(); if (!k) return;
+  localStorage.setItem('iown_finnhub_key', k);
+  keyInput.classList.add('saved'); keyStatus.textContent = 'Key saved ✓'; keyStatus.classList.remove('none'); fetchBtn.disabled = false;
 }
-
 function toggleKeyVis() {
   const btn = document.getElementById('toggleBtn');
   if (keyInput.type === 'password') { keyInput.type = 'text'; btn.textContent = 'Hide'; }
   else { keyInput.type = 'password'; btn.textContent = 'Show'; }
 }
 
-// ═══════════════════════════════════════════
-// PROGRESS & STATUS
-// ═══════════════════════════════════════════
+// UI
+function setProgress(p) { document.getElementById('progressBar').classList.add('active'); document.getElementById('progressFill').style.width = p + '%'; }
+function log(m) { document.getElementById('statusLog').textContent = m; }
+function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-function setProgress(pct) {
-  document.getElementById('progressBar').classList.add('active');
-  document.getElementById('progressFill').style.width = pct + '%';
+// Finnhub: /api/v1/quote?symbol=X&token=KEY
+// Returns: { c: current, d: change, dp: change%, h: high, l: low, o: open, pc: prevClose, t: timestamp }
+// Free tier: 60 calls/minute
+async function fhQuote(sym) {
+  const key = localStorage.getItem('iown_finnhub_key');
+  const url = `https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(sym)}&token=${key}`;
+  try {
+    const res = await fetch(url);
+    if (res.status === 429) { await wait(3000); const r2 = await fetch(url); if (!r2.ok) return null; return r2.json(); }
+    if (!res.ok) return null;
+    return res.json();
+  } catch(e) { return null; }
 }
 
-function log(msg) {
-  document.getElementById('statusLog').textContent = msg;
-}
+async function fetchAllQuotes(tickers) {
+  const results = {};
+  const tp = document.getElementById('tickerProgress');
+  tp.classList.add('active');
+  const ok = [], fail = [];
 
-// ═══════════════════════════════════════════
-// FETCH HELPERS
-// ═══════════════════════════════════════════
+  for (let i = 0; i < tickers.length; i++) {
+    const sym = tickers[i];
+    setProgress(Math.round(5 + (i / tickers.length) * 70));
+    log(`Fetching ${i + 1}/${tickers.length}: ${sym}`);
 
-function fmpUrl(endpoint, params = '') {
-  const key = localStorage.getItem('iown_fmp_key');
-  return `https://financialmodelingprep.com/api/v3/${endpoint}?apikey=${key}${params}`;
-}
-
-async function fmpFetch(endpoint, params = '') {
-  const res = await fetch(fmpUrl(endpoint, params));
-  if (!res.ok) throw new Error(`FMP ${endpoint}: ${res.status}`);
-  return res.json();
-}
-
-async function fetchJSON(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Fetch ${url}: ${res.status}`);
-  return res.json();
-}
-
-// Split array into chunks
-function chunk(arr, size) {
-  const out = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-}
-
-// Small delay to avoid rate limits
-function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-// Fetch quotes in small batches (FMP free tier limits batch size)
-async function fetchQuotesBatched(tickers, batchSize = 5) {
-  const batches = chunk(tickers, batchSize);
-  const all = [];
-  let errors = [];
-  for (let i = 0; i < batches.length; i++) {
-    const batch = batches[i];
-    const pct = Math.round(5 + (i / batches.length) * 50);
-    setProgress(pct);
-    log(`Fetching quotes batch ${i + 1}/${batches.length}: ${batch.join(', ')}...`);
-    try {
-      const data = await fmpFetch('quote/' + batch.join(','));
-      if (Array.isArray(data)) all.push(...data);
-      else if (data && data.symbol) all.push(data); // single ticker returns object
-    } catch(e) {
-      errors.push(batch.join(','));
-      console.warn('Batch failed:', batch, e.message);
-      // Try individually as fallback
-      for (const sym of batch) {
-        try {
-          const single = await fmpFetch('quote/' + sym);
-          if (Array.isArray(single) && single.length) all.push(...single);
-          else if (single && single.symbol) all.push(single);
-        } catch(e2) {
-          console.warn('Single failed:', sym, e2.message);
-        }
-        await delay(200);
-      }
+    const data = await fhQuote(sym);
+    if (data && data.c > 0) {
+      results[sym] = { symbol: sym, price: data.c, change: data.d, changesPercentage: data.dp, dayHigh: data.h, dayLow: data.l, open: data.o, previousClose: data.pc };
+      ok.push(sym);
+    } else {
+      fail.push(sym);
     }
-    if (i < batches.length - 1) await delay(300); // rate limit buffer
-  }
-  if (errors.length) console.warn('Batch errors on:', errors);
-  return all;
-}
 
-// ═══════════════════════════════════════════
-// MAIN FETCH
-// ═══════════════════════════════════════════
+    // Live ticker display
+    tp.innerHTML = tickers.map((t, idx) => {
+      if (idx > i) return `<span class="tp-wait">${t}</span>`;
+      return `<span class="${ok.includes(t) ? 'tp-done' : 'tp-fail'}">${t}</span>`;
+    }).join(' · ');
+
+    // Pace: ~55/min safe margin
+    if (i < tickers.length - 1) await wait(1100);
+  }
+  return { results, ok, fail };
+}
 
 let DATA = {};
 
@@ -476,381 +194,148 @@ async function fetchAll() {
   document.getElementById('copyBtn').style.display = 'none';
   document.getElementById('outputWrap').classList.remove('visible');
   document.getElementById('dashboard').classList.remove('visible');
-  DATA = {};
+  document.getElementById('tickerProgress').classList.remove('active');
+  DATA = { quotes: {} };
+  const t0 = Date.now();
 
   try {
-    // 1) Batch quotes — all equity tickers in chunks of 5
-    log('Fetching equity quotes...');
-    setProgress(5);
-    const allQuotes = await fetchQuotesBatched(ALL_TICKERS, 5);
-    DATA.quotes = {};
-    allQuotes.forEach(q => { if (q && q.symbol) DATA.quotes[q.symbol] = q; });
-    log(`Got ${Object.keys(DATA.quotes).length} of ${ALL_TICKERS.length} tickers`);
-    setProgress(55);
-
-    // 2) Try VIX via UVXY proxy (^VIX often blocked on free tier)
-    log('Fetching VIX proxy...');
-    try {
-      const vixAlt = await fmpFetch('quote/UVXY');
-      if (Array.isArray(vixAlt) && vixAlt.length) DATA.vixProxy = vixAlt[0];
-      else if (vixAlt && vixAlt.symbol) DATA.vixProxy = vixAlt;
-    } catch(e) { /* no VIX data */ }
-    setProgress(60);
-
-    // 3) Earnings calendar
-    log('Fetching earnings calendar...');
-    const today = new Date().toISOString().slice(0, 10);
-    try {
-      const earnings = await fmpFetch('earning_calendar', `&from=${today}&to=${today}`);
-      DATA.earnings = earnings || [];
-    } catch(e) { DATA.earnings = []; }
-    setProgress(65);
-
-    // 4) Gainers & Losers
-    log('Fetching market movers...');
-    try {
-      const gainers = await fmpFetch('stock_market/gainers');
-      DATA.gainers = (gainers || []).slice(0, 10);
-    } catch(e) { DATA.gainers = []; }
-    try {
-      const losers = await fmpFetch('stock_market/losers');
-      DATA.losers = (losers || []).slice(0, 10);
-    } catch(e) { DATA.losers = []; }
-    setProgress(72);
-
-    // 5) Sector performance
-    log('Fetching sector performance...');
-    try {
-      const sectors = await fmpFetch('sector-performance');
-      DATA.sectorPerf = sectors || [];
-    } catch(e) { DATA.sectorPerf = []; }
+    // 1) Equity quotes
+    const { results, ok, fail } = await fetchAllQuotes(ALL_TICKERS);
+    DATA.quotes = results;
     setProgress(78);
 
-    // 6) Crypto — CoinGecko (no key)
-    log('Fetching crypto (CoinGecko)...');
+    // 2) Crypto
+    log('Fetching crypto...');
     try {
-      const crypto = await fetchJSON(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum&order=market_cap_desc&per_page=2&page=1&sparkline=false&price_change_percentage=24h,7d'
-      );
-      DATA.crypto = {};
-      crypto.forEach(c => { DATA.crypto[c.id] = c; });
+      const c = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum&order=market_cap_desc&per_page=2&page=1&sparkline=false&price_change_percentage=24h,7d').then(r => r.json());
+      DATA.crypto = {}; c.forEach(x => DATA.crypto[x.id] = x);
     } catch(e) { DATA.crypto = {}; }
     setProgress(84);
 
-    // 7) Crypto global data (dominance)
+    // 3) Crypto global
+    try { const g = await fetch('https://api.coingecko.com/api/v3/global').then(r => r.json()); DATA.cryptoGlobal = g.data || {}; }
+    catch(e) { DATA.cryptoGlobal = {}; }
+    setProgress(89);
+
+    // 4) Fear & Greed
+    log('Fetching sentiment...');
+    try { const f = await fetch('https://api.alternative.me/fng/?limit=1').then(r => r.json()); DATA.fearGreed = f.data ? f.data[0] : null; }
+    catch(e) { DATA.fearGreed = null; }
+    setProgress(94);
+
+    // 5) News
+    log('Fetching headlines...');
     try {
-      const globalData = await fetchJSON('https://api.coingecko.com/api/v3/global');
-      DATA.cryptoGlobal = globalData.data || {};
-    } catch(e) { DATA.cryptoGlobal = {}; }
-    setProgress(90);
+      const key = localStorage.getItem('iown_finnhub_key');
+      const n = await fetch(`https://finnhub.io/api/v1/news?category=general&token=${key}`).then(r => r.json());
+      DATA.news = (n || []).slice(0, 8);
+    } catch(e) { DATA.news = []; }
+    setProgress(97);
 
-    // 8) Fear & Greed
-    log('Fetching Fear & Greed Index...');
-    try {
-      const fg = await fetchJSON('https://api.alternative.me/fng/?limit=1');
-      DATA.fearGreed = fg.data ? fg.data[0] : null;
-    } catch(e) { DATA.fearGreed = null; }
-    setProgress(95);
-
-    // Build output
-    log('Building data drop...');
-    buildOutput();
-    buildDashboard();
-    setProgress(100);
-    const missing = ALL_TICKERS.filter(t => !DATA.quotes[t]);
-    const doneMsg = `Done ✓ — ${new Date().toLocaleTimeString()} | ${Object.keys(DATA.quotes).length}/${ALL_TICKERS.length} tickers`;
-    if (missing.length) log(doneMsg + ` | Missing: ${missing.join(', ')}`);
-    else log(doneMsg);
-
-  } catch(err) {
-    log('ERROR: ' + err.message);
-    console.error(err);
-  }
-
+    buildOutput(); buildDashboard(); setProgress(100);
+    const sec = ((Date.now() - t0) / 1000).toFixed(0);
+    let msg = `Done ✓ — ${new Date().toLocaleTimeString()} | ${ok.length}/${ALL_TICKERS.length} tickers | ${sec}s`;
+    if (fail.length) msg += ` | Missing: ${fail.join(', ')}`;
+    log(msg);
+  } catch(err) { log('ERROR: ' + err.message); console.error(err); }
   fetchBtn.disabled = false;
 }
 
-// ═══════════════════════════════════════════
-// FORMAT HELPERS
-// ═══════════════════════════════════════════
-
-function fmt(n, decimals = 2) {
-  if (n == null || isNaN(n)) return '—';
-  return Number(n).toFixed(decimals);
-}
-
-function pct(n) {
-  if (n == null || isNaN(n)) return '—';
-  const s = Number(n).toFixed(2);
-  return (n >= 0 ? '+' : '') + s + '%';
-}
-
-function price(n) {
-  if (n == null || isNaN(n)) return '—';
-  if (n >= 1000) return '$' + Number(n).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-  return '$' + fmt(n);
-}
-
-function tickerLine(sym) {
-  const q = DATA.quotes[sym];
-  if (!q) return sym + ' —';
-  return sym + ' ' + price(q.price) + ' (' + pct(q.changesPercentage) + ')';
-}
-
-function shortTickerLine(sym) {
-  const q = DATA.quotes[sym];
-  if (!q) return sym + ':—';
-  return sym + ':' + pct(q.changesPercentage);
-}
-
-// ═══════════════════════════════════════════
-// BUILD TEXT OUTPUT
-// ═══════════════════════════════════════════
+// Format helpers
+function fmt(n, d=2) { if (n==null||isNaN(n)) return '—'; return Number(n).toFixed(d); }
+function pct(n) { if (n==null||isNaN(n)) return '—'; return (n>=0?'+':'')+Number(n).toFixed(2)+'%'; }
+function price(n) { if (n==null||isNaN(n)) return '—'; if (n>=1000) return '$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); return '$'+fmt(n); }
 
 function buildOutput() {
-  const now = new Date();
-  const dateStr = now.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric', year:'numeric'});
-  const timeStr = now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit'});
   const Q = DATA.quotes;
+  const now = new Date();
+  const ds = now.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+  const ts = now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+  let o = `=== IOWN DATA DROP | ${ds} | ${ts} ===\n\n`;
 
-  let out = '';
-  out += `=== IOWN DATA DROP | ${dateStr} | ${timeStr} ===\n\n`;
+  o += '── INDICES ──\n';
+  INDEX_PROXIES.forEach(s => { const q=Q[s]; if(q) o+=`${INDEX_NAMES[s]}: ${price(q.price)} (${pct(q.changesPercentage)}) | O:${price(q.open)} H:${price(q.dayHigh)} L:${price(q.dayLow)} PC:${price(q.previousClose)}\n`; });
+  const vix=Q['UVXY']; if(vix) o+=`UVXY (VIX proxy): ${price(vix.price)} (${pct(vix.changesPercentage)})\n`;
+  o += '\n── RATES ──\n';
+  const tlt=Q['TLT']; if(tlt) o+=`TLT (20Y Bond): ${price(tlt.price)} (${pct(tlt.changesPercentage)}) PC:${price(tlt.previousClose)}\n`;
 
-  // INDICES
-  out += '── INDICES ──\n';
-  INDEX_PROXIES.forEach(s => {
-    const q = Q[s];
-    if (q) out += `${INDEX_NAMES[s] || s}: ${price(q.price)} (${pct(q.changesPercentage)}) | Prev Close: ${price(q.previousClose)}\n`;
-  });
-  if (DATA.vix) out += `VIX: ${fmt(DATA.vix.price)} (${pct(DATA.vix.changesPercentage)})\n`;
-  else if (DATA.vixProxy) out += `UVXY (VIX proxy): ${price(DATA.vixProxy.price)} (${pct(DATA.vixProxy.changesPercentage)})\n`;
-  out += '\n';
+  o += '\n── SECTORS ──\n';
+  SECTOR_ETFS.map(s=>({s,q:Q[s]})).filter(x=>x.q).sort((a,b)=>(b.q.changesPercentage||0)-(a.q.changesPercentage||0)).forEach(({s,q})=>{ o+=`${SECTOR_NAMES[s]} (${s}): ${pct(q.changesPercentage)} | ${price(q.price)}\n`; });
 
-  // RATES
-  out += '── RATES & DOLLAR ──\n';
-  const tlt = Q['TLT'];
-  if (tlt) out += `TLT (20Y Bond): ${price(tlt.price)} (${pct(tlt.changesPercentage)})\n`;
-  out += '\n';
+  o += '\n── COMMODITIES ──\n';
+  COMMODITY_PROXIES.forEach(s=>{ const q=Q[s]; if(q) o+=`${COMMODITY_NAMES[s]} (${s}): ${price(q.price)} (${pct(q.changesPercentage)})\n`; });
 
-  // SECTORS
-  out += '── SECTORS (ETFs) ──\n';
-  const sectorEntries = SECTOR_ETFS.map(s => {
-    const q = Q[s];
-    return { sym: s, name: SECTOR_NAMES[s], chg: q ? q.changesPercentage : null, price: q ? q.price : null };
-  }).sort((a, b) => (b.chg || 0) - (a.chg || 0));
-  sectorEntries.forEach(e => {
-    out += `${e.name} (${e.sym}): ${pct(e.chg)}\n`;
-  });
-  out += '\n';
+  o += '\n── CRYPTO ──\n';
+  const btc=DATA.crypto.bitcoin, eth=DATA.crypto.ethereum;
+  if(btc) o+=`BTC: ${price(btc.current_price)} | 24h: ${pct(btc.price_change_percentage_24h)} | 7d: ${pct(btc.price_change_percentage_7d_in_currency)} | MCap: $${fmt(btc.market_cap/1e9,1)}B\n`;
+  if(eth) o+=`ETH: ${price(eth.current_price)} | 24h: ${pct(eth.price_change_percentage_24h)} | 7d: ${pct(eth.price_change_percentage_7d_in_currency)} | MCap: $${fmt(eth.market_cap/1e9,1)}B\n`;
+  if(DATA.cryptoGlobal.market_cap_percentage){ o+=`BTC Dom: ${fmt(DATA.cryptoGlobal.market_cap_percentage.btc,1)}% | Total MCap: $${fmt(DATA.cryptoGlobal.total_market_cap?.usd/1e12,2)}T\n`; }
+  DIGITAL_ETFS.forEach(s=>{ const q=Q[s]; if(q) o+=`${s}: ${price(q.price)} (${pct(q.changesPercentage)})\n`; });
 
-  // COMMODITIES
-  out += '── COMMODITIES (ETF proxies) ──\n';
-  COMMODITY_PROXIES.forEach(s => {
-    const q = Q[s];
-    if (q) out += `${COMMODITY_NAMES[s] || s} (${s}): ${price(q.price)} (${pct(q.changesPercentage)})\n`;
-  });
-  out += '\n';
+  o += '\n── SENTIMENT ──\n';
+  if(DATA.fearGreed) o+=`Fear & Greed: ${DATA.fearGreed.value} (${DATA.fearGreed.value_classification})\n`;
 
-  // CRYPTO
-  out += '── CRYPTO ──\n';
-  const btc = DATA.crypto.bitcoin;
-  const eth = DATA.crypto.ethereum;
-  if (btc) out += `BTC: ${price(btc.current_price)} | 24h: ${pct(btc.price_change_percentage_24h)} | 7d: ${pct(btc.price_change_percentage_7d_in_currency)} | MCap: $${fmt(btc.market_cap / 1e9, 1)}B\n`;
-  if (eth) out += `ETH: ${price(eth.current_price)} | 24h: ${pct(eth.price_change_percentage_24h)} | 7d: ${pct(eth.price_change_percentage_7d_in_currency)} | MCap: $${fmt(eth.market_cap / 1e9, 1)}B\n`;
-  if (DATA.cryptoGlobal.market_cap_percentage) {
-    out += `BTC Dominance: ${fmt(DATA.cryptoGlobal.market_cap_percentage.btc, 1)}%\n`;
-    out += `Total Crypto MCap: $${fmt(DATA.cryptoGlobal.total_market_cap?.usd / 1e12, 2)}T\n`;
-  }
-  // Digital asset ETFs
-  DIGITAL_ETFS.forEach(s => {
-    const q = Q[s];
-    if (q) out += `${s}: ${price(q.price)} (${pct(q.changesPercentage)})\n`;
-  });
-  out += '\n';
+  o += '\n── DIVIDEND STRATEGY (25) ──\n';
+  DIVIDEND.forEach(s=>{ const q=Q[s]; o += q ? `${s}: ${price(q.price)} (${pct(q.changesPercentage)}) O:${price(q.open)} H:${price(q.dayHigh)} L:${price(q.dayLow)} PC:${price(q.previousClose)}\n` : `${s}: — (no data)\n`; });
 
-  // SENTIMENT
-  out += '── SENTIMENT ──\n';
-  if (DATA.fearGreed) out += `Fear & Greed: ${DATA.fearGreed.value} (${DATA.fearGreed.value_classification})\n`;
-  out += '\n';
+  o += '\n── GROWTH HYBRID (24) ──\n';
+  GROWTH.forEach(s=>{ const q=Q[s]; o += q ? `${s}: ${price(q.price)} (${pct(q.changesPercentage)}) O:${price(q.open)} H:${price(q.dayHigh)} L:${price(q.dayLow)} PC:${price(q.previousClose)}\n` : `${s}: — (no data)\n`; });
 
-  // DIVIDEND STRATEGY
-  out += '── DIVIDEND STRATEGY (25) ──\n';
-  const divData = DIVIDEND.map(s => ({sym: s, q: Q[s]}));
-  const divSorted = [...divData].sort((a, b) => ((b.q?.changesPercentage) || 0) - ((a.q?.changesPercentage) || 0));
-  divData.forEach(d => {
-    if (d.q) out += `${d.sym}: ${price(d.q.price)} (${pct(d.q.changesPercentage)}) vol:${(d.q.volume/1e6).toFixed(1)}M\n`;
-    else out += `${d.sym}: — (no data)\n`;
-  });
-  out += '\n';
+  o += '\n── DIGITAL ASSET ETFs ──\n';
+  DIGITAL_ETFS.forEach(s=>{ const q=Q[s]; o += q ? `${s}: ${price(q.price)} (${pct(q.changesPercentage)}) PC:${price(q.previousClose)}\n` : `${s}: —\n`; });
 
-  // GROWTH HYBRID STRATEGY
-  out += '── GROWTH HYBRID STRATEGY (24) ──\n';
-  const grData = GROWTH.map(s => ({sym: s, q: Q[s]}));
-  grData.forEach(d => {
-    if (d.q) out += `${d.sym}: ${price(d.q.price)} (${pct(d.q.changesPercentage)}) vol:${(d.q.volume/1e6).toFixed(1)}M\n`;
-    else out += `${d.sym}: — (no data)\n`;
-  });
-  out += '\n';
+  o += '\n── BENCHMARKS ──\n';
+  BENCHMARKS.forEach(s=>{ const q=Q[s]; o += q ? `${s}: ${price(q.price)} (${pct(q.changesPercentage)}) PC:${price(q.previousClose)}\n` : `${s}: —\n`; });
 
-  // BENCHMARKS
-  out += '── BENCHMARKS ──\n';
-  BENCHMARKS.forEach(s => {
-    const q = Q[s];
-    if (q) out += `${s}: ${price(q.price)} (${pct(q.changesPercentage)})\n`;
-  });
-  out += '\n';
+  const allH=[...DIVIDEND,...GROWTH,...DIGITAL_ETFS];
+  const hq=allH.map(s=>({s,q:Q[s]})).filter(x=>x.q).sort((a,b)=>(b.q.changesPercentage||0)-(a.q.changesPercentage||0));
+  o += '\n── TOP 5 IOWN MOVERS ──\n';
+  hq.slice(0,5).forEach(({s,q})=>{ o+=`${s}: ${pct(q.changesPercentage)} (${price(q.price)})\n`; });
+  o += '\n── BOTTOM 5 IOWN MOVERS ──\n';
+  hq.slice(-5).reverse().forEach(({s,q})=>{ o+=`${s}: ${pct(q.changesPercentage)} (${price(q.price)})\n`; });
 
-  // TOP & BOTTOM MOVERS (within our holdings)
-  const allHoldings = [...DIVIDEND, ...GROWTH, ...DIGITAL_ETFS];
-  const holdingQuotes = allHoldings.map(s => ({sym: s, chg: Q[s]?.changesPercentage || 0, price: Q[s]?.price})).filter(h => h.price);
-  holdingQuotes.sort((a, b) => b.chg - a.chg);
+  if(DATA.news&&DATA.news.length){ o+='\n── HEADLINES ──\n'; DATA.news.forEach(n=>{ o+=`• ${n.headline} (${n.source})\n`; }); }
 
-  out += '── TOP 5 IOWN MOVERS ──\n';
-  holdingQuotes.slice(0, 5).forEach(h => {
-    out += `${h.sym}: ${pct(h.chg)} (${price(h.price)})\n`;
-  });
-  out += '\n── BOTTOM 5 IOWN MOVERS ──\n';
-  holdingQuotes.slice(-5).reverse().forEach(h => {
-    out += `${h.sym}: ${pct(h.chg)} (${price(h.price)})\n`;
-  });
-  out += '\n';
-
-  // EARNINGS TODAY
-  if (DATA.earnings.length) {
-    out += '── EARNINGS TODAY ──\n';
-    const notable = DATA.earnings.slice(0, 20).map(e => e.symbol).join(', ');
-    out += notable + '\n';
-
-    // Flag any of ours reporting
-    const ours = DATA.earnings.filter(e => allHoldings.includes(e.symbol));
-    if (ours.length) out += `⚡ IOWN HOLDINGS REPORTING: ${ours.map(e => e.symbol).join(', ')}\n`;
-    out += '\n';
-  }
-
-  // MARKET MOVERS (broad market)
-  if (DATA.gainers.length) {
-    out += '── MARKET GAINERS (top 5) ──\n';
-    DATA.gainers.slice(0, 5).forEach(g => {
-      out += `${g.symbol}: ${pct(g.changesPercentage)} (${price(g.price)})\n`;
-    });
-    out += '\n';
-  }
-  if (DATA.losers.length) {
-    out += '── MARKET LOSERS (top 5) ──\n';
-    DATA.losers.slice(0, 5).forEach(g => {
-      out += `${g.symbol}: ${pct(g.changesPercentage)} (${price(g.price)})\n`;
-    });
-    out += '\n';
-  }
-
-  out += '=== END DATA DROP ===\n';
-
-  document.getElementById('outputBox').textContent = out;
+  o += '\n=== END DATA DROP ===\n';
+  document.getElementById('outputBox').textContent = o;
   document.getElementById('outputWrap').classList.add('visible');
   document.getElementById('copyBtn').style.display = 'inline-block';
 }
 
-// ═══════════════════════════════════════════
-// VISUAL DASHBOARD
-// ═══════════════════════════════════════════
-
 function buildDashboard() {
-  const Q = DATA.quotes;
-  const el = document.getElementById('dashboard');
-  let html = '';
-
-  // Index cards
-  html += '<div class="section-title">Indices</div><div class="cards">';
-  INDEX_PROXIES.forEach(s => {
-    const q = Q[s];
-    if (!q) return;
-    const cls = q.changesPercentage >= 0 ? 'up' : 'down';
-    html += `<div class="card"><div class="card-label">${INDEX_NAMES[s]}</div><div class="card-value">${price(q.price)}</div><div class="card-change ${cls}">${pct(q.changesPercentage)}</div></div>`;
-  });
-  html += '</div>';
-
-  // Commodity cards
-  html += '<div class="section-title">Commodities & Rates</div><div class="cards">';
-  [...COMMODITY_PROXIES, ...RATE_PROXIES].forEach(s => {
-    const q = Q[s];
-    if (!q) return;
-    const cls = q.changesPercentage >= 0 ? 'up' : 'down';
-    const name = COMMODITY_NAMES[s] || (s === 'TLT' ? '20Y Bond' : s);
-    html += `<div class="card"><div class="card-label">${name}</div><div class="card-value">${price(q.price)}</div><div class="card-change ${cls}">${pct(q.changesPercentage)}</div></div>`;
-  });
-  html += '</div>';
-
-  // Crypto cards
-  if (DATA.crypto.bitcoin || DATA.crypto.ethereum) {
-    html += '<div class="section-title">Crypto</div><div class="cards">';
-    ['bitcoin','ethereum'].forEach(id => {
-      const c = DATA.crypto[id];
-      if (!c) return;
-      const cls = c.price_change_percentage_24h >= 0 ? 'up' : 'down';
-      html += `<div class="card"><div class="card-label">${c.symbol.toUpperCase()}</div><div class="card-value">${price(c.current_price)}</div><div class="card-change ${cls}">${pct(c.price_change_percentage_24h)} 24h</div></div>`;
-    });
-    if (DATA.fearGreed) {
-      const val = parseInt(DATA.fearGreed.value);
-      const cls = val < 30 ? 'down' : val > 60 ? 'up' : 'flat';
-      html += `<div class="card"><div class="card-label">Fear & Greed</div><div class="card-value">${DATA.fearGreed.value}</div><div class="card-change ${cls}">${DATA.fearGreed.value_classification}</div></div>`;
-    }
-    html += '</div>';
+  const Q = DATA.quotes, el = document.getElementById('dashboard');
+  let h = '<div class="section-title">Indices</div><div class="cards">';
+  INDEX_PROXIES.forEach(s=>{ const q=Q[s]; if(!q)return; const c=q.changesPercentage>=0?'up':'down'; h+=`<div class="card"><div class="card-label">${INDEX_NAMES[s]}</div><div class="card-value">${price(q.price)}</div><div class="card-change ${c}">${pct(q.changesPercentage)}</div></div>`; });
+  h += '</div><div class="section-title">Commodities & Rates</div><div class="cards">';
+  [...COMMODITY_PROXIES,...RATE_PROXIES].forEach(s=>{ const q=Q[s]; if(!q)return; const c=q.changesPercentage>=0?'up':'down'; const nm=COMMODITY_NAMES[s]||(s==='TLT'?'20Y Bond':s); h+=`<div class="card"><div class="card-label">${nm}</div><div class="card-value">${price(q.price)}</div><div class="card-change ${c}">${pct(q.changesPercentage)}</div></div>`; });
+  h += '</div>';
+  if(DATA.crypto.bitcoin||DATA.crypto.ethereum){
+    h+='<div class="section-title">Crypto & Sentiment</div><div class="cards">';
+    ['bitcoin','ethereum'].forEach(id=>{ const c=DATA.crypto[id]; if(!c)return; const cl=c.price_change_percentage_24h>=0?'up':'down'; h+=`<div class="card"><div class="card-label">${c.symbol.toUpperCase()}</div><div class="card-value">${price(c.current_price)}</div><div class="card-change ${cl}">${pct(c.price_change_percentage_24h)} 24h</div></div>`; });
+    if(DATA.fearGreed){ const v=parseInt(DATA.fearGreed.value); const cl=v<30?'down':v>60?'up':'flat'; h+=`<div class="card"><div class="card-label">Fear & Greed</div><div class="card-value">${DATA.fearGreed.value}</div><div class="card-change ${cl}">${DATA.fearGreed.value_classification}</div></div>`; }
+    h+='</div>';
   }
-
-  // Sectors sorted
-  html += '<div class="section-title">Sectors</div><div class="cards">';
-  SECTOR_ETFS.map(s => ({s, q: Q[s]})).filter(x => x.q).sort((a, b) => (b.q.changesPercentage || 0) - (a.q.changesPercentage || 0)).forEach(({s, q}) => {
-    const cls = q.changesPercentage >= 0 ? 'up' : 'down';
-    html += `<div class="card"><div class="card-label">${SECTOR_NAMES[s]}</div><div class="card-value">${pct(q.changesPercentage)}</div><div class="card-change ${cls}">${price(q.price)}</div></div>`;
-  });
-  html += '</div>';
-
-  // Top/bottom holdings
-  const allH = [...DIVIDEND, ...GROWTH, ...DIGITAL_ETFS];
-  const hq = allH.map(s => ({s, q: Q[s]})).filter(x => x.q).sort((a, b) => (b.q.changesPercentage || 0) - (a.q.changesPercentage || 0));
-
-  if (hq.length) {
-    html += '<div class="section-title">Top 5 Holdings</div><div class="cards">';
-    hq.slice(0, 5).forEach(({s, q}) => {
-      html += `<div class="card"><div class="card-label">${s}</div><div class="card-value up">${pct(q.changesPercentage)}</div><div class="card-change">${price(q.price)}</div></div>`;
-    });
-    html += '</div>';
-    html += '<div class="section-title">Bottom 5 Holdings</div><div class="cards">';
-    hq.slice(-5).reverse().forEach(({s, q}) => {
-      html += `<div class="card"><div class="card-label">${s}</div><div class="card-value down">${pct(q.changesPercentage)}</div><div class="card-change">${price(q.price)}</div></div>`;
-    });
-    html += '</div>';
+  h+='<div class="section-title">Sectors</div><div class="cards">';
+  SECTOR_ETFS.map(s=>({s,q:Q[s]})).filter(x=>x.q).sort((a,b)=>(b.q.changesPercentage||0)-(a.q.changesPercentage||0)).forEach(({s,q})=>{ const c=q.changesPercentage>=0?'up':'down'; h+=`<div class="card"><div class="card-label">${SECTOR_NAMES[s]}</div><div class="card-value">${pct(q.changesPercentage)}</div><div class="card-change ${c}">${price(q.price)}</div></div>`; });
+  h+='</div>';
+  const allH=[...DIVIDEND,...GROWTH,...DIGITAL_ETFS];
+  const hq=allH.map(s=>({s,q:Q[s]})).filter(x=>x.q).sort((a,b)=>(b.q.changesPercentage||0)-(a.q.changesPercentage||0));
+  if(hq.length){
+    h+='<div class="section-title">Top 5 Holdings</div><div class="cards">';
+    hq.slice(0,5).forEach(({s,q})=>{ h+=`<div class="card"><div class="card-label">${s}</div><div class="card-value up">${pct(q.changesPercentage)}</div><div class="card-change">${price(q.price)}</div></div>`; });
+    h+='</div><div class="section-title">Bottom 5 Holdings</div><div class="cards">';
+    hq.slice(-5).reverse().forEach(({s,q})=>{ h+=`<div class="card"><div class="card-label">${s}</div><div class="card-value down">${pct(q.changesPercentage)}</div><div class="card-change">${price(q.price)}</div></div>`; });
+    h+='</div>';
   }
-
-  el.innerHTML = html;
-  el.classList.add('visible');
+  el.innerHTML = h; el.classList.add('visible');
 }
-
-// ═══════════════════════════════════════════
-// COPY
-// ═══════════════════════════════════════════
 
 async function copyOutput() {
   const text = document.getElementById('outputBox').textContent;
-  try {
-    await navigator.clipboard.writeText(text);
-  } catch(e) {
-    // Fallback
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-  }
-  const toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2000);
+  try { await navigator.clipboard.writeText(text); } catch(e) { const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
+  const toast = document.getElementById('toast'); toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 2000);
 }
 
-// ═══════════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════════
 loadKey();
 </script>
 </body>

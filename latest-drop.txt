@@ -1,0 +1,126 @@
+=== IOWN DATA DROP | Thu, Mar 5, 2026 | 08:14 AM CT ===
+
+── INDICES ──
+S&P 500: $685.13 (+0.71%) | O:$681.63 H:$687.09 L:$679.62 PC:$680.33
+Dow: $487.74 (+0.46%) | O:$486.56 H:$489.03 L:$483.95 PC:$485.52
+Nasdaq: $610.75 (+1.52%) | O:$604.16 H:$612.88 L:$603.43 PC:$601.58
+Russell 2K: $261.76 (+0.97%) | O:$261.20 H:$262.96 L:$258.82 PC:$259.24
+UVXY (VIX proxy): $40.69 (-5.70%)
+
+── RATES ──
+TLT (20Y Bond): $89.15 (-0.31%) PC:$89.43
+
+── SECTORS ──
+Discret. (XLY): +1.78% | $116.39
+Tech (XLK): +1.70% | $139.84
+Comm Svcs (XLC): +0.70% | $118.79
+Financials (XLF): +0.57% | $51.50
+Utilities (XLU): +0.42% | $47.27
+Industrials (XLI): +0.30% | $175.97
+Healthcare (XLV): +0.20% | $157.05
+Real Estate (XLRE): +0.14% | $43.76
+Materials (XLB): -0.04% | $51.92
+Energy (XLE): -0.58% | $56.19
+Staples (XLP): -0.66% | $87.16
+
+── COMMODITIES ──
+Gold (GLD): $471.80 (+0.78%)
+Silver (SLV): $75.34 (+0.88%)
+WTI Oil (USO): $91.56 (+1.51%)
+Nat Gas (UNG): $11.78 (-4.07%)
+Brent Oil (BNO): $38.90 (+0.75%)
+
+── CRYPTO ──
+IBIT: $41.44 (+7.08%)
+ETHA: $16.25 (+8.84%)
+
+── SENTIMENT ──
+Fear & Greed: 22 (Extreme Fear)
+
+── DIVIDEND STRATEGY (25) ──
+ABT: $113.10 (-0.45%) O:$113.66 H:$113.95 L:$112.03 PC:$113.61
+A: $120.54 (+1.26%) O:$119.58 H:$121.17 L:$119.25 PC:$119.04
+ADI: $341.51 (+0.74%) O:$344.04 H:$346.39 L:$339.29 PC:$338.99
+ATO: $186.77 (+0.41%) O:$185.89 H:$186.89 L:$183.85 PC:$186.00
+ADP: $217.16 (+0.41%) O:$216.84 H:$218.36 L:$214.62 PC:$216.27
+BKH: $75.76 (+1.97%) O:$74.23 H:$75.83 L:$73.06 PC:$74.30
+CAT: $731.97 (+1.36%) O:$737.09 H:$746.01 L:$730.84 PC:$722.18
+CHD: $102.47 (-0.53%) O:$102.94 H:$103.06 L:$101.64 PC:$103.02
+CL: $95.28 (-0.24%) O:$95.62 H:$96.02 L:$95.05 PC:$95.51
+FAST: $46.43 (+0.43%) O:$46.35 H:$47.08 L:$45.78 PC:$46.23
+GD: $366.12 (+0.39%) O:$366.00 H:$366.75 L:$359.28 PC:$364.70
+GPC: $115.64 (-0.67%) O:$116.55 H:$117.05 L:$115.20 PC:$116.42
+LRCX: $222.99 (+2.63%) O:$221.71 H:$225.12 L:$219.00 PC:$217.27
+LMT: $664.48 (-0.50%) O:$670.00 H:$671.00 L:$652.54 PC:$667.82
+MATX: $167.38 (-0.68%) O:$168.36 H:$170.52 L:$166.36 PC:$168.53
+NEE: $92.60 (+0.01%) O:$92.56 H:$93.10 L:$91.63 PC:$92.59
+ORI: $42.46 (+0.21%) O:$42.37 H:$42.70 L:$41.84 PC:$42.37
+PCAR: $124.92 (+3.08%) O:$124.56 H:$126.08 L:$123.75 PC:$121.19
+QCOM: $139.51 (+1.00%) O:$138.22 H:$139.89 L:$137.42 PC:$138.13
+DGX: $208.45 (+0.04%) O:$208.14 H:$209.76 L:$207.11 PC:$208.36
+SSNC: $75.20 (+0.56%) O:$74.83 H:$75.47 L:$74.40 PC:$74.78
+STLD: $193.91 (-1.79%) O:$198.69 H:$199.80 L:$193.86 PC:$197.45
+SYK: $381.89 (-0.70%) O:$382.92 H:$384.51 L:$380.87 PC:$384.59
+TEL: $209.02 (+2.31%) O:$206.97 H:$212.36 L:$206.16 PC:$204.31
+VLO: $225.60 (+3.62%) O:$217.25 H:$225.96 L:$216.44 PC:$217.71
+
+── GROWTH HYBRID (24) ──
+AMD: $202.07 (+5.82%) O:$192.12 H:$202.44 L:$189.86 PC:$190.95
+AEM: $232.73 (-0.76%) O:$240.01 H:$241.10 L:$229.00 PC:$234.52
+ATAT: $36.50 (+0.11%) O:$37.33 H:$37.80 L:$36.00 PC:$36.46
+CVX: $186.03 (-1.45%) O:$187.45 H:$188.46 L:$184.15 PC:$188.77
+CWAN: $23.54 (+0.17%) O:$23.53 H:$23.60 L:$23.52 PC:$23.50
+CNX: $42.38 (+1.12%) O:$41.48 H:$42.43 L:$41.05 PC:$41.91
+COIN: $208.93 (+14.57%) O:$195.91 H:$212.07 L:$195.40 PC:$182.36
+EIX: $73.89 (+0.04%) O:$74.23 H:$74.64 L:$73.61 PC:$73.86
+FINV: $5.41 (+2.27%) O:$5.36 H:$5.50 L:$5.34 PC:$5.29
+FTNT: $82.79 (+2.08%) O:$81.04 H:$83.98 L:$80.95 PC:$81.10
+GFI: $51.08 (-0.25%) O:$51.89 H:$51.89 L:$50.34 PC:$51.21
+SUPV: $8.82 (+3.16%) O:$8.81 H:$9.04 L:$8.45 PC:$8.55
+HRMY: $28.54 (+0.96%) O:$28.81 H:$28.88 L:$28.12 PC:$28.27
+HUT: $54.21 (+13.89%) O:$50.28 H:$54.93 L:$49.66 PC:$47.60
+KEYS: $300.92 (-0.54%) O:$307.05 H:$308.00 L:$297.70 PC:$302.54
+MARA: $9.29 (+7.27%) O:$9.11 H:$9.55 L:$8.87 PC:$8.66
+NVDA: $183.04 (+1.66%) O:$180.44 H:$184.70 L:$180.06 PC:$180.05
+NXPI: $216.37 (+0.52%) O:$217.89 H:$218.98 L:$215.15 PC:$215.25
+OKE: $84.76 (-0.02%) O:$84.28 H:$85.13 L:$83.72 PC:$84.78
+PDD: $101.19 (+0.48%) O:$101.65 H:$102.80 L:$100.86 PC:$100.71
+HOOD: $82.21 (+8.07%) O:$79.60 H:$83.85 L:$79.58 PC:$76.07
+SYF: $69.27 (+0.89%) O:$69.15 H:$69.99 L:$68.69 PC:$68.66
+TSM: $357.44 (+1.22%) O:$357.43 H:$361.09 L:$354.55 PC:$353.13
+TOL: $153.56 (-0.07%) O:$154.87 H:$154.87 L:$151.96 PC:$153.66
+
+── DIGITAL ASSET ETFs ──
+IBIT: $41.44 (+7.08%) PC:$38.70
+ETHA: $16.25 (+8.84%) PC:$14.93
+
+── BENCHMARKS ──
+DVY: $154.84 (+0.47%) PC:$154.11
+IWS: $152.42 (+0.36%) PC:$151.87
+IUSG: $164.46 (+1.01%) PC:$162.81
+
+── TOP 5 IOWN MOVERS ──
+COIN: +14.57% ($208.93)
+HUT: +13.89% ($54.21)
+ETHA: +8.84% ($16.25)
+HOOD: +8.07% ($82.21)
+MARA: +7.27% ($9.29)
+
+── BOTTOM 5 IOWN MOVERS ──
+STLD: -1.79% ($193.91)
+CVX: -1.45% ($186.03)
+AEM: -0.76% ($232.73)
+SYK: -0.70% ($381.89)
+MATX: -0.68% ($167.38)
+
+── HEADLINES ──
+• Iran war threatens $11.7 trillion global travel industry as passengers get caught in crossfire (CNBC)
+• Family offices double down on AI investments as startup fundraising breaks record in February (CNBC)
+• Exclusive: NATO allies will keep supporting Ukraine despite situation in Iran, Rutte says - Reuters (Reuters)
+• Exclusive: No talk of triggering NATO's Article 5 over Turkey missile shoot-down, Rutte says - Reuters (Reuters)
+• Gulf countries concerned about risk of Iran civil war, says EU's foreign chief - Reuters (Reuters)
+• Iran has not requested Russian arms supplies, Kremlin says - Reuters (Reuters)
+• Russia accuses US and Israel of trying to drag Arab countries into a wider Middle East conflict - Reuters (Reuters)
+• Turkey says it is closely following actions of Iranian Kurdish PJAK militant group - Reuters (Reuters)
+
+=== END DATA DROP ===

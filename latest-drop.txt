@@ -1,126 +1,126 @@
-=== IOWN DATA DROP | Wed, Mar 11, 2026 | 10:11 AM CT ===
+=== IOWN DATA DROP | Thu, Mar 12, 2026 | 10:44 AM CT ===
 
 ── INDICES ──
-S&P 500: $677.18 (+0.00%) | O:$677.66 H:$680.08 L:$675.20 PC:$677.18
-Dow: $475.17 (-0.53%) | O:$477.74 H:$477.77 L:$473.52 PC:$477.70
-Nasdaq: $609.25 (+0.24%) | O:$608.58 H:$612.43 L:$607.09 PC:$607.77
-Russell 2K: $253.49 (+0.05%) | O:$252.76 H:$254.38 L:$250.58 PC:$253.36
-UVXY (VIX proxy): $47.65 (-4.32%)
+S&P 500: $669.41 (-1.02%) | O:$672.12 H:$672.12 L:$666.92 PC:$676.33
+Dow: $469.19 (-1.18%) | O:$471.15 H:$471.15 L:$467.57 PC:$474.81
+Nasdaq: $600.37 (-1.20%) | O:$603.86 H:$604.14 L:$597.53 PC:$607.69
+Russell 2K: $248.65 (-1.66%) | O:$249.28 H:$249.57 L:$246.57 PC:$252.85
+UVXY (VIX proxy): $49.38 (+6.74%)
 
 ── RATES ──
-TLT (20Y Bond): $87.47 (-0.92%) PC:$88.28
+TLT (20Y Bond): $87.10 (-0.05%) PC:$87.14
 
 ── SECTORS ──
-Energy (XLE): +1.94% | $56.68
-Tech (XLK): +0.74% | $140.80
-Discret. (XLY): +0.19% | $114.66
-Industrials (XLI): +0.03% | $170.07
-Comm Svcs (XLC): -0.13% | $117.23
-Healthcare (XLV): -0.13% | $152.95
-Materials (XLB): -0.14% | $49.81
-Utilities (XLU): -0.34% | $46.40
-Real Estate (XLRE): -0.54% | $42.69
-Staples (XLP): -1.10% | $84.78
-Financials (XLF): -1.10% | $49.51
+Energy (XLE): +1.67% | $57.93
+Utilities (XLU): +1.65% | $46.93
+Materials (XLB): +0.46% | $50.07
+Staples (XLP): +0.38% | $84.91
+Real Estate (XLRE): -0.17% | $42.34
+Comm Svcs (XLC): -0.86% | $115.99
+Healthcare (XLV): -1.07% | $151.21
+Financials (XLF): -1.19% | $49.05
+Tech (XLK): -1.32% | $138.57
+Discret. (XLY): -1.55% | $112.37
+Industrials (XLI): -1.63% | $166.73
 
 ── COMMODITIES ──
-Gold (GLD): $475.93 (-0.40%)
-Silver (SLV): $77.37 (-3.40%)
-WTI Oil (USO): $105.64 (-0.21%)
-Nat Gas (UNG): $12.70 (+3.50%)
-Brent Oil (BNO): $43.26 (-0.25%)
+Gold (GLD): $470.95 (-1.11%)
+Silver (SLV): $77.04 (-1.12%)
+WTI Oil (USO): $115.89 (+7.26%)
+Nat Gas (UNG): $13.07 (+1.48%)
+Brent Oil (BNO): $47.31 (+7.43%)
 
 ── CRYPTO ──
-IBIT: $39.89 (+0.45%)
-ETHA: $15.52 (+0.78%)
+IBIT: $39.96 (-0.27%)
+ETHA: $15.70 (+0.06%)
 
 ── SENTIMENT ──
-Fear & Greed: 15 (Extreme Fear)
+Fear & Greed: 18 (Extreme Fear)
 
 ── DIVIDEND STRATEGY (25) ──
-ABT: $110.03 (-0.47%) O:$110.00 H:$110.67 L:$108.96 PC:$110.55
-A: $115.06 (-0.32%) O:$115.64 H:$116.67 L:$114.69 PC:$115.43
-ADI: $319.79 (+0.31%) O:$318.90 H:$321.53 L:$316.93 PC:$318.81
-ATO: $183.83 (+0.21%) O:$184.52 H:$184.52 L:$182.19 PC:$183.44
-ADP: $211.95 (-2.49%) O:$217.99 H:$219.80 L:$211.71 PC:$217.37
-BKH: $71.22 (+0.00%) O:$71.17 H:$71.44 L:$70.10 PC:$71.22
-CAT: $717.60 (+0.13%) O:$717.50 H:$720.42 L:$703.63 PC:$716.68
-CHD: $99.81 (-1.31%) O:$101.19 H:$101.19 L:$98.83 PC:$101.13
-CL: $90.23 (-2.44%) O:$91.92 H:$92.12 L:$89.22 PC:$92.49
-FAST: $46.35 (+0.11%) O:$46.51 H:$46.51 L:$45.60 PC:$46.30
-GD: $354.87 (-0.20%) O:$354.25 H:$355.87 L:$351.18 PC:$355.59
-GPC: $112.24 (+3.01%) O:$109.48 H:$114.78 L:$108.14 PC:$108.96
-LRCX: $220.20 (+2.31%) O:$215.53 H:$221.62 L:$214.00 PC:$215.23
-LMT: $651.75 (+0.08%) O:$648.28 H:$653.63 L:$644.13 PC:$651.22
-MATX: $154.70 (-1.31%) O:$156.37 H:$156.37 L:$153.56 PC:$156.76
-NEE: $91.98 (+0.48%) O:$91.54 H:$92.04 L:$91.10 PC:$91.54
-ORI: $40.57 (-0.20%) O:$40.50 H:$40.69 L:$40.12 PC:$40.65
-PCAR: $117.96 (-0.89%) O:$118.44 H:$118.57 L:$116.78 PC:$119.02
-QCOM: $135.28 (+0.06%) O:$135.82 H:$138.20 L:$134.65 PC:$135.20
-DGX: $200.69 (-0.10%) O:$200.08 H:$200.95 L:$198.37 PC:$200.90
-SSNC: $72.08 (-2.16%) O:$73.96 H:$74.30 L:$71.75 PC:$73.67
-STLD: $183.65 (+0.80%) O:$182.84 H:$185.29 L:$180.73 PC:$182.19
-SYK: $349.23 (-2.63%) O:$358.25 H:$359.75 L:$339.49 PC:$358.65
-TEL: $203.83 (+0.43%) O:$202.72 H:$205.39 L:$202.33 PC:$202.95
-VLO: $227.86 (+4.99%) O:$217.94 H:$228.90 L:$217.94 PC:$217.02
+ABT: $109.41 (-0.76%) O:$109.84 H:$111.18 L:$109.11 PC:$110.25
+A: $112.91 (-2.17%) O:$114.39 H:$114.39 L:$112.50 PC:$115.42
+ADI: $309.77 (-2.96%) O:$315.20 H:$315.20 L:$304.26 PC:$319.22
+ATO: $187.87 (+1.94%) O:$184.35 H:$187.93 L:$183.79 PC:$184.30
+ADP: $210.97 (-0.95%) O:$212.19 H:$216.00 L:$210.62 PC:$213.00
+BKH: $71.02 (+1.27%) O:$69.56 H:$71.11 L:$69.01 PC:$70.13
+CAT: $693.37 (-2.01%) O:$696.96 H:$696.96 L:$679.76 PC:$707.59
+CHD: $101.21 (+1.55%) O:$99.42 H:$101.23 L:$98.54 PC:$99.67
+CL: $88.97 (-0.71%) O:$89.27 H:$89.81 L:$88.60 PC:$89.61
+FAST: $46.27 (-0.69%) O:$46.29 H:$46.41 L:$46.00 PC:$46.59
+GD: $354.00 (+0.04%) O:$350.87 H:$355.46 L:$349.00 PC:$353.85
+GPC: $108.45 (-0.69%) O:$108.44 H:$109.33 L:$107.54 PC:$109.20
+LRCX: $212.25 (-3.02%) O:$215.08 H:$215.16 L:$208.00 PC:$218.87
+LMT: $657.28 (+1.20%) O:$649.86 H:$661.00 L:$646.63 PC:$649.47
+MATX: $151.82 (-1.38%) O:$151.09 H:$153.75 L:$143.64 PC:$153.94
+NEE: $92.52 (+0.94%) O:$91.12 H:$92.65 L:$90.81 PC:$91.66
+ORI: $39.94 (-0.27%) O:$39.41 H:$39.96 L:$39.18 PC:$40.05
+PCAR: $118.61 (+0.41%) O:$117.66 H:$118.67 L:$117.05 PC:$118.12
+QCOM: $133.63 (-0.37%) O:$133.64 H:$134.87 L:$132.45 PC:$134.12
+DGX: $201.86 (+0.65%) O:$200.40 H:$203.00 L:$199.97 PC:$200.56
+SSNC: $72.43 (-0.75%) O:$72.65 H:$73.67 L:$71.85 PC:$72.98
+STLD: $177.48 (-3.68%) O:$181.37 H:$181.50 L:$175.65 PC:$184.26
+SYK: $337.82 (-2.30%) O:$344.39 H:$346.66 L:$336.44 PC:$345.78
+TEL: $200.73 (-2.15%) O:$203.14 H:$206.59 L:$199.34 PC:$205.14
+VLO: $236.39 (+2.31%) O:$232.35 H:$237.86 L:$230.84 PC:$231.05
 
 ── GROWTH HYBRID (24) ──
-AMD: $205.85 (+1.29%) O:$204.69 H:$209.21 L:$204.69 PC:$203.23
-AEM: $222.84 (-1.81%) O:$223.88 H:$224.49 L:$216.68 PC:$226.94
-ATAT: $36.10 (-0.93%) O:$36.52 H:$37.01 L:$35.60 PC:$36.44
-CVX: $188.92 (+1.41%) O:$186.12 H:$189.46 L:$186.12 PC:$186.29
-CWAN: $23.27 (+0.39%) O:$23.23 H:$23.30 L:$23.23 PC:$23.18
-CNX: $40.59 (+1.88%) O:$39.97 H:$40.61 L:$39.76 PC:$39.84
-COIN: $195.97 (-0.28%) O:$196.70 H:$203.10 L:$194.22 PC:$196.52
-EIX: $71.75 (+0.94%) O:$71.08 H:$71.78 L:$70.97 PC:$71.08
-FINV: $5.34 (-0.19%) O:$5.37 H:$5.46 L:$5.33 PC:$5.35
-FTNT: $83.29 (-1.08%) O:$84.06 H:$85.37 L:$82.90 PC:$84.20
-GFI: $50.05 (-3.99%) O:$50.53 H:$50.77 L:$49.06 PC:$52.13
-SUPV: $9.38 (+3.65%) O:$9.00 H:$9.43 L:$9.00 PC:$9.05
-HRMY: $28.84 (+0.35%) O:$28.75 H:$28.91 L:$28.43 PC:$28.74
-HUT: $51.09 (+3.88%) O:$49.13 H:$52.64 L:$49.13 PC:$49.18
-KEYS: $285.41 (-0.05%) O:$284.49 H:$286.60 L:$282.20 PC:$285.54
-MARA: $8.50 (-0.82%) O:$8.61 H:$8.78 L:$8.47 PC:$8.57
-NVDA: $186.46 (+0.91%) O:$185.52 H:$187.62 L:$184.94 PC:$184.77
-NXPI: $202.82 (-0.10%) O:$203.88 H:$207.00 L:$201.64 PC:$203.03
-OKE: $85.78 (+1.30%) O:$84.93 H:$85.93 L:$84.63 PC:$84.68
-PDD: $103.19 (-1.59%) O:$104.98 H:$104.98 L:$103.10 PC:$104.86
-HOOD: $78.38 (-0.19%) O:$78.36 H:$79.77 L:$77.71 PC:$78.53
-SYF: $65.30 (-0.24%) O:$65.70 H:$66.40 L:$65.11 PC:$65.46
-TSM: $356.18 (+2.62%) O:$353.96 H:$357.35 L:$350.36 PC:$347.09
-TOL: $144.64 (-0.69%) O:$145.05 H:$145.34 L:$142.57 PC:$145.65
+AMD: $198.58 (-3.05%) O:$203.09 H:$203.62 L:$196.67 PC:$204.83
+AEM: $217.97 (-2.17%) O:$221.20 H:$222.71 L:$215.81 PC:$222.81
+ATAT: $35.02 (-3.55%) O:$36.13 H:$36.58 L:$34.71 PC:$36.31
+CVX: $197.57 (+3.01%) O:$192.55 H:$197.81 L:$191.77 PC:$191.79
+CWAN: $23.24 (-0.04%) O:$23.30 H:$23.32 L:$23.20 PC:$23.25
+CNX: $41.17 (+1.01%) O:$40.80 H:$41.37 L:$40.55 PC:$40.76
+COIN: $197.06 (-0.79%) O:$196.06 H:$198.00 L:$192.46 PC:$198.63
+EIX: $71.88 (+0.49%) O:$71.11 H:$71.90 L:$70.61 PC:$71.53
+FINV: $5.32 (-0.37%) O:$5.31 H:$5.40 L:$5.25 PC:$5.34
+FTNT: $84.40 (+1.10%) O:$83.09 H:$85.07 L:$82.31 PC:$83.48
+GFI: $50.79 (+0.40%) O:$51.05 H:$51.87 L:$50.21 PC:$50.59
+SUPV: $9.01 (-2.59%) O:$9.07 H:$9.12 L:$8.80 PC:$9.25
+HRMY: $28.28 (-1.77%) O:$28.54 H:$28.54 L:$28.00 PC:$28.79
+HUT: $48.97 (-4.21%) O:$50.13 H:$50.13 L:$46.94 PC:$51.12
+KEYS: $285.22 (+0.34%) O:$280.10 H:$285.35 L:$277.08 PC:$284.26
+MARA: $8.62 (+0.82%) O:$8.42 H:$8.63 L:$8.30 PC:$8.55
+NVDA: $184.01 (-1.09%) O:$184.48 H:$184.86 L:$181.75 PC:$186.03
+NXPI: $194.85 (-2.51%) O:$197.38 H:$198.23 L:$192.92 PC:$199.87
+OKE: $86.85 (+1.27%) O:$85.87 H:$86.91 L:$85.44 PC:$85.76
+PDD: $102.50 (-0.43%) O:$102.84 H:$103.89 L:$102.00 PC:$102.94
+HOOD: $76.47 (-2.82%) O:$77.55 H:$77.82 L:$75.07 PC:$78.69
+SYF: $63.67 (-2.36%) O:$63.85 H:$64.29 L:$63.17 PC:$65.21
+TSM: $340.51 (-3.96%) O:$348.68 H:$348.68 L:$336.38 PC:$354.56
+TOL: $140.85 (-1.67%) O:$141.82 H:$142.04 L:$139.18 PC:$143.24
 
 ── DIGITAL ASSET ETFs ──
-IBIT: $39.89 (+0.45%) PC:$39.71
-ETHA: $15.52 (+0.78%) PC:$15.40
+IBIT: $39.96 (-0.27%) PC:$40.07
+ETHA: $15.70 (+0.06%) PC:$15.69
 
 ── BENCHMARKS ──
-DVY: $151.40 (-0.11%) PC:$151.57
-IWS: $147.68 (-0.01%) PC:$147.69
-IUSG: $164.46 (+0.21%) PC:$164.11
+DVY: $151.59 (+0.34%) PC:$151.08
+IWS: $146.61 (-0.57%) PC:$147.45
+IUSG: $162.00 (-1.34%) PC:$164.20
 
 ── TOP 5 IOWN MOVERS ──
-VLO: +4.99% ($227.86)
-HUT: +3.88% ($51.09)
-SUPV: +3.65% ($9.38)
-GPC: +3.01% ($112.24)
-TSM: +2.62% ($356.18)
+CVX: +3.01% ($197.57)
+VLO: +2.31% ($236.39)
+ATO: +1.94% ($187.87)
+CHD: +1.55% ($101.21)
+OKE: +1.27% ($86.85)
 
 ── BOTTOM 5 IOWN MOVERS ──
-GFI: -3.99% ($50.05)
-SYK: -2.63% ($349.23)
-ADP: -2.49% ($211.95)
-CL: -2.44% ($90.23)
-SSNC: -2.16% ($72.08)
+HUT: -4.21% ($48.97)
+TSM: -3.96% ($340.51)
+STLD: -3.68% ($177.48)
+ATAT: -3.55% ($35.02)
+AMD: -3.05% ($198.58)
 
 ── HEADLINES ──
-• Black women were disproportionately impacted by DOGE cuts. A year later, they're rebuilding careers for themselves and each other (CNBC)
-• Interior Secretary Burgum calls for IEA to release oil reserves to address supply disruption (CNBC)
-• Iran cannot participate in World Cup, sports minister says - Reuters (Reuters)
-• How the Strait of Hormuz closure affects global oil supply - Reuters (Reuters)
-• Iran's new supreme leader 'lightly injured' but still active, Iranian official tells Reuters - Reuters (Reuters)
-• Iran says oil will reach $200 a barrel, warns of 'continuous strikes' - Reuters (Reuters)
-• Israel sees no certainty Iran’s government will fall despite war - Reuters (Reuters)
-• Spain permanently withdraws ambassador as rift with Israel deepens - Reuters (Reuters)
+• EV maker Lucid reveals plans for robotaxi, positive free cash flow late this decade (CNBC)
+• Trump: US benefits from high oil prices, but priority is stopping Iran - Reuters (Reuters)
+• Amid Middle East conflict and new tax incentives, more family offices look to Hong Kong (CNBC)
+• Jim Cramer's top 10 things to watch in the stock market Thursday (CNBC)
+• Jobless claims show sluggish but stable labor market (MarketWatch)
+• Bombing won't overthrow ruling clerics, Iran dissidents say - Reuters (Reuters)
+• Nintendo has jumped 18% this week as a surprise Pokémon hit drove hope it could boost Switch 2 sales (CNBC)
+• Poland says foiled cyberattack on nuclear centre may have come from Iran - Reuters (Reuters)
 
 === END DATA DROP ===

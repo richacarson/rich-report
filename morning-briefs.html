@@ -120,30 +120,38 @@
     columns: 2 300px; column-gap: 36px; column-rule: 1px solid var(--gray-200);
   }
 
-  /* Force section starts to break to new column if near bottom */
-  .bc .section-label { break-after: avoid; }
-  .bc h2 { break-after: avoid; }
-  .bc .section-rule { break-after: avoid; }
+  /* ── Section start group: keeps header + first bullet together ── */
+  .bc .section-start {
+    break-inside: avoid; break-before: auto;
+  }
+
+  /* ── Tables pair: keeps Top/Bottom movers side by side ── */
+  .bc .tables-pair {
+    break-inside: avoid;
+  }
+
+  /* ── Radar group: keeps radar items from orphaning ── */
+  .bc .radar-group {
+    break-inside: avoid;
+  }
 
   /* Section label */
   .bc .section-label {
     font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--gray-400);
     letter-spacing: 2px; text-transform: uppercase; margin-top: 28px;
-    break-inside: avoid;
   }
+  .bc .section-start:first-child .section-label,
   .bc .section-label:first-child { margin-top: 0; }
 
   /* Section h2 */
   .bc h2 {
     font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700;
     color: var(--gray-900); margin: 3px 0 0; line-height: 1.2;
-    break-inside: avoid; break-after: avoid;
   }
 
   /* Section rule */
   .bc .section-rule {
     height: 2px; background: var(--gray-900); margin: 6px 0 14px;
-    break-inside: avoid; break-after: avoid;
   }
 
   /* Paragraphs */

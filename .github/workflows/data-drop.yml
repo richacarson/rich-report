@@ -2,8 +2,14 @@ name: IOWN Data Drop
 
 on:
   schedule:
-    - cron: '30 12 * * 1-5'
+    # 5:00 AM CT (10:00 UTC) - Morning Brief (buffer for CDT + GitHub delay)
+    - cron: '0 10 * * 1-5'
+    # 4:15 PM CT (21:15 UTC) - Market Commentary
+    - cron: '15 21 * * 1-5'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   fetch-data:

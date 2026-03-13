@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IOWN Morning Briefs</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gd: #3D4A2E; --gm: #5B7A3D; --gl: #7A8F5A; --gb: #F4F7F0;
+    --ink: #1A1A1A; --accent: #8B3A3A; --mgray: #8A8A84; --lrule: #BCBCB4; --cream: #FAFAF5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--gb); color: var(--ink); min-height: 100vh; }
+  .shell { max-width: 800px; margin: 0 auto; padding: 2.5rem 1.5rem; display: none; }
+
+  /* ── Password Gate ── */
+  .gate {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: var(--gb);
+  }
+  .gate.hidden { display: none; }
+  .gate-box {
+    background: white; border: 1px solid var(--lrule); padding: 2.5rem 2rem;
+    max-width: 380px; width: 100%; text-align: center;
+  }
+  .gate-title {
+    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.4rem;
+    color: var(--gd); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem;
+  }
+  .gate-sub {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--mgray);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.5rem;
+  }
+  .gate-input {
+    width: 100%; font-family: 'DM Mono', monospace; font-size: 0.9rem;
+    padding: 0.6rem 0.75rem; border: 1px solid var(--lrule); background: var(--cream);
+    color: var(--ink); outline: none; text-align: center; letter-spacing: 0.1em;
+    transition: border 0.2s; margin-bottom: 0.75rem;
+  }
+  .gate-input:focus { border-color: var(--gm); }
+  .gate-input.error { border-color: var(--accent); animation: shake 0.3s; }
+  .gate-btn {
+    font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.04em;
+    padding: 0.6rem 2rem; border: none; cursor: pointer; text-transform: uppercase;
+    background: var(--gd); color: white; transition: background 0.15s; width: 100%;
+  }
+  .gate-btn:hover { background: var(--gm); }
+  .gate-error {
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent);
+    margin-top: 0.5rem; min-height: 1rem;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 0.75rem; border-bottom: 3px solid var(--ink); margin-bottom: 0.25rem;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.75rem;
+    letter-spacing: 0.04em; color: var(--gd); text-transform: uppercase; line-height: 1.1;
+  }
+  .masthead .tag {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: white;
+    background: var(--gm); padding: 0.2rem 0.6rem; border-radius: 2px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .masthead-sub {
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-top: 0.4rem; border-top: 1px solid var(--ink); margin-bottom: 2rem;
+  }
+
+  /* ── Stats Bar ── */
+  .stats {
+    display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;
+  }
+  .stat {
+    font-family: 'DM Mono', monospace;
+  }
+  .stat-label { font-size: 0.6rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; }
+  .stat-value { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gd); }
+
+  /* ── Brief Cards ── */
+  .briefs-list { display: flex; flex-direction: column; gap: 0; }
+
+  .brief-card {
+    display: grid; grid-template-columns: 4px 1fr auto;
+    background: white; border: 1px solid var(--lrule); border-top: none;
+    transition: all 0.15s; cursor: pointer; text-decoration: none; color: inherit;
+  }
+  .brief-card:first-child { border-top: 1px solid var(--lrule); }
+  .brief-card:hover { background: var(--cream); border-color: var(--mgray); z-index: 1; position: relative; }
+
+  .brief-stripe { background: var(--mgray); }
+  .brief-stripe.up { background: var(--gm); }
+  .brief-stripe.down { background: var(--accent); }
+
+  .brief-body { padding: 1rem 1.25rem; }
+  .brief-date {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--mgray);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem;
+  }
+  .brief-headline {
+    font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+    color: var(--ink); line-height: 1.3; margin-bottom: 0.3rem;
+  }
+  .brief-headline.up { color: var(--gd); }
+  .brief-headline.down { color: var(--accent); }
+
+  .brief-sub {
+    font-family: 'EB Garamond', serif; font-size: 0.95rem; color: var(--mgray);
+    font-style: italic; line-height: 1.4;
+  }
+
+  .brief-meta {
+    display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
+    padding: 1rem 1.25rem; gap: 0.3rem;
+  }
+  .brief-day {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray);
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .brief-daynum {
+    font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900;
+    color: var(--lrule); line-height: 1;
+  }
+  .brief-pdf {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--gm);
+    text-transform: uppercase; letter-spacing: 0.04em;
+    border: 1px solid var(--gm); padding: 0.15rem 0.5rem; border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .brief-card:hover .brief-pdf { background: var(--gm); color: white; }
+
+  /* ── Loading / Empty ── */
+  .loading, .empty {
+    font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--mgray);
+    text-align: center; padding: 3rem 0;
+  }
+
+  /* ── Footer ── */
+  .foot {
+    margin-top: 3rem; padding-top: 0.75rem; border-top: 1px solid var(--lrule);
+    font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray);
+    text-align: center; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .brief-card { grid-template-columns: 4px 1fr; }
+    .brief-meta { display: none; }
+    .brief-headline { font-size: 1.05rem; }
+    .stats { gap: 1.25rem; }
+    .stat-value { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-title">Morning Briefs</div>
+    <div class="gate-sub">Intentional Ownership · Investment Committee</div>
+    <input type="password" class="gate-input" id="gatePass" placeholder="Enter password" autofocus />
+    <button class="gate-btn" onclick="tryAuth()">Enter</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+
+<div class="shell" id="shell">
+
+  <div class="masthead">
+    <h1>Morning Briefs</h1>
+    <span class="tag">Archive</span>
+  </div>
+  <div class="masthead-sub">
+    Intentional Ownership · Investment Committee · Daily Market Intelligence
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div id="briefsList">
+    <div class="loading">Loading briefs...</div>
+  </div>
+
+  <div class="foot">Confidential · IOWN · RIA · Paradiem</div>
+</div>
+
+<script>
+// Manifest path — update briefs/manifest.json when adding new PDFs
+const MANIFEST_URL = 'briefs/manifest.json';
+
+async function loadBriefs() {
+  const container = document.getElementById('briefsList');
+  const statsEl = document.getElementById('stats');
+
+  try {
+    const res = await fetch(MANIFEST_URL);
+    if (!res.ok) throw new Error('No manifest found');
+    const briefs = await res.json();
+
+    if (!briefs.length) {
+      container.innerHTML = '<div class="empty">No briefs yet.</div>';
+      return;
+    }
+
+    // Sort reverse chronological
+    briefs.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Stats
+    const total = briefs.length;
+    const upDays = briefs.filter(b => b.direction === 'up').length;
+    const downDays = briefs.filter(b => b.direction === 'down').length;
+    const latest = new Date(briefs[0].date);
+    const earliest = new Date(briefs[briefs.length - 1].date);
+
+    statsEl.innerHTML = `
+      <div class="stat"><div class="stat-label">Total Briefs</div><div class="stat-value">${total}</div></div>
+      <div class="stat"><div class="stat-label">Green Days</div><div class="stat-value" style="color:var(--gm)">${upDays}</div></div>
+      <div class="stat"><div class="stat-label">Red Days</div><div class="stat-value" style="color:var(--accent)">${downDays}</div></div>
+      <div class="stat"><div class="stat-label">Since</div><div class="stat-value" style="font-size:1.1rem">${earliest.toLocaleDateString('en-US',{month:'short',day:'numeric'})}</div></div>
+    `;
+
+    // Render cards
+    let html = '';
+    briefs.forEach(b => {
+      const d = new Date(b.date + 'T12:00:00');
+      const dayName = d.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase();
+      const dayNum = d.getDate();
+      const monthYear = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      const weekday = d.toLocaleDateString('en-US', { weekday: 'long' });
+      const dir = b.direction || 'flat';
+
+      html += `
+        <a class="brief-card" href="briefs/${b.filename}" target="_blank">
+          <div class="brief-stripe ${dir}"></div>
+          <div class="brief-body">
+            <div class="brief-date">${weekday} · ${monthYear}</div>
+            <div class="brief-headline ${dir}">${b.headline}</div>
+            <div class="brief-sub">${b.subhead || ''}</div>
+          </div>
+          <div class="brief-meta">
+            <div class="brief-day">${dayName}</div>
+            <div class="brief-daynum">${dayNum}</div>
+            <div class="brief-pdf">PDF</div>
+          </div>
+        </a>
+      `;
+    });
+
+    container.innerHTML = '<div class="briefs-list">' + html + '</div>';
+
+  } catch(e) {
+    container.innerHTML = `<div class="empty">Could not load briefs manifest.<br><span style="font-size:0.7rem;color:var(--lrule)">Add briefs/manifest.json to your repo.</span></div>`;
+  }
+}
+
+// Password gate — SHA-256 hashed, stored in localStorage
+const HASH = '1163a0013453d999380b32225cdcaa183f5d3f675d55a18872c4bbafdc0fd36c';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function tryAuth() {
+  const input = document.getElementById('gatePass');
+  const err = document.getElementById('gateError');
+  const hash = await sha256(input.value);
+  if (hash === HASH) {
+    localStorage.setItem('iown_briefs_auth', hash);
+    unlock();
+  } else {
+    input.classList.add('error');
+    err.textContent = 'Incorrect password';
+    setTimeout(() => { input.classList.remove('error'); err.textContent = ''; }, 1500);
+  }
+}
+
+function unlock() {
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('shell').style.display = 'block';
+  loadBriefs();
+}
+
+// Enter key triggers auth
+document.getElementById('gatePass').addEventListener('keydown', e => { if (e.key === 'Enter') tryAuth(); });
+
+// Check if already authed
+(async () => {
+  const stored = localStorage.getItem('iown_briefs_auth');
+  if (stored === HASH) { unlock(); }
+})();
+
+</script>
+</body>
+</html>

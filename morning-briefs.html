@@ -4,229 +4,293 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IOWN Morning Briefs</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gd: #3D4A2E; --gm: #5B7A3D; --gl: #7A8F5A; --gb: #F4F7F0;
-    --ink: #1A1A1A; --ink-light: #3a3a3a; --accent: #8B3A3A; --accent-light: #a94e4e;
-    --mgray: #8A8A84; --lrule: #BCBCB4; --cream: #FAFAF5; --warm: #F8F5F0;
-    --gold: #BFA654; --gold-light: #F5EDD0;
+    --olive-deep: #2C3321;
+    --olive-hero: #3D4432;
+    --olive-nav: #4A5240;
+    --olive-accent: #6B7F4E;
+    --olive-light: #B0BF9A;
+    --parchment: #EDE9D5;
+    --parchment-dark: #E4E0CC;
+    --parchment-light: #F5F2E6;
+    --text: #2A2A2A;
+    --text-light: #5A5A52;
+    --muted: #8A8E7A;
+    --muted-light: #C8C4B0;
+    --accent-red: #8B3A3A;
+    --accent-red-light: #A54E4E;
+    --rule: #C5C1AD;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'EB Garamond', Georgia, serif; background: var(--gb); color: var(--ink); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'EB Garamond', Garamond, 'Times New Roman', serif; background: var(--olive-deep); color: var(--text); -webkit-font-smoothing: antialiased; }
 
   /* ══════ GATE ══════ */
-  .gate { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(170deg, var(--gb) 0%, #eef2e8 50%, var(--cream) 100%); }
+  .gate { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--olive-deep); }
   .gate.hidden { display: none; }
-  .gate-box { background: white; border: 1px solid var(--lrule); padding: 3rem 2.5rem; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 8px 40px rgba(61,74,46,0.06); }
-  .gate-mark { width: 48px; height: 4px; background: var(--gd); margin: 0 auto 1.25rem; }
-  .gate-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.5rem; color: var(--gd); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
-  .gate-sub { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2rem; }
-  .gate-input { width: 100%; font-family: 'DM Mono', monospace; font-size: 0.9rem; padding: 0.7rem 0.85rem; border: 1px solid var(--lrule); background: var(--cream); color: var(--ink); outline: none; text-align: center; letter-spacing: 0.1em; margin-bottom: 0.85rem; transition: border 0.2s; }
-  .gate-input:focus { border-color: var(--gm); }
-  .gate-input.error { border-color: var(--accent); animation: shake 0.3s; }
-  .gate-btn { font-family: 'DM Mono', monospace; font-size: 0.75rem; padding: 0.7rem 2rem; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; background: var(--gd); color: white; width: 100%; transition: background 0.15s; }
-  .gate-btn:hover { background: var(--gm); }
-  .gate-error { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); margin-top: 0.5rem; min-height: 1rem; }
+  .gate-box { background: var(--olive-hero); padding: 3rem 2.5rem; max-width: 380px; width: 100%; text-align: center; }
+  .gate-mark { width: 48px; height: 3px; background: var(--olive-light); margin: 0 auto 1.5rem; }
+  .gate-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.6rem; color: var(--parchment); letter-spacing: 0.04em; margin-bottom: 0.2rem; }
+  .gate-sub { font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--muted-light); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 2rem; }
+  .gate-input { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 10px 12px; border: 1px solid var(--olive-accent); background: rgba(255,255,255,0.06); color: var(--parchment); outline: none; text-align: center; letter-spacing: 2px; margin-bottom: 10px; }
+  .gate-input::placeholder { color: var(--muted); }
+  .gate-input:focus { border-color: var(--olive-light); }
+  .gate-input.error { border-color: var(--accent-red); animation: shake 0.3s; }
+  .gate-btn { font-family: 'DM Sans', sans-serif; font-size: 10px; padding: 10px 2rem; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; background: var(--olive-accent); color: var(--parchment); width: 100%; transition: background 0.15s; }
+  .gate-btn:hover { background: var(--olive-light); color: var(--olive-deep); }
+  .gate-error { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--accent-red-light); margin-top: 8px; min-height: 1rem; }
   @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
 
-  /* ══════ APP LAYOUT ══════ */
-  .app { display: none; max-width: 1160px; margin: 0 auto; padding: 1.25rem; }
-  .app.visible { display: flex; gap: 1.5rem; }
+  /* ══════ APP ══════ */
+  .app { display: none; }
+  .app.visible { display: block; }
 
-  /* ══════ SIDEBAR ══════ */
-  .sidebar { width: 270px; flex-shrink: 0; position: sticky; top: 1rem; align-self: flex-start; }
-  .sb-brand { padding-bottom: 0.75rem; border-bottom: 3px double var(--gd); margin-bottom: 0.75rem; }
-  .sb-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.15rem; color: var(--gd); text-transform: uppercase; letter-spacing: 0.05em; }
-  .sb-tag { font-family: 'DM Mono', monospace; font-size: 0.55rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; }
-  .sb-stats { display: flex; gap: 0.75rem; margin-bottom: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--lrule); }
-  .sb-stat-label { font-family: 'DM Mono', monospace; font-size: 0.5rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.04em; }
-  .sb-stat-val { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gd); }
-  .sb-list { display: flex; flex-direction: column; gap: 0; max-height: calc(100vh - 220px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--lrule) transparent; }
-  .sb-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.5rem; border-bottom: 1px solid rgba(188,188,180,0.4); cursor: pointer; transition: all 0.12s; }
-  .sb-item:hover { background: rgba(255,255,255,0.7); }
-  .sb-item.active { background: white; box-shadow: inset 3px 0 0 var(--gm); padding-left: calc(0.5rem + 3px); }
-  .sb-item.active.dn { box-shadow: inset 3px 0 0 var(--accent); }
-  .sb-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; background: var(--lrule); }
-  .sb-dot.up { background: var(--gm); }
-  .sb-dot.down { background: var(--accent); }
-  .sb-item-body { flex: 1; min-width: 0; }
-  .sb-item-date { font-family: 'DM Mono', monospace; font-size: 0.55rem; color: var(--mgray); letter-spacing: 0.03em; }
-  .sb-item-hl { font-family: 'Playfair Display', serif; font-size: 0.82rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.3; }
-  .sb-item-hl.up { color: var(--gd); }
-  .sb-item-hl.down { color: var(--accent); }
-
-  /* ══════ MAIN ══════ */
-  .main { flex: 1; min-width: 0; }
-
-  /* ── Brief Header ── */
-  .bh { margin-bottom: 0; }
-  .bh-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
-  .bh-hl { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; line-height: 1.08; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-  .bh-hl.up { color: var(--gd); }
-  .bh-hl.down { color: var(--accent); }
-  .bh-sub { font-family: 'EB Garamond', serif; font-size: 1.2rem; color: var(--mgray); font-style: italic; line-height: 1.35; margin-bottom: 1rem; }
-  .bh-actions { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem; }
-  .btn-dl {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase;
-    letter-spacing: 0.05em; padding: 0.4rem 0.9rem; border: 1px solid var(--gd);
-    color: var(--gd); background: transparent; cursor: pointer; transition: all 0.15s;
-    text-decoration: none;
+  /* ── Top Bar ── */
+  .top-bar {
+    background: var(--olive-deep); padding: 8px 24px; display: flex;
+    justify-content: space-between; align-items: center;
+    font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--muted);
+    letter-spacing: 1.5px; text-transform: uppercase;
   }
-  .btn-dl:hover { background: var(--gd); color: white; }
-  .btn-dl svg { width: 13px; height: 13px; }
-  .bh-rule { height: 3px; background: var(--ink); }
-  .bh-rule2 { height: 1px; background: var(--ink); margin-top: 2px; margin-bottom: 1.5rem; }
+  .top-bar a { color: var(--muted); text-decoration: none; }
+  .top-bar a:hover { color: var(--muted-light); }
 
-  /* ══════ BRIEF CONTENT (the magic) ══════ */
-  .bc {
-    background: white; border: 1px solid var(--lrule); padding: 0; overflow: hidden;
-    box-shadow: 0 2px 16px rgba(61,74,46,0.04);
+  /* ── Hero ── */
+  .hero-section {
+    background: var(--olive-hero); text-align: center;
+    padding: 30px 20px 10px;
+  }
+  .hero-logo { font-family: 'Playfair Display', serif; color: var(--olive-light); margin-bottom: 4px; }
+  .hero-logo .the { font-size: 18px; font-weight: 400; letter-spacing: 2px; display: block; margin-bottom: -12px; }
+  .hero-logo .morning { font-size: 52px; font-weight: 900; line-height: 1; letter-spacing: -1px; }
+  .hero-logo .brief { font-size: 62px; font-weight: 900; font-style: italic; line-height: 0.85; letter-spacing: -1px; }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--muted-light);
+    letter-spacing: 3px; text-transform: uppercase; margin-top: 14px;
   }
 
-  .bc-inner { padding: 2rem 2.5rem 2.5rem; }
-
-  /* ── Snapshot Bar ── */
-  .bc .snapshot {
-    display: flex; flex-wrap: wrap; gap: 0; background: var(--ink); color: white;
-    font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.02em;
+  /* ── Date Bar ── */
+  .date-bar {
+    background: var(--olive-hero); text-align: center; padding: 10px 20px 12px;
+    font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--muted-light);
+    letter-spacing: 2px; text-transform: uppercase;
   }
-  .bc .snap-item {
-    flex: 1; min-width: 120px; padding: 0.7rem 0.9rem;
-    border-right: 1px solid rgba(255,255,255,0.1);
-    display: flex; flex-direction: column; gap: 0.15rem;
-  }
-  .bc .snap-item:last-child { border-right: none; }
-  .bc .snap-label { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.5); }
-  .bc .snap-val { font-size: 0.85rem; font-weight: 500; }
-  .bc .snap-val.up { color: #7AE582; }
-  .bc .snap-val.dn { color: #FF8A80; }
 
-  /* ── Section Headers ── */
+  /* ── Sticky Nav ── */
+  .sticky-nav {
+    background: var(--olive-nav); position: sticky; top: 0; z-index: 100;
+    text-align: center; padding: 10px 16px; display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 6px 20px;
+  }
+  .sticky-nav a {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--muted-light);
+    text-decoration: none; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 2px 0; transition: color 0.15s; white-space: nowrap;
+  }
+  .sticky-nav a:hover { color: #fff; }
+  .sticky-nav a.active { color: #fff; border-bottom: 1px solid var(--olive-light); }
+  .sticky-nav a.nav-dl { border: 1px solid var(--muted); padding: 2px 8px; border-radius: 2px; }
+  .sticky-nav a.nav-dl:hover { border-color: var(--muted-light); color: #fff; }
+
+  /* ── Content Wrapper (green sidebar stripe) ── */
+  .content-wrap { display: flex; max-width: 1000px; margin: 0 auto; }
+  .green-sidebar { width: 24px; background: var(--olive-light); flex-shrink: 0; }
+  .content-body { flex: 1; background: var(--parchment); padding: 28px 24px 40px; min-height: 60vh; }
+
+  /* ── Archive Drawer ── */
+  .archive-toggle {
+    display: none; background: var(--parchment-dark); padding: 10px 24px;
+    border-bottom: 1px solid var(--rule); cursor: pointer; text-align: center;
+    font-family: 'DM Sans', sans-serif; font-size: 10px; color: var(--muted);
+    letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.15s;
+  }
+  .archive-toggle:hover { background: var(--rule); }
+  .archive-drawer {
+    background: var(--parchment-dark); border-bottom: 2px solid var(--olive-accent);
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+  }
+  .archive-drawer.open { max-height: 800px; }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 0; padding: 0; }
+  .archive-item {
+    flex: 1; min-width: 200px; padding: 12px 18px; cursor: pointer;
+    border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule);
+    transition: background 0.12s;
+  }
+  .archive-item:hover { background: var(--parchment); }
+  .archive-item.active { background: var(--parchment); box-shadow: inset 0 -3px 0 var(--olive-accent); }
+  .archive-item.active.dn { box-shadow: inset 0 -3px 0 var(--accent-red); }
+  .archive-date {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--muted);
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .archive-hl { font-family: 'EB Garamond', serif; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .archive-hl.up { color: var(--olive-accent); }
+  .archive-hl.down { color: var(--accent-red); }
+  .archive-stats {
+    display: flex; gap: 16px; padding: 10px 18px; border-bottom: 1px solid var(--rule);
+    font-family: 'DM Sans', sans-serif; font-size: 10px; color: var(--muted);
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .archive-stats span { font-family: 'EB Garamond', serif; font-size: 18px; font-weight: 700; }
+
+  /* ══════ BRIEF CONTENT STYLES ══════ */
+
+  /* Section label (SECTION 01) */
+  .bc .section-label {
+    font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--muted);
+    letter-spacing: 2px; text-transform: uppercase; margin-top: 32px;
+  }
+  .bc .section-label:first-child { margin-top: 0; }
+
+  /* Section h2 */
   .bc h2 {
-    font-family: 'DM Sans', 'DM Mono', sans-serif; font-size: 0.7rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.12em; color: var(--gd);
-    margin-top: 2.25rem; margin-bottom: 0.75rem; padding: 0.5rem 0;
-    border-top: 2px solid var(--gd); border-bottom: 1px solid var(--lrule);
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .bc h2:first-child { margin-top: 0; }
-  .bc h2::before {
-    content: ''; display: inline-block; width: 4px; height: 4px;
-    background: var(--gm); border-radius: 1px; flex-shrink: 0;
+    font-family: 'EB Garamond', Garamond, serif; font-size: 24px; font-weight: 700;
+    color: var(--text); margin: 4px 0 6px; line-height: 1.2;
   }
 
-  /* ── Body Text ── */
+  /* Section rule */
+  .bc .section-rule { height: 3px; background: var(--olive-accent); margin-bottom: 14px; }
+
+  /* Bullet / insight cards */
+  .bc .bullet {
+    padding: 14px 0 14px 20px; margin: 0 0 16px 8px;
+    border-left: 3px solid var(--olive-accent);
+  }
+  .bc .bullet-heading {
+    font-family: 'EB Garamond', serif; font-size: 17px; font-weight: 700;
+    color: var(--text); margin-bottom: 6px;
+  }
+  .bc .bullet-body {
+    font-family: 'EB Garamond', serif; font-size: 16px; line-height: 1.65;
+    color: var(--text-light);
+  }
+  .bc .bullet-body b, .bc .bullet-body strong { color: var(--text); }
+
+  /* Regular paragraphs */
   .bc p {
-    font-family: 'EB Garamond', Georgia, serif; font-size: 1.08rem; line-height: 1.72;
-    margin-bottom: 0.85rem; color: var(--ink-light); text-align: justify;
-    hyphens: auto; -webkit-hyphens: auto;
+    font-family: 'EB Garamond', serif; font-size: 16px; line-height: 1.65;
+    margin-bottom: 12px; color: var(--text-light);
   }
+  .bc p b, .bc p strong { color: var(--text); }
 
-  /* ── Lead Paragraph ── */
-  .bc .lead {
-    font-size: 1.12rem; font-weight: 500; color: var(--ink); line-height: 1.65;
-  }
-  .bc .lead b, .bc .lead strong {
-    font-weight: 700; color: var(--ink); letter-spacing: -0.005em;
-  }
+  /* Lead text */
+  .bc .lead { font-size: 17px; font-weight: 500; color: var(--text); line-height: 1.6; }
 
-  /* ── Inline Bold ── */
-  .bc p b, .bc p strong { color: var(--ink); }
-
-  /* ── Pullquote / Tactical Callout ── */
+  /* Pullquote / Tactical */
   .bc .pullquote {
-    position: relative; margin: 1.25rem 0; padding: 1rem 1.25rem 1rem 1.4rem;
-    background: linear-gradient(135deg, var(--gb) 0%, rgba(244,247,240,0.5) 100%);
-    border-left: 4px solid var(--gd); font-style: italic; color: var(--gd);
-    font-size: 1.05rem; line-height: 1.6;
+    position: relative; margin: 18px 0 18px 8px; padding: 14px 0 14px 20px;
+    border-left: 3px solid var(--olive-accent); font-style: italic;
+    color: var(--olive-accent); font-size: 16px; line-height: 1.6;
+    background: rgba(176,191,154,0.08);
   }
   .bc .pullquote::before {
-    content: 'IOWN TACTICAL'; position: absolute; top: -0.55rem; left: 1.4rem;
-    font-family: 'DM Mono', monospace; font-size: 0.5rem; font-style: normal;
-    font-weight: 700; letter-spacing: 0.1em; color: var(--gm);
-    background: var(--gb); padding: 0 0.4rem;
+    content: 'IOWN TACTICAL'; position: absolute; top: -8px; left: 20px;
+    font-family: 'DM Sans', sans-serif; font-size: 8px; font-style: normal;
+    font-weight: 600; letter-spacing: 1.5px; color: var(--olive-light);
+    background: var(--parchment); padding: 0 6px;
   }
-  .bc .pullquote b, .bc .pullquote strong { color: var(--gd); font-style: normal; }
+  .bc .pullquote b, .bc .pullquote strong { font-style: normal; color: var(--olive-accent); }
 
-  /* ── On Our Radar Items ── */
-  .bc .radar-item {
-    position: relative; margin-bottom: 0.85rem; padding-left: 2.25rem;
-    font-size: 1.02rem; line-height: 1.65; color: var(--ink-light);
-  }
-  .bc .radar-item b:first-child, .bc .radar-item strong:first-child {
-    color: var(--ink);
-  }
-
-  /* ── Data Callout Box ── */
+  /* Data box */
   .bc .data-box {
-    background: var(--cream); border: 1px solid var(--lrule); padding: 1rem 1.25rem;
-    margin: 1rem 0; font-family: 'DM Mono', monospace; font-size: 0.78rem;
-    line-height: 1.7; color: var(--ink-light);
+    background: var(--parchment-dark); padding: 14px 18px; margin: 14px 0 14px 8px;
+    border-left: 3px solid var(--olive-accent);
+    font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.8; color: var(--text-light);
   }
-  .bc .data-box .data-row { display: flex; justify-content: space-between; padding: 0.2rem 0; border-bottom: 1px dotted var(--lrule); }
+  .bc .data-box .data-row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px dotted var(--rule); }
   .bc .data-box .data-row:last-child { border-bottom: none; }
-  .bc .data-box .data-label { color: var(--mgray); }
-  .bc .data-box .data-val { font-weight: 500; }
-  .bc .data-box .up { color: var(--gm); }
-  .bc .data-box .dn { color: var(--accent); }
+  .bc .data-box .data-label { color: var(--muted); font-size: 11px; }
+  .bc .data-box .data-val { font-weight: 600; }
+  .bc .up { color: var(--olive-accent); }
+  .bc .dn { color: var(--accent-red); }
 
-  /* ── Tables ── */
-  .bc table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .bc thead { border-bottom: 2px solid var(--ink); }
+  /* Tables */
+  .bc table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  .bc thead { border-bottom: 2px solid var(--text); }
   .bc th {
-    font-family: 'DM Mono', monospace; font-size: 0.58rem; text-transform: uppercase;
-    letter-spacing: 0.06em; color: var(--mgray); text-align: left; padding: 0.4rem 0.5rem;
-    font-weight: 500;
+    font-family: 'DM Sans', sans-serif; font-size: 9px; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--muted); text-align: left; padding: 6px 8px; font-weight: 500;
   }
   .bc td {
-    font-family: 'DM Mono', monospace; font-size: 0.78rem; padding: 0.4rem 0.5rem;
-    border-bottom: 1px solid rgba(188,188,180,0.3); color: var(--ink-light);
+    font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 7px 8px;
+    border-bottom: 1px solid var(--rule); color: var(--text-light);
   }
-  .bc td:first-child { font-weight: 600; color: var(--ink); }
-  .bc .up { color: var(--gm); }
-  .bc .dn { color: var(--accent); }
+  .bc td:first-child { font-weight: 700; color: var(--text); font-family: 'EB Garamond', serif; font-size: 15px; }
 
-  /* ── Divider ── */
-  .bc .section-end { height: 1px; background: var(--lrule); margin: 0.5rem 0 0; }
+  /* Radar items */
+  .bc .radar-item {
+    padding: 14px 0 14px 20px; margin: 0 0 16px 8px;
+    border-left: 3px solid var(--olive-accent);
+    font-size: 15px; line-height: 1.6; color: var(--text-light);
+  }
+  .bc .radar-item b:first-child, .bc .radar-item strong:first-child { color: var(--text); font-size: 16px; }
+
+  /* Snapshot bar */
+  .bc .snapshot {
+    display: flex; flex-wrap: wrap; background: var(--olive-deep); color: var(--parchment);
+    font-family: 'DM Sans', sans-serif; margin: -28px -24px 24px;
+  }
+  .bc .snap-item {
+    flex: 1; min-width: 110px; padding: 10px 14px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .bc .snap-item:last-child { border-right: none; }
+  .bc .snap-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  .bc .snap-val { font-size: 13px; font-weight: 600; color: var(--parchment); margin-top: 2px; }
+  .bc .snap-val.up { color: #9FCB8A; }
+  .bc .snap-val.dn { color: #E07B6F; }
 
   /* ── Disclaimer ── */
   .brief-disc {
-    font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--mgray);
-    margin-top: 1.25rem; line-height: 1.6; letter-spacing: 0.01em;
+    background: var(--parchment-dark); margin: 0 -24px -40px; padding: 20px 24px;
+    font-family: 'DM Sans', sans-serif; font-size: 11px; color: #777;
+    line-height: 1.6;
   }
 
+  /* ── Footer ── */
+  .app-footer {
+    background: var(--olive-deep); padding: 20px 40px; text-align: center;
+    font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .app-footer a { color: var(--muted-light); text-decoration: none; }
+
+  /* ── Floating PDF Button ── */
+  .pdf-float {
+    position: fixed; bottom: 20px; right: 20px; z-index: 200;
+    background: var(--olive-hero); color: var(--parchment); padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.5px;
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: background 0.15s;
+  }
+  .pdf-float:hover { background: var(--olive-accent); }
+  .pdf-float svg { width: 14px; height: 14px; }
+
   .brief-loading {
-    font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--mgray);
-    text-align: center; padding: 4rem 0;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--muted);
+    text-align: center; padding: 60px 0;
   }
 
   /* ══════ MOBILE ══════ */
-  @media (max-width: 800px) {
-    .app.visible { flex-direction: column; }
-    .sidebar { width: 100%; position: static; }
-    .sb-list {
-      max-height: none; flex-direction: row; overflow-x: auto;
-      scrollbar-width: thin; -webkit-overflow-scrolling: touch; padding-bottom: 6px;
-    }
-    .sb-item {
-      flex-direction: column; min-width: 105px; text-align: center;
-      border-bottom: none; border-right: 1px solid rgba(188,188,180,0.3); padding: 0.5rem 0.6rem;
-    }
-    .sb-item.active { box-shadow: inset 0 -3px 0 var(--gm); padding-left: 0.6rem; }
-    .sb-item.active.dn { box-shadow: inset 0 -3px 0 var(--accent); }
-    .sb-dot { display: none; }
-    .bh-hl { font-size: 1.8rem; }
-    .bc-inner { padding: 1.25rem 1rem 1.5rem; }
-    .bc .snap-item { min-width: 90px; }
-    .bc .radar-item { padding-left: 0; }
+  @media (max-width: 700px) {
+    .green-sidebar { width: 12px; }
+    .content-body { padding: 20px 16px 30px; }
+    .hero-logo .morning { font-size: 36px; }
+    .hero-logo .brief { font-size: 44px; }
+    .bc .snapshot { margin: -20px -16px 20px; }
+    .bc .snap-item { min-width: 80px; padding: 8px 10px; }
+    .bc h2 { font-size: 20px; }
+    .bc .bullet, .bc .pullquote, .bc .radar-item, .bc .data-box { margin-left: 0; }
+    .archive-item { min-width: 150px; }
+    .brief-disc { margin: 0 -16px -30px; padding: 16px; }
+    .pdf-float { bottom: 12px; right: 12px; padding: 8px 12px; font-size: 11px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ══════ PASSWORD GATE ══════ -->
+<!-- ══════ GATE ══════ -->
 <div class="gate" id="gate">
   <div class="gate-box">
     <div class="gate-mark"></div>
@@ -240,18 +304,48 @@
 
 <!-- ══════ APP ══════ -->
 <div class="app" id="app">
-  <aside class="sidebar">
-    <div class="sb-brand">
-      <div class="sb-title">Morning Briefs</div>
-      <div class="sb-tag">IOWN · Investment Committee</div>
+
+  <div class="top-bar">
+    <span class="top-bar-logo">IOWN</span>
+    <a href="https://intentionalownership.com">INTENTIONALOWNERSHIP.COM</a>
+    <span>(985) 727-0770</span>
+  </div>
+
+  <div class="hero-section">
+    <div class="hero-logo">
+      <span class="the">The</span>
+      <span class="morning">Morning</span><br>
+      <span class="brief">Brief</span>
     </div>
-    <div class="sb-stats" id="sbStats"></div>
-    <div class="sb-list" id="sbList"></div>
-  </aside>
-  <main class="main">
-    <div id="briefHeader"></div>
-    <div id="briefBody"><div class="brief-loading">Loading&hellip;</div></div>
-  </main>
+    <div class="hero-sub">Daily Intelligence for the Investment Committee</div>
+  </div>
+
+  <div class="date-bar" id="dateBar">LOADING...</div>
+
+  <div class="sticky-nav" id="stickyNav"></div>
+
+  <div class="archive-toggle" id="archiveToggle" onclick="toggleArchive()">▾ ARCHIVE (<span id="archiveCount">0</span> BRIEFS)</div>
+
+  <div class="archive-drawer" id="archiveDrawer">
+    <div class="archive-stats" id="archiveStats"></div>
+    <div class="archive-list" id="archiveList"></div>
+  </div>
+
+  <div class="content-wrap">
+    <div class="green-sidebar"></div>
+    <div class="content-body bc" id="briefBody">
+      <div class="brief-loading">Loading&hellip;</div>
+    </div>
+  </div>
+
+  <div class="app-footer">
+    <a href="https://intentionalownership.com">www.intentionalownership.com</a> &nbsp;·&nbsp; Research Reveals Opportunities
+  </div>
+
+  <a class="pdf-float" id="pdfFloat" href="#" download style="display:none">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </a>
 </div>
 
 <script>
@@ -267,9 +361,17 @@ function unlock() { document.getElementById('gate').classList.add('hidden'); doc
 document.getElementById('gatePass').addEventListener('keydown', e => { if (e.key === 'Enter') tryAuth(); });
 (async () => { if (localStorage.getItem('iown_ba') === HASH) unlock(); })();
 
-/* ══════ APP STATE ══════ */
-let BRIEFS = [], active = null;
-const DL = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+/* ══════ APP ══════ */
+let BRIEFS = [], active = null, archiveOpen = false;
+
+// Section IDs for nav (matched in content HTML)
+const SECTIONS = [
+  { id: 'markets', label: 'Markets' },
+  { id: 'holdings', label: 'Holdings' },
+  { id: 'digital', label: 'Digital Assets' },
+  { id: 'geopolitics', label: 'Geopolitics' },
+  { id: 'radar', label: 'On Our Radar' }
+];
 
 async function init() {
   try {
@@ -277,57 +379,81 @@ async function init() {
     if (!r.ok) throw new Error();
     BRIEFS = await r.json();
     BRIEFS.sort((a, b) => new Date(b.date) - new Date(a.date));
-    renderSidebar();
+    document.getElementById('archiveToggle').style.display = 'block';
+    document.getElementById('archiveCount').textContent = BRIEFS.length;
+    renderArchive();
+    renderNav();
     if (BRIEFS.length) selectBrief(BRIEFS[0].date);
   } catch(e) {
     document.getElementById('briefBody').innerHTML = '<div class="brief-loading">Could not load manifest.</div>';
   }
 }
 
-function renderSidebar() {
+function renderNav() {
+  const nav = document.getElementById('stickyNav');
+  nav.innerHTML = SECTIONS.map(s =>
+    `<a href="#${s.id}" onclick="smoothScroll('${s.id}');return false;">${s.label}</a>`
+  ).join('') + `<a href="#" id="navDl" class="nav-dl" onclick="return false;">↓ DOWNLOAD PDF</a>`;
+}
+
+function renderArchive() {
   const up = BRIEFS.filter(b => b.direction === 'up').length;
   const dn = BRIEFS.filter(b => b.direction === 'down').length;
-  document.getElementById('sbStats').innerHTML = `
-    <div><div class="sb-stat-label">Briefs</div><div class="sb-stat-val">${BRIEFS.length}</div></div>
-    <div><div class="sb-stat-label">Green</div><div class="sb-stat-val" style="color:var(--gm)">${up}</div></div>
-    <div><div class="sb-stat-label">Red</div><div class="sb-stat-val" style="color:var(--accent)">${dn}</div></div>
-  `;
-  document.getElementById('sbList').innerHTML = BRIEFS.map(b => {
+  document.getElementById('archiveStats').innerHTML =
+    `BRIEFS <span>${BRIEFS.length}</span> &nbsp;&nbsp; GREEN <span style="color:var(--olive-accent)">${up}</span> &nbsp;&nbsp; RED <span style="color:var(--accent-red)">${dn}</span>`;
+
+  document.getElementById('archiveList').innerHTML = BRIEFS.map(b => {
     const d = new Date(b.date + 'T12:00:00');
-    const s = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const s = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     const dir = b.direction || 'flat';
-    return `<div class="sb-item" data-d="${b.date}" onclick="selectBrief('${b.date}')">
-      <div class="sb-dot ${dir}"></div>
-      <div class="sb-item-body"><div class="sb-item-date">${s}</div><div class="sb-item-hl ${dir}">${b.headline}</div></div>
+    return `<div class="archive-item" data-d="${b.date}" onclick="selectBrief('${b.date}')">
+      <div class="archive-date">${s}</div>
+      <div class="archive-hl ${dir}">${b.headline}</div>
     </div>`;
   }).join('');
+}
+
+function toggleArchive() {
+  archiveOpen = !archiveOpen;
+  document.getElementById('archiveDrawer').classList.toggle('open', archiveOpen);
+  document.getElementById('archiveToggle').innerHTML =
+    `${archiveOpen ? '▴' : '▾'} ARCHIVE (<span id="archiveCount">${BRIEFS.length}</span> BRIEFS)`;
 }
 
 async function selectBrief(date) {
   active = BRIEFS.find(b => b.date === date);
   if (!active) return;
 
-  document.querySelectorAll('.sb-item').forEach(el => {
+  // Close archive
+  archiveOpen = false;
+  document.getElementById('archiveDrawer').classList.remove('open');
+  document.getElementById('archiveToggle').innerHTML =
+    `▾ ARCHIVE (<span id="archiveCount">${BRIEFS.length}</span> BRIEFS)`;
+
+  // Update active states
+  document.querySelectorAll('.archive-item').forEach(el => {
     el.classList.remove('active', 'dn');
     if (el.dataset.d === date) { el.classList.add('active'); if (active.direction === 'down') el.classList.add('dn'); }
   });
 
+  // Update date bar
   const d = new Date(date + 'T12:00:00');
-  const full = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-  const dir = active.direction || 'flat';
+  document.getElementById('dateBar').textContent =
+    d.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' }).toUpperCase();
+
+  // PDF float
   const pdf = active.pdf || active.filename;
-  const pp = pdf ? 'briefs/' + pdf : null;
+  const pdfEl = document.getElementById('pdfFloat');
+  const navDl = document.getElementById('navDl');
+  if (pdf) {
+    const pp = 'briefs/' + pdf;
+    pdfEl.href = pp; pdfEl.style.display = 'flex';
+    if (navDl) { navDl.href = pp; navDl.setAttribute('download', ''); navDl.onclick = null; }
+  } else {
+    pdfEl.style.display = 'none';
+  }
 
-  document.getElementById('briefHeader').innerHTML = `
-    <div class="bh">
-      <div class="bh-date">${full}</div>
-      <div class="bh-hl ${dir}">${active.headline}</div>
-      <div class="bh-sub">${active.subhead || ''}</div>
-      ${pp ? `<div class="bh-actions"><a class="btn-dl" href="${pp}" download>${DL} Download PDF</a></div>` : ''}
-      <div class="bh-rule"></div>
-      <div class="bh-rule2"></div>
-    </div>`;
-
+  // Load HTML content
   const cf = active.content || date + '.html';
   const body = document.getElementById('briefBody');
   body.innerHTML = '<div class="brief-loading">Loading brief&hellip;</div>';
@@ -336,13 +462,18 @@ async function selectBrief(date) {
     const r = await fetch('briefs/' + cf);
     if (!r.ok) throw new Error();
     const html = await r.text();
-    body.innerHTML = `
-      <div class="bc">${html}</div>
-      <div class="brief-disc">For internal IOWN investment committee use only. Not investment advice. Information from public sources believed reliable. Past performance not indicative of future results. IOWN is a Registered Investment Advisor under Paradiem.</div>`;
+    body.innerHTML = html +
+      `<div class="brief-disc">Paradiem, LLC dba Intentional Ownership ("IOWN") is a registered investment advisor. Advisory services are only offered to clients or prospective clients where Paradiem/IOWN and its representatives are properly licensed or exempt from licensure. The information provided is for educational and informational purposes only and does not constitute investment advice and it should not be relied on as such. It should not be considered a solicitation to buy or an offer to sell a security.</div>`;
   } catch(e) {
-    body.innerHTML = `<div class="brief-loading">HTML version not yet available.${pp ? `<br><br><a class="btn-dl" href="${pp}" target="_blank">${DL} Open PDF</a>` : ''}</div>`;
+    const pp = pdf ? 'briefs/' + pdf : null;
+    body.innerHTML = `<div class="brief-loading">HTML version not yet available.${pp ? `<br><br><a class="pdf-float" href="${pp}" target="_blank" style="position:static;display:inline-flex;box-shadow:none;">Download PDF</a>` : ''}</div>`;
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function smoothScroll(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 </script>
 </body>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IOWN Morning Briefs</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gd: #3D4A2E; --gm: #5B7A3D; --gl: #7A8F5A; --gb: #F4F7F0;
+    --ink: #1A1A1A; --accent: #8B3A3A; --mgray: #8A8A84; --lrule: #BCBCB4; --cream: #FAFAF5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--gb); color: var(--ink); min-height: 100vh; }
+
+  /* ── Gate ── */
+  .gate { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--gb); }
+  .gate.hidden { display: none; }
+  .gate-box { background: white; border: 1px solid var(--lrule); padding: 2.5rem 2rem; max-width: 380px; width: 100%; text-align: center; }
+  .gate-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.4rem; color: var(--gd); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .gate-sub { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.5rem; }
+  .gate-input { width: 100%; font-family: 'DM Mono', monospace; font-size: 0.9rem; padding: 0.6rem 0.75rem; border: 1px solid var(--lrule); background: var(--cream); color: var(--ink); outline: none; text-align: center; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+  .gate-input:focus { border-color: var(--gm); }
+  .gate-input.error { border-color: var(--accent); animation: shake 0.3s; }
+  .gate-btn { font-family: 'DM Mono', monospace; font-size: 0.8rem; padding: 0.6rem 2rem; border: none; cursor: pointer; text-transform: uppercase; background: var(--gd); color: white; width: 100%; }
+  .gate-btn:hover { background: var(--gm); }
+  .gate-error { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); margin-top: 0.5rem; min-height: 1rem; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+
+  /* ── App Layout ── */
+  .app { display: none; max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+  .app.visible { display: flex; gap: 1.5rem; }
+
+  /* ── Sidebar ── */
+  .sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 1.5rem; align-self: flex-start; }
+  .sidebar-header { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.2rem; color: var(--gd); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.25rem; }
+  .sidebar-sub { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 0.5rem; border-bottom: 2px solid var(--ink); margin-bottom: 0.75rem; }
+  .sidebar-stats { display: flex; gap: 1rem; margin-bottom: 1rem; }
+  .sidebar-stat { font-family: 'DM Mono', monospace; }
+  .sidebar-stat-label { font-size: 0.55rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.04em; }
+  .sidebar-stat-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gd); }
+
+  .sidebar-list { display: flex; flex-direction: column; gap: 0; max-height: calc(100vh - 200px); overflow-y: auto; }
+  .sidebar-item {
+    display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid var(--lrule); cursor: pointer; transition: background 0.1s;
+  }
+  .sidebar-item:hover { background: var(--cream); }
+  .sidebar-item.active { background: white; border-left: 3px solid var(--gm); padding-left: calc(0.5rem - 3px); }
+  .sidebar-item.active.down-active { border-left-color: var(--accent); }
+  .sidebar-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: var(--mgray); }
+  .sidebar-dot.up { background: var(--gm); }
+  .sidebar-dot.down { background: var(--accent); }
+  .sidebar-item-body { flex: 1; min-width: 0; }
+  .sidebar-item-date { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray); letter-spacing: 0.04em; }
+  .sidebar-item-title { font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sidebar-item-title.up { color: var(--gd); }
+  .sidebar-item-title.down { color: var(--accent); }
+
+  /* ── Main Content ── */
+  .main { flex: 1; min-width: 0; }
+
+  /* ── Brief Header ── */
+  .brief-header { margin-bottom: 1.5rem; }
+  .brief-header-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+  .brief-header-headline { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 0.4rem; }
+  .brief-header-headline.up { color: var(--gd); }
+  .brief-header-headline.down { color: var(--accent); }
+  .brief-header-sub { font-family: 'EB Garamond', serif; font-size: 1.15rem; color: var(--mgray); font-style: italic; line-height: 1.4; margin-bottom: 1rem; }
+  .brief-header-actions { display: flex; gap: 0.75rem; align-items: center; }
+  .btn-download {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.04em; padding: 0.45rem 1rem; border: 1px solid var(--gd);
+    color: var(--gd); background: transparent; cursor: pointer; transition: all 0.15s;
+    text-decoration: none;
+  }
+  .btn-download:hover { background: var(--gd); color: white; }
+  .btn-download svg { width: 14px; height: 14px; }
+  .brief-header-rule { height: 2px; background: var(--ink); margin-top: 0.75rem; }
+  .brief-header-rule-thin { height: 0.5px; background: var(--ink); margin-top: 3px; margin-bottom: 1.5rem; }
+
+  /* ── Brief Body (HTML content) ── */
+  .brief-content {
+    background: white; border: 1px solid var(--lrule); padding: 2rem 2.25rem; line-height: 1.7;
+  }
+  .brief-content h2 {
+    font-family: 'DM Mono', monospace; font-size: 0.8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink);
+    margin-top: 1.75rem; margin-bottom: 0.5rem; padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .brief-content h2:first-child { margin-top: 0; }
+  .brief-content p { margin-bottom: 0.75rem; font-size: 1.05rem; text-align: justify; }
+  .brief-content .lead { font-weight: 700; }
+  .brief-content .pullquote {
+    font-style: italic; color: var(--gd); padding: 0.5rem 0.75rem;
+    border-left: 3px solid var(--gl); margin: 0.75rem 0; font-size: 1.05rem; line-height: 1.5;
+  }
+  .brief-content .radar-item { padding-left: 0.75rem; margin-bottom: 0.5rem; font-size: 0.98rem; }
+  .brief-content table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.9rem; }
+  .brief-content th {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase;
+    color: var(--mgray); text-align: left; padding: 0.3rem 0.4rem; border-bottom: 1px solid var(--ink);
+  }
+  .brief-content td { padding: 0.3rem 0.4rem; border-bottom: 1px solid var(--lrule); }
+  .brief-content td:first-child { font-weight: 700; }
+  .brief-content .up-val { color: var(--gm); }
+  .brief-content .dn-val { color: var(--accent); }
+
+  .brief-loading {
+    font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--mgray);
+    text-align: center; padding: 3rem 0;
+  }
+  .brief-disclaimer {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray);
+    margin-top: 1.5rem; line-height: 1.5;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    .app.visible { flex-direction: column; }
+    .sidebar { width: 100%; position: static; }
+    .sidebar-list {
+      max-height: none; flex-direction: row; overflow-x: auto; gap: 0;
+      scrollbar-width: thin; -webkit-overflow-scrolling: touch; padding-bottom: 4px;
+    }
+    .sidebar-item {
+      flex-direction: column; min-width: 100px; text-align: center;
+      border-bottom: none; border-right: 1px solid var(--lrule); padding: 0.5rem;
+    }
+    .sidebar-item.active { border-left: none; border-bottom: 3px solid var(--gm); padding-left: 0.5rem; }
+    .sidebar-item.active.down-active { border-bottom-color: var(--accent); }
+    .sidebar-dot { display: none; }
+    .brief-header-headline { font-size: 1.6rem; }
+    .brief-content { padding: 1.25rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Password Gate ── -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-title">Morning Briefs</div>
+    <div class="gate-sub">Intentional Ownership · Investment Committee</div>
+    <input type="password" class="gate-input" id="gatePass" placeholder="Enter password" autofocus />
+    <button class="gate-btn" onclick="tryAuth()">Enter</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+
+<!-- ── App ── -->
+<div class="app" id="app">
+  <aside class="sidebar">
+    <div class="sidebar-header">Morning Briefs</div>
+    <div class="sidebar-sub">IOWN · Investment Committee</div>
+    <div class="sidebar-stats" id="sidebarStats"></div>
+    <div class="sidebar-list" id="sidebarList"></div>
+  </aside>
+  <main class="main">
+    <div id="briefHeader"></div>
+    <div id="briefBody"><div class="brief-loading">Loading...</div></div>
+  </main>
+</div>
+
+<script>
+/* ── Auth ── */
+const HASH = '1163a0013453d999380b32225cdcaa183f5d3f675d55a18872c4bbafdc0fd36c';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function tryAuth() {
+  const input = document.getElementById('gatePass');
+  const err = document.getElementById('gateError');
+  if (await sha256(input.value) === HASH) {
+    localStorage.setItem('iown_briefs_auth', HASH);
+    unlock();
+  } else {
+    input.classList.add('error');
+    err.textContent = 'Incorrect password';
+    setTimeout(() => { input.classList.remove('error'); err.textContent = ''; }, 1500);
+  }
+}
+
+function unlock() {
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').classList.add('visible');
+  init();
+}
+
+document.getElementById('gatePass').addEventListener('keydown', e => { if (e.key === 'Enter') tryAuth(); });
+(async () => { if (localStorage.getItem('iown_briefs_auth') === HASH) unlock(); })();
+
+/* ── App ── */
+let BRIEFS = [];
+let activeBrief = null;
+
+const DL_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+
+async function init() {
+  try {
+    const res = await fetch('briefs/manifest.json');
+    if (!res.ok) throw new Error('Manifest not found');
+    BRIEFS = await res.json();
+    BRIEFS.sort((a, b) => new Date(b.date) - new Date(a.date));
+    renderSidebar();
+    // Show latest brief by default
+    if (BRIEFS.length) selectBrief(BRIEFS[0].date);
+  } catch (e) {
+    document.getElementById('briefBody').innerHTML =
+      '<div class="brief-loading">Could not load manifest.<br><span style="font-size:0.65rem;color:var(--lrule)">Ensure briefs/manifest.json exists in your repo.</span></div>';
+  }
+}
+
+function renderSidebar() {
+  const statsEl = document.getElementById('sidebarStats');
+  const listEl = document.getElementById('sidebarList');
+  const up = BRIEFS.filter(b => b.direction === 'up').length;
+  const dn = BRIEFS.filter(b => b.direction === 'down').length;
+
+  statsEl.innerHTML = `
+    <div class="sidebar-stat"><div class="sidebar-stat-label">Briefs</div><div class="sidebar-stat-value">${BRIEFS.length}</div></div>
+    <div class="sidebar-stat"><div class="sidebar-stat-label">Green</div><div class="sidebar-stat-value" style="color:var(--gm)">${up}</div></div>
+    <div class="sidebar-stat"><div class="sidebar-stat-label">Red</div><div class="sidebar-stat-value" style="color:var(--accent)">${dn}</div></div>
+  `;
+
+  listEl.innerHTML = BRIEFS.map(b => {
+    const d = new Date(b.date + 'T12:00:00');
+    const short = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const dir = b.direction || 'flat';
+    return `
+      <div class="sidebar-item" data-date="${b.date}" onclick="selectBrief('${b.date}')">
+        <div class="sidebar-dot ${dir}"></div>
+        <div class="sidebar-item-body">
+          <div class="sidebar-item-date">${short}</div>
+          <div class="sidebar-item-title ${dir}">${b.headline}</div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+async function selectBrief(date) {
+  activeBrief = BRIEFS.find(b => b.date === date);
+  if (!activeBrief) return;
+
+  // Update sidebar active
+  document.querySelectorAll('.sidebar-item').forEach(el => {
+    el.classList.remove('active', 'down-active');
+    if (el.dataset.date === date) {
+      el.classList.add('active');
+      if (activeBrief.direction === 'down') el.classList.add('down-active');
+    }
+  });
+
+  const d = new Date(date + 'T12:00:00');
+  const fullDate = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  const dir = activeBrief.direction || 'flat';
+  const pdfFile = activeBrief.pdf || activeBrief.filename;
+  const pdfPath = pdfFile ? 'briefs/' + pdfFile : null;
+
+  // Header
+  const headerEl = document.getElementById('briefHeader');
+  headerEl.innerHTML = `
+    <div class="brief-header">
+      <div class="brief-header-date">${fullDate}</div>
+      <div class="brief-header-headline ${dir}">${activeBrief.headline}</div>
+      <div class="brief-header-sub">${activeBrief.subhead || ''}</div>
+      ${pdfPath ? `<div class="brief-header-actions"><a class="btn-download" href="${pdfPath}" download>${DL_ICON} Download PDF</a></div>` : ''}
+      <div class="brief-header-rule"></div>
+      <div class="brief-header-rule-thin"></div>
+    </div>
+  `;
+
+  // Load HTML content
+  const contentFile = activeBrief.content || date + '.html';
+  const bodyEl = document.getElementById('briefBody');
+  bodyEl.innerHTML = '<div class="brief-loading">Loading brief...</div>';
+
+  try {
+    const cRes = await fetch('briefs/' + contentFile);
+    if (!cRes.ok) throw new Error('Not found');
+    const html = await cRes.text();
+    bodyEl.innerHTML = `
+      <div class="brief-content">${html}</div>
+      <div class="brief-disclaimer">For internal IOWN investment committee use only. Not investment advice. Information from public sources believed reliable. Past performance not indicative of future results. IOWN is a Registered Investment Advisor under Paradiem.</div>
+    `;
+  } catch (e) {
+    bodyEl.innerHTML = `
+      <div class="brief-loading">
+        HTML version not yet available for this date.
+        ${pdfPath ? `<br><br><a class="btn-download" href="${pdfPath}" target="_blank">${DL_ICON} Open PDF Version</a>` : ''}
+      </div>`;
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

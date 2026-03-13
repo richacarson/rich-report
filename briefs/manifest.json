@@ -1,1 +1,65 @@
-
+[
+  {
+    "date": "2026-03-03",
+    "headline": "Markets at War",
+    "subhead": "Day 4 of US-Israel-Iran conflict. Hormuz closed. Oil surging. Gold at ATH.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-03.pdf"
+  },
+  {
+    "date": "2026-03-04",
+    "headline": "Risk On",
+    "subhead": "S&P +0.87%. Crypto explodes. ISM services surge. Oil flattens. Fear & Greed at 10.",
+    "direction": "up",
+    "filename": "IOWN_Morning_Brief_2026-03-04.pdf"
+  },
+  {
+    "date": "2026-03-05",
+    "headline": "The AI Capex Signal",
+    "subhead": "Broadcom's $100B AI forecast. S&P +0.71%. Crypto holds. Fear & Greed 22. Tariffs this week.",
+    "direction": "up",
+    "filename": "IOWN_Morning_Brief_2026-03-05.pdf"
+  },
+  {
+    "date": "2026-03-06",
+    "headline": "Oil Bites Back",
+    "subhead": "Dow -1.61%. WTI tops $81. Iran hits tanker. AVGO +5% defies the tape. Jobs report today.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-06.pdf"
+  },
+  {
+    "date": "2026-03-09",
+    "headline": "Hundred Dollar Oil",
+    "subhead": "WTI hit $120 overnight. Hormuz closed. Kuwait force majeure. Fear & Greed at 8. BTC holds.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-09.pdf"
+  },
+  {
+    "date": "2026-03-10",
+    "headline": "The Reversal",
+    "subhead": "Oil $120→$94. S&P flips from -1.5% to +0.88%. Trump says war nearing end. G7 meets today.",
+    "direction": "up",
+    "filename": "IOWN_Morning_Brief_2026-03-10.pdf"
+  },
+  {
+    "date": "2026-03-11",
+    "headline": "Goldilocks Holds",
+    "subhead": "CPI in line: 2.4% YoY, core 0.2%. IEA record reserve release today. Navy clears Hormuz mines.",
+    "direction": "up",
+    "filename": "IOWN_Morning_Brief_2026-03-11.pdf"
+  },
+  {
+    "date": "2026-03-12",
+    "headline": "Not Enough",
+    "subhead": "400M barrels released. Oil surges anyway. Israel hits nuclear sites. S&P -0.84%. Day 13.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-12.pdf"
+  },
+  {
+    "date": "2026-03-13",
+    "headline": "2026 Lows",
+    "subhead": "Dow below 47K. S&P -1.52%. Brent closes at $100. New supreme leader vows Hormuz stays shut.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-13.pdf"
+  }
+]

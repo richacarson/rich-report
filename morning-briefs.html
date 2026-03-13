@@ -4,166 +4,232 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IOWN Morning Briefs</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --gd: #3D4A2E; --gm: #5B7A3D; --gl: #7A8F5A; --gb: #F4F7F0;
-    --ink: #1A1A1A; --accent: #8B3A3A; --mgray: #8A8A84; --lrule: #BCBCB4; --cream: #FAFAF5;
+    --ink: #1A1A1A; --ink-light: #3a3a3a; --accent: #8B3A3A; --accent-light: #a94e4e;
+    --mgray: #8A8A84; --lrule: #BCBCB4; --cream: #FAFAF5; --warm: #F8F5F0;
+    --gold: #BFA654; --gold-light: #F5EDD0;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'EB Garamond', Georgia, serif; background: var(--gb); color: var(--ink); min-height: 100vh; }
-  .shell { max-width: 800px; margin: 0 auto; padding: 2.5rem 1.5rem; display: none; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--gb); color: var(--ink); min-height: 100vh; -webkit-font-smoothing: antialiased; }
 
-  /* ── Password Gate ── */
-  .gate {
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    background: var(--gb);
-  }
+  /* ══════ GATE ══════ */
+  .gate { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(170deg, var(--gb) 0%, #eef2e8 50%, var(--cream) 100%); }
   .gate.hidden { display: none; }
-  .gate-box {
-    background: white; border: 1px solid var(--lrule); padding: 2.5rem 2rem;
-    max-width: 380px; width: 100%; text-align: center;
-  }
-  .gate-title {
-    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.4rem;
-    color: var(--gd); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem;
-  }
-  .gate-sub {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--mgray);
-    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.5rem;
-  }
-  .gate-input {
-    width: 100%; font-family: 'DM Mono', monospace; font-size: 0.9rem;
-    padding: 0.6rem 0.75rem; border: 1px solid var(--lrule); background: var(--cream);
-    color: var(--ink); outline: none; text-align: center; letter-spacing: 0.1em;
-    transition: border 0.2s; margin-bottom: 0.75rem;
-  }
+  .gate-box { background: white; border: 1px solid var(--lrule); padding: 3rem 2.5rem; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 8px 40px rgba(61,74,46,0.06); }
+  .gate-mark { width: 48px; height: 4px; background: var(--gd); margin: 0 auto 1.25rem; }
+  .gate-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.5rem; color: var(--gd); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+  .gate-sub { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2rem; }
+  .gate-input { width: 100%; font-family: 'DM Mono', monospace; font-size: 0.9rem; padding: 0.7rem 0.85rem; border: 1px solid var(--lrule); background: var(--cream); color: var(--ink); outline: none; text-align: center; letter-spacing: 0.1em; margin-bottom: 0.85rem; transition: border 0.2s; }
   .gate-input:focus { border-color: var(--gm); }
   .gate-input.error { border-color: var(--accent); animation: shake 0.3s; }
-  .gate-btn {
-    font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.04em;
-    padding: 0.6rem 2rem; border: none; cursor: pointer; text-transform: uppercase;
-    background: var(--gd); color: white; transition: background 0.15s; width: 100%;
-  }
+  .gate-btn { font-family: 'DM Mono', monospace; font-size: 0.75rem; padding: 0.7rem 2rem; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; background: var(--gd); color: white; width: 100%; transition: background 0.15s; }
   .gate-btn:hover { background: var(--gm); }
-  .gate-error {
-    font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent);
-    margin-top: 0.5rem; min-height: 1rem;
+  .gate-error { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); margin-top: 0.5rem; min-height: 1rem; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+
+  /* ══════ APP LAYOUT ══════ */
+  .app { display: none; max-width: 1160px; margin: 0 auto; padding: 1.25rem; }
+  .app.visible { display: flex; gap: 1.5rem; }
+
+  /* ══════ SIDEBAR ══════ */
+  .sidebar { width: 270px; flex-shrink: 0; position: sticky; top: 1rem; align-self: flex-start; }
+  .sb-brand { padding-bottom: 0.75rem; border-bottom: 3px double var(--gd); margin-bottom: 0.75rem; }
+  .sb-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.15rem; color: var(--gd); text-transform: uppercase; letter-spacing: 0.05em; }
+  .sb-tag { font-family: 'DM Mono', monospace; font-size: 0.55rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; }
+  .sb-stats { display: flex; gap: 0.75rem; margin-bottom: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--lrule); }
+  .sb-stat-label { font-family: 'DM Mono', monospace; font-size: 0.5rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.04em; }
+  .sb-stat-val { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gd); }
+  .sb-list { display: flex; flex-direction: column; gap: 0; max-height: calc(100vh - 220px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--lrule) transparent; }
+  .sb-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.5rem; border-bottom: 1px solid rgba(188,188,180,0.4); cursor: pointer; transition: all 0.12s; }
+  .sb-item:hover { background: rgba(255,255,255,0.7); }
+  .sb-item.active { background: white; box-shadow: inset 3px 0 0 var(--gm); padding-left: calc(0.5rem + 3px); }
+  .sb-item.active.dn { box-shadow: inset 3px 0 0 var(--accent); }
+  .sb-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; background: var(--lrule); }
+  .sb-dot.up { background: var(--gm); }
+  .sb-dot.down { background: var(--accent); }
+  .sb-item-body { flex: 1; min-width: 0; }
+  .sb-item-date { font-family: 'DM Mono', monospace; font-size: 0.55rem; color: var(--mgray); letter-spacing: 0.03em; }
+  .sb-item-hl { font-family: 'Playfair Display', serif; font-size: 0.82rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.3; }
+  .sb-item-hl.up { color: var(--gd); }
+  .sb-item-hl.down { color: var(--accent); }
+
+  /* ══════ MAIN ══════ */
+  .main { flex: 1; min-width: 0; }
+
+  /* ── Brief Header ── */
+  .bh { margin-bottom: 0; }
+  .bh-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+  .bh-hl { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; line-height: 1.08; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .bh-hl.up { color: var(--gd); }
+  .bh-hl.down { color: var(--accent); }
+  .bh-sub { font-family: 'EB Garamond', serif; font-size: 1.2rem; color: var(--mgray); font-style: italic; line-height: 1.35; margin-bottom: 1rem; }
+  .bh-actions { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem; }
+  .btn-dl {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase;
+    letter-spacing: 0.05em; padding: 0.4rem 0.9rem; border: 1px solid var(--gd);
+    color: var(--gd); background: transparent; cursor: pointer; transition: all 0.15s;
+    text-decoration: none;
   }
-  @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-6px); }
-    75% { transform: translateX(6px); }
+  .btn-dl:hover { background: var(--gd); color: white; }
+  .btn-dl svg { width: 13px; height: 13px; }
+  .bh-rule { height: 3px; background: var(--ink); }
+  .bh-rule2 { height: 1px; background: var(--ink); margin-top: 2px; margin-bottom: 1.5rem; }
+
+  /* ══════ BRIEF CONTENT (the magic) ══════ */
+  .bc {
+    background: white; border: 1px solid var(--lrule); padding: 0; overflow: hidden;
+    box-shadow: 0 2px 16px rgba(61,74,46,0.04);
   }
 
-  /* ── Masthead ── */
-  .masthead {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-bottom: 0.75rem; border-bottom: 3px solid var(--ink); margin-bottom: 0.25rem;
+  .bc-inner { padding: 2rem 2.5rem 2.5rem; }
+
+  /* ── Snapshot Bar ── */
+  .bc .snapshot {
+    display: flex; flex-wrap: wrap; gap: 0; background: var(--ink); color: white;
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.02em;
   }
-  .masthead h1 {
-    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.75rem;
-    letter-spacing: 0.04em; color: var(--gd); text-transform: uppercase; line-height: 1.1;
+  .bc .snap-item {
+    flex: 1; min-width: 120px; padding: 0.7rem 0.9rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    display: flex; flex-direction: column; gap: 0.15rem;
   }
-  .masthead .tag {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: white;
-    background: var(--gm); padding: 0.2rem 0.6rem; border-radius: 2px;
-    letter-spacing: 0.05em; text-transform: uppercase;
+  .bc .snap-item:last-child { border-right: none; }
+  .bc .snap-label { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.5); }
+  .bc .snap-val { font-size: 0.85rem; font-weight: 500; }
+  .bc .snap-val.up { color: #7AE582; }
+  .bc .snap-val.dn { color: #FF8A80; }
+
+  /* ── Section Headers ── */
+  .bc h2 {
+    font-family: 'DM Sans', 'DM Mono', sans-serif; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--gd);
+    margin-top: 2.25rem; margin-bottom: 0.75rem; padding: 0.5rem 0;
+    border-top: 2px solid var(--gd); border-bottom: 1px solid var(--lrule);
+    display: flex; align-items: center; gap: 0.5rem;
   }
-  .masthead-sub {
-    font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mgray);
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding-top: 0.4rem; border-top: 1px solid var(--ink); margin-bottom: 2rem;
+  .bc h2:first-child { margin-top: 0; }
+  .bc h2::before {
+    content: ''; display: inline-block; width: 4px; height: 4px;
+    background: var(--gm); border-radius: 1px; flex-shrink: 0;
   }
 
-  /* ── Stats Bar ── */
-  .stats {
-    display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;
-  }
-  .stat {
-    font-family: 'DM Mono', monospace;
-  }
-  .stat-label { font-size: 0.6rem; color: var(--mgray); text-transform: uppercase; letter-spacing: 0.06em; }
-  .stat-value { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gd); }
-
-  /* ── Brief Cards ── */
-  .briefs-list { display: flex; flex-direction: column; gap: 0; }
-
-  .brief-card {
-    display: grid; grid-template-columns: 4px 1fr auto;
-    background: white; border: 1px solid var(--lrule); border-top: none;
-    transition: all 0.15s; cursor: pointer; text-decoration: none; color: inherit;
-  }
-  .brief-card:first-child { border-top: 1px solid var(--lrule); }
-  .brief-card:hover { background: var(--cream); border-color: var(--mgray); z-index: 1; position: relative; }
-
-  .brief-stripe { background: var(--mgray); }
-  .brief-stripe.up { background: var(--gm); }
-  .brief-stripe.down { background: var(--accent); }
-
-  .brief-body { padding: 1rem 1.25rem; }
-  .brief-date {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--mgray);
-    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem;
-  }
-  .brief-headline {
-    font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
-    color: var(--ink); line-height: 1.3; margin-bottom: 0.3rem;
-  }
-  .brief-headline.up { color: var(--gd); }
-  .brief-headline.down { color: var(--accent); }
-
-  .brief-sub {
-    font-family: 'EB Garamond', serif; font-size: 0.95rem; color: var(--mgray);
-    font-style: italic; line-height: 1.4;
+  /* ── Body Text ── */
+  .bc p {
+    font-family: 'EB Garamond', Georgia, serif; font-size: 1.08rem; line-height: 1.72;
+    margin-bottom: 0.85rem; color: var(--ink-light); text-align: justify;
+    hyphens: auto; -webkit-hyphens: auto;
   }
 
-  .brief-meta {
-    display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
-    padding: 1rem 1.25rem; gap: 0.3rem;
+  /* ── Lead Paragraph ── */
+  .bc .lead {
+    font-size: 1.12rem; font-weight: 500; color: var(--ink); line-height: 1.65;
   }
-  .brief-day {
-    font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray);
-    text-transform: uppercase; letter-spacing: 0.04em;
+  .bc .lead b, .bc .lead strong {
+    font-weight: 700; color: var(--ink); letter-spacing: -0.005em;
   }
-  .brief-daynum {
-    font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900;
-    color: var(--lrule); line-height: 1;
-  }
-  .brief-pdf {
-    font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--gm);
-    text-transform: uppercase; letter-spacing: 0.04em;
-    border: 1px solid var(--gm); padding: 0.15rem 0.5rem; border-radius: 2px;
-    transition: all 0.15s;
-  }
-  .brief-card:hover .brief-pdf { background: var(--gm); color: white; }
 
-  /* ── Loading / Empty ── */
-  .loading, .empty {
+  /* ── Inline Bold ── */
+  .bc p b, .bc p strong { color: var(--ink); }
+
+  /* ── Pullquote / Tactical Callout ── */
+  .bc .pullquote {
+    position: relative; margin: 1.25rem 0; padding: 1rem 1.25rem 1rem 1.4rem;
+    background: linear-gradient(135deg, var(--gb) 0%, rgba(244,247,240,0.5) 100%);
+    border-left: 4px solid var(--gd); font-style: italic; color: var(--gd);
+    font-size: 1.05rem; line-height: 1.6;
+  }
+  .bc .pullquote::before {
+    content: 'IOWN TACTICAL'; position: absolute; top: -0.55rem; left: 1.4rem;
+    font-family: 'DM Mono', monospace; font-size: 0.5rem; font-style: normal;
+    font-weight: 700; letter-spacing: 0.1em; color: var(--gm);
+    background: var(--gb); padding: 0 0.4rem;
+  }
+  .bc .pullquote b, .bc .pullquote strong { color: var(--gd); font-style: normal; }
+
+  /* ── On Our Radar Items ── */
+  .bc .radar-item {
+    position: relative; margin-bottom: 0.85rem; padding-left: 2.25rem;
+    font-size: 1.02rem; line-height: 1.65; color: var(--ink-light);
+  }
+  .bc .radar-item b:first-child, .bc .radar-item strong:first-child {
+    color: var(--ink);
+  }
+
+  /* ── Data Callout Box ── */
+  .bc .data-box {
+    background: var(--cream); border: 1px solid var(--lrule); padding: 1rem 1.25rem;
+    margin: 1rem 0; font-family: 'DM Mono', monospace; font-size: 0.78rem;
+    line-height: 1.7; color: var(--ink-light);
+  }
+  .bc .data-box .data-row { display: flex; justify-content: space-between; padding: 0.2rem 0; border-bottom: 1px dotted var(--lrule); }
+  .bc .data-box .data-row:last-child { border-bottom: none; }
+  .bc .data-box .data-label { color: var(--mgray); }
+  .bc .data-box .data-val { font-weight: 500; }
+  .bc .data-box .up { color: var(--gm); }
+  .bc .data-box .dn { color: var(--accent); }
+
+  /* ── Tables ── */
+  .bc table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .bc thead { border-bottom: 2px solid var(--ink); }
+  .bc th {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--mgray); text-align: left; padding: 0.4rem 0.5rem;
+    font-weight: 500;
+  }
+  .bc td {
+    font-family: 'DM Mono', monospace; font-size: 0.78rem; padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid rgba(188,188,180,0.3); color: var(--ink-light);
+  }
+  .bc td:first-child { font-weight: 600; color: var(--ink); }
+  .bc .up { color: var(--gm); }
+  .bc .dn { color: var(--accent); }
+
+  /* ── Divider ── */
+  .bc .section-end { height: 1px; background: var(--lrule); margin: 0.5rem 0 0; }
+
+  /* ── Disclaimer ── */
+  .brief-disc {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--mgray);
+    margin-top: 1.25rem; line-height: 1.6; letter-spacing: 0.01em;
+  }
+
+  .brief-loading {
     font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--mgray);
-    text-align: center; padding: 3rem 0;
+    text-align: center; padding: 4rem 0;
   }
 
-  /* ── Footer ── */
-  .foot {
-    margin-top: 3rem; padding-top: 0.75rem; border-top: 1px solid var(--lrule);
-    font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mgray);
-    text-align: center; letter-spacing: 0.05em; text-transform: uppercase;
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 600px) {
-    .brief-card { grid-template-columns: 4px 1fr; }
-    .brief-meta { display: none; }
-    .brief-headline { font-size: 1.05rem; }
-    .stats { gap: 1.25rem; }
-    .stat-value { font-size: 1.3rem; }
+  /* ══════ MOBILE ══════ */
+  @media (max-width: 800px) {
+    .app.visible { flex-direction: column; }
+    .sidebar { width: 100%; position: static; }
+    .sb-list {
+      max-height: none; flex-direction: row; overflow-x: auto;
+      scrollbar-width: thin; -webkit-overflow-scrolling: touch; padding-bottom: 6px;
+    }
+    .sb-item {
+      flex-direction: column; min-width: 105px; text-align: center;
+      border-bottom: none; border-right: 1px solid rgba(188,188,180,0.3); padding: 0.5rem 0.6rem;
+    }
+    .sb-item.active { box-shadow: inset 0 -3px 0 var(--gm); padding-left: 0.6rem; }
+    .sb-item.active.dn { box-shadow: inset 0 -3px 0 var(--accent); }
+    .sb-dot { display: none; }
+    .bh-hl { font-size: 1.8rem; }
+    .bc-inner { padding: 1.25rem 1rem 1.5rem; }
+    .bc .snap-item { min-width: 90px; }
+    .bc .radar-item { padding-left: 0; }
   }
 </style>
 </head>
 <body>
+
+<!-- ══════ PASSWORD GATE ══════ -->
 <div class="gate" id="gate">
   <div class="gate-box">
+    <div class="gate-mark"></div>
     <div class="gate-title">Morning Briefs</div>
     <div class="gate-sub">Intentional Ownership · Investment Committee</div>
     <input type="password" class="gate-input" id="gatePass" placeholder="Enter password" autofocus />
@@ -172,131 +238,112 @@
   </div>
 </div>
 
-<div class="shell" id="shell">
-
-  <div class="masthead">
-    <h1>Morning Briefs</h1>
-    <span class="tag">Archive</span>
-  </div>
-  <div class="masthead-sub">
-    Intentional Ownership · Investment Committee · Daily Market Intelligence
-  </div>
-
-  <div class="stats" id="stats"></div>
-
-  <div id="briefsList">
-    <div class="loading">Loading briefs...</div>
-  </div>
-
-  <div class="foot">Confidential · IOWN · RIA · Paradiem</div>
+<!-- ══════ APP ══════ -->
+<div class="app" id="app">
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="sb-title">Morning Briefs</div>
+      <div class="sb-tag">IOWN · Investment Committee</div>
+    </div>
+    <div class="sb-stats" id="sbStats"></div>
+    <div class="sb-list" id="sbList"></div>
+  </aside>
+  <main class="main">
+    <div id="briefHeader"></div>
+    <div id="briefBody"><div class="brief-loading">Loading&hellip;</div></div>
+  </main>
 </div>
 
 <script>
-// Manifest path — update briefs/manifest.json when adding new PDFs
-const MANIFEST_URL = 'briefs/manifest.json';
+/* ══════ AUTH ══════ */
+const HASH = '1163a0013453d999380b32225cdcaa183f5d3f675d55a18872c4bbafdc0fd36c';
+async function sha256(s) { const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)); return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2,'0')).join(''); }
+async function tryAuth() {
+  const inp = document.getElementById('gatePass'), err = document.getElementById('gateError');
+  if (await sha256(inp.value) === HASH) { localStorage.setItem('iown_ba', HASH); unlock(); }
+  else { inp.classList.add('error'); err.textContent = 'Incorrect password'; setTimeout(() => { inp.classList.remove('error'); err.textContent = ''; }, 1500); }
+}
+function unlock() { document.getElementById('gate').classList.add('hidden'); document.getElementById('app').classList.add('visible'); init(); }
+document.getElementById('gatePass').addEventListener('keydown', e => { if (e.key === 'Enter') tryAuth(); });
+(async () => { if (localStorage.getItem('iown_ba') === HASH) unlock(); })();
 
-async function loadBriefs() {
-  const container = document.getElementById('briefsList');
-  const statsEl = document.getElementById('stats');
+/* ══════ APP STATE ══════ */
+let BRIEFS = [], active = null;
+const DL = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+
+async function init() {
+  try {
+    const r = await fetch('briefs/manifest.json');
+    if (!r.ok) throw new Error();
+    BRIEFS = await r.json();
+    BRIEFS.sort((a, b) => new Date(b.date) - new Date(a.date));
+    renderSidebar();
+    if (BRIEFS.length) selectBrief(BRIEFS[0].date);
+  } catch(e) {
+    document.getElementById('briefBody').innerHTML = '<div class="brief-loading">Could not load manifest.</div>';
+  }
+}
+
+function renderSidebar() {
+  const up = BRIEFS.filter(b => b.direction === 'up').length;
+  const dn = BRIEFS.filter(b => b.direction === 'down').length;
+  document.getElementById('sbStats').innerHTML = `
+    <div><div class="sb-stat-label">Briefs</div><div class="sb-stat-val">${BRIEFS.length}</div></div>
+    <div><div class="sb-stat-label">Green</div><div class="sb-stat-val" style="color:var(--gm)">${up}</div></div>
+    <div><div class="sb-stat-label">Red</div><div class="sb-stat-val" style="color:var(--accent)">${dn}</div></div>
+  `;
+  document.getElementById('sbList').innerHTML = BRIEFS.map(b => {
+    const d = new Date(b.date + 'T12:00:00');
+    const s = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const dir = b.direction || 'flat';
+    return `<div class="sb-item" data-d="${b.date}" onclick="selectBrief('${b.date}')">
+      <div class="sb-dot ${dir}"></div>
+      <div class="sb-item-body"><div class="sb-item-date">${s}</div><div class="sb-item-hl ${dir}">${b.headline}</div></div>
+    </div>`;
+  }).join('');
+}
+
+async function selectBrief(date) {
+  active = BRIEFS.find(b => b.date === date);
+  if (!active) return;
+
+  document.querySelectorAll('.sb-item').forEach(el => {
+    el.classList.remove('active', 'dn');
+    if (el.dataset.d === date) { el.classList.add('active'); if (active.direction === 'down') el.classList.add('dn'); }
+  });
+
+  const d = new Date(date + 'T12:00:00');
+  const full = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  const dir = active.direction || 'flat';
+  const pdf = active.pdf || active.filename;
+  const pp = pdf ? 'briefs/' + pdf : null;
+
+  document.getElementById('briefHeader').innerHTML = `
+    <div class="bh">
+      <div class="bh-date">${full}</div>
+      <div class="bh-hl ${dir}">${active.headline}</div>
+      <div class="bh-sub">${active.subhead || ''}</div>
+      ${pp ? `<div class="bh-actions"><a class="btn-dl" href="${pp}" download>${DL} Download PDF</a></div>` : ''}
+      <div class="bh-rule"></div>
+      <div class="bh-rule2"></div>
+    </div>`;
+
+  const cf = active.content || date + '.html';
+  const body = document.getElementById('briefBody');
+  body.innerHTML = '<div class="brief-loading">Loading brief&hellip;</div>';
 
   try {
-    const res = await fetch(MANIFEST_URL);
-    if (!res.ok) throw new Error('No manifest found');
-    const briefs = await res.json();
-
-    if (!briefs.length) {
-      container.innerHTML = '<div class="empty">No briefs yet.</div>';
-      return;
-    }
-
-    // Sort reverse chronological
-    briefs.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    // Stats
-    const total = briefs.length;
-    const upDays = briefs.filter(b => b.direction === 'up').length;
-    const downDays = briefs.filter(b => b.direction === 'down').length;
-    const latest = new Date(briefs[0].date);
-    const earliest = new Date(briefs[briefs.length - 1].date);
-
-    statsEl.innerHTML = `
-      <div class="stat"><div class="stat-label">Total Briefs</div><div class="stat-value">${total}</div></div>
-      <div class="stat"><div class="stat-label">Green Days</div><div class="stat-value" style="color:var(--gm)">${upDays}</div></div>
-      <div class="stat"><div class="stat-label">Red Days</div><div class="stat-value" style="color:var(--accent)">${downDays}</div></div>
-      <div class="stat"><div class="stat-label">Since</div><div class="stat-value" style="font-size:1.1rem">${earliest.toLocaleDateString('en-US',{month:'short',day:'numeric'})}</div></div>
-    `;
-
-    // Render cards
-    let html = '';
-    briefs.forEach(b => {
-      const d = new Date(b.date + 'T12:00:00');
-      const dayName = d.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase();
-      const dayNum = d.getDate();
-      const monthYear = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-      const weekday = d.toLocaleDateString('en-US', { weekday: 'long' });
-      const dir = b.direction || 'flat';
-
-      html += `
-        <a class="brief-card" href="briefs/${b.filename}" target="_blank">
-          <div class="brief-stripe ${dir}"></div>
-          <div class="brief-body">
-            <div class="brief-date">${weekday} · ${monthYear}</div>
-            <div class="brief-headline ${dir}">${b.headline}</div>
-            <div class="brief-sub">${b.subhead || ''}</div>
-          </div>
-          <div class="brief-meta">
-            <div class="brief-day">${dayName}</div>
-            <div class="brief-daynum">${dayNum}</div>
-            <div class="brief-pdf">PDF</div>
-          </div>
-        </a>
-      `;
-    });
-
-    container.innerHTML = '<div class="briefs-list">' + html + '</div>';
-
+    const r = await fetch('briefs/' + cf);
+    if (!r.ok) throw new Error();
+    const html = await r.text();
+    body.innerHTML = `
+      <div class="bc">${html}</div>
+      <div class="brief-disc">For internal IOWN investment committee use only. Not investment advice. Information from public sources believed reliable. Past performance not indicative of future results. IOWN is a Registered Investment Advisor under Paradiem.</div>`;
   } catch(e) {
-    container.innerHTML = `<div class="empty">Could not load briefs manifest.<br><span style="font-size:0.7rem;color:var(--lrule)">Add briefs/manifest.json to your repo.</span></div>`;
+    body.innerHTML = `<div class="brief-loading">HTML version not yet available.${pp ? `<br><br><a class="btn-dl" href="${pp}" target="_blank">${DL} Open PDF</a>` : ''}</div>`;
   }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-// Password gate — SHA-256 hashed, stored in localStorage
-const HASH = '1163a0013453d999380b32225cdcaa183f5d3f675d55a18872c4bbafdc0fd36c';
-
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-async function tryAuth() {
-  const input = document.getElementById('gatePass');
-  const err = document.getElementById('gateError');
-  const hash = await sha256(input.value);
-  if (hash === HASH) {
-    localStorage.setItem('iown_briefs_auth', hash);
-    unlock();
-  } else {
-    input.classList.add('error');
-    err.textContent = 'Incorrect password';
-    setTimeout(() => { input.classList.remove('error'); err.textContent = ''; }, 1500);
-  }
-}
-
-function unlock() {
-  document.getElementById('gate').classList.add('hidden');
-  document.getElementById('shell').style.display = 'block';
-  loadBriefs();
-}
-
-// Enter key triggers auth
-document.getElementById('gatePass').addEventListener('keydown', e => { if (e.key === 'Enter') tryAuth(); });
-
-// Check if already authed
-(async () => {
-  const stored = localStorage.getItem('iown_briefs_auth');
-  if (stored === HASH) { unlock(); }
-})();
-
 </script>
 </body>
 </html>

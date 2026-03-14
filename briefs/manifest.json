@@ -37,7 +37,7 @@
   {
     "date": "2026-03-10",
     "headline": "The Reversal",
-    "subhead": "Oil $120→$94. S&P flips from -1.5% to +0.88%. Trump says war nearing end. G7 meets today.",
+    "subhead": "Oil $120\u2192$94. S&P flips from -1.5% to +0.88%. Trump says war nearing end. G7 meets today.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-03-10.pdf"
   },
@@ -61,5 +61,12 @@
     "subhead": "Dow below 47K. S&P -1.52%. Brent closes at $100. New supreme leader vows Hormuz stays shut.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-13.pdf"
+  },
+  {
+    "date": "2026-03-14",
+    "headline": "Kharg Island",
+    "subhead": "US strikes 90+ targets on Iran oil hub. Brent $103. 200DMA 36pts away. GTC Monday. FOMC Wednesday.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-14.pdf"
   }
 ]

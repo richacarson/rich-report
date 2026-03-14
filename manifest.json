@@ -1,0 +1,21 @@
+{
+  "name": "The Rich Report",
+  "short_name": "Rich Report",
+  "description": "Weekly Intelligence for Intentional Owners",
+  "start_url": "/rich-report/The_Rich_Report.html",
+  "display": "standalone",
+  "background_color": "#2C3321",
+  "theme_color": "#2C3321",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

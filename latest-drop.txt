@@ -1,4 +1,4 @@
-=== IOWN DATA DROP v2 | Sat, Mar 14, 2026 | 12:05 PM CT ===
+=== IOWN DATA DROP v2 | Sat, Mar 14, 2026 | 01:49 PM CT ===
 
 ── EARNINGS (YESTERDAY) ──
 VEON EPS:-0.39 vs Est:1.2648 | DLNG EPS:0.34 vs Est:0.2652 | STKS EPS:-0.2 vs Est:0.1734 | SMLR EPS:— vs Est:0.0408 | ACTU EPS:— vs Est:-0.2499 | CCIRU EPS:— vs Est:0.3245 | AXR EPS:— vs Est:0.5757 | EEX EPS:-0.15 vs Est:0.0455 | DOUG EPS:-0.17 vs Est:0.0306 | ACXP EPS:— vs Est:-1.0336 | GOSS EPS:— vs Est:-0.1996 | PROK EPS:— vs Est:-0.124 | BMXI EPS:— vs Est:— | UG EPS:— vs Est:— | MUEL EPS:— vs Est:—
@@ -125,8 +125,8 @@ ADI: Dividend Champion, Contender, And Challenger Highlights: Week Of March 15 (
 ADI: 2 S&P 500 Stocks with Competitive Advantages and 1 We Avoid (Yahoo)
 ATO: The $500,000 Portfolio To Potentially Pay All Your Bills (SeekingAlpha)
 ATO: 3 Dividend Aristocrats to Buy Now Amid the Middle East Crisis (Yahoo)
+ADP: Average IRS tax refund is up 10.6%, filing data shows (CNBC)
 ADP: 2 Nasdaq 100 Stocks on Our Watchlist and 1 We Avoid (Yahoo)
-ADP: Gig workers feel pain at the pump as gas prices hit 21-month highs (CNBC)
 CAT: Ecuador trade deal: Trump administration targets lower food and tech levies (Yahoo)
 CAT: Trade Tracker: Kevin Simpson buys Intuit, Palo Alto and more Caterpillar (CNBC)
 CL: Iran conflict moving from ’Initial Shockwave’ to the ’Ripple Effects phase’ (Yahoo)
@@ -142,8 +142,8 @@ LRCX: Lam Research Corp. (LRCX) Targets Growth in Foundry and Logic Markets (Yah
 LMT: Lockheed Martin Expands Munitions And Japan Ties As Valuation Nears Fair Value (Yahoo)
 LMT: Lockheed Martin (LMT) Dips More Than Broader Market: What You Should Know (Yahoo)
 MATX: Trump Considers Jones Act Waiver By July: What Do Prediction Markets Say? (Benzinga)
+NEE: How OPAL Fuels’ New Preferred Stock Facility Supports Its Next Growth Phase (Yahoo)
 NEE: Does NextEra’s CRO Exit Reshape Its Data Center Risk Strategy And Investment Story For NEE? (Yahoo)
-NEE: NextEra Energy (NEE) Gains As Market Dips: What You Should Know (Yahoo)
 ORI: Dividend Champion, Contender, And Challenger Highlights: Week Of March 15 (SeekingAlpha)
 PCAR: Paccar (PCAR) Declines More Than Market: Some Information for Investors (Yahoo)
 PCAR: Paccar (PCAR) Stock Moves -1.10%: What You Should Know (Yahoo)
@@ -156,17 +156,17 @@ SYK: Intuitive Surgical Stock Falls After Cybersecurity Breach Hits Internal Sys
 SYK: A Cyberattack Just Put Stryker’s $25 Billion Growth Story to the Test (Yahoo)
 TEL: Dividend Champion, Contender, And Challenger Highlights: Week Of March 15 (SeekingAlpha)
 TEL: 10 Information Technology Stocks Whale Activity In Today's Session (Benzinga)
+VLO: Trump says U.S. 'obliterated' military targets on Iran's Kharg Island but didn't 'wipe out' oil infrastructure (CNBC)
 VLO: Oil Shock Splits Markets, As Economy Teeters Toward Stagflation: This Week On Wall Street (Benzinga)
-VLO: Green Plains: Time To Harvest The Greenbacks (SeekingAlpha)
 AMD: Jim Cramer Says He “Certainly Would” Start a Position in Advanced Micro Devices If He Didn’t Own NVIDIA (Yahoo)
 AMD: NVIDIA Joins OCI To Shape Optical Links And AI Data Center Future (Yahoo)
 AEM: Shares of precious metals companies are trading lower amid declines for both gold and silver and gains for the dollar. Also, higher energy prices may limit bets for central bank easing, which limits gold's appeal as an inflation hedge. (Benzinga)
 AEM: 2 "Safety Plays" to Make Now (Benzinga)
-CVX: What Moved Markets This Week (SeekingAlpha)
-CVX: 3 No-Brainer Warren Buffett Stocks to Buy Right Now (Yahoo)
+CVX: Is Chevron a good long-term investment? Its buy-and-hold prospects explained (Yahoo)
+CVX: Some oil-loading operations in UAE hub of Fujairah suspended after fire: Reuters (CNBC)
 CNX: Why Is Comstock (CRK) Up 8.3% Since Last Earnings Report? (Yahoo)
 COIN: Crypto Currents: SEC, CFTC sign MOU for Joint Harmonization Initiative (Yahoo)
-COIN: Iran War Drags Stocks Lower (Yahoo)
+COIN: Bitcoin beat the S&P 500, Nasdaq Composite and gold since the start of the Iran war (CNBC)
 EIX: Dividend stocks are catching up to tech stocks on a key earnings metric at a critical time for the market (CNBC)
 EIX: Edison International (EIX) Valuation Check As Shares Trade Above Popular Fair Value Estimate (Yahoo)
 FINV: 14 Ideal 'Safer' Dividend Buys From 70 Mid-March Graham Value All-Stars (GVAS) (SeekingAlpha)
@@ -179,8 +179,8 @@ KEYS: Keysight Technologies Stock: Is KEYS Outperforming the Technology Sector? 
 KEYS: Keysight Introduces New 224G Test Solutions to Enable 1.6T Optical Network Validation (Yahoo)
 MARA: These stocks are making the most noise in today's session. (ChartMill)
 MARA: Why MARA Holdings Shares Are Surging Friday (Benzinga)
-NVDA: Is Dogecoin a Millionaire-Maker Cryptocurrency? (Yahoo)
-NVDA: Could Buying the Vanguard Total Stock Market ETF in 2026 Make You a Millionaire? (Yahoo)
+NVDA: The $700 Billion AI Spending Boom: 3 Tech Stocks Positioned to Win in 2026 (Yahoo)
+NVDA: Is Micron Stock a Buy Now? (Yahoo)
 NXPI: Reassessing NXP Semiconductors (NXPI) After Recent Share Price Weakness (Yahoo)
 NXPI: Here's Why NXP (NXPI) is Poised for a Turnaround After Losing 20.0% in 4 Weeks (Yahoo)
 OKE: 4 'Safer' Dividend Buys In Barron's 23 Better March Bets Than T-Bills (SeekingAlpha)
@@ -188,7 +188,7 @@ OKE: Wells Fargo Maintains Equal-Weight on ONEOK, Raises Price Target to $81 (Be
 PDD: Did Surging PDD (PDD) Pre‑Earnings Options Activity Just Shift Its Investment Narrative? (Yahoo)
 PDD: Do Options Traders Know Something About PDD Holdings Stock We Don't? (Yahoo)
 HOOD: Scottie Pippen helps sell Wall Street on prediction markets (Yahoo)
-HOOD: Robinhood Markets (HOOD) Appoints Dr. Naomi Boyd as Chief Economic Advisor (Yahoo)
+HOOD: Kalshi co-founder Luana Lopes Lara on the biggest prediction markets risks she has ever taken (CNBC)
 SYF: Oracle Has More Resilience Amid AI Pressures, Says Analyst. Plus, CarMax, Rivian, and More Stocks. (Yahoo)
 SYF: 3 Overlooked U.S. Value Stocks With the Fundamentals to Outperform in 2026 (Yahoo)
 TSM: Deploy Cash Now Into Double-Digit Yielding Passive Income (SeekingAlpha)
@@ -200,13 +200,13 @@ IBIT: What Risk-Off? Bitcoin ETFs Just Checked Every Box For A Bull Market ― O
 ETHA: BlackRock's $55B Bitcoin ETF Success Continues With Staked Ethereum Launch (Benzinga)
 
 ── HEADLINES ──
+• Exclusive: Trump rejects efforts to launch Iran ceasefire talks, sources say - Reuters (Reuters)
 • Week in review: How we navigated the Iran war-driven surge in oil that slammed stocks (CNBC)
-• Fire at UAE oil hub as Iran vows retaliation for US attack on Kharg Island - Reuters (Reuters)
+• Israel and Lebanon expected to hold direct talks in coming days, Haaretz reports - Reuters (Reuters)
 • Trump says 'many countries' will send warships to keep Strait of Hormuz open - Reuters (Reuters)
 • Hamas calls on Iran not to target neighboring countries but affirms its right to self-defence - Reuters (Reuters)
 • Kalshi co-founder Luana Lopes Lara on the biggest prediction markets risks she has ever taken (CNBC)
 • Berkshire Hathaway will start repurchasing its own shares—what buybacks mean for investors (CNBC)
 • US strikes more than 90 Iranian military targets on Kharg Island, CENTCOM says - Reuters (Reuters)
-• A Paramount-Warner Bros. movie slate could rule the 2027 box office, but is it sustainable? (CNBC)
 
 === END DATA DROP ===

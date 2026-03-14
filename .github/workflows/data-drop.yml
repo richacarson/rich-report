@@ -2,6 +2,9 @@ name: IOWN Data Drop
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'trigger-drop.txt'
 
 permissions:
   contents: write

@@ -1,30 +1,27 @@
-=== IOWN DATA DROP v2 | Sat, Mar 14, 2026 | 01:49 PM CT ===
-
-── EARNINGS (YESTERDAY) ──
-VEON EPS:-0.39 vs Est:1.2648 | DLNG EPS:0.34 vs Est:0.2652 | STKS EPS:-0.2 vs Est:0.1734 | SMLR EPS:— vs Est:0.0408 | ACTU EPS:— vs Est:-0.2499 | CCIRU EPS:— vs Est:0.3245 | AXR EPS:— vs Est:0.5757 | EEX EPS:-0.15 vs Est:0.0455 | DOUG EPS:-0.17 vs Est:0.0306 | ACXP EPS:— vs Est:-1.0336 | GOSS EPS:— vs Est:-0.1996 | PROK EPS:— vs Est:-0.124 | BMXI EPS:— vs Est:— | UG EPS:— vs Est:— | MUEL EPS:— vs Est:—
+=== IOWN DATA DROP v2 | Sun, Mar 15, 2026 | 08:32 AM CT ===
 
 ── INDICES ──
-S&P 500: $662.31 (-0.56%) | O:$669.28 H:$672.34 L:$661.36 PC:$666.06
-Dow: $466.43 (-0.22%) | O:$469.95 H:$472.10 L:$465.78 PC:$467.48
-Nasdaq: $593.74 (-0.59%) | O:$599.74 H:$603.60 L:$592.57 PC:$597.26
-Russell 2K: $246.61 (-0.32%) | O:$249.27 H:$250.61 L:$245.53 PC:$247.41
-UVXY (VIX proxy): $52.31 (+2.93%)
+S&P 500: $662.29 (-0.57%) | O:$669.27 H:$672.34 L:$661.36 PC:$666.06
+Dow: $466.41 (-0.23%) | O:$469.94 H:$472.10 L:$465.78 PC:$467.48
+Nasdaq: $593.72 (-0.59%) | O:$599.73 H:$603.60 L:$592.57 PC:$597.26
+Russell 2K: $246.59 (-0.33%) | O:$249.26 H:$250.61 L:$245.53 PC:$247.41
+UVXY (VIX proxy): $52.29 (+2.89%)
 
 ── RATES ──
-TLT (20Y Bond): $86.56 (-0.47%) PC:$86.97
+TLT (20Y Bond): $86.54 (-0.49%) PC:$86.97
 
 ── SECTORS ──
-Utilities (XLU): +1.01% | $46.97
+Utilities (XLU): +0.99% | $46.96
 Staples (XLP): +0.61% | $84.76
-Energy (XLE): +0.37% | $57.72
-Real Estate (XLRE): +0.28% | $42.26
-Financials (XLF): +0.14% | $48.90
-Healthcare (XLV): -0.23% | $149.81
-Industrials (XLI): -0.34% | $164.67
+Energy (XLE): +0.33% | $57.70
+Real Estate (XLRE): +0.26% | $42.25
+Financials (XLF): +0.12% | $48.89
+Healthcare (XLV): -0.25% | $149.79
+Industrials (XLI): -0.36% | $164.65
 Discret. (XLY): -0.57% | $110.88
 Comm Svcs (XLC): -0.69% | $114.47
-Tech (XLK): -0.74% | $136.82
-Materials (XLB): -0.97% | $49.20
+Tech (XLK): -0.75% | $136.80
+Materials (XLB): -0.99% | $49.19
 
 ── COMMODITIES ──
 Gold (GLD): $460.86 (-1.29%)
@@ -38,7 +35,7 @@ IBIT: $40.38 (+1.08%)
 ETHA: $15.90 (+1.73%)
 
 ── SENTIMENT ──
-Fear & Greed: 16 (Extreme Fear)
+Fear & Greed: 15 (Extreme Fear)
 
 ── DIVIDEND STRATEGY (25) ──
 ABT: $108.05 (-0.08%) O:$109.40 H:$110.31 L:$107.70 PC:$108.14
@@ -129,49 +126,42 @@ ADP: Average IRS tax refund is up 10.6%, filing data shows (CNBC)
 ADP: 2 Nasdaq 100 Stocks on Our Watchlist and 1 We Avoid (Yahoo)
 CAT: Ecuador trade deal: Trump administration targets lower food and tech levies (Yahoo)
 CAT: Trade Tracker: Kevin Simpson buys Intuit, Palo Alto and more Caterpillar (CNBC)
-CL: Iran conflict moving from ’Initial Shockwave’ to the ’Ripple Effects phase’ (Yahoo)
-CL: CTAs are buying USD, selling equities and USTs: BofA (Yahoo)
+CL: SLB warns of $0.09 EPS hit as Hormuz blockade shuts down Middle East flows (Yahoo)
+CL: UBS: AI investment is ‘lone buffer’ for emerging markets as energy costs soar (Yahoo)
 FAST: Fastenal to Break Ground on New Southeast U.S. Distribution Facility (Yahoo)
-FAST: Why The Fastenal (FAST) Narrative Is Shifting As Analyst Views And Fair Value Evolve (Yahoo)
 GD: Defense IPO Leads Five Stocks To Watch As Iran War Pressures Market (Yahoo)
 GD: General Dynamics (GD) Declines More Than Market: Some Information for Investors (Yahoo)
 GPC: Genuine Parts (GPC) Expects Split to Close in 9-12 Months (Yahoo)
-GPC: In today's session, there are S&P500 stocks with remarkable trading volume. (ChartMill)
 LRCX: Iran War Drags Stocks Lower (Yahoo)
 LRCX: Lam Research Corp. (LRCX) Targets Growth in Foundry and Logic Markets (Yahoo)
-LMT: Lockheed Martin Expands Munitions And Japan Ties As Valuation Nears Fair Value (Yahoo)
-LMT: Lockheed Martin (LMT) Dips More Than Broader Market: What You Should Know (Yahoo)
+LMT: 2 Under-the-Radar Defense Stocks That Could Double as Military Budgets Surge (Yahoo)
+LMT: SpaceX, Boeing, and Lockheed Will Take America Back to the Moon -- but Not Just Yet (Yahoo)
 MATX: Trump Considers Jones Act Waiver By July: What Do Prediction Markets Say? (Benzinga)
 NEE: How OPAL Fuels’ New Preferred Stock Facility Supports Its Next Growth Phase (Yahoo)
 NEE: Does NextEra’s CRO Exit Reshape Its Data Center Risk Strategy And Investment Story For NEE? (Yahoo)
 ORI: Dividend Champion, Contender, And Challenger Highlights: Week Of March 15 (SeekingAlpha)
 PCAR: Paccar (PCAR) Declines More Than Market: Some Information for Investors (Yahoo)
-PCAR: Paccar (PCAR) Stock Moves -1.10%: What You Should Know (Yahoo)
+QCOM: Qualcomm (QCOM), Wayve Partner to Accelerate AI-Driven Autonomous Driving (Yahoo)
 QCOM: 3 Top Tech Stocks That Could Make You a Millionaire (Yahoo)
-QCOM: The New Magic Formula For Investing (SeekingAlpha)
-DGX: Quest Diagnostics Elects Timothy Wentworth, Former CEO of Walgreens Boots Alliance, Evernorth Health Services and Express Scripts, to Board of Directors (Yahoo)
-DGX: Quest Diagnostics (DGX) Down 4.2% Since Last Earnings Report: Can It Rebound? (Yahoo)
 STLD: Oracle Has More Resilience Amid AI Pressures, Says Analyst. Plus, CarMax, Rivian, and More Stocks. (Yahoo)
+SYK: Stryker Cyberattack Tests Digital Growth Story And Healthcare Supply Resilience (Yahoo)
 SYK: Intuitive Surgical Stock Falls After Cybersecurity Breach Hits Internal Systems (Yahoo)
-SYK: A Cyberattack Just Put Stryker’s $25 Billion Growth Story to the Test (Yahoo)
+TEL: Microchip Technology vs. TE Connectivity: Two Mature Chip Plays, One Better Buy (Yahoo)
 TEL: Dividend Champion, Contender, And Challenger Highlights: Week Of March 15 (SeekingAlpha)
-TEL: 10 Information Technology Stocks Whale Activity In Today's Session (Benzinga)
 VLO: Trump says U.S. 'obliterated' military targets on Iran's Kharg Island but didn't 'wipe out' oil infrastructure (CNBC)
 VLO: Oil Shock Splits Markets, As Economy Teeters Toward Stagflation: This Week On Wall Street (Benzinga)
-AMD: Jim Cramer Says He “Certainly Would” Start a Position in Advanced Micro Devices If He Didn’t Own NVIDIA (Yahoo)
-AMD: NVIDIA Joins OCI To Shape Optical Links And AI Data Center Future (Yahoo)
+AMD: Wall Street Week Ahead (SeekingAlpha)
+AMD: This Artificial Intelligence (AI) Stock Just Landed a Deal Worth Over $100 Billion. Is It a Buy? (Yahoo)
 AEM: Shares of precious metals companies are trading lower amid declines for both gold and silver and gains for the dollar. Also, higher energy prices may limit bets for central bank easing, which limits gold's appeal as an inflation hedge. (Benzinga)
-AEM: 2 "Safety Plays" to Make Now (Benzinga)
-CVX: Is Chevron a good long-term investment? Its buy-and-hold prospects explained (Yahoo)
-CVX: Some oil-loading operations in UAE hub of Fujairah suspended after fire: Reuters (CNBC)
-CNX: Why Is Comstock (CRK) Up 8.3% Since Last Earnings Report? (Yahoo)
+CVX: Chevron Confronts Geopolitics Restructuring And Compliance Risks In Portfolio Shift (Yahoo)
+CVX: Piper Sandler Bumps Chevron (CVX) Price Target by $63 (Yahoo)
+CNX: Improving Earnings Outlook And Insider Selling Could Be A Game Changer For CNX Resources (CNX) (Yahoo)
+CNX: Assessing CNX Resources (CNX) Valuation After Earnings Beats And Raised Growth Expectations (Yahoo)
+COIN: Is Coinbase Global (COIN) Pricing Crypto Growth Too Highly After Recent Share Surge (Yahoo)
 COIN: Crypto Currents: SEC, CFTC sign MOU for Joint Harmonization Initiative (Yahoo)
-COIN: Bitcoin beat the S&P 500, Nasdaq Composite and gold since the start of the Iran war (CNBC)
 EIX: Dividend stocks are catching up to tech stocks on a key earnings metric at a critical time for the market (CNBC)
-EIX: Edison International (EIX) Valuation Check As Shares Trade Above Popular Fair Value Estimate (Yahoo)
-FINV: 14 Ideal 'Safer' Dividend Buys From 70 Mid-March Graham Value All-Stars (GVAS) (SeekingAlpha)
-FTNT: Fortinet, Inc. (FTNT) Discusses Cybersecurity Vision, AI-Driven Convergence, and Operating System Innovations at Investor Briefing Transcript (SeekingAlpha)
-FTNT: Here's Why Fortinet (FTNT) Fell More Than Broader Market (Yahoo)
+FTNT: AI will Act as Tailwind for the Company, According to Fortinet (FTNT)’s Management (Yahoo)
+FTNT: Liquid Networx Wins Two Partner of the Year Awards at Fortinet Accelerate 2026 (Yahoo)
 GFI: Gold Fields Ltd. (NYSE:GFI) Presents a Compelling Value Case for Investors (ChartMill)
 GFI: Shares of precious metals companies are trading lower amid declines for both gold and silver and gains for the dollar. Also, higher energy prices may limit bets for central bank easing, which limits gold's appeal as an inflation hedge. (Benzinga)
 HRMY: Harmony Biosciences Holdings (NASDAQ:HRMY) Presents a Compelling Case for Quality at a Discount (ChartMill)
@@ -179,34 +169,31 @@ KEYS: Keysight Technologies Stock: Is KEYS Outperforming the Technology Sector? 
 KEYS: Keysight Introduces New 224G Test Solutions to Enable 1.6T Optical Network Validation (Yahoo)
 MARA: These stocks are making the most noise in today's session. (ChartMill)
 MARA: Why MARA Holdings Shares Are Surging Friday (Benzinga)
-NVDA: The $700 Billion AI Spending Boom: 3 Tech Stocks Positioned to Win in 2026 (Yahoo)
-NVDA: Is Micron Stock a Buy Now? (Yahoo)
-NXPI: Reassessing NXP Semiconductors (NXPI) After Recent Share Price Weakness (Yahoo)
-NXPI: Here's Why NXP (NXPI) is Poised for a Turnaround After Losing 20.0% in 4 Weeks (Yahoo)
+NVDA: Want Safe Dividend Income in 2026 and Beyond? Invest in the Following 2 Ultra-High-Yield Stocks. (Yahoo)
+NVDA: If President Trump Successfully Raises the Global Tariff Rate to 15%, These Stocks Could Take a Hit (Yahoo)
+OKE: QVAL: Value ETF Lagging Its Peers (SeekingAlpha)
 OKE: 4 'Safer' Dividend Buys In Barron's 23 Better March Bets Than T-Bills (SeekingAlpha)
-OKE: Wells Fargo Maintains Equal-Weight on ONEOK, Raises Price Target to $81 (Benzinga)
 PDD: Did Surging PDD (PDD) Pre‑Earnings Options Activity Just Shift Its Investment Narrative? (Yahoo)
 PDD: Do Options Traders Know Something About PDD Holdings Stock We Don't? (Yahoo)
+HOOD: Robinhood Deepens Gold Experience With AI Insights And Economic Expertise (Yahoo)
 HOOD: Scottie Pippen helps sell Wall Street on prediction markets (Yahoo)
-HOOD: Kalshi co-founder Luana Lopes Lara on the biggest prediction markets risks she has ever taken (CNBC)
+SYF: A Look At Synchrony Financial (SYF) Valuation After Recent Share Price Pullback (Yahoo)
 SYF: Oracle Has More Resilience Amid AI Pressures, Says Analyst. Plus, CarMax, Rivian, and More Stocks. (Yahoo)
-SYF: 3 Overlooked U.S. Value Stocks With the Fundamentals to Outperform in 2026 (Yahoo)
+TSM: Wall Street Week Ahead (SeekingAlpha)
 TSM: Deploy Cash Now Into Double-Digit Yielding Passive Income (SeekingAlpha)
-TSM: Tower Semiconductor: The Hidden AI Photonics Winner (SeekingAlpha)
+TOL: Assessing Toll Brothers (TOL) Valuation After Recent Share Price Pullback (Yahoo)
 TOL: Dividend Champion, Contender, And Challenger Highlights: Week Of March 15 (SeekingAlpha)
-TOL: Toll Brothers Unveils Two Brand-New Home Designs at Cross Kirkland Towns in Kirkland, Washington (Yahoo)
 IBIT: IBIT: Navigating The Deep Correction Toward A Long-Term $126,000 Target (SeekingAlpha)
 IBIT: What Risk-Off? Bitcoin ETFs Just Checked Every Box For A Bull Market ― Officially (Benzinga)
-ETHA: BlackRock's $55B Bitcoin ETF Success Continues With Staked Ethereum Launch (Benzinga)
 
 ── HEADLINES ──
-• Exclusive: Trump rejects efforts to launch Iran ceasefire talks, sources say - Reuters (Reuters)
-• Week in review: How we navigated the Iran war-driven surge in oil that slammed stocks (CNBC)
-• Israel and Lebanon expected to hold direct talks in coming days, Haaretz reports - Reuters (Reuters)
-• Trump says 'many countries' will send warships to keep Strait of Hormuz open - Reuters (Reuters)
-• Hamas calls on Iran not to target neighboring countries but affirms its right to self-defence - Reuters (Reuters)
-• Kalshi co-founder Luana Lopes Lara on the biggest prediction markets risks she has ever taken (CNBC)
-• Berkshire Hathaway will start repurchasing its own shares—what buybacks mean for investors (CNBC)
-• US strikes more than 90 Iranian military targets on Kharg Island, CENTCOM says - Reuters (Reuters)
+• 36-year-old moved from Chicago to Spain, works 16 hours a week and is semi-retired: 'You get one life. Live it right' (CNBC)
+• Iran arrests dozens of people accused of being informants for Israel - Reuters (Reuters)
+• Israeli foreign minister denies reports of Lebanon talks, interceptor shortages - Reuters (Reuters)
+• Oil poised for further gains as Middle East conflict threatens export facilities - Reuters (Reuters)
+• UAE's Fujairah resumes oil loadings after attack, sources say - Reuters (Reuters)
+• Russia is supplying Iran with Shahed drones, Zelenskiy says - Reuters (Reuters)
+• US, China economic chiefs meet in Paris to clear path to Trump-Xi summit - Reuters (Reuters)
+• Trump warns of more strikes on Iran's Kharg Island, pressures allies to secure oil chokepoint - Reuters (Reuters)
 
 === END DATA DROP ===

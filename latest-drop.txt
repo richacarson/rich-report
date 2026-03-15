@@ -1,27 +1,27 @@
-=== IOWN DATA DROP v2 | Sun, Mar 15, 2026 | 08:32 AM CT ===
+=== IOWN DATA DROP v2 | Sun, Mar 15, 2026 | 08:49 AM CT ===
 
 ── INDICES ──
-S&P 500: $662.29 (-0.57%) | O:$669.27 H:$672.34 L:$661.36 PC:$666.06
-Dow: $466.41 (-0.23%) | O:$469.94 H:$472.10 L:$465.78 PC:$467.48
-Nasdaq: $593.72 (-0.59%) | O:$599.73 H:$603.60 L:$592.57 PC:$597.26
-Russell 2K: $246.59 (-0.33%) | O:$249.26 H:$250.61 L:$245.53 PC:$247.41
-UVXY (VIX proxy): $52.29 (+2.89%)
+S&P 500: $662.31 (-0.56%) | O:$669.28 H:$672.34 L:$661.36 PC:$666.06
+Dow: $466.43 (-0.22%) | O:$469.95 H:$472.10 L:$465.78 PC:$467.48
+Nasdaq: $593.74 (-0.59%) | O:$599.74 H:$603.60 L:$592.57 PC:$597.26
+Russell 2K: $246.61 (-0.32%) | O:$249.27 H:$250.61 L:$245.53 PC:$247.41
+UVXY (VIX proxy): $52.31 (+2.93%)
 
 ── RATES ──
-TLT (20Y Bond): $86.54 (-0.49%) PC:$86.97
+TLT (20Y Bond): $86.56 (-0.47%) PC:$86.97
 
 ── SECTORS ──
-Utilities (XLU): +0.99% | $46.96
+Utilities (XLU): +1.01% | $46.97
 Staples (XLP): +0.61% | $84.76
-Energy (XLE): +0.33% | $57.70
-Real Estate (XLRE): +0.26% | $42.25
-Financials (XLF): +0.12% | $48.89
-Healthcare (XLV): -0.25% | $149.79
-Industrials (XLI): -0.36% | $164.65
+Energy (XLE): +0.37% | $57.72
+Real Estate (XLRE): +0.28% | $42.26
+Financials (XLF): +0.14% | $48.90
+Healthcare (XLV): -0.23% | $149.81
+Industrials (XLI): -0.34% | $164.67
 Discret. (XLY): -0.57% | $110.88
 Comm Svcs (XLC): -0.69% | $114.47
-Tech (XLK): -0.75% | $136.80
-Materials (XLB): -0.99% | $49.19
+Tech (XLK): -0.74% | $136.82
+Materials (XLB): -0.97% | $49.20
 
 ── COMMODITIES ──
 Gold (GLD): $460.86 (-1.29%)

@@ -58,6 +58,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+          FORCE_REGENERATE: "1"
         run: |
           python3 scripts/generate-brief.py
 

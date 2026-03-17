@@ -180,7 +180,7 @@ HTML FORMAT RULES:
 PDF CONTENT CODE RULES:
 - This code will be concatenated after bp1_template.py and executed
 - Set HL_COLOR = DG for up days, HL_COLOR = ACCENT for down days
-- Use: doc = BriefDoc("<PDF_PATH>", pagesize=letter)
+- IMPORTANT: Use the variable PDF_PATH (already defined) for the doc path: doc = BriefDoc(PDF_PATH, pagesize=letter)
 - story = [NextPageTemplate("later")]
 - Define EM, EN, AQ variables for typography
 - Use styles: sec_s, sec_rule(), lead_s, body_s, pq_s, radar_s, small_s
@@ -225,7 +225,7 @@ Instructions:
 
 <HTML_BRIEF> block: Full HTML content for briefs/{DATE_STR}.html following the exact structure pattern from prior briefs.
 
-<PDF_CONTENT> block: Python code that will be concatenated after bp1_template.py. Use this exact PDF output path: "{str(BRIEFS_DIR / f'IOWN_Morning_Brief_{DATE_STR}.pdf')}"
+<PDF_CONTENT> block: Python code that will be concatenated after bp1_template.py. A variable PDF_PATH is already defined with the correct output path. Use: doc = BriefDoc(PDF_PATH, pagesize=letter)
 
 The headline and subhead in the PDF template's draw_first() method will be set separately — your PDF content code should ONLY contain the story content (from "HL_COLOR = ..." through "doc.build(story)"). Do NOT include the template code or class definitions.
 
@@ -329,9 +329,16 @@ def generate_pdf(meta, pdf_content):
     template_out = REPO_ROOT / "bp1_template_auto.py"
     template_out.write_text(template, encoding="utf-8")
 
+    # Sanitize content: ensure PDF path is resolved regardless of what Claude used
+    pdf_output_path = str(BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf")
+    # Inject PDF_PATH definition at the top of content so any reference works
+    pdf_content_final = f'PDF_PATH = "{pdf_output_path}"\n\n' + pdf_content
+    # Also replace any hardcoded placeholder paths Claude might have used
+    pdf_content_final = pdf_content_final.replace("<PDF_PATH>", pdf_output_path)
+
     # Write content
     content_out = REPO_ROOT / "bp1_content_auto.py"
-    content_out.write_text(pdf_content, encoding="utf-8")
+    content_out.write_text(pdf_content_final, encoding="utf-8")
 
     # Concatenate and run
     combined = REPO_ROOT / "bp1_auto.py"
@@ -463,6 +470,14 @@ def main():
     print(f"═══ IOWN Morning Brief Generator ═══")
     print(f"Date: {DATE_STR} ({DAY_NAME})")
     print()
+
+    # Check if brief already exists (skip unless FORCE_REGENERATE is set)
+    html_path = BRIEFS_DIR / f"{DATE_STR}.html"
+    pdf_path = BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf"
+    if html_path.exists() and pdf_path.exists() and not os.environ.get("FORCE_REGENERATE"):
+        print(f"Brief already exists for {DATE_STR}. Set FORCE_REGENERATE=1 to overwrite.")
+        print("Exiting cleanly.")
+        sys.exit(0)
 
     # 1. Read data drop
     data_drop = read_file(LATEST_DROP)

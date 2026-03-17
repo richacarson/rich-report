@@ -340,8 +340,9 @@
 /* ══════ AUTH ══════ */
 const HASH='1163a0013453d999380b32225cdcaa183f5d3f675d55a18872c4bbafdc0fd36c';
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}
-async function tryAuth(){const i=document.getElementById('gatePass'),e=document.getElementById('gateError');if(await sha256(i.value)===HASH){unlock()}else{i.classList.add('error');e.textContent='Incorrect password';setTimeout(()=>{i.classList.remove('error');e.textContent=''},1500)}}
+async function tryAuth(){const i=document.getElementById('gatePass'),e=document.getElementById('gateError');if(await sha256(i.value)===HASH){try{localStorage.setItem('iown_auth','1')}catch(x){}unlock()}else{i.classList.add('error');e.textContent='Incorrect password';setTimeout(()=>{i.classList.remove('error');e.textContent=''},1500)}}
 function unlock(){document.getElementById('gate').classList.add('hidden');document.getElementById('app').classList.add('visible');init()}
+try{if(localStorage.getItem('iown_auth')==='1'){unlock()}}catch(x){}
 document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')tryAuth()});
 
 /* ══════ APP ══════ */

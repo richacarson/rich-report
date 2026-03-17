@@ -3,5 +3,6 @@ bp1_template_auto.py
 bp1_content_auto.py
 bp1_auto.py
 scripts/iown_logo_processed.png
+drafts/
 __pycache__/
 *.pyc

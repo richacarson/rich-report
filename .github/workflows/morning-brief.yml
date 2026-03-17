@@ -54,13 +54,20 @@ jobs:
           git diff --cached --quiet || git commit -m "Data Drop $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
 
-      - name: Generate morning brief
+      - name: Generate morning brief (draft)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
-          FORCE_REGENERATE: "1"
         run: |
           python3 scripts/generate-brief.py
+
+      - name: Upload draft for review
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: morning-brief-draft
+          path: drafts/
+          retention-days: 30
 
       - name: Upload debug artifacts on failure
         if: failure()
@@ -69,7 +76,5 @@ jobs:
           name: debug-output
           path: |
             debug_response.txt
-            bp1_template_auto.py
-            bp1_content_auto.py
-            bp1_auto.py
+            drafts/
           retention-days: 3

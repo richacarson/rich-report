@@ -1,0 +1,74 @@
+name: IOWN Morning Brief (Automated)
+
+on:
+  # Weekdays at 9:30 UTC = 3:30 AM CT (CST)
+  # During CDT (March-November), this runs at 4:30 AM CT — adjust if needed
+  schedule:
+    - cron: '30 9 * * 1-5'
+  # Manual trigger for testing
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for git operations
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup Node.js (for data drop)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python dependencies
+        run: |
+          pip install reportlab Pillow numpy
+
+      - name: Configure git
+        run: |
+          git config user.name "IOWN Data Bot"
+          git config user.email "bot@iown.dev"
+
+      - name: Run data drop first
+        env:
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+        run: |
+          echo "Running data drop..."
+          node scripts/data-drop.js
+          echo "Data drop complete. First line:"
+          head -1 latest-drop.txt
+          # Commit the fresh data drop
+          git add latest-drop.txt
+          git diff --cached --quiet || git commit -m "Data Drop $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Generate morning brief
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+        run: |
+          python3 scripts/generate-brief.py
+
+      - name: Upload debug artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-output
+          path: |
+            debug_response.txt
+            bp1_template_auto.py
+            bp1_content_auto.py
+            bp1_auto.py
+          retention-days: 3

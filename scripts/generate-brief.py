@@ -4,8 +4,8 @@ IOWN Automated Morning Brief Generator
 Runs via GitHub Actions at 3:30 AM CT on weekdays.
 1. Reads latest-drop.txt (market data from Finnhub)
 2. Reads the last two HTML briefs for narrative continuity
-3. Calls Claude API to generate brief content (HTML + PDF python code)
-4. Writes HTML brief, generates PDF, updates manifest
+3. Calls Claude API to generate brief content (HTML + structured JSON for PDF)
+4. Builds PDF deterministically from JSON using ReportLab
 5. Commits and pushes to the repo
 """
 
@@ -32,15 +32,12 @@ REPO_ROOT = Path(__file__).parent.parent
 BRIEFS_DIR = REPO_ROOT / "briefs"
 LATEST_DROP = REPO_ROOT / "latest-drop.txt"
 MANIFEST_PATH = BRIEFS_DIR / "manifest.json"
-TEMPLATE_PATH = REPO_ROOT / "scripts" / "bp1_template.py"
 LOGO_SRC = REPO_ROOT / "scripts" / "IOWN_Logo_1.png"
 
-CT = timezone(timedelta(hours=-6))  # Central Time (CST; CDT would be -5)
+CT = timezone(timedelta(hours=-6))  # Central Standard Time (always UTC-6)
 TODAY = datetime.now(CT)
 DATE_STR = TODAY.strftime("%Y-%m-%d")
 DAY_NAME = TODAY.strftime("%A").upper()
-DATE_DISPLAY = TODAY.strftime("%B %d, %Y").upper().replace(f" 0", " ")  # "MARCH 17, 2026"
-# Fix: strftime doesn't zero-pad day with space, let's just do it cleanly
 DATE_DISPLAY = f"{TODAY.strftime('%B').upper()} {TODAY.day}, {TODAY.year}"
 DATE_LINE = f"{DATE_DISPLAY}  |  {DAY_NAME}"
 
@@ -52,7 +49,6 @@ MODEL = "claude-opus-4-6"
 # ═══════════════════════════════════════════
 
 def read_file(path):
-    """Read a file and return its contents, or empty string if missing."""
     try:
         return Path(path).read_text(encoding="utf-8")
     except FileNotFoundError:
@@ -60,7 +56,6 @@ def read_file(path):
         return ""
 
 def get_last_two_briefs():
-    """Get the two most recent HTML briefs by filename date."""
     html_files = sorted(BRIEFS_DIR.glob("2026-*.html"), reverse=True)
     briefs = []
     for f in html_files[:2]:
@@ -68,14 +63,12 @@ def get_last_two_briefs():
     return briefs
 
 def get_manifest():
-    """Read the current manifest."""
     try:
         return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
 def call_claude_api(system_prompt, user_prompt, max_tokens=16000):
-    """Call the Anthropic Messages API."""
     payload = json.dumps({
         "model": MODEL,
         "max_tokens": max_tokens,
@@ -84,8 +77,7 @@ def call_claude_api(system_prompt, user_prompt, max_tokens=16000):
     }).encode("utf-8")
 
     req = urllib.request.Request(
-        API_URL,
-        data=payload,
+        API_URL, data=payload,
         headers={
             "Content-Type": "application/json",
             "x-api-key": ANTHROPIC_API_KEY,
@@ -97,7 +89,6 @@ def call_claude_api(system_prompt, user_prompt, max_tokens=16000):
     try:
         with urllib.request.urlopen(req, timeout=300) as resp:
             data = json.loads(resp.read().decode("utf-8"))
-            # Extract text from content blocks
             text_parts = [block["text"] for block in data.get("content", []) if block.get("type") == "text"]
             full_text = "\n".join(text_parts)
             usage = data.get("usage", {})
@@ -111,356 +102,296 @@ def call_claude_api(system_prompt, user_prompt, max_tokens=16000):
         print(f"API request failed: {e}")
         sys.exit(1)
 
-
 def fetch_news_headlines():
-    """Fetch recent news from Finnhub for IOWN holdings. Uses FINNHUB_KEY env var."""
     finnhub_key = os.environ.get("FINNHUB_KEY")
     if not finnhub_key:
-        print("WARNING: FINNHUB_KEY not set, skipping news fetch")
         return ""
-
-    # Fetch general market news
     url = f"https://finnhub.io/api/v1/news?category=general&token={finnhub_key}"
     try:
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(urllib.request.Request(url), timeout=30) as resp:
             articles = json.loads(resp.read().decode("utf-8"))
-            # Take top 15 headlines
-            headlines = []
-            for art in articles[:15]:
-                headline = art.get("headline", "")
-                source = art.get("source", "")
-                summary = art.get("summary", "")[:200]
-                if headline:
-                    headlines.append(f"• {headline} ({source}): {summary}")
-            return "\n".join(headlines)
+            return "\n".join(
+                f"* {a.get('headline','')} ({a.get('source','')}): {a.get('summary','')[:200]}"
+                for a in articles[:15] if a.get("headline")
+            )
     except Exception as e:
         print(f"WARNING: News fetch failed: {e}")
         return ""
 
+# ═══════════════════════════════════════════
+# SYSTEM PROMPT
+# ═══════════════════════════════════════════
+
+SYSTEM_PROMPT = r"""You are a senior investment research analyst at Intentional Ownership (IOWN), an RIA managing ~$516M under Paradiem. You write the daily IOWN Morning Brief.
+
+Writing style: direct, analytical, no fluff. Like a trusted colleague handing the CIO a one-page briefing sheet. ~5 min read. Opinionated and investment-relevant.
+
+IOWN philosophy (use naturally): Research Reveals Opportunities, Think Like an Owner, Avoid Erosion, Simplicity Over Complexity.
+
+HOLDINGS — Dividend: ABT, A, ADI, ATO, ADP, BKH, CAT, CHD, CL, FAST, GD, GPC, LRCX, LMT, MATX, NEE, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO | Growth: AMD, AEM, ATAT, CVX, CWAN, CNX, COIN, EIX, FINV, FTNT, GFI, SUPV, HRMY, HUT, KEYS, MARA, NVDA, NXPI, OKE, PDD, HOOD, SYF, TSM, TOL | Digital: IBIT, ETHA | Benchmarks: DVY, IWS, IUSG
+
+OUTPUT THREE BLOCKS:
+
+1. <META> — JSON: {"headline": "2-3 Words", "subhead": "One sentence.", "direction": "up" or "down"}
+
+2. <HTML_BRIEF> — Full HTML for the daily brief matching prior brief structure exactly. Use HTML entities (&ndash; &mdash; &rsquo; etc). Snapshot div first. Sections: markets, geopolitics, radar.
+
+3. <PDF_PARAGRAPHS> — A JSON array of objects. Each has "style" and "text":
+   Styles: "sec" (section header), "rule" (HR), "lead" (bold opening), "body" (regular), "pq" (pullquote), "radar" (radar item), "small" (disclaimer), "spacer" (section gap)
+   - For "rule" and "spacer": include "text": "" (empty string)
+   - Text uses <b>bold</b> and <i>italic</i> tags
+   - Use &amp; for ampersands (ReportLab XML)
+   - Use actual Unicode: em dash \u2014, en dash \u2013, apostrophe \u2019
+   - Three sections: MARKETS, GEOPOLITICS, ON OUR RADAR (each preceded by sec+rule, separated by spacer)
+   - End with disclaimer in "small" style
+
+Every brief must advance the narrative. Do NOT repeat prior brief themes/phrasing/radar items."""
 
 # ═══════════════════════════════════════════
-# SYSTEM PROMPT FOR CLAUDE
-# ═══════════════════════════════════════════
-
-SYSTEM_PROMPT = """You are a senior investment research analyst at Intentional Ownership (IOWN), an RIA managing ~$516M under Paradiem. You write the daily IOWN Morning Brief.
-
-Your writing style is direct, analytical, no fluff. You write like a trusted colleague handing the CIO a one-page briefing sheet. Approximately 5 minutes of reading time. Opinionated and investment-relevant — not raw news aggregation.
-
-IOWN philosophy references (use naturally, don't force):
-- Research Reveals Opportunities
-- Think Like an Owner
-- Avoid Erosion
-- Simplicity Over Complexity
-
-IOWN HOLDINGS:
-Dividend sleeve: ABT, A, ADI, ATO, ADP, BKH, CAT, CHD, CL, FAST, GD, GPC, LRCX, LMT, MATX, NEE, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
-Growth sleeve: AMD, AEM, ATAT, CVX, CWAN, CNX, COIN, EIX, FINV, FTNT, GFI, SUPV, HRMY, HUT, KEYS, MARA, NVDA, NXPI, OKE, PDD, HOOD, SYF, TSM, TOL
-Digital ETFs: IBIT, ETHA
-Benchmarks: DVY, IWS, IUSG
-
-KEY RULES:
-1. Every brief must advance the narrative from the prior briefs. Do NOT repeat the same themes, phrasing, data points, or radar items unless there is a material update.
-2. Output TWO clearly separated blocks:
-   - Block 1: HTML brief wrapped in <HTML_BRIEF>...</HTML_BRIEF> tags
-   - Block 2: PDF content Python code wrapped in <PDF_CONTENT>...</PDF_CONTENT> tags
-3. The HTML brief has THREE content sections: Markets, Geopolitics, On Our Radar
-4. The PDF content has THREE sections: MARKETS, GEOPOLITICS, ON OUR RADAR
-5. Include a headline (2-3 words max), subhead (one sentence), and direction (up/down) wrapped in <META>...</META> tags as JSON.
-
-HTML FORMAT RULES:
-- Start with a snapshot div (S&P 500, Brent, Bitcoin, contextual 4th item, Fear & Greed)
-- Use class "up" for green values, "dn" for red
-- Use proper HTML entities: &ndash; &mdash; &rsquo; &ldquo; &rdquo; &darr; &uarr; &middot; &amp;
-- Section IDs: markets, geopolitics, radar
-- Use section-start wrappers, bullet divs, data-box divs, pullquote divs, radar-item divs, radar-group divs
-- Radar items 1-2 standalone, 3-4 in a radar-group, 5-6 in a radar-group
-- Follow the exact HTML structure pattern from the prior briefs provided
-
-PDF CONTENT CODE RULES:
-- This code will be concatenated after bp1_template.py and executed
-- Set HL_COLOR = DG for up days, HL_COLOR = ACCENT for down days
-- IMPORTANT: Use the variable PDF_PATH (already defined) for the doc path: doc = BriefDoc(PDF_PATH, pagesize=letter)
-- story = [NextPageTemplate("later")]
-- Define EM, EN, AQ variables for typography
-- Use styles: sec_s, sec_rule(), lead_s, body_s, pq_s, radar_s, small_s
-- Spacer(1, 14) between sections
-- End with disclaimer paragraph and doc.build(story)
-- Use f-strings with {EM}, {EN}, {AQ} for dashes and apostrophes
-- Use &amp; for ampersands in Paragraph text
-"""
-
-# ═══════════════════════════════════════════
-# BUILD THE USER PROMPT
+# USER PROMPT
 # ═══════════════════════════════════════════
 
 def build_user_prompt(data_drop, news, prev_briefs):
-    """Construct the user prompt with all context."""
-
-    prev_briefs_text = ""
+    prev_text = ""
     for b in prev_briefs:
-        prev_briefs_text += f"\n--- PRIOR BRIEF ({b['date']}) ---\n{b['content']}\n"
+        prev_text += f"\n--- PRIOR BRIEF ({b['date']}) ---\n{b['content']}\n"
 
-    return f"""Today is {DATE_LINE}. Generate the IOWN Morning Brief for today.
+    return f"""Today is {DATE_LINE}. Generate the IOWN Morning Brief.
 
 <DATA_DROP>
 {data_drop}
 </DATA_DROP>
 
 <NEWS_HEADLINES>
-{news if news else "No additional news headlines available. Use data drop and your knowledge."}
+{news if news else "No additional headlines. Use data drop and your knowledge."}
 </NEWS_HEADLINES>
 
 <PRIOR_BRIEFS>
-{prev_briefs_text}
+{prev_text}
 </PRIOR_BRIEFS>
 
-Instructions:
-1. Analyze the data drop for market moves, sector performance, holdings performance, crypto, rates, commodities.
-2. Cross-reference with news headlines for geopolitical/macro context.
-3. Read the prior briefs carefully — do NOT repeat themes, phrasing, or radar items. Advance the narrative.
-4. Generate the brief in three output blocks:
-
-<META> block: JSON with "headline" (2-3 words), "subhead" (one sentence), "direction" ("up" or "down")
-
-<HTML_BRIEF> block: Full HTML content for briefs/{DATE_STR}.html following the exact structure pattern from prior briefs.
-
-<PDF_CONTENT> block: Python code that will be concatenated after bp1_template.py. A variable PDF_PATH is already defined with the correct output path. Use: doc = BriefDoc(PDF_PATH, pagesize=letter)
-
-The headline and subhead in the PDF template's draw_first() method will be set separately — your PDF content code should ONLY contain the story content (from "HL_COLOR = ..." through "doc.build(story)"). Do NOT include the template code or class definitions.
-
-Remember: Be opinionated. Include technical indicators where relevant. The brief should read as one cohesive argument across all three sections."""
+Generate <META>, <HTML_BRIEF>, and <PDF_PARAGRAPHS> blocks. The PDF_PARAGRAPHS must be valid JSON."""
 
 # ═══════════════════════════════════════════
-# PARSE CLAUDE'S RESPONSE
+# PARSE RESPONSE
 # ═══════════════════════════════════════════
 
 def parse_response(response_text):
-    """Extract META, HTML_BRIEF, and PDF_CONTENT blocks from Claude's response."""
-
     meta_match = re.search(r"<META>(.*?)</META>", response_text, re.DOTALL)
     html_match = re.search(r"<HTML_BRIEF>(.*?)</HTML_BRIEF>", response_text, re.DOTALL)
-    pdf_match = re.search(r"<PDF_CONTENT>(.*?)</PDF_CONTENT>", response_text, re.DOTALL)
+    pdf_match = re.search(r"<PDF_PARAGRAPHS>(.*?)</PDF_PARAGRAPHS>", response_text, re.DOTALL)
 
     if not all([meta_match, html_match, pdf_match]):
-        print("ERROR: Could not parse all three blocks from Claude's response")
-        print(f"META found: {bool(meta_match)}")
-        print(f"HTML found: {bool(html_match)}")
-        print(f"PDF found: {bool(pdf_match)}")
-        # Save raw response for debugging
-        debug_path = REPO_ROOT / "debug_response.txt"
-        debug_path.write_text(response_text, encoding="utf-8")
-        print(f"Raw response saved to {debug_path}")
+        print("ERROR: Could not parse all blocks")
+        print(f"META: {bool(meta_match)}, HTML: {bool(html_match)}, PDF: {bool(pdf_match)}")
+        (REPO_ROOT / "debug_response.txt").write_text(response_text, encoding="utf-8")
         sys.exit(1)
 
     meta = json.loads(meta_match.group(1).strip())
     html = html_match.group(1).strip()
-    pdf_content = pdf_match.group(1).strip()
 
-    # Strip markdown code fences if present
-    if pdf_content.startswith("```python"):
-        pdf_content = pdf_content[len("```python"):].strip()
-    if pdf_content.startswith("```"):
-        pdf_content = pdf_content[3:].strip()
-    if pdf_content.endswith("```"):
-        pdf_content = pdf_content[:-3].strip()
+    pdf_raw = pdf_match.group(1).strip()
+    # Strip code fences
+    for prefix in ["```json", "```"]:
+        if pdf_raw.startswith(prefix):
+            pdf_raw = pdf_raw[len(prefix):].strip()
+    if pdf_raw.endswith("```"):
+        pdf_raw = pdf_raw[:-3].strip()
 
-    return meta, html, pdf_content
-
-
-# ═══════════════════════════════════════════
-# PDF GENERATION
-# ═══════════════════════════════════════════
-
-def generate_pdf(meta, pdf_content):
-    """Generate the PDF by modifying the template and concatenating content."""
-
-    # Read template
-    template = read_file(TEMPLATE_PATH)
-    if not template:
-        print("ERROR: Could not read bp1_template.py")
+    try:
+        pdf_paragraphs = json.loads(pdf_raw)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: PDF JSON parse failed: {e}")
+        (REPO_ROOT / "debug_response.txt").write_text(response_text, encoding="utf-8")
         sys.exit(1)
 
-    # Modify template dates and headline
+    return meta, html, pdf_paragraphs
+
+# ═══════════════════════════════════════════
+# PDF GENERATION — deterministic from JSON
+# ═══════════════════════════════════════════
+
+def generate_pdf(meta, pdf_paragraphs):
+    from reportlab.lib.pagesizes import letter
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from reportlab.lib.colors import HexColor
+    from reportlab.lib.units import inch
+    from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT
+    from reportlab.platypus import Paragraph, Spacer, HRFlowable, NextPageTemplate
+    from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate, Frame
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+
+    pdfmetrics.registerFont(TTFont("LS", "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf"))
+    pdfmetrics.registerFont(TTFont("LSB", "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"))
+    pdfmetrics.registerFont(TTFont("LSI", "/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf"))
+    pdfmetrics.registerFont(TTFont("LSBI", "/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf"))
+    pdfmetrics.registerFontFamily("LS", normal="LS", bold="LSB", italic="LSI", boldItalic="LSBI")
+    pdfmetrics.registerFont(TTFont("DVB", "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"))
+
+    INK = HexColor("#1A1A1A")
+    DG = HexColor("#3D4A2E")
+    ACCENT = HexColor("#8B3A3A")
+    MGRAY = HexColor("#8A8A84")
+    HL_COLOR = DG if meta["direction"] == "up" else ACCENT
+
+    W, H = letter
+    M = 0.65 * inch
+    GUTTER = 0.22 * inch
+    COL_W = (W - 2*M - GUTTER) / 2.0
+    BUL = chr(8226)
+    logo_path = str(REPO_ROOT / "scripts" / "iown_logo_processed.png")
+    pdf_output = str(BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf")
     headline = meta["headline"]
     subhead = meta["subhead"]
-    direction = meta["direction"]
 
-    # Replace date in draw_first
-    template = re.sub(
-        r'c\.drawRightString\(W - M, H - 0\.50\*inch, ".*?"\)',
-        f'c.drawRightString(W - M, H - 0.50*inch, "{DATE_LINE}")',
-        template
-    )
+    class BriefDoc(BaseDocTemplate):
+        def __init__(self2, fn, **kw):
+            BaseDocTemplate.__init__(self2, fn, **kw)
+            top_off = 1.80 * inch
+            f1L = Frame(M, 0.6*inch, COL_W, H - top_off - 0.6*inch, id="p1L", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
+            f1R = Frame(M + COL_W + GUTTER, 0.6*inch, COL_W, H - top_off - 0.6*inch, id="p1R", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
+            f2L = Frame(M, 0.6*inch, COL_W, H - 1.2*inch, id="p2L", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
+            f2R = Frame(M + COL_W + GUTTER, 0.6*inch, COL_W, H - 1.2*inch, id="p2R", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
+            self2.addPageTemplates([
+                PageTemplate(id="first", frames=[f1L, f1R], onPage=self2.draw_first),
+                PageTemplate(id="later", frames=[f2L, f2R], onPage=self2.draw_later),
+            ])
 
-    # Replace INVESTMENT COMMITTEE line date (it's static, keep as is)
+        def draw_first(self2, c, doc):
+            c.saveState()
+            logo_h = 0.55 * inch
+            logo_w = logo_h * (1245.0 / 657.0)
+            c.drawImage(logo_path, M, H - 0.63*inch, width=logo_w, height=logo_h, mask="auto")
+            c.setFillColor(MGRAY)
+            c.setFont("Helvetica", 7.5)
+            c.drawRightString(W - M, H - 0.50*inch, DATE_LINE)
+            c.drawRightString(W - M, H - 0.62*inch, "INVESTMENT COMMITTEE")
+            rule_y = H - 0.82*inch
+            c.setStrokeColor(INK)
+            c.setLineWidth(2)
+            c.line(M, rule_y, W - M, rule_y)
+            c.setLineWidth(0.5)
+            c.line(M, rule_y - 3, W - M, rule_y - 3)
+            c.setFillColor(HL_COLOR)
+            c.setFont("DVB", 36)
+            hl_y = rule_y - 0.52*inch
+            c.drawString(M, hl_y, headline)
+            c.setFillColor(INK)
+            c.setFont("LSI", 11)
+            sub_y = hl_y - 0.26*inch
+            c.drawString(M, sub_y, subhead)
+            content_rule_y = sub_y - 0.18*inch
+            c.setStrokeColor(INK)
+            c.setLineWidth(1)
+            c.line(M, content_rule_y, W - M, content_rule_y)
+            self2._footer(c, doc)
+            c.restoreState()
 
-    # Replace headline
-    template = re.sub(
-        r'c\.drawString\(M, hl_y, ".*?"\)',
-        f'c.drawString(M, hl_y, "{headline}")',
-        template
-    )
+        def draw_later(self2, c, doc):
+            c.saveState()
+            c.setFont("Helvetica", 6.5)
+            c.setFillColor(MGRAY)
+            hdr = "IOWN MORNING BRIEF " + BUL + " " + DATE_DISPLAY + " " + BUL + " INVESTMENT COMMITTEE"
+            c.drawString(M, H - 0.38*inch, hdr)
+            c.setStrokeColor(INK)
+            c.setLineWidth(0.75)
+            c.line(M, H - 0.44*inch, W - M, H - 0.44*inch)
+            self2._footer(c, doc)
+            c.restoreState()
 
-    # Replace subhead
-    # Need to escape special chars for the replacement
-    safe_subhead = subhead.replace('"', '\\"').replace("'", "\\'")
-    template = re.sub(
-        r'c\.drawString\(M, sub_y, ".*?"\)',
-        f'c.drawString(M, sub_y, "{safe_subhead}")',
-        template
-    )
+        def _footer(self2, c, doc):
+            c.setStrokeColor(INK)
+            c.setLineWidth(0.5)
+            c.line(M, 0.48*inch, W - M, 0.48*inch)
+            c.setFont("Helvetica", 6)
+            c.setFillColor(MGRAY)
+            c.drawString(M, 0.32*inch, "CONFIDENTIAL  |  Intentional Ownership (IOWN)  |  RIA  |  Paradiem")
+            c.drawRightString(W - M, 0.32*inch, "%d" % doc.page)
 
-    # Replace draw_later header date
-    brief_date_str = f"{TODAY.strftime('%B').upper()} {TODAY.day}, {TODAY.year}"
-    template = re.sub(
-        r'hdr = "IOWN MORNING BRIEF " \+ BUL \+ " .*? " \+ BUL \+ " INVESTMENT COMMITTEE"',
-        f'hdr = "IOWN MORNING BRIEF " + BUL + " {brief_date_str} " + BUL + " INVESTMENT COMMITTEE"',
-        template
-    )
+    sty = getSampleStyleSheet()
+    sec_s = ParagraphStyle("Sec", parent=sty["Heading1"], fontName="Helvetica-Bold", fontSize=10.5, textColor=INK, spaceBefore=0, spaceAfter=0, leading=12)
+    body_s = ParagraphStyle("Bod", parent=sty["Normal"], fontName="LS", fontSize=9, textColor=INK, leading=13.5, spaceBefore=0, spaceAfter=6, alignment=TA_JUSTIFY)
+    lead_s = ParagraphStyle("Lead", parent=body_s, fontName="LSB", fontSize=9)
+    pq_s = ParagraphStyle("PQ", parent=body_s, fontName="LSBI", fontSize=9.2, textColor=DG, leftIndent=8, rightIndent=8, spaceBefore=6, spaceAfter=8, leading=14)
+    radar_s = ParagraphStyle("Rad", parent=body_s, leftIndent=10, spaceBefore=1, spaceAfter=4, fontSize=8.8, leading=13)
+    small_s = ParagraphStyle("Sm", parent=body_s, fontSize=6.5, textColor=MGRAY, leading=8.5, alignment=TA_LEFT)
 
-    # Replace the logo path to use the one in scripts/
-    template = template.replace(
-        'LOGO = "/tmp/iown_logo.png"',
-        f'LOGO = "{str(REPO_ROOT / "scripts" / "iown_logo_processed.png")}"'
-    )
+    style_map = {"sec": sec_s, "lead": lead_s, "body": body_s, "pq": pq_s, "radar": radar_s, "small": small_s}
 
-    # Write modified template
-    template_out = REPO_ROOT / "bp1_template_auto.py"
-    template_out.write_text(template, encoding="utf-8")
+    doc = BriefDoc(pdf_output, pagesize=letter)
+    story = [NextPageTemplate("later")]
 
-    # Sanitize content: ensure PDF path is resolved regardless of what Claude used
-    pdf_output_path = str(BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf")
-    # Inject PDF_PATH definition at the top of content so any reference works
-    pdf_content_final = f'PDF_PATH = "{pdf_output_path}"\n\n' + pdf_content
-    # Also replace any hardcoded placeholder paths Claude might have used
-    pdf_content_final = pdf_content_final.replace("<PDF_PATH>", pdf_output_path)
+    for para in pdf_paragraphs:
+        s = para.get("style", "body")
+        text = para.get("text", "")
+        if s == "rule":
+            story.append(HRFlowable(width="100%", thickness=1, color=INK, spaceBefore=2, spaceAfter=8))
+        elif s == "spacer":
+            story.append(Spacer(1, 14))
+        elif s in style_map:
+            story.append(Paragraph(text, style_map[s]))
+        else:
+            story.append(Paragraph(text, body_s))
 
-    # Write content
-    content_out = REPO_ROOT / "bp1_content_auto.py"
-    content_out.write_text(pdf_content_final, encoding="utf-8")
+    doc.build(story)
+    print(f"PDF generated: {pdf_output}")
+    return pdf_output
 
-    # Concatenate and run
-    combined = REPO_ROOT / "bp1_auto.py"
-    combined_text = template_out.read_text() + "\n" + content_out.read_text()
-    combined.write_text(combined_text, encoding="utf-8")
-
-    result = subprocess.run(
-        ["python3", str(combined)],
-        capture_output=True, text=True, cwd=str(REPO_ROOT)
-    )
-
-    if result.returncode != 0:
-        print(f"PDF generation FAILED:\n{result.stderr}")
-        # Save for debugging
-        print(f"Combined script at: {combined}")
-        sys.exit(1)
-
-    print(f"PDF generated: {result.stdout.strip()}")
-
-    # Cleanup temp files
-    for f in [template_out, content_out, combined]:
-        f.unlink(missing_ok=True)
-
+# ═══════════════════════════════════════════
+# LOGO / MANIFEST / GIT
+# ═══════════════════════════════════════════
 
 def process_logo():
-    """Process the IOWN logo (remove dark background, crop)."""
     logo_processed = REPO_ROOT / "scripts" / "iown_logo_processed.png"
-
     if logo_processed.exists():
         print("Logo already processed, skipping")
         return
-
     if not LOGO_SRC.exists():
         print(f"ERROR: Logo source not found at {LOGO_SRC}")
         sys.exit(1)
-
-    try:
-        from PIL import Image
-        import numpy as np
-        img = Image.open(str(LOGO_SRC)).convert('RGBA')
-        d = np.array(img)
-        dark = (d[:,:,0] < 45) & (d[:,:,1] < 45) & (d[:,:,2] < 45)
-        d[dark, 3] = 0
-        out = Image.fromarray(d)
-        out = out.crop(out.getbbox())
-        out.save(str(logo_processed))
-        print("Logo processed successfully")
-    except ImportError:
-        print("ERROR: Pillow/numpy not available for logo processing")
-        sys.exit(1)
-
-
-# ═══════════════════════════════════════════
-# MANIFEST UPDATE
-# ═══════════════════════════════════════════
+    from PIL import Image
+    import numpy as np
+    img = Image.open(str(LOGO_SRC)).convert('RGBA')
+    d = np.array(img)
+    dark = (d[:,:,0] < 45) & (d[:,:,1] < 45) & (d[:,:,2] < 45)
+    d[dark, 3] = 0
+    out = Image.fromarray(d)
+    out = out.crop(out.getbbox())
+    out.save(str(logo_processed))
+    print("Logo processed successfully")
 
 def update_manifest(meta):
-    """Add today's entry to manifest.json."""
     manifest = get_manifest()
-
-    # Remove existing entry for today if any
     manifest = [e for e in manifest if e.get("date") != DATE_STR]
-
     manifest.append({
-        "date": DATE_STR,
-        "headline": meta["headline"],
-        "subhead": meta["subhead"],
-        "direction": meta["direction"],
+        "date": DATE_STR, "headline": meta["headline"],
+        "subhead": meta["subhead"], "direction": meta["direction"],
         "filename": f"IOWN_Morning_Brief_{DATE_STR}.pdf"
     })
-
-    # Sort by date
     manifest.sort(key=lambda e: e["date"])
-
-    MANIFEST_PATH.write_text(
-        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8"
-    )
-    print(f"Manifest updated with entry for {DATE_STR}")
-
-
-# ═══════════════════════════════════════════
-# GIT OPERATIONS
-# ═══════════════════════════════════════════
+    MANIFEST_PATH.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Manifest updated for {DATE_STR}")
 
 def git_commit_and_push(meta):
-    """Commit the new brief files and push."""
-    html_file = f"briefs/{DATE_STR}.html"
-    pdf_file = f"briefs/IOWN_Morning_Brief_{DATE_STR}.pdf"
-    manifest_file = "briefs/manifest.json"
+    files = [f"briefs/{DATE_STR}.html", f"briefs/IOWN_Morning_Brief_{DATE_STR}.pdf", "briefs/manifest.json"]
+    subprocess.run(["git", "add"] + files, cwd=str(REPO_ROOT), check=True)
+    result = subprocess.run(
+        ["git", "commit", "-m", f"IOWN Morning Brief \u2014 {TODAY.strftime('%B')} {TODAY.day}, {TODAY.year}: {meta['headline']}"],
+        capture_output=True, text=True, cwd=str(REPO_ROOT)
+    )
+    if result.returncode != 0:
+        if "nothing to commit" in result.stdout + result.stderr:
+            print("Nothing to commit"); return
+        print(f"Commit failed: {result.stderr}"); sys.exit(1)
 
-    cmds = [
-        ["git", "add", html_file, pdf_file, manifest_file],
-        ["git", "commit", "-m", f"IOWN Morning Brief — {TODAY.strftime('%B')} {TODAY.day}, {TODAY.year}: {meta['headline']}"],
-    ]
-
-    for cmd in cmds:
-        result = subprocess.run(cmd, capture_output=True, text=True, cwd=str(REPO_ROOT))
-        if result.returncode != 0:
-            print(f"Git command failed: {' '.join(cmd)}")
-            print(result.stderr)
-            if "nothing to commit" in result.stdout + result.stderr:
-                print("Nothing to commit — files may already be up to date")
-                return
-            sys.exit(1)
-
-    # Push with retry on rejection
     for attempt in range(3):
-        result = subprocess.run(
-            ["git", "push"], capture_output=True, text=True, cwd=str(REPO_ROOT)
-        )
-        if result.returncode == 0:
-            print("Pushed successfully")
-            return
-        print(f"Push attempt {attempt+1} failed, trying rebase...")
-        subprocess.run(
-            ["git", "pull", "--rebase"], capture_output=True, text=True, cwd=str(REPO_ROOT)
-        )
-
-    print("ERROR: Failed to push after 3 attempts")
-    sys.exit(1)
-
+        r = subprocess.run(["git", "push"], capture_output=True, text=True, cwd=str(REPO_ROOT))
+        if r.returncode == 0:
+            print("Pushed successfully"); return
+        print(f"Push attempt {attempt+1} failed, rebasing...")
+        subprocess.run(["git", "pull", "--rebase"], capture_output=True, text=True, cwd=str(REPO_ROOT))
+    print("ERROR: Push failed after 3 attempts"); sys.exit(1)
 
 # ═══════════════════════════════════════════
 # MAIN
@@ -468,82 +399,54 @@ def git_commit_and_push(meta):
 
 def main():
     print(f"═══ IOWN Morning Brief Generator ═══")
-    print(f"Date: {DATE_STR} ({DAY_NAME})")
-    print()
+    print(f"Date: {DATE_STR} ({DAY_NAME})\n")
 
-    # Check if brief already exists (skip unless FORCE_REGENERATE is set)
     html_path = BRIEFS_DIR / f"{DATE_STR}.html"
     pdf_path = BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf"
     if html_path.exists() and pdf_path.exists() and not os.environ.get("FORCE_REGENERATE"):
-        print(f"Brief already exists for {DATE_STR}. Set FORCE_REGENERATE=1 to overwrite.")
-        print("Exiting cleanly.")
-        sys.exit(0)
+        print(f"Brief exists for {DATE_STR}. Set FORCE_REGENERATE=1 to overwrite."); sys.exit(0)
 
-    # 1. Read data drop
     data_drop = read_file(LATEST_DROP)
-    if not data_drop:
-        print("ERROR: No data drop available")
-        sys.exit(1)
-    print(f"Data drop loaded: {len(data_drop)} chars")
+    if not data_drop: print("ERROR: No data drop"); sys.exit(1)
+    print(f"Data drop: {len(data_drop)} chars | {data_drop.split(chr(10))[0]}")
 
-    # Check data drop freshness
-    first_line = data_drop.split("\n")[0]
-    print(f"Data drop header: {first_line}")
-
-    # 2. Fetch news
-    print("Fetching news headlines...")
+    print("Fetching news...")
     news = fetch_news_headlines()
     print(f"News: {len(news)} chars")
 
-    # 3. Read last two briefs
     prev_briefs = get_last_two_briefs()
-    print(f"Prior briefs loaded: {[b['date'] for b in prev_briefs]}")
+    print(f"Prior briefs: {[b['date'] for b in prev_briefs]}")
 
-    # 4. Process logo
     print("Processing logo...")
     process_logo()
 
-    # 5. Call Claude API
     print(f"\nCalling Claude API ({MODEL})...")
     user_prompt = build_user_prompt(data_drop, news, prev_briefs)
-    print(f"Prompt size: ~{len(user_prompt)} chars")
-
+    print(f"Prompt: ~{len(user_prompt)} chars")
     response = call_claude_api(SYSTEM_PROMPT, user_prompt)
-    print(f"Response received: {len(response)} chars")
+    print(f"Response: {len(response)} chars")
 
-    # 6. Parse response
-    print("\nParsing response...")
-    meta, html_content, pdf_content = parse_response(response)
+    print("\nParsing...")
+    meta, html_content, pdf_paragraphs = parse_response(response)
     print(f"Headline: {meta['headline']}")
     print(f"Subhead: {meta['subhead']}")
     print(f"Direction: {meta['direction']}")
+    print(f"PDF paragraphs: {len(pdf_paragraphs)}")
 
-    # 7. Write HTML
-    html_path = BRIEFS_DIR / f"{DATE_STR}.html"
-    html_path.write_text(html_content, encoding="utf-8")
-    print(f"\nHTML written: {html_path} ({len(html_content)} chars)")
+    html_out = BRIEFS_DIR / f"{DATE_STR}.html"
+    html_out.write_text(html_content, encoding="utf-8")
+    print(f"\nHTML: {html_out} ({len(html_content)} chars)")
 
-    # 8. Generate PDF
-    print("\nGenerating PDF...")
-    generate_pdf(meta, pdf_content)
+    print("Generating PDF...")
+    pdf_out = generate_pdf(meta, pdf_paragraphs)
+    print(f"PDF: {Path(pdf_out).stat().st_size} bytes")
 
-    pdf_path = BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf"
-    if pdf_path.exists():
-        print(f"PDF verified: {pdf_path} ({pdf_path.stat().st_size} bytes)")
-    else:
-        print("ERROR: PDF was not created")
-        sys.exit(1)
-
-    # 9. Update manifest
     update_manifest(meta)
 
-    # 10. Commit and push
-    print("\nCommitting and pushing...")
+    print("\nPushing...")
     git_commit_and_push(meta)
 
-    print(f"\n═══ Brief complete: {meta['headline']} ═══")
-    print(f"Archive: https://richacarson.github.io/rich-report/morning-briefs.html")
-
+    print(f"\n═══ Complete: {meta['headline']} ═══")
 
 if __name__ == "__main__":
     main()

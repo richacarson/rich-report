@@ -495,8 +495,12 @@ def git_commit_and_push(meta):
 
 def main():
     print(f"═══ IOWN Morning Brief Generator ═══")
-    print(f"Date: {DATE_STR} ({DAY_NAME})")
-    print(f"Mode: DRAFT (review only — not pushed to live site)\n")
+    print(f"Date: {DATE_STR} ({DAY_NAME})\n")
+
+    html_path = BRIEFS_DIR / f"{DATE_STR}.html"
+    pdf_path = BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf"
+    if html_path.exists() and pdf_path.exists() and not os.environ.get("FORCE_REGENERATE"):
+        print(f"Brief exists for {DATE_STR}. Set FORCE_REGENERATE=1 to overwrite."); sys.exit(0)
 
     data_drop = read_file(LATEST_DROP)
     if not data_drop: print("ERROR: No data drop"); sys.exit(1)
@@ -525,22 +529,21 @@ def main():
     print(f"Direction: {meta['direction']}")
     print(f"PDF paragraphs: {len(pdf_paragraphs)}")
 
-    # Write drafts to a draft directory (not the live briefs/ folder)
-    draft_dir = REPO_ROOT / "drafts"
-    draft_dir.mkdir(exist_ok=True)
-
-    html_out = draft_dir / f"{DATE_STR}.html"
+    html_out = BRIEFS_DIR / f"{DATE_STR}.html"
     html_out.write_text(html_content, encoding="utf-8")
-    print(f"\nHTML draft: {html_out} ({len(html_content)} chars)")
+    print(f"\nHTML: {html_out} ({len(html_content)} chars)")
 
-    # Generate PDF into drafts/
     print("Generating PDF...")
-    pdf_output = str(draft_dir / f"IOWN_Morning_Brief_{DATE_STR}.pdf")
-    pdf_out = generate_pdf(meta, pdf_paragraphs, output_path=pdf_output)
-    print(f"PDF draft: {Path(pdf_out).stat().st_size} bytes")
+    pdf_out = generate_pdf(meta, pdf_paragraphs)
+    print(f"PDF: {Path(pdf_out).stat().st_size} bytes")
 
-    print(f"\n═══ Draft complete: {meta['headline']} ═══")
-    print(f"Files in drafts/ — download from GitHub Actions artifacts to review.")
+    update_manifest(meta)
+
+    print("\nPushing...")
+    git_commit_and_push(meta)
+
+    print(f"\n═══ Complete: {meta['headline']} ═══")
+    print(f"Archive: https://richacarson.github.io/rich-report/morning-briefs.html")
 
 if __name__ == "__main__":
     main()

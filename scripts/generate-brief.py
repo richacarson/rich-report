@@ -45,7 +45,7 @@ DATE_DISPLAY = f"{TODAY.strftime('%B').upper()} {TODAY.day}, {TODAY.year}"
 DATE_LINE = f"{DATE_DISPLAY}  |  {DAY_NAME}"
 
 API_URL = "https://api.anthropic.com/v1/messages"
-MODEL = "claude-sonnet-4-20250514"
+MODEL = "claude-opus-4-6"
 
 # ═══════════════════════════════════════════
 # HELPERS

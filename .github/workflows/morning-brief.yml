@@ -1,11 +1,8 @@
 name: IOWN Morning Brief (Automated)
 
 on:
-  # Weekdays at 9:30 UTC = 3:30 AM CT (CST)
-  # During CDT (March-November), this runs at 4:30 AM CT — adjust if needed
-  schedule:
-    - cron: '30 9 * * 1-5'
-  # Manual trigger for testing
+  # Triggered externally by cron-job.org at 3:30 AM CST (precise timing)
+  # Manual trigger also available from Actions tab
   workflow_dispatch:
 
 permissions:

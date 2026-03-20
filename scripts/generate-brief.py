@@ -136,6 +136,36 @@ IOWN philosophy references (use naturally, don't force):
 
 The core IOWN investment thesis centers on "physical world matters" — emphasizing physical AI infrastructure, energy value, and real-world industrial themes.
 
+═══ TONE & COMPLIANCE ═══
+
+This document is for an RIA investment committee. All language must be professional and SEC-appropriate.
+
+NEVER use predictive language stated as fact. Examples of what NOT to write:
+- "The snap-back will be violent" → Instead: "Historically, these patterns tend to reverse sharply"
+- "Futures will re-converge upward" → Instead: "Futures tend to re-converge with physical premiums when de-leveraging subsides"
+- "These names snap back hardest" → Instead: "These names historically tend to recover quickly"
+- "This is the final stage" → Instead: "This pattern is consistent with late-stage..."
+- "Oil is headed toward $X" → Instead: "Oil could approach $X if current trends persist"
+
+Use conditional framing: "may," "could," "tends to," "historically," "if this pattern holds," "consistent with," "suggests"
+
+NEVER use informal or retail-newsletter language:
+- No "Don't be fooled" — use "The headline number warrants context"
+- No "fool's errand" — use "the timing remains uncertain"
+- No "disaster" — use "material miss" or "significant shortfall"
+- No "generational entry" — use "attractive entry levels"
+- No "the right place to be" — use "tend to hold up well in this environment"
+- No citing TV personalities (e.g., Cramer) by name — make the analytical point directly
+
+NEVER make direct recommendations or timing calls:
+- No "let the forced sellers finish before stepping in" — use "discipline over impulse"
+- No "the technical structure flips bullish" — use "the technical structure would turn notably more constructive"
+- No "X are the beneficiaries" — use "X stand to benefit in a scenario where..."
+
+When interpreting foreign leader statements or geopolitical intent, hedge appropriately:
+- No "That vision requires X" → "That vision would require X"
+- No "this means Israel's war aims include..." → "if taken at face value, this would suggest..."
+
 ═══ IOWN HOLDINGS ═══
 
 Dividend sleeve: ABT, A, ADI, ATO, ADP, BKH, CAT, CHD, CL, FAST, GD, GPC, LRCX, LMT, MATX, NEE, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
@@ -237,10 +267,10 @@ Body style example:
 "The catalyst: Iran\u2019s new supreme leader Mojtaba Khamenei issued his first statement, vowing to keep the Strait of Hormuz closed as a tool to pressure the enemy and continue attacks on Gulf Arab neighbors. That single statement sent WTI up 9.72% to $95.73 and Brent up 9.22% to $100.46."
 
 Pullquote style example:
-"IOWN Tactical: S&amp;P at 6,673 (SPY $666.06). Down ~13% from January ATH of 7,003. The 200-day moving average is at ~6,596\u2014hasn\u2019t been broken in 10 months. That\u2019s the technical line in the sand. Our \u201320% buy trigger is at ~5,600. Research Reveals Opportunities\u2014but patience is a discipline."
+"IOWN Tactical: S&amp;P at 6,673 (SPY $666.06). Down ~13% from January ATH of 7,003. The 200-day moving average is at ~6,596\u2014hasn\u2019t been broken in 10 months. That\u2019s the technical line in the sand. Our \u201320% buy trigger is at ~5,600. Research Reveals Opportunities\u2014discipline over impulse."
 
 Radar style example:
-"<b>1. The 200DMA at 6,596 is the line.</b> S&amp;P at 6,673\u2014just 77 points above. This level hasn\u2019t been broken in 10 months. If it fails, the next support is 6,400 (November lows). Our \u201320% buy trigger is ~5,600\u2014still 16% below. Don\u2019t front-run the signal."
+"<b>1. The 200DMA at 6,596 is the level to watch.</b> S&amp;P at 6,673\u2014just 77 points above. This level hasn\u2019t been broken in 10 months. If it fails, the next support is 6,400 (November lows). Our \u201320% buy trigger is ~5,600\u2014still 16% below. Patience remains the discipline."
 """
 
 # ═══════════════════════════════════════════

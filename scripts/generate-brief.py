@@ -309,7 +309,15 @@ def build_user_prompt(data_drop, news, prev_briefs):
     for b in prev_briefs:
         prev_text += f"\n--- PRIOR BRIEF ({b['date']}) ---\n{b['content']}\n"
 
-    return f"""Today is {DATE_LINE}. Generate the IOWN Morning Brief.
+    return f"""Today is {DATE_LINE}. It is approximately 3:30 AM Central Time — roughly 5.5 hours before the NYSE opens at 8:30 AM CT (9:30 AM ET).
+
+This brief will be read by the investment committee before market open. Frame accordingly:
+- The data drop reflects the PRIOR session's closing prices and after-hours activity.
+- Any earnings reported after yesterday's close or in pre-market this morning are relevant and should be highlighted.
+- Overnight futures, Asian and European session moves, and pre-market movers provide forward-looking context for today's open.
+- The committee is reading this to prepare for the trading day ahead — emphasize what to watch today, not just what happened yesterday.
+
+Generate the IOWN Morning Brief.
 
 <DATA_DROP>
 {data_drop}

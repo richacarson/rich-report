@@ -166,6 +166,8 @@ When interpreting foreign leader statements or geopolitical intent, hedge approp
 - No "That vision requires X" → "That vision would require X"
 - No "this means Israel's war aims include..." → "if taken at face value, this would suggest..."
 
+NEVER call specific support or resistance price levels (e.g., "support at 6,400," "resistance at $235," "$178–$180 is the line"). You may reference moving averages (50-day, 100-day, 200-day) and whether price is above or below them, but do not identify or predict specific price floors, ceilings, or targets.
+
 ═══ IOWN HOLDINGS ═══
 
 Dividend sleeve: ABT, A, ADI, ATO, ADP, BKH, CAT, CHD, CL, FAST, GD, GPC, LRCX, LMT, MATX, NEE, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
@@ -270,7 +272,7 @@ Pullquote style example:
 "IOWN Tactical: S&amp;P at 6,673 (SPY $666.06). Down ~13% from January ATH of 7,003. The 200-day moving average is at ~6,596\u2014hasn\u2019t been broken in 10 months. That\u2019s the technical line in the sand. Our \u201320% buy trigger is at ~5,600. Research Reveals Opportunities\u2014discipline over impulse."
 
 Radar style example:
-"<b>1. The 200DMA at 6,596 is the level to watch.</b> S&amp;P at 6,673\u2014just 77 points above. This level hasn\u2019t been broken in 10 months. If it fails, the next support is 6,400 (November lows). Our \u201320% buy trigger is ~5,600\u2014still 16% below. Patience remains the discipline."
+"<b>1. The 200DMA at 6,596 is the level to watch.</b> S&amp;P at 6,673\u2014just 77 points above. This level hasn\u2019t been broken in 10 months. Our \u201320% buy trigger is ~5,600\u2014still 16% below. Patience remains the discipline."
 """
 
 # ═══════════════════════════════════════════

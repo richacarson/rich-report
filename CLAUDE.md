@@ -10,6 +10,8 @@
 
 The post-process step handles everything: parsing, PDF generation (ReportLab), HTML output, manifest update, auto-checkout to `main`, git commit, and push to `origin main`. This deploys directly to GitHub Pages at https://richacarson.github.io/rich-report/morning-briefs.html. No manual merge step needed.
 
+**Environment**: The script reads `GITHUB_PUSH_TOKEN` from `.env` to authenticate pushes. Before running, ensure the token is loaded: `source .env && export GITHUB_PUSH_TOKEN`
+
 ---
 
 ## Brief-Writing Guidelines

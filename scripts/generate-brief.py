@@ -540,6 +540,13 @@ def git_commit_and_push(meta):
         subprocess.run(["git", "checkout", "main"], capture_output=True, text=True, cwd=str(REPO_ROOT), check=True)
         subprocess.run(["git", "pull", "--rebase", "origin", "main"], capture_output=True, text=True, cwd=str(REPO_ROOT))
 
+    # Set authenticated remote URL if GITHUB_PUSH_TOKEN is available (from .env)
+    push_token = os.environ.get("GITHUB_PUSH_TOKEN", "")
+    if push_token:
+        subprocess.run(["git", "remote", "set-url", "origin",
+                        f"https://{push_token}@github.com/richacarson/rich-report.git"],
+                       capture_output=True, text=True, cwd=str(REPO_ROOT))
+
     files = [f"briefs/{DATE_STR}.html", f"briefs/IOWN_Morning_Brief_{DATE_STR}.pdf", "briefs/manifest.json"]
     subprocess.run(["git", "add"] + files, cwd=str(REPO_ROOT), check=True)
     result = subprocess.run(

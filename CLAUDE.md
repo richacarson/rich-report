@@ -2,7 +2,15 @@
 
 ## Daily Workflow (3:30 AM CST)
 
-1. **Data drop**: The `latest-drop.txt` file is updated automatically by a GitHub Actions workflow (`data-drop.yml`) which runs before this task. Just verify it exists and has recent data. If it's missing or stale, run `node scripts/data-drop.js` manually (requires `FINNHUB_KEY` env var).
+1. **Data drop**: Trigger the "IOWN Data Drop" GitHub Actions workflow and wait for it to finish, then pull the result:
+   ```
+   gh workflow run "IOWN Data Drop" && sleep 10
+   # Poll until complete:
+   gh run list --workflow="IOWN Data Drop" --limit=1 --json status,conclusion
+   # Once succeeded:
+   git pull origin main
+   ```
+   The workflow uses `FINNHUB_KEY` from GitHub repo secrets to fetch 75 tickers, earnings, economic calendar, holdings news, crypto, and sentiment. It commits `latest-drop.txt` to main automatically.
 2. **Prep**: Run `python3 scripts/generate-brief.py --prep` to get assembled context (data drop + news + prior briefs)
 3. **Research**: Web search for the day's most important developments. Cast a wide net — do NOT fixate on any single storyline. Search for:
    - Overnight futures, Asian/European session moves, pre-market movers
@@ -19,7 +27,7 @@
 
 The post-process step handles everything: parsing, PDF generation (ReportLab), HTML output, manifest update, auto-checkout to `main`, git commit, and push to `origin main`. This deploys directly to GitHub Pages at https://richacarson.github.io/rich-report/morning-briefs.html. No manual merge step needed.
 
-**Environment**: The script reads `GITHUB_PUSH_TOKEN` from `.env` to authenticate pushes. Before running, ensure the token is loaded: `source .env && export GITHUB_PUSH_TOKEN`
+**Environment**: Before running, load secrets: `source .env && export GITHUB_PUSH_TOKEN`. The `.env` file contains `GITHUB_PUSH_TOKEN` for authenticated git push to main. `FINNHUB_KEY` is stored as a GitHub repo secret and used by the Data Drop workflow — not needed locally.
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Daily Workflow (3:30 AM CST)
 
-1. **Data drop**: Run `node scripts/data-drop.js` (requires `FINNHUB_KEY` env var)
+1. **Data drop**: The `latest-drop.txt` file is updated automatically by a GitHub Actions workflow (`data-drop.yml`) which runs before this task. Just verify it exists and has recent data. If it's missing or stale, run `node scripts/data-drop.js` manually (requires `FINNHUB_KEY` env var).
 2. **Prep**: Run `python3 scripts/generate-brief.py --prep` to get assembled context (data drop + news + prior briefs)
 3. **Research**: Web search for the day's most important developments. Cast a wide net — do NOT fixate on any single storyline. Search for:
    - Overnight futures, Asian/European session moves, pre-market movers

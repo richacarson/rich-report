@@ -1,0 +1,29 @@
+name: Fetch US Tickers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/public-companies-list-M8pVM
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch US tickers from Finnhub
+        env:
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+        run: python3 scripts/fetch-us-tickers.py
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add us-tickers.csv
+          git commit -m "Add complete US tradable tickers list from Finnhub"
+          git push origin claude/public-companies-list-M8pVM

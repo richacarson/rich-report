@@ -1,0 +1,17 @@
+name: Merge claude branch to main
+on:
+  workflow_dispatch:
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          git config user.name "IOWN Data Bot"
+          git config user.email "bot@iown.dev"
+          git merge origin/claude/iown-morning-brief-QSvqE --no-edit
+          git push origin main

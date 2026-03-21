@@ -4,9 +4,18 @@
 
 1. **Data drop**: Run `node scripts/data-drop.js` (requires `FINNHUB_KEY` env var)
 2. **Prep**: Run `python3 scripts/generate-brief.py --prep` to get assembled context (data drop + news + prior briefs)
-3. **Write the brief**: Generate content with `<META>`, `<HTML_BRIEF>`, and `<PDF_PARAGRAPHS>` blocks following the guidelines below
-4. **Save**: Write the response to `/tmp/brief_response.txt`
-5. **Build & Deploy**: Run `FORCE_REGENERATE=1 python3 scripts/generate-brief.py --post-process /tmp/brief_response.txt`
+3. **Research**: Web search for the day's most important developments. Cast a wide net — do NOT fixate on any single storyline. Search for:
+   - Overnight futures, Asian/European session moves, pre-market movers
+   - Fed/central bank commentary, rate expectations, inflation data
+   - Geopolitical developments (whatever is dominant — conflict, trade policy, sanctions, elections, diplomacy, regulatory shifts)
+   - Earnings surprises or guidance from major companies
+   - Oil/energy supply developments
+   - Crypto overnight moves
+   - Any breaking news that moves markets
+   The brief covers whatever matters most TODAY. When the dominant story is Fed policy, write about Fed policy. When it's trade wars, write about trade wars. When it's a quiet day, write a shorter brief. Never force a narrative that isn't there.
+4. **Write the brief**: Generate content with `<META>`, `<HTML_BRIEF>`, and `<PDF_PARAGRAPHS>` blocks following the guidelines below
+5. **Save**: Write the response to `/tmp/brief_response.txt`
+6. **Build & Deploy**: Run `FORCE_REGENERATE=1 python3 scripts/generate-brief.py --post-process /tmp/brief_response.txt`
 
 The post-process step handles everything: parsing, PDF generation (ReportLab), HTML output, manifest update, auto-checkout to `main`, git commit, and push to `origin main`. This deploys directly to GitHub Pages at https://richacarson.github.io/rich-report/morning-briefs.html. No manual merge step needed.
 

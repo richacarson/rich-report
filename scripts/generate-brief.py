@@ -18,7 +18,6 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import urllib.request
 import urllib.error
-import base64
 
 # ═══════════════════════════════════════════
 # CONFIGURATION
@@ -69,12 +68,12 @@ def get_manifest():
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
-def call_claude_api(system_prompt, user_content, max_tokens=16000):
+def call_claude_api(system_prompt, user_prompt, max_tokens=16000):
     payload = json.dumps({
         "model": MODEL,
         "max_tokens": max_tokens,
         "system": system_prompt,
-        "messages": [{"role": "user", "content": user_content}]
+        "messages": [{"role": "user", "content": user_prompt}]
     }).encode("utf-8")
 
     req = urllib.request.Request(
@@ -585,13 +584,7 @@ def main():
     print(f"\nCalling Claude API ({MODEL})...")
     user_prompt = build_user_prompt(data_drop, news, prev_briefs)
     print(f"Prompt: ~{len(user_prompt)} chars")
-    logo_processed = REPO_ROOT / "scripts" / "iown_logo_processed.png"
-    logo_b64 = base64.standard_b64encode(logo_processed.read_bytes()).decode("ascii")
-    user_content = [
-        {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": logo_b64}},
-        {"type": "text", "text": user_prompt},
-    ]
-    response = call_claude_api(SYSTEM_PROMPT, user_content)
+    response = call_claude_api(SYSTEM_PROMPT, user_prompt)
     print(f"Response: {len(response)} chars")
 
     print("\nParsing...")

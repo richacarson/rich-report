@@ -1,9 +1,19 @@
-name: IOWN Morning Brief (Automated)
+name: IOWN Morning Brief (DISABLED — migrated to Claude Cloud)
+
+# DISABLED: Brief generation now runs via Claude Cloud scheduled task at 3:30 AM CST.
+# The Claude API call has been replaced by Claude Code writing the brief directly.
+# Kept for reference only. To re-enable, uncomment the 'on' block below.
+#
+# on:
+#   workflow_dispatch:
 
 on:
-  # Triggered externally by cron-job.org at 3:30 AM CST (precise timing)
-  # Manual trigger also available from Actions tab
   workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'This workflow is deprecated. Use Claude Cloud instead.'
+        required: true
+        default: 'I understand this is deprecated'
 
 permissions:
   contents: write

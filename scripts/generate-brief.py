@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 IOWN Automated Morning Brief Generator
-Runs via GitHub Actions at 3:30 AM CT on weekdays.
-1. Reads latest-drop.txt (market data from Finnhub)
-2. Reads the last two HTML briefs for narrative continuity
-3. Calls Claude API to generate brief content (HTML + structured JSON for PDF)
-4. Builds PDF deterministically from JSON using ReportLab
-5. Commits and pushes to the repo
+
+Modes:
+  --prep           Gather data and print the assembled prompt to stdout (for Claude Code)
+  --post-process F Read Claude's response from file F, then generate PDF/HTML/manifest/git push
+  (no flags)       Legacy full mode: data gather → Claude API call → PDF/HTML/git push
 """
 
 import os
@@ -14,6 +13,7 @@ import sys
 import json
 import subprocess
 import re
+import argparse
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import urllib.request
@@ -23,10 +23,7 @@ import urllib.error
 # CONFIGURATION
 # ═══════════════════════════════════════════
 
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
-if not ANTHROPIC_API_KEY:
-    print("ERROR: ANTHROPIC_API_KEY not set")
-    sys.exit(1)
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 REPO_ROOT = Path(__file__).parent.parent
 BRIEFS_DIR = REPO_ROOT / "briefs"
@@ -555,11 +552,91 @@ def git_commit_and_push(meta):
     print("ERROR: Push failed after 3 attempts"); sys.exit(1)
 
 # ═══════════════════════════════════════════
-# MAIN
+# POST-PROCESS (from Claude Code response file)
+# ═══════════════════════════════════════════
+
+def post_process(response_file):
+    """Read Claude Code's response from a file and generate PDF/HTML/manifest/git push."""
+    print(f"═══ IOWN Morning Brief — Post-Process ═══")
+    print(f"Date: {DATE_STR} ({DAY_NAME})")
+    print(f"Response file: {response_file}\n")
+
+    response = Path(response_file).read_text(encoding="utf-8")
+    print(f"Response: {len(response)} chars")
+
+    print("Processing logo...")
+    process_logo()
+
+    print("Parsing...")
+    meta, html_content, pdf_paragraphs = parse_response(response)
+    print(f"Headline: {meta['headline']}")
+    print(f"Subhead: {meta['subhead']}")
+    print(f"Direction: {meta['direction']}")
+    print(f"PDF paragraphs: {len(pdf_paragraphs)}")
+
+    html_out = BRIEFS_DIR / f"{DATE_STR}.html"
+    html_out.write_text(html_content, encoding="utf-8")
+    print(f"\nHTML: {html_out} ({len(html_content)} chars)")
+
+    print("Generating PDF...")
+    pdf_out = generate_pdf(meta, pdf_paragraphs)
+    print(f"PDF: {Path(pdf_out).stat().st_size} bytes")
+
+    update_manifest(meta)
+
+    print("\nPushing...")
+    git_commit_and_push(meta)
+
+    print(f"\n═══ Complete: {meta['headline']} ═══")
+    print(f"Archive: https://richacarson.github.io/rich-report/morning-briefs.html")
+
+# ═══════════════════════════════════════════
+# PREP (output assembled prompt for Claude Code)
+# ═══════════════════════════════════════════
+
+def prep():
+    """Gather data and print the assembled user prompt to stdout."""
+    data_drop = read_file(LATEST_DROP)
+    if not data_drop:
+        print("ERROR: No data drop", file=sys.stderr); sys.exit(1)
+    print(f"Data drop: {len(data_drop)} chars", file=sys.stderr)
+
+    news = fetch_news_headlines()
+    print(f"News: {len(news)} chars", file=sys.stderr)
+
+    prev_briefs = get_last_two_briefs()
+    print(f"Prior briefs: {[b['date'] for b in prev_briefs]}", file=sys.stderr)
+
+    user_prompt = build_user_prompt(data_drop, news, prev_briefs)
+    print(f"Prompt: ~{len(user_prompt)} chars", file=sys.stderr)
+
+    # Print the prompt to stdout for Claude Code to read
+    print(user_prompt)
+
+# ═══════════════════════════════════════════
+# MAIN (legacy full mode)
 # ═══════════════════════════════════════════
 
 def main():
-    print(f"═══ IOWN Morning Brief Generator ═══")
+    parser = argparse.ArgumentParser(description="IOWN Morning Brief Generator")
+    parser.add_argument("--prep", action="store_true",
+                        help="Gather data and print assembled prompt to stdout")
+    parser.add_argument("--post-process", metavar="FILE",
+                        help="Read response from FILE, generate PDF/HTML/manifest/git push")
+    args = parser.parse_args()
+
+    if args.prep:
+        prep()
+        return
+
+    if args.post_process:
+        post_process(args.post_process)
+        return
+
+    # Legacy full mode (data gather → Claude API → PDF/HTML/git)
+    if not ANTHROPIC_API_KEY:
+        print("ERROR: ANTHROPIC_API_KEY not set (required for legacy mode)"); sys.exit(1)
+    print(f"═══ IOWN Morning Brief Generator (Legacy Mode) ═══")
     print(f"Date: {DATE_STR} ({DAY_NAME})\n")
 
     html_path = BRIEFS_DIR / f"{DATE_STR}.html"

@@ -532,6 +532,14 @@ def update_manifest(meta):
     print(f"Manifest updated for {DATE_STR}")
 
 def git_commit_and_push(meta):
+    # Ensure we are on main so the brief deploys to GitHub Pages
+    current = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"],
+                             capture_output=True, text=True, cwd=str(REPO_ROOT)).stdout.strip()
+    if current != "main":
+        print(f"Switching from '{current}' to 'main' for deploy...")
+        subprocess.run(["git", "checkout", "main"], capture_output=True, text=True, cwd=str(REPO_ROOT), check=True)
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], capture_output=True, text=True, cwd=str(REPO_ROOT))
+
     files = [f"briefs/{DATE_STR}.html", f"briefs/IOWN_Morning_Brief_{DATE_STR}.pdf", "briefs/manifest.json"]
     subprocess.run(["git", "add"] + files, cwd=str(REPO_ROOT), check=True)
     result = subprocess.run(
@@ -544,12 +552,12 @@ def git_commit_and_push(meta):
         print(f"Commit failed: {result.stderr}"); sys.exit(1)
 
     for attempt in range(3):
-        r = subprocess.run(["git", "push"], capture_output=True, text=True, cwd=str(REPO_ROOT))
+        r = subprocess.run(["git", "push", "origin", "main"], capture_output=True, text=True, cwd=str(REPO_ROOT))
         if r.returncode == 0:
-            print("Pushed successfully"); return
+            print("Pushed to main successfully — deployed to GitHub Pages"); return
         print(f"Push attempt {attempt+1} failed, rebasing...")
-        subprocess.run(["git", "pull", "--rebase"], capture_output=True, text=True, cwd=str(REPO_ROOT))
-    print("ERROR: Push failed after 3 attempts"); sys.exit(1)
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], capture_output=True, text=True, cwd=str(REPO_ROOT))
+    print("ERROR: Push to main failed after 3 attempts"); sys.exit(1)
 
 # ═══════════════════════════════════════════
 # POST-PROCESS (from Claude Code response file)

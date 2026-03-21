@@ -6,10 +6,9 @@
 2. **Prep**: Run `python3 scripts/generate-brief.py --prep` to get assembled context (data drop + news + prior briefs)
 3. **Write the brief**: Generate content with `<META>`, `<HTML_BRIEF>`, and `<PDF_PARAGRAPHS>` blocks following the guidelines below
 4. **Save**: Write the response to `/tmp/brief_response.txt`
-5. **Build**: Run `FORCE_REGENERATE=1 python3 scripts/generate-brief.py --post-process /tmp/brief_response.txt`
-6. **Deploy**: The post-process step commits and pushes to the current branch. The brief must be on the `master` branch for GitHub Pages to serve it at https://richacarson.github.io/rich-report/morning-briefs.html. Ensure you are on `master` before running, or merge after.
+5. **Build & Deploy**: Run `FORCE_REGENERATE=1 python3 scripts/generate-brief.py --post-process /tmp/brief_response.txt`
 
-The post-process step handles: parsing, PDF generation (ReportLab), HTML output, manifest update, git commit/push.
+The post-process step handles everything: parsing, PDF generation (ReportLab), HTML output, manifest update, auto-checkout to `main`, git commit, and push to `origin main`. This deploys directly to GitHub Pages at https://richacarson.github.io/rich-report/morning-briefs.html. No manual merge step needed.
 
 ---
 

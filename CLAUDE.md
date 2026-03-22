@@ -117,20 +117,61 @@ On quiet days: write shorter. Do not stretch thin material. 3 tight radar items 
 
 ### Weekend & Holiday Briefs
 
-Before writing, check: is today Saturday, Sunday, or a US market holiday? Adjust the brief accordingly.
+Before writing, check: is today Saturday, Sunday, or a US market holiday? If yes, use the weekend/holiday format below.
 
-**Weekend/holiday format:**
-- **Headline**: Include "Weekend Edition" or "Week in Review" in the subhead
-- **Snapshot**: Label all equity/commodity values as "Fri Close" in the snap-label (e.g., "S&P 500 Fri Close"). Show the **weekly** change, not the daily change. Exception: Bitcoin/crypto can show live weekend prices since those markets trade 24/7.
-- **Markets section**: ONE bullet maximum summarizing the week. Do NOT rehash Friday's individual stock moves — the reader already has Friday's brief. Focus only on what changed over the weekend (crypto moves, Sunday evening futures if available). Skip the data box in Markets unless there is genuinely new weekend data.
+**US market holidays (NYSE closed):**
+New Year's Day, Martin Luther King Jr. Day, Presidents' Day, Good Friday, Memorial Day, Juneteenth, Independence Day, Labor Day, Thanksgiving Day, Christmas Day. If unsure, web search to confirm.
+
+**Weekend/holiday format — content rules:**
+- **Subhead**: Include "Weekend Edition" or "Week in Review"
+- **Snapshot**: Label equity/commodity values as "Fri Close" in the snap-label. Show **weekly** change, not daily. Exception: Bitcoin/crypto can show live weekend prices (24/7 markets).
+- **Markets section**: Short summary of the week — do NOT rehash Friday's individual stock moves. Focus on what changed over the weekend (crypto moves, Sunday evening futures if available).
 - **Geopolitics section**: This is the PRIMARY section on weekends. Weekend developments — diplomatic moves, military action, policy announcements — are the main content. This section can be longer than on weekdays.
-- **Radar section**: 3-4 items maximum. Focus on:
-  - Monday/week-ahead catalysts (earnings calendar, Fed speakers, economic data releases)
-  - Weekend developments that change the Monday setup
-  - Position-relevant news from the weekend
-  - Include a "Week Ahead" item listing key scheduled events
-- **Overall length**: ~60% of a weekday brief. Do NOT pad with stale Friday data.
-- **Do NOT include**: Intraday technical levels, daily RSI, daily moving average analysis, or individual stock daily percentage moves from Friday's session.
+- **Radar section**: 3-4 items maximum. Focus on Monday/week-ahead catalysts (earnings, Fed speakers, economic data), weekend developments that change the Monday setup, and position-relevant weekend news. Include a "Week Ahead" item.
+- **Overall length**: ~60% of a weekday brief. Do NOT pad with stale data.
+- **Do NOT include**: Intraday technical levels, daily RSI, daily moving average analysis, or individual stock daily percentage moves from the last trading session.
+
+**Weekend/holiday format — HTML structure:**
+
+The Markets section uses a different layout than weekday briefs. Instead of multiple detailed bullets, use:
+1. ONE short bullet (3-5 sentences) with the week's dominant theme
+2. A data box with key weekly numbers
+3. ONE short bullet on the most important macro development (Fed, rates, etc.)
+4. Pullquote
+
+```html
+<!-- Markets: short bullet → data box → short bullet → pullquote -->
+<div class="section-start">
+  <div class="section-label" id="markets">Section 01</div>
+  <h2>Markets &mdash; Week in Review</h2>
+  <div class="section-rule"></div>
+  <div class="bullet">
+    <div class="bullet-heading">Theme Title</div>
+    <div class="bullet-body">3-5 sentence week summary. No individual stock moves.</div>
+  </div>
+</div>
+
+<div class="data-box">
+  <div class="data-row"><span class="data-label">S&amp;P 500</span><span class="data-val dn">6,486 &middot; &darr;4.2% on the week</span></div>
+  <div class="data-row"><span class="data-label">Brent Crude</span><span class="data-val up">$112 &middot; &uarr;8.7% on the week</span></div>
+  <div class="data-row"><span class="data-label">Gold</span><span class="data-val dn">$4,490 &middot; &darr;10.5% on the week</span></div>
+  <div class="data-row"><span class="data-label">Bitcoin (Live)</span><span class="data-val dn">$68,951 &middot; Below recent trading range</span></div>
+  <div class="data-row"><span class="data-label">Fed Hike Odds</span><span class="data-val dn">12% April &middot; 48% no cuts in 2026</span></div>
+</div>
+
+<div class="bullet">
+  <div class="bullet-heading">Key Macro Development</div>
+  <div class="bullet-body">3-5 sentences on the most important policy or macro shift. Connect to IOWN holdings.</div>
+</div>
+
+<div class="pullquote">Tactical takeaway. <b>IOWN Philosophy.</b></div>
+```
+
+The Geopolitics and Radar sections follow the same HTML structure as weekday briefs.
+
+**Weekend/holiday format — PDF structure:**
+
+Same pattern as weekday but Markets section has: lead (3-5 sentences) → body (weekly data summary) → body (macro development) → pullquote. Shorter overall.
 
 **Weekday format:** Write the standard brief per the guidelines above.
 

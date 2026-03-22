@@ -115,6 +115,35 @@ Every brief MUST advance the narrative. Do NOT repeat the same themes, phrasing,
 
 On quiet days: write shorter. Do not stretch thin material. 3 tight radar items > 6 padded ones. Never fabricate urgency.
 
+### Weekend & Holiday Briefs
+
+Before writing, check: is today Saturday, Sunday, or a US market holiday? Adjust the brief accordingly.
+
+**Weekend/holiday format:**
+- **Headline**: Include "Weekend Edition" or "Week in Review" in the subhead
+- **Snapshot**: Label all equity/commodity values as "Fri Close" in the snap-label (e.g., "S&P 500 Fri Close"). Show the **weekly** change, not the daily change. Exception: Bitcoin/crypto can show live weekend prices since those markets trade 24/7.
+- **Markets section**: ONE bullet maximum summarizing the week. Do NOT rehash Friday's individual stock moves — the reader already has Friday's brief. Focus only on what changed over the weekend (crypto moves, Sunday evening futures if available). Skip the data box in Markets unless there is genuinely new weekend data.
+- **Geopolitics section**: This is the PRIMARY section on weekends. Weekend developments — diplomatic moves, military action, policy announcements — are the main content. This section can be longer than on weekdays.
+- **Radar section**: 3-4 items maximum. Focus on:
+  - Monday/week-ahead catalysts (earnings calendar, Fed speakers, economic data releases)
+  - Weekend developments that change the Monday setup
+  - Position-relevant news from the weekend
+  - Include a "Week Ahead" item listing key scheduled events
+- **Overall length**: ~60% of a weekday brief. Do NOT pad with stale Friday data.
+- **Do NOT include**: Intraday technical levels, daily RSI, daily moving average analysis, or individual stock daily percentage moves from Friday's session.
+
+**Weekday format:** Write the standard brief per the guidelines above.
+
+### Compliance Checklist (Every Brief)
+
+Before finalizing any brief, verify:
+1. No specific price support/resistance levels called (use moving averages instead)
+2. No unverified comparative claims ("worst since X", "Nth consecutive", "first time since Y")
+3. No definitive language without hedging ("no off-ramp" → "no apparent off-ramp as of this writing")
+4. No direct recommendations ("stay the course", "step in") — use analytical framing
+5. No informal/retail language ("snap back" → "recover sharply", "broke $X" → "moved below its recent trading range")
+6. All third-party data attributed, no direct quotes
+
 ---
 
 ## Output Format

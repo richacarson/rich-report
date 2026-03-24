@@ -156,9 +156,9 @@
     columns: 2 300px; column-gap: 40px; column-rule: 1px solid var(--gray-200);
   }
 
-  /* ── Section start group: keeps header + first bullet together ── */
+  /* ── Section start group: header spans both columns, bullets flow below ── */
   .bc .section-start {
-    break-inside: avoid; break-before: auto;
+    column-span: all; break-inside: avoid;
   }
 
   /* ── Tables pair: keeps Top/Bottom movers side by side ── */

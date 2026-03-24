@@ -202,8 +202,8 @@
   /* Lead */
   .bc .lead { font-size: 15.5px; font-weight: 500; color: var(--gray-900); }
 
-  /* ── Drop cap on first bullet body of each section ── */
-  .bc .section-start .bullet:first-of-type .bullet-body::first-letter {
+  /* ── Drop cap on first bullet after each section header ── */
+  .bc .section-start + .bullet .bullet-body::first-letter {
     float: left; font-family: 'Cormorant Garamond', serif;
     font-size: 3.4em; font-weight: 700; line-height: 0.8;
     margin: 0.05em 0.08em 0 -0.02em; color: var(--gray-900);
@@ -475,6 +475,13 @@ async function selectBrief(date){
     }
     body.innerHTML=html+`<div class="brief-disc">Paradiem, LLC dba Intentional Ownership (&ldquo;IOWN&rdquo;) is a registered investment advisor. Advisory services are only offered to clients or prospective clients where Paradiem/IOWN and its representatives are properly licensed or exempt from licensure. The information provided is for educational and informational purposes only and does not constitute investment advice.</div>`;
   }catch(e){body.innerHTML=`<div class="brief-loading">HTML version not yet available.${pp?`<br><br><a class="pdf-float" href="${pp}" target="_blank" style="position:static;display:inline-flex;box-shadow:none">Download PDF</a>`:''}</div>`}
+
+  // Hoist bullets out of section-start so headers span columns and bullets flow into columns
+  body.querySelectorAll('.section-start').forEach(ss=>{
+    const bullets=Array.from(ss.querySelectorAll('.bullet'));
+    let ref=ss;
+    bullets.forEach(b=>{ref.after(b);ref=b});
+  });
 
   // Update ticker from snapshot data if present
   const snaps=body.querySelectorAll('.snap-item');

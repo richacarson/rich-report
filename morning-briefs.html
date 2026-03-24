@@ -14,6 +14,7 @@
 <style>
   :root {
     --white: #FFFFFF;
+    --cream: #FAF9F6;
     --gray-50: #FAFAFA;
     --gray-100: #F4F4F2;
     --gray-200: #E8E8E4;
@@ -67,13 +68,22 @@
 
   /* ── Masthead ── */
   .masthead {
-    background: var(--white); border-bottom: 3px solid var(--gray-900);
-    padding: 24px 40px 20px; text-align: center;
+    background: var(--white);
+    padding: 16px 40px 0; text-align: center;
   }
-  .mast-over { font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 4px; }
-  .mast-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; color: var(--gray-900); line-height: 1; letter-spacing: -0.5px; }
-  .mast-date { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--gray-500); letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; }
-  .mast-rule2 { width: 100%; height: 1px; background: var(--gray-900); margin-top: 14px; }
+  .mast-rule-top { width: 100%; height: 4px; background: var(--gray-900); margin-bottom: 2px; }
+  .mast-rule-thin { width: 100%; height: 1px; background: var(--gray-900); margin-bottom: 12px; }
+  .mast-meta {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--gray-400);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
+    padding: 0 4px;
+  }
+  .mast-over { font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 3px; }
+  .mast-title { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: var(--gray-900); line-height: 1; letter-spacing: -1px; }
+  .mast-date { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--gray-500); letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; }
+  .mast-rule-bottom { width: 100%; height: 1px; background: var(--gray-300); margin-top: 12px; }
+  .mast-rule2 { display: none; }
 
   /* ── Sticky Nav ── */
   .sticky-nav {
@@ -116,13 +126,34 @@
   .arch-item-hl.down { color: var(--red); }
 
   /* ══════ CONTENT SHELL ══════ */
-  .content-shell { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+  .content-shell { max-width: 960px; margin: 0 auto; padding: 0 20px; }
 
-  /* ══════ BRIEF CONTENT — MAGAZINE SPREAD ══════ */
+  /* ══════ HEADLINE BANNER — full-width above columns ══════ */
+  .bc .brief-banner {
+    column-span: all; break-inside: avoid;
+    text-align: center; padding: 28px 24px 24px; margin: 0 0 8px;
+  }
+  .bc .brief-banner .banner-headline {
+    font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700;
+    line-height: 1.15; color: var(--gray-900); margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .bc .brief-banner .banner-headline.up { color: var(--green); }
+  .bc .brief-banner .banner-headline.down { color: var(--red); }
+  .bc .brief-banner .banner-subhead {
+    font-family: 'EB Garamond', Georgia, serif; font-size: 17px; font-weight: 400;
+    font-style: italic; color: var(--gray-500); line-height: 1.45;
+    max-width: 540px; margin: 0 auto;
+  }
+  .bc .brief-banner .banner-rule {
+    width: 60px; height: 3px; background: var(--gray-900); margin: 16px auto 0;
+  }
+
+  /* ══════ BRIEF CONTENT — BROADSHEET ══════ */
   .bc {
     background: var(--white); border: 1px solid var(--gray-200); border-top: none;
-    padding: 32px 36px 40px;
-    columns: 2 300px; column-gap: 36px; column-rule: 1px solid var(--gray-200);
+    padding: 0 40px 44px;
+    columns: 2 300px; column-gap: 40px; column-rule: 1px solid var(--gray-200);
   }
 
   /* ── Section start group: keeps header + first bullet together ── */
@@ -142,26 +173,27 @@
 
   /* Section label */
   .bc .section-label {
-    font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--gray-400);
-    letter-spacing: 2px; text-transform: uppercase; margin-top: 28px;
+    font-family: 'DM Sans', sans-serif; font-size: 8px; color: var(--gray-400);
+    letter-spacing: 2.5px; text-transform: uppercase; margin-top: 28px;
+    padding-top: 6px; border-top: 1px solid var(--gray-300);
   }
   .bc .section-start:first-child .section-label,
   .bc .section-label:first-child { margin-top: 0; }
 
   /* Section h2 */
   .bc h2 {
-    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700;
-    color: var(--gray-900); margin: 3px 0 0; line-height: 1.2;
+    font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700;
+    color: var(--gray-900); margin: 4px 0 0; line-height: 1.15;
   }
 
   /* Section rule */
   .bc .section-rule {
-    height: 2px; background: var(--gray-900); margin: 6px 0 14px;
+    height: 3px; background: var(--gray-900); margin: 8px 0 16px;
   }
 
   /* Paragraphs */
   .bc p {
-    font-size: 15px; line-height: 1.7; margin-bottom: 10px; color: var(--gray-700);
+    font-size: 15.5px; line-height: 1.72; margin-bottom: 10px; color: var(--gray-700);
     text-align: justify; hyphens: auto; -webkit-hyphens: auto;
     break-inside: avoid;
   }
@@ -170,27 +202,34 @@
   /* Lead */
   .bc .lead { font-size: 15.5px; font-weight: 500; color: var(--gray-900); }
 
+  /* ── Drop cap on first bullet body of each section ── */
+  .bc .section-start .bullet:first-of-type .bullet-body::first-letter {
+    float: left; font-family: 'Cormorant Garamond', serif;
+    font-size: 3.4em; font-weight: 700; line-height: 0.8;
+    margin: 0.05em 0.08em 0 -0.02em; color: var(--gray-900);
+  }
+
   /* Bullet cards */
   .bc .bullet {
-    padding: 10px 0 10px 16px; margin: 0 0 12px;
-    border-left: 2px solid var(--gray-900); break-inside: avoid;
+    padding: 10px 0 10px 16px; margin: 0 0 14px;
+    border-left: 3px solid var(--gray-900); break-inside: avoid;
   }
   .bc .bullet-heading {
-    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
-    color: var(--gray-900); letter-spacing: 0.3px; margin-bottom: 4px;
+    font-family: 'DM Sans', sans-serif; font-size: 11.5px; font-weight: 700;
+    color: var(--gray-900); letter-spacing: 0.5px; margin-bottom: 5px;
     text-transform: uppercase;
   }
   .bc .bullet-body {
-    font-size: 15px; line-height: 1.65; color: var(--gray-700);
+    font-size: 15.5px; line-height: 1.68; color: var(--gray-700);
   }
   .bc .bullet-body b, .bc .bullet-body strong { color: var(--gray-900); }
 
   /* ── PULLQUOTE — spans both columns ── */
   .bc .pullquote {
     column-span: all; break-inside: avoid;
-    margin: 20px 0; padding: 18px 0;
-    border-top: 2px solid var(--gray-900); border-bottom: 1px solid var(--gray-300);
-    font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600;
+    margin: 24px 0; padding: 22px 40px;
+    border-top: 3px solid var(--gray-900); border-bottom: 1px solid var(--gray-300);
+    font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600;
     font-style: italic; color: var(--green); line-height: 1.5; text-align: center;
     position: relative;
   }
@@ -198,21 +237,21 @@
     content: 'IOWN TACTICAL';
     position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
     font-family: 'DM Sans', sans-serif; font-size: 8px; font-style: normal;
-    font-weight: 600; letter-spacing: 2px; color: var(--gray-400);
-    background: var(--white); padding: 0 10px;
+    font-weight: 600; letter-spacing: 2.5px; color: var(--gray-400);
+    background: var(--white); padding: 0 12px;
   }
   .bc .pullquote b, .bc .pullquote strong { font-style: normal; }
 
   /* Data box */
   .bc .data-box {
     break-inside: avoid;
-    background: var(--gray-50); border: 1px solid var(--gray-200);
-    padding: 12px 14px; margin: 12px 0;
+    background: var(--cream); border-top: 2px solid var(--gray-900); border-bottom: 1px solid var(--gray-200);
+    padding: 14px 16px; margin: 14px 0;
     font-family: 'DM Sans', sans-serif; font-size: 11.5px; line-height: 1.8; color: var(--gray-700);
   }
-  .bc .data-box .data-row { display: flex; justify-content: space-between; padding: 1px 0; border-bottom: 1px dotted var(--gray-200); }
+  .bc .data-box .data-row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px dotted var(--gray-300); }
   .bc .data-box .data-row:last-child { border-bottom: none; }
-  .bc .data-box .data-label { color: var(--gray-400); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .bc .data-box .data-label { color: var(--gray-500); font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; }
   .bc .data-box .data-val { font-weight: 600; }
   .bc .up { color: var(--green-mid); }
   .bc .dn { color: var(--red); }
@@ -227,9 +266,9 @@
   /* Radar items */
   .bc .radar-item {
     break-inside: avoid;
-    padding: 10px 0 10px 16px; margin: 0 0 12px;
-    border-left: 2px solid var(--gray-900);
-    font-size: 14.5px; line-height: 1.6; color: var(--gray-700);
+    padding: 10px 0 10px 16px; margin: 0 0 14px;
+    border-left: 3px solid var(--gray-900);
+    font-size: 14.5px; line-height: 1.62; color: var(--gray-700);
   }
   .bc .radar-item b:first-child { color: var(--gray-900); font-size: 15px; }
 
@@ -237,29 +276,30 @@
   .bc .snapshot {
     column-span: all; break-inside: avoid;
     display: flex; flex-wrap: wrap; justify-content: space-between;
-    border: 1px solid var(--gray-200); border-bottom: 2px solid var(--gray-900);
-    margin: 0 0 24px; padding: 0;
+    background: var(--gray-900); border: none;
+    margin: 0; padding: 0;
     font-family: 'DM Sans', sans-serif;
   }
-  .bc .snap-item { flex: 1; min-width: 100px; padding: 10px 14px; border-right: 1px solid var(--gray-200); text-align: center; }
+  .bc .snap-item { flex: 1; min-width: 100px; padding: 12px 14px; border-right: 1px solid var(--gray-700); text-align: center; }
   .bc .snap-item:last-child { border-right: none; }
   .bc .snap-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); }
-  .bc .snap-val { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-top: 2px; }
-  .bc .snap-val.up { color: var(--green-mid); }
-  .bc .snap-val.dn { color: var(--red); }
+  .bc .snap-val { font-size: 13px; font-weight: 700; color: var(--white); margin-top: 3px; }
+  .bc .snap-val.up { color: #68D391; }
+  .bc .snap-val.dn { color: #FC8181; }
 
   /* Disclaimer */
   .brief-disc {
     column-span: all; break-inside: avoid;
-    margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--gray-200);
-    font-family: 'DM Sans', sans-serif; font-size: 10px; color: var(--gray-400); line-height: 1.6;
+    margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--gray-200);
+    font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: var(--gray-400); line-height: 1.6;
+    text-align: center;
   }
 
   .brief-loading { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--gray-400); text-align: center; padding: 60px 0; column-span: all; }
 
   /* ── Footer ── */
   .app-foot {
-    max-width: 920px; margin: 0 auto; padding: 16px 20px;
+    max-width: 960px; margin: 0 auto; padding: 16px 20px;
     font-family: 'DM Sans', sans-serif; font-size: 10px; color: var(--gray-400);
     letter-spacing: 0.5px; text-align: center;
   }
@@ -278,13 +318,18 @@
 
   /* ══════ MOBILE ══════ */
   @media (max-width: 700px) {
-    .bc { columns: 1; padding: 24px 20px 32px; }
-    .bc .pullquote { font-size: 17px; text-align: left; }
-    .masthead { padding: 18px 20px 14px; }
-    .mast-title { font-size: 30px; }
+    .bc { columns: 1; padding: 0 20px 32px; }
+    .bc .brief-banner { padding: 20px 8px 18px; }
+    .bc .brief-banner .banner-headline { font-size: 26px; }
+    .bc .pullquote { font-size: 17px; text-align: left; padding: 18px 0; }
+    .masthead { padding: 12px 20px 0; }
+    .mast-title { font-size: 34px; }
+    .mast-meta { flex-direction: column; align-items: center; gap: 2px; }
     .tick { padding: 6px 12px; font-size: 10px; }
     .arch-item { min-width: 140px; }
     .pdf-float { bottom: 12px; right: 12px; padding: 8px 12px; font-size: 10px; }
+    .bc .snapshot { flex-wrap: wrap; }
+    .bc .snap-item { min-width: 48%; }
   }
 </style>
 </head>
@@ -308,10 +353,16 @@
   <div class="ticker" id="ticker"></div>
 
   <div class="masthead">
-    <div class="mast-over">Intentional Ownership · Investment Committee</div>
+    <div class="mast-rule-top"></div>
+    <div class="mast-rule-thin"></div>
+    <div class="mast-meta">
+      <span>Intentional Ownership</span>
+      <span id="mastDate">Loading&hellip;</span>
+      <span>Investment Committee</span>
+    </div>
     <div class="mast-title">The Morning Brief</div>
-    <div class="mast-date" id="mastDate">Loading...</div>
-    <div class="mast-rule2"></div>
+    <div class="mast-date" id="mastEdition" style="margin-top:6px;"></div>
+    <div class="mast-rule-bottom"></div>
   </div>
 
   <div class="sticky-nav" id="stickyNav"></div>
@@ -394,11 +445,34 @@ async function selectBrief(date){
   const pf=document.getElementById('pdfFloat'),nd=document.getElementById('navDl');
   if(pp){pf.href=pp;pf.style.display='flex';if(nd){nd.href=pp;nd.setAttribute('download','');nd.onclick=null}}else{pf.style.display='none'}
 
+  // Edition number (reverse index: newest = highest)
+  const edIdx=BRIEFS.length - BRIEFS.findIndex(b=>b.date===date);
+  document.getElementById('mastEdition').textContent=`Edition ${edIdx}`;
+
   const cf=active.content||date+'.html',body=document.getElementById('briefBody');
   body.innerHTML='<div class="brief-loading">Loading&hellip;</div>';
   try{
     const r=await fetch('briefs/'+cf);if(!r.ok)throw 0;
-    body.innerHTML=await r.text()+`<div class="brief-disc">Paradiem, LLC dba Intentional Ownership ("IOWN") is a registered investment advisor. Advisory services are only offered to clients or prospective clients where Paradiem/IOWN and its representatives are properly licensed or exempt from licensure. The information provided is for educational and informational purposes only and does not constitute investment advice.</div>`;
+    let html=await r.text();
+    // Inject headline banner after snapshot
+    const hl=active.headline||'',sh=active.subhead||'',dir=active.direction||'';
+    if(hl){
+      const banner=`<div class="brief-banner"><div class="banner-headline ${dir}">${hl}</div>${sh?`<div class="banner-subhead">${sh}</div>`:''}<div class="banner-rule"></div></div>`;
+      // Insert after the snapshot div (find its closing tag by matching the outer div)
+      const snapIdx=html.indexOf('class="snapshot"');
+      if(snapIdx>-1){
+        // Find the end of the snapshot div: count nested divs
+        let pos=html.indexOf('>',snapIdx)+1,depth=1;
+        while(depth>0&&pos<html.length){
+          const nextOpen=html.indexOf('<div',pos),nextClose=html.indexOf('</div>',pos);
+          if(nextClose===-1)break;
+          if(nextOpen!==-1&&nextOpen<nextClose){depth++;pos=nextOpen+4}
+          else{depth--;pos=nextClose+6}
+        }
+        html=html.slice(0,pos)+banner+html.slice(pos);
+      }else{html=banner+html}
+    }
+    body.innerHTML=html+`<div class="brief-disc">Paradiem, LLC dba Intentional Ownership (&ldquo;IOWN&rdquo;) is a registered investment advisor. Advisory services are only offered to clients or prospective clients where Paradiem/IOWN and its representatives are properly licensed or exempt from licensure. The information provided is for educational and informational purposes only and does not constitute investment advice.</div>`;
   }catch(e){body.innerHTML=`<div class="brief-loading">HTML version not yet available.${pp?`<br><br><a class="pdf-float" href="${pp}" target="_blank" style="position:static;display:inline-flex;box-shadow:none">Download PDF</a>`:''}</div>`}
 
   // Update ticker from snapshot data if present

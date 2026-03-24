@@ -178,7 +178,7 @@
     padding-top: 6px; border-top: 1px solid var(--gray-300);
   }
   .bc .section-start:first-child .section-label,
-  .bc .section-label:first-child { margin-top: 0; }
+  .bc .section-label:first-child { margin-top: 0; border-top: none; padding-top: 0; }
 
   /* Section h2 */
   .bc h2 {
@@ -276,16 +276,17 @@
   .bc .snapshot {
     column-span: all; break-inside: avoid;
     display: flex; flex-wrap: wrap; justify-content: space-between;
-    background: var(--gray-900); border: none;
+    background: var(--white);
+    border-top: 2px solid var(--gray-900); border-bottom: 1px solid var(--gray-300);
     margin: 0; padding: 0;
     font-family: 'DM Sans', sans-serif;
   }
-  .bc .snap-item { flex: 1; min-width: 100px; padding: 12px 14px; border-right: 1px solid var(--gray-700); text-align: center; }
+  .bc .snap-item { flex: 1; min-width: 100px; padding: 10px 14px; border-right: 1px solid var(--gray-200); text-align: center; }
   .bc .snap-item:last-child { border-right: none; }
   .bc .snap-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); }
-  .bc .snap-val { font-size: 13px; font-weight: 700; color: var(--white); margin-top: 3px; }
-  .bc .snap-val.up { color: #68D391; }
-  .bc .snap-val.dn { color: #FC8181; }
+  .bc .snap-val { font-size: 13px; font-weight: 700; color: var(--gray-900); margin-top: 3px; }
+  .bc .snap-val.up { color: var(--green-mid); }
+  .bc .snap-val.dn { color: var(--red); }
 
   /* Disclaimer */
   .brief-disc {

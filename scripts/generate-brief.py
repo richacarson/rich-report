@@ -337,31 +337,21 @@ Generate <META>, <HTML_BRIEF>, and <PDF_PARAGRAPHS> blocks. The PDF_PARAGRAPHS m
 def parse_response(response_text):
     meta_match = re.search(r"<META>(.*?)</META>", response_text, re.DOTALL)
     html_match = re.search(r"<HTML_BRIEF>(.*?)</HTML_BRIEF>", response_text, re.DOTALL)
-    pdf_match = re.search(r"<PDF_PARAGRAPHS>(.*?)</PDF_PARAGRAPHS>", response_text, re.DOTALL)
 
-    if not all([meta_match, html_match, pdf_match]):
-        print("ERROR: Could not parse all blocks")
-        print(f"META: {bool(meta_match)}, HTML: {bool(html_match)}, PDF: {bool(pdf_match)}")
+    if not all([meta_match, html_match]):
+        print("ERROR: Could not parse META and HTML_BRIEF blocks")
+        print(f"META: {bool(meta_match)}, HTML: {bool(html_match)}")
         (REPO_ROOT / "debug_response.txt").write_text(response_text, encoding="utf-8")
         sys.exit(1)
 
     meta = json.loads(meta_match.group(1).strip())
     html = html_match.group(1).strip()
 
-    pdf_raw = pdf_match.group(1).strip()
-    # Strip code fences
-    for prefix in ["```json", "```"]:
-        if pdf_raw.startswith(prefix):
-            pdf_raw = pdf_raw[len(prefix):].strip()
-    if pdf_raw.endswith("```"):
-        pdf_raw = pdf_raw[:-3].strip()
-
-    try:
-        pdf_paragraphs = json.loads(pdf_raw)
-    except json.JSONDecodeError as e:
-        print(f"ERROR: PDF JSON parse failed: {e}")
-        (REPO_ROOT / "debug_response.txt").write_text(response_text, encoding="utf-8")
-        sys.exit(1)
+    # PDF_PARAGRAPHS is no longer required (PDF is generated from HTML via weasyprint)
+    pdf_paragraphs = None
+    pdf_match = re.search(r"<PDF_PARAGRAPHS>(.*?)</PDF_PARAGRAPHS>", response_text, re.DOTALL)
+    if pdf_match:
+        print("Note: PDF_PARAGRAPHS block found but will be ignored (using weasyprint HTML-to-PDF)")
 
     return meta, html, pdf_paragraphs
 
@@ -369,130 +359,305 @@ def parse_response(response_text):
 # PDF GENERATION — deterministic from JSON
 # ═══════════════════════════════════════════
 
-def generate_pdf(meta, pdf_paragraphs, output_path=None):
-    from reportlab.lib.pagesizes import letter
-    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-    from reportlab.lib.colors import HexColor
-    from reportlab.lib.units import inch
-    from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT
-    from reportlab.platypus import Paragraph, Spacer, HRFlowable, NextPageTemplate
-    from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate, Frame
-    from reportlab.pdfbase import pdfmetrics
-    from reportlab.pdfbase.ttfonts import TTFont
+def generate_pdf(meta, html_content, output_path=None):
+    """Generate PDF from HTML brief content using weasyprint (matches web styling)."""
+    import weasyprint
 
-    pdfmetrics.registerFont(TTFont("LS", "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf"))
-    pdfmetrics.registerFont(TTFont("LSB", "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"))
-    pdfmetrics.registerFont(TTFont("LSI", "/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf"))
-    pdfmetrics.registerFont(TTFont("LSBI", "/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf"))
-    pdfmetrics.registerFontFamily("LS", normal="LS", bold="LSB", italic="LSI", boldItalic="LSBI")
-    pdfmetrics.registerFont(TTFont("DVB", "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"))
-
-    INK = HexColor("#1A1A1A")
-    DG = HexColor("#3D4A2E")
-    ACCENT = HexColor("#8B3A3A")
-    MGRAY = HexColor("#8A8A84")
-    HL_COLOR = DG if meta["direction"] == "up" else ACCENT
-
-    W, H = letter
-    M = 0.65 * inch
-    GUTTER = 0.22 * inch
-    COL_W = (W - 2*M - GUTTER) / 2.0
-    BUL = chr(8226)
-    logo_path = str(REPO_ROOT / "scripts" / "iown_logo_processed.png")
+    logo_path = (REPO_ROOT / "scripts" / "iown_logo_processed.png").as_uri()
     pdf_output = output_path or str(BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf")
-    headline = meta["headline"]
-    subhead = meta["subhead"]
+    hl_color = "#3D4A2E" if meta.get("direction") == "up" else "#9B2C2C"
 
-    class BriefDoc(BaseDocTemplate):
-        def __init__(self2, fn, **kw):
-            BaseDocTemplate.__init__(self2, fn, **kw)
-            top_off = 1.80 * inch
-            f1L = Frame(M, 0.6*inch, COL_W, H - top_off - 0.6*inch, id="p1L", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
-            f1R = Frame(M + COL_W + GUTTER, 0.6*inch, COL_W, H - top_off - 0.6*inch, id="p1R", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
-            f2L = Frame(M, 0.6*inch, COL_W, H - 1.2*inch, id="p2L", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
-            f2R = Frame(M + COL_W + GUTTER, 0.6*inch, COL_W, H - 1.2*inch, id="p2R", topPadding=0, bottomPadding=0, leftPadding=0, rightPadding=0)
-            self2.addPageTemplates([
-                PageTemplate(id="first", frames=[f1L, f1R], onPage=self2.draw_first),
-                PageTemplate(id="later", frames=[f2L, f2R], onPage=self2.draw_later),
-            ])
+    wrapper_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 
-        def draw_first(self2, c, doc):
-            c.saveState()
-            logo_h = 0.55 * inch
-            logo_w = logo_h * (1245.0 / 657.0)
-            c.drawImage(logo_path, M, H - 0.63*inch, width=logo_w, height=logo_h, mask="auto")
-            c.setFillColor(MGRAY)
-            c.setFont("Helvetica", 7.5)
-            c.drawRightString(W - M, H - 0.50*inch, DATE_LINE)
-            c.drawRightString(W - M, H - 0.62*inch, "INVESTMENT COMMITTEE")
-            rule_y = H - 0.82*inch
-            c.setStrokeColor(INK)
-            c.setLineWidth(2)
-            c.line(M, rule_y, W - M, rule_y)
-            c.setLineWidth(0.5)
-            c.line(M, rule_y - 3, W - M, rule_y - 3)
-            c.setFillColor(HL_COLOR)
-            c.setFont("DVB", 36)
-            hl_y = rule_y - 0.52*inch
-            c.drawString(M, hl_y, headline)
-            c.setFillColor(INK)
-            c.setFont("LSI", 11)
-            sub_y = hl_y - 0.26*inch
-            c.drawString(M, sub_y, subhead)
-            content_rule_y = sub_y - 0.18*inch
-            c.setStrokeColor(INK)
-            c.setLineWidth(1)
-            c.line(M, content_rule_y, W - M, content_rule_y)
-            self2._footer(c, doc)
-            c.restoreState()
+  @page {{
+    size: letter;
+    margin: 0.6in 0.65in 0.55in;
+    @bottom-left {{
+      content: "CONFIDENTIAL  |  Intentional Ownership (IOWN)  |  RIA  |  Paradiem";
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6pt;
+      color: #8A8A84;
+    }}
+    @bottom-right {{
+      content: counter(page);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6pt;
+      color: #8A8A84;
+    }}
+  }}
+  @page :first {{
+    margin-top: 0.45in;
+  }}
+  @page :not(:first) {{
+    @top-left {{
+      content: "IOWN MORNING BRIEF";
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6pt;
+      color: #8A8A84;
+      letter-spacing: 1pt;
+      text-transform: uppercase;
+    }}
+    @top-right {{
+      content: "{DATE_DISPLAY}";
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6pt;
+      color: #8A8A84;
+      letter-spacing: 1pt;
+      text-transform: uppercase;
+    }}
+  }}
 
-        def draw_later(self2, c, doc):
-            c.saveState()
-            c.setFont("Helvetica", 6.5)
-            c.setFillColor(MGRAY)
-            hdr = "IOWN MORNING BRIEF " + BUL + " " + DATE_DISPLAY + " " + BUL + " INVESTMENT COMMITTEE"
-            c.drawString(M, H - 0.38*inch, hdr)
-            c.setStrokeColor(INK)
-            c.setLineWidth(0.75)
-            c.line(M, H - 0.44*inch, W - M, H - 0.44*inch)
-            self2._footer(c, doc)
-            c.restoreState()
+  :root {{
+    --white: #FFFFFF;
+    --cream: #FAF9F6;
+    --gray-50: #FAFAFA;
+    --gray-100: #F4F4F2;
+    --gray-200: #E8E8E4;
+    --gray-300: #D1D1CB;
+    --gray-400: #A8A8A0;
+    --gray-500: #78786E;
+    --gray-700: #4A4A42;
+    --gray-900: #1A1A18;
+    --green: #3D4A2E;
+    --green-mid: #5B7A3D;
+    --green-light: #7A8F5A;
+    --red: #9B2C2C;
+    --red-light: #C53030;
+  }}
 
-        def _footer(self2, c, doc):
-            c.setStrokeColor(INK)
-            c.setLineWidth(0.5)
-            c.line(M, 0.48*inch, W - M, 0.48*inch)
-            c.setFont("Helvetica", 6)
-            c.setFillColor(MGRAY)
-            c.drawString(M, 0.32*inch, "CONFIDENTIAL  |  Intentional Ownership (IOWN)  |  RIA  |  Paradiem")
-            c.drawRightString(W - M, 0.32*inch, "%d" % doc.page)
+  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+  body {{
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--gray-900);
+    font-size: 10pt;
+    line-height: 1.55;
+  }}
 
-    sty = getSampleStyleSheet()
-    sec_s = ParagraphStyle("Sec", parent=sty["Heading1"], fontName="Helvetica-Bold", fontSize=10.5, textColor=INK, spaceBefore=0, spaceAfter=0, leading=12)
-    body_s = ParagraphStyle("Bod", parent=sty["Normal"], fontName="LS", fontSize=9, textColor=INK, leading=13.5, spaceBefore=0, spaceAfter=6, alignment=TA_JUSTIFY)
-    lead_s = ParagraphStyle("Lead", parent=body_s, fontName="LSB", fontSize=9)
-    pq_s = ParagraphStyle("PQ", parent=body_s, fontName="LSBI", fontSize=9.2, textColor=DG, leftIndent=8, rightIndent=8, spaceBefore=6, spaceAfter=8, leading=14)
-    radar_s = ParagraphStyle("Rad", parent=body_s, leftIndent=10, spaceBefore=1, spaceAfter=4, fontSize=8.8, leading=13)
-    small_s = ParagraphStyle("Sm", parent=body_s, fontSize=6.5, textColor=MGRAY, leading=8.5, alignment=TA_LEFT)
+  /* ══ MASTHEAD ══ */
+  .pdf-masthead {{
+    text-align: center;
+    margin-bottom: 0;
+    break-inside: avoid;
+  }}
+  .mast-rule-top {{ height: 3pt; background: var(--gray-900); margin-bottom: 1.5pt; }}
+  .mast-rule-thin {{ height: 0.75pt; background: var(--gray-900); margin-bottom: 8pt; }}
+  .mast-meta {{
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'DM Sans', sans-serif; font-size: 6pt; color: var(--gray-400);
+    letter-spacing: 1.5pt; text-transform: uppercase; margin-bottom: 4pt;
+    padding: 0 2pt;
+  }}
+  .mast-logo {{
+    height: 28pt;
+    display: block;
+    margin: 0 auto 6pt;
+  }}
+  .mast-title {{
+    font-family: 'Cormorant Garamond', serif; font-size: 30pt; font-weight: 700;
+    color: var(--gray-900); line-height: 1; letter-spacing: -0.5pt;
+    margin-bottom: 2pt;
+  }}
+  .mast-date {{
+    font-family: 'DM Sans', sans-serif; font-size: 7pt; color: var(--gray-500);
+    letter-spacing: 1.5pt; text-transform: uppercase; margin-top: 4pt;
+    margin-bottom: 6pt;
+  }}
+  .mast-rule-bottom {{ height: 0.75pt; background: var(--gray-300); margin-bottom: 0; }}
 
-    style_map = {"sec": sec_s, "lead": lead_s, "body": body_s, "pq": pq_s, "radar": radar_s, "small": small_s}
+  /* ══ HEADLINE BANNER ══ */
+  .pdf-banner {{
+    text-align: center;
+    padding: 12pt 16pt 10pt;
+    column-span: all;
+    break-inside: avoid;
+  }}
+  .banner-headline {{
+    font-family: 'Cormorant Garamond', serif; font-size: 28pt; font-weight: 700;
+    line-height: 1.15; color: {hl_color}; margin-bottom: 5pt;
+    letter-spacing: -0.3pt;
+  }}
+  .banner-subhead {{
+    font-family: 'EB Garamond', Georgia, serif; font-size: 10.5pt; font-weight: 400;
+    font-style: italic; color: var(--gray-500); line-height: 1.45;
+    max-width: 80%; margin: 0 auto;
+  }}
+  .banner-rule {{
+    width: 36pt; height: 2pt; background: var(--gray-900); margin: 10pt auto 0;
+  }}
 
-    doc = BriefDoc(pdf_output, pagesize=letter)
-    story = [NextPageTemplate("later")]
+  /* ══ TWO-COLUMN CONTENT ══ */
+  .bc {{
+    columns: 2; column-gap: 24pt; column-rule: 0.75pt solid var(--gray-200);
+    padding-top: 6pt;
+  }}
 
-    for para in pdf_paragraphs:
-        s = para.get("style", "body")
-        text = para.get("text", "")
-        if s == "rule":
-            story.append(HRFlowable(width="100%", thickness=1, color=INK, spaceBefore=2, spaceAfter=8))
-        elif s == "spacer":
-            story.append(Spacer(1, 14))
-        elif s in style_map:
-            story.append(Paragraph(text, style_map[s]))
-        else:
-            story.append(Paragraph(text, body_s))
+  /* ── Section headers ── */
+  .bc .section-start {{
+    column-span: all; break-inside: avoid;
+  }}
+  .bc .section-label {{
+    font-family: 'DM Sans', sans-serif; font-size: 5.5pt; color: var(--gray-400);
+    letter-spacing: 1.8pt; text-transform: uppercase; margin-top: 14pt;
+    padding-top: 4pt; border-top: 0.75pt solid var(--gray-300);
+  }}
+  .bc .section-start:first-child .section-label {{
+    margin-top: 0; border-top: none; padding-top: 0;
+  }}
+  .bc h2 {{
+    font-family: 'Cormorant Garamond', serif; font-size: 15pt; font-weight: 700;
+    color: var(--gray-900); margin: 2pt 0 0; line-height: 1.15;
+  }}
+  .bc .section-rule {{
+    height: 2pt; background: var(--gray-900); margin: 5pt 0 10pt;
+  }}
 
-    doc.build(story)
+  /* ── Bullet cards ── */
+  .bc .bullet {{
+    padding: 6pt 0 6pt 10pt; margin: 0 0 8pt;
+    border-left: 2pt solid var(--gray-900); break-inside: avoid;
+  }}
+  .bc .bullet-heading {{
+    font-family: 'DM Sans', sans-serif; font-size: 7.5pt; font-weight: 700;
+    color: var(--gray-900); letter-spacing: 0.3pt; margin-bottom: 3pt;
+    text-transform: uppercase;
+  }}
+  .bc .bullet-body {{
+    font-size: 10pt; line-height: 1.55; color: var(--gray-700);
+    text-align: justify; hyphens: auto;
+  }}
+  .bc .bullet-body b, .bc .bullet-body strong {{ color: var(--gray-900); }}
+
+  /* ── Pullquote ── */
+  .bc .pullquote {{
+    column-span: all; break-inside: avoid;
+    margin: 14pt 0; padding: 14pt 24pt;
+    border-top: 2pt solid var(--gray-900); border-bottom: 0.75pt solid var(--gray-300);
+    font-family: 'Cormorant Garamond', serif; font-size: 13pt; font-weight: 600;
+    font-style: italic; color: var(--green); line-height: 1.45; text-align: center;
+  }}
+  .bc .pullquote b, .bc .pullquote strong {{ font-style: normal; }}
+
+  /* ── Data box ── */
+  .bc .data-box {{
+    break-inside: avoid;
+    background: var(--cream); border-top: 1.5pt solid var(--gray-900);
+    border-bottom: 0.75pt solid var(--gray-200);
+    padding: 8pt 10pt; margin: 8pt 0;
+    font-family: 'DM Sans', sans-serif; font-size: 7.5pt; line-height: 1.7;
+    color: var(--gray-700);
+  }}
+  .bc .data-box .data-row {{
+    display: flex; justify-content: space-between; padding: 1.5pt 0;
+    border-bottom: 0.5pt dotted var(--gray-300);
+  }}
+  .bc .data-box .data-row:last-child {{ border-bottom: none; }}
+  .bc .data-box .data-label {{
+    color: var(--gray-500); font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.5pt;
+  }}
+  .bc .data-box .data-val {{ font-weight: 600; }}
+  .bc .up {{ color: var(--green-mid); }}
+  .bc .dn {{ color: var(--red); }}
+
+  /* ── Snapshot bar ── */
+  .bc .snapshot {{
+    column-span: all; break-inside: avoid;
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+    border-top: 1.5pt solid var(--gray-900); border-bottom: 0.75pt solid var(--gray-300);
+    margin: 0 0 4pt; padding: 0;
+    font-family: 'DM Sans', sans-serif;
+  }}
+  .bc .snap-item {{
+    flex: 1; min-width: 60pt; padding: 6pt 8pt;
+    border-right: 0.75pt solid var(--gray-200); text-align: center;
+  }}
+  .bc .snap-item:last-child {{ border-right: none; }}
+  .bc .snap-label {{
+    font-size: 5pt; text-transform: uppercase; letter-spacing: 1pt; color: var(--gray-400);
+  }}
+  .bc .snap-val {{
+    font-size: 8pt; font-weight: 700; color: var(--gray-900); margin-top: 2pt;
+  }}
+  .bc .snap-val.up {{ color: var(--green-mid); }}
+  .bc .snap-val.dn {{ color: var(--red); }}
+
+  /* ── Radar items ── */
+  .bc .radar-item {{
+    column-span: all; break-inside: avoid;
+    padding: 6pt 0 6pt 10pt; margin: 0 0 8pt;
+    border-left: 2pt solid var(--gray-900);
+    font-size: 9pt; line-height: 1.5; color: var(--gray-700);
+  }}
+  .bc .radar-item b:first-child {{ color: var(--gray-900); font-size: 9.5pt; }}
+  .bc .radar-item em {{ font-style: italic; }}
+  .bc .radar-group {{ break-inside: avoid; }}
+
+  /* ── Disclaimer ── */
+  .brief-disc {{
+    column-span: all; break-inside: avoid;
+    margin-top: 14pt; padding-top: 10pt; border-top: 0.75pt solid var(--gray-200);
+    font-family: 'DM Sans', sans-serif; font-size: 6pt; color: var(--gray-400); line-height: 1.5;
+    text-align: center;
+  }}
+
+  /* ── Tables ── */
+  .bc table {{ width: 100%; border-collapse: collapse; margin: 8pt 0; break-inside: avoid; }}
+  .bc thead {{ border-bottom: 1.5pt solid var(--gray-900); }}
+  .bc th {{
+    font-family: 'DM Sans', sans-serif; font-size: 6pt; text-transform: uppercase;
+    letter-spacing: 1pt; color: var(--gray-400); text-align: left; padding: 3pt 4pt; font-weight: 500;
+  }}
+  .bc td {{
+    font-family: 'DM Sans', sans-serif; font-size: 8pt; padding: 3pt 4pt;
+    border-bottom: 0.75pt solid var(--gray-200); color: var(--gray-700);
+  }}
+  .bc td:first-child {{
+    font-weight: 700; color: var(--gray-900); font-family: 'EB Garamond', serif; font-size: 9pt;
+  }}
+</style>
+</head>
+<body>
+
+<div class="pdf-masthead">
+  <div class="mast-rule-top"></div>
+  <div class="mast-rule-thin"></div>
+  <div class="mast-meta">
+    <span>Intentional Ownership</span>
+    <span>{DATE_DISPLAY}</span>
+    <span>Investment Committee</span>
+  </div>
+  <img class="mast-logo" src="{logo_path}" alt="IOWN">
+  <div class="mast-title">The Morning Brief</div>
+  <div class="mast-date">{DATE_DISPLAY}</div>
+  <div class="mast-rule-bottom"></div>
+</div>
+
+<div class="bc">
+  <div class="pdf-banner">
+    <div class="banner-headline">{meta["headline"]}</div>
+    <div class="banner-subhead">{meta["subhead"]}</div>
+    <div class="banner-rule"></div>
+  </div>
+
+  {html_content}
+
+  <div class="brief-disc">
+    For internal IOWN investment committee use only. Not investment advice.
+    Information from public sources believed reliable. Past performance not indicative of future results.
+    IOWN is an RIA under Paradiem.
+  </div>
+</div>
+
+</body>
+</html>
+"""
+
+    doc = weasyprint.HTML(string=wrapper_html)
+    doc.write_pdf(pdf_output)
     print(f"PDF generated: {pdf_output}")
     return pdf_output
 
@@ -583,18 +748,17 @@ def post_process(response_file):
     process_logo()
 
     print("Parsing...")
-    meta, html_content, pdf_paragraphs = parse_response(response)
+    meta, html_content, _ = parse_response(response)
     print(f"Headline: {meta['headline']}")
     print(f"Subhead: {meta['subhead']}")
     print(f"Direction: {meta['direction']}")
-    print(f"PDF paragraphs: {len(pdf_paragraphs)}")
 
     html_out = BRIEFS_DIR / f"{DATE_STR}.html"
     html_out.write_text(html_content, encoding="utf-8")
     print(f"\nHTML: {html_out} ({len(html_content)} chars)")
 
-    print("Generating PDF...")
-    pdf_out = generate_pdf(meta, pdf_paragraphs)
+    print("Generating PDF (weasyprint)...")
+    pdf_out = generate_pdf(meta, html_content)
     print(f"PDF: {Path(pdf_out).stat().st_size} bytes")
 
     update_manifest(meta)
@@ -680,18 +844,17 @@ def main():
     print(f"Response: {len(response)} chars")
 
     print("\nParsing...")
-    meta, html_content, pdf_paragraphs = parse_response(response)
+    meta, html_content, _ = parse_response(response)
     print(f"Headline: {meta['headline']}")
     print(f"Subhead: {meta['subhead']}")
     print(f"Direction: {meta['direction']}")
-    print(f"PDF paragraphs: {len(pdf_paragraphs)}")
 
     html_out = BRIEFS_DIR / f"{DATE_STR}.html"
     html_out.write_text(html_content, encoding="utf-8")
     print(f"\nHTML: {html_out} ({len(html_content)} chars)")
 
-    print("Generating PDF...")
-    pdf_out = generate_pdf(meta, pdf_paragraphs)
+    print("Generating PDF (weasyprint)...")
+    pdf_out = generate_pdf(meta, html_content)
     print(f"PDF: {Path(pdf_out).stat().st_size} bytes")
 
     update_manifest(meta)

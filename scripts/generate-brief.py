@@ -519,7 +519,7 @@ def generate_pdf(meta, html_content, output_path=None):
   /* ── Bullet cards ── */
   .bc .bullet {{
     padding: 6pt 0 6pt 10pt; margin: 0 0 8pt;
-    border-left: 2pt solid var(--gray-900); break-inside: avoid;
+    border-left: 2pt solid var(--gray-900);
   }}
   .bc .bullet-heading {{
     font-family: 'DM Sans', sans-serif; font-size: 7.5pt; font-weight: 700;
@@ -587,7 +587,7 @@ def generate_pdf(meta, html_content, output_path=None):
 
   /* ── Radar items ── */
   .bc .radar-item {{
-    column-span: all; break-inside: avoid;
+    column-span: all;
     padding: 6pt 0 6pt 10pt; margin: 0 0 8pt;
     border-left: 2pt solid var(--gray-900);
     font-size: 9pt; line-height: 1.5; color: var(--gray-700);

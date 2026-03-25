@@ -1,10 +1,10 @@
-=== IOWN DATA DROP v2 | Wed, Mar 25, 2026 | 03:40 AM CT ===
+=== IOWN DATA DROP v2 | Wed, Mar 25, 2026 | 06:53 AM CT ===
 
 ── EARNINGS (YESTERDAY) ──
 MCIC EPS:— vs Est:— | ABSI EPS:-0.23 vs Est:-0.1982 | BCDA EPS:-0.06 vs Est:-0.1734 | SCS EPS:— vs Est:0.2222 | GNRV EPS:— vs Est:— | CNXC EPS:2.61 vs Est:2.6979 | DRRX EPS:— vs Est:-0.1632 | SMTI EPS:0.04 vs Est:0.1122 | LPAA EPS:— vs Est:— | BRZE EPS:0.1 vs Est:0.1406 | EPSN EPS:0.21 vs Est:0.0408 | GUTS EPS:0.15 vs Est:-0.1836 | SFD EPS:0.83 vs Est:0.6823 | FBIO EPS:— vs Est:0.1122 | BSEM EPS:-0.01 vs Est:0.0204
 
 ── EARNINGS (TODAY) ──
-FAT Est:-3.1916 | JBS Est:0.4093 | KALV Est:-0.1683 | CBDY Est:— | CULL Est:— | FUL Est:0.5607 | VINC Est:-0.1122 | WDRP Est:— | EQ Est:-0.0618 | COEP Est:— | PIII Est:-9.6543 | VSTD Est:— | KULR Est:-0.0204 | BPTH Est:-0.408 | STLY Est:— | PGEN Est:-0.085 | RECT Est:— | PMVCD Est:— | NSYS Est:— | WHLM Est:—
+FAT Est:-3.1916 | JBS Est:0.4093 | KALV Est:-0.1683 | CBDY Est:— | CULL Est:— | FUL Est:0.5607 | VINC Est:-0.1122 | WDRP Est:— | EQ Est:-0.0618 | COEP Est:— | PIII Est:-9.6543 | VSTD Est:— | KULR Est:-0.0204 | BPTH Est:-0.408 | STLY Est:— | PGEN Est:-0.085 | RECT Est:— | PMVCD Est:— | WHLM Est:— | CELC Est:-1.0627
 
 ── INDICES ──
 S&P 500: $653.18 (-0.34%) | O:$651.32 H:$657.03 L:$649.88 PC:$655.38
@@ -120,8 +120,8 @@ FINV: -4.71% ($4.86)
 HOOD: -4.70% ($69.08)
 
 ── IOWN HOLDINGS NEWS (24h) ──
+ABT: Abbott Laboratories (NYSE:ABT) Passes the 'Caviar Cruise' Quality Investing Screen (ChartMill)
 ABT: Is It Time To Reconsider Abbott Laboratories (ABT) After Recent Share Price Weakness? (Yahoo)
-ABT: Top Analyst Reports for Eli Lilly, RTX & Abbott (Yahoo)
 A: Agilent Technologies (A) to Acquire Biocare Medical for $950M (Yahoo)
 A: Q4 Earnings Outperformers: Agilent (NYSE:A) And The Rest Of The Research Tools & Consumables Stocks (Yahoo)
 ADI: Magnachip, Analog Devices, Applied Materials, KLA Corporation, and MACOM Shares Skyrocket, What You Need To Know (Yahoo)
@@ -142,31 +142,31 @@ GPC: Stocks making big moves yesterday: Genuine Parts, Sabre, JFrog, Palantir Te
 GPC: 1 Cash-Producing Stock with Impressive Fundamentals and 2 We Ignore (Yahoo)
 LRCX: A Look Back at Semiconductor Manufacturing Stocks’ Q4 Earnings: Lam Research (NASDAQ:LRCX) Vs The Rest Of The Pack (Yahoo)
 LRCX: Why the Market Dipped But Lam Research (LRCX) Gained Today (Yahoo)
+LMT: The Zacks Analyst Blog Highlights Lockheed Martin, Northrop Grumman, Apple and Microsoft (Yahoo)
 LMT: Susquehanna Lifts Price Target on Lockheed Martin Corporation (LMT) to $740, Keeps Positive Rating (Yahoo)
-LMT: 3 Defense Stocks To Replenish America’s Depleting Arsenal (Yahoo)
+NEE: Zacks Investment Ideas feature highlights: NextEra Energy (Yahoo)
 NEE: NextEra Energy Links AI Factories To Grid As Valuation Stays Rich (Yahoo)
-NEE: Prediction: The Next Phase of Artificial Intelligence (AI) Won't Be About Chips. Here are the Stocks That Win in 2026. (Yahoo)
 ORI: How The Old Republic International (ORI) Narrative Is Shifting Around A Steady US$42.50 Target (Yahoo)
 ORI: Is It Time To Reassess Old Republic International (ORI) After Recent Share Price Pullback (Yahoo)
 PCAR: PACCAR Recognizes Top Performing Suppliers in North America (Yahoo)
 PCAR: Shares of machine-related companies are trading higher. The industry may be experiencing strength in response to a drop in the price of oil. (Benzinga)
+QCOM: Arm jumps as new AI chip to drive billions in annual revenue (Yahoo)
 QCOM: Qualcomm Is Down 24% in 2026 and Just Announced a $20 Billion Buyback. Is That Bullish or a Warning Sign? (Yahoo)
-QCOM: A Look At Qualcomm (QCOM) Valuation After Recent Share Price Weakness (Yahoo)
 DGX: 3 Reasons to Avoid DGX and 1 Stock to Buy Instead (Yahoo)
 DGX: 3 Mid-Cap Stocks with Warning Signs (Yahoo)
 STLD: Steel Dynamics (STLD) Increases Despite Market Slip: Here's What You Need to Know (Yahoo)
 STLD: Steel Dynamics Stock: Is STLD Outperforming the Basic Materials Sector? (Yahoo)
+SYK: Stryker Corp. (NYSE:SYK) Demonstrates a Balanced Profile for Dividend Investors (ChartMill)
 SYK: Stryker announces Annual Meeting of Shareholders (Yahoo)
-SYK: NVST or SYK: Which Is the Better Value Stock Right Now? (Yahoo)
 TEL: TE Connectivity survey: Return on investment becomes top priority as AI age evolves (Yahoo)
 VLO: Here's Why Shares in Delek US Soared Today (Yahoo)
 VLO: Is Valero Energy Corporation (VLO) A Good Stock To Buy Now? (Yahoo)
+AMD: AMD and Hammer Distribution Target UK's AI "Power Wall" with New CPU-First Infrastructure Strategy (Yahoo)
 AMD: Arm to Sell Its Own Chips, Eyeing Sales Goal of $15 Billion (Yahoo)
-AMD: Here's Why Nvidia's Stock Looks ‘Relatively Cheap' According to These Experts (Yahoo)
 AEM: Tracking John Paulson's Paulson & Company Portfolio - Q4 2025 Update (SeekingAlpha)
 AEM: Gold Flashes Ultra-Rare '9 Red Birds' Pattern: Is A Reversal Ahead? (Benzinga)
-CVX: Chevron’s Sable Offshore Deal Adds West Coast Supply And Risk Considerations (Yahoo)
-CVX: Oil Drops on Signs of US Diplomatic Push to End War With Iran (Yahoo)
+CVX: Market Chatter: Chevron Warns of California Fuel Crisis; Threatens Refining Exit (Yahoo)
+CVX: The Zacks Analyst Blog Highlights Chevron, Kinder Morgan and TC Energy (Yahoo)
 CWAN: Clearwater Analytics: 17% Annualized Return On A Smooth Go-Private Transaction (SeekingAlpha)
 CNX: Truist Securities Initiates Coverage of CNX Resources (CNX) with Sell Recommendation (Fintel)
 CNX: Truist Securities Initiates Coverage On CNX Resources with Sell Rating, Announces Price Target of $35 (Benzinga)
@@ -180,8 +180,8 @@ GFI: Gold Fields Ltd-Spons ADR (NYSE:GFI) Emerges as a CANSLIM Growth Candidate 
 HUT: Eric Trump-Linked American Bitcoin Says It's Turning Into A BTC 'Accumulation Machine,' But ABTC Stock Still Can't Shake Off The Woes (Benzinga)
 KEYS: Keysight Introduces Hands-On Semiconductor Teaching Labs for Universities (Yahoo)
 KEYS: Can Rising AI Tool Adoption Lift Synopsys' Design Automation Revenues? (Yahoo)
-NVDA: How Married Couples Can Coordinate Social Security in 2026 to Maximize Lifetime Income (Yahoo)
-NVDA: Qualcomm Is Down 24% in 2026 and Just Announced a $20 Billion Buyback. Is That Bullish or a Warning Sign? (Yahoo)
+NVDA: Arm jumps as new AI chip to drive billions in annual revenue (Yahoo)
+NVDA: Iran Talks Could Shake Oil Prices This Week: 3 Energy Stocks I Wouldn't Hesitate to Buy Amid The Uncertainty. (Yahoo)
 NXPI: Winners And Losers Of Q4: NXP Semiconductors (NASDAQ:NXPI) Vs The Rest Of The Analog Semiconductors Stocks (Yahoo)
 NXPI: STMicroelectronics: DC And Robotics Opportunities Re-Ignited Enthusiasm (Upgrade) (SeekingAlpha)
 OKE: Truist Securities Initiates Coverage of ONEOK (OKE) with Hold Recommendation (Fintel)
@@ -201,13 +201,13 @@ IBIT: Tracking John Paulson's Paulson & Company Portfolio - Q4 2025 Update (Seek
 ETHA: BlackRock's ETHB: A Potential Contender To Grayscale's ETH (SeekingAlpha)
 
 ── HEADLINES ──
+• Thai tanker safely transits Strait of Hormuz after talks with Iran - Reuters (Reuters)
+• UK inflation holds at 3% in February ahead of likely Iran war jump - Reuters (Reuters)
 • Western powers were unable to secure shipping in the Red Sea. Hormuz will be harder - Reuters (Reuters)
 • Morning Bid: Deal, or no deal? - Reuters (Reuters)
 • Iran military spokesperson says US is negotiating with itself - Reuters (Reuters)
 • China's coal chemicals sector cashes in as Iran war crushes petrochemical competitors - Reuters (Reuters)
-• Iran's military rejects Trump's talk of negotiation, Israel and Iran launch airstrikes - Reuters (Reuters)
-• Indian shares extend gains as US pushes Iran ceasefire plan - Reuters (Reuters)
-• Philippines says working with Washington to obtain oil from U.S.-sanctioned countries - Reuters (Reuters)
-• Currency markets tread water amid uncertainty over US efforts to end Iran war - Reuters (Reuters)
+• Pakistan has conveyed US proposal; Turkey or Pakistan could host talks, senior Iranian official says - Reuters (Reuters)
+• New Zealand players willing to play World Cup opener against Iran outside US - Reuters (Reuters)
 
 === END DATA DROP ===

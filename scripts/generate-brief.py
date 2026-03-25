@@ -367,6 +367,21 @@ def generate_pdf(meta, html_content, output_path=None):
     pdf_output = output_path or str(BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf")
     hl_color = "#3D4A2E" if meta.get("direction") == "up" else "#9B2C2C"
 
+    # Split each section into its own .bc container so page breaks work
+    section_break = '</div>\n<div class="bc section-page-break">\n'
+    html_content = re.sub(
+        r'(<!-- ═+\s*(?:GEOPOLITICS|ON OUR RADAR)\s*═+ -->)',
+        section_break + r'\1',
+        html_content
+    )
+    # Fallback: match section-start divs containing geopolitics/radar IDs
+    if 'section-page-break' not in html_content:
+        html_content = re.sub(
+            r'(<div class="section-start">\s*<div class="section-label" id="(?:geopolitics|radar)">)',
+            section_break + r'\1',
+            html_content
+        )
+
     wrapper_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -507,6 +522,10 @@ def generate_pdf(meta, html_content, output_path=None):
   }}
   .bc .section-start:first-child .section-label {{
     margin-top: 0; border-top: none; padding-top: 0;
+  }}
+  /* Each major section starts on a new page */
+  .bc.section-page-break {{
+    break-before: page;
   }}
   .bc h2 {{
     font-family: 'Cormorant Garamond', serif; font-size: 15pt; font-weight: 700;

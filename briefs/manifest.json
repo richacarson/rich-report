@@ -37,7 +37,7 @@
   {
     "date": "2026-03-10",
     "headline": "The Reversal",
-    "subhead": "Oil $120\u2192$94. S&P flips from -1.5% to +0.88%. Trump says war nearing end. G7 meets today.",
+    "subhead": "Oil $120→$94. S&P flips from -1.5% to +0.88%. Trump says war nearing end. G7 meets today.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-03-10.pdf"
   },
@@ -72,7 +72,7 @@
   {
     "date": "2026-03-15",
     "headline": "Stagflation",
-    "subhead": "Q4 GDP 0.7%. Core PCE 3.1%. War goes regional\u2014Iran hits UAE, Kuwait, Baghdad. Ceasefire rejected.",
+    "subhead": "Q4 GDP 0.7%. Core PCE 3.1%. War goes regional—Iran hits UAE, Kuwait, Baghdad. Ceasefire rejected.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-15.pdf"
   },
@@ -100,7 +100,7 @@
   {
     "date": "2026-03-19",
     "headline": "Fork Resolved",
-    "subhead": "The Fed held one cut but markets broke anyway \u2014 S&P plunges 1.4% as SAMREF refinery attack and $100+ oil overwhelm dovish dots.",
+    "subhead": "The Fed held one cut but markets broke anyway — S&P plunges 1.4% as SAMREF refinery attack and $100+ oil overwhelm dovish dots.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-19.pdf"
   },
@@ -114,21 +114,21 @@
   {
     "date": "2026-03-21",
     "headline": "Cracks Widen",
-    "subhead": "Day 22 brings Natanz strikes, Diego Garcia retaliation, and gold\u2019s worst week since 2011\u2014but Trump floats \u2018winding down.\u2019",
+    "subhead": "Day 22 brings Natanz strikes, Diego Garcia retaliation, and gold’s worst week since 2011—but Trump floats ‘winding down.’",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-21.pdf"
   },
   {
     "date": "2026-03-22",
     "headline": "Deadline Monday",
-    "subhead": "Weekend Edition \u2014 Trump\u2019s 48-hour Hormuz ultimatum expires Monday evening, creating a binary setup for Tuesday\u2019s open.",
+    "subhead": "Weekend Edition — Trump’s 48-hour Hormuz ultimatum expires Monday evening, creating a binary setup for Tuesday’s open.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-22.pdf"
   },
   {
     "date": "2026-03-23",
     "headline": "Ultimatum Day",
-    "subhead": "Trump\u2019s 48-hour Hormuz deadline expires tonight as Asian markets trigger circuit breakers and Iran opens a financial warfare front.",
+    "subhead": "Trump’s 48-hour Hormuz deadline expires tonight as Asian markets trigger circuit breakers and Iran opens a financial warfare front.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-23.pdf"
   },
@@ -142,8 +142,15 @@
   {
     "date": "2026-03-25",
     "headline": "Bifurcation",
-    "subhead": "Energy +2%, software imploding. COIN -9.76% on CLARITY Act. 15-point peace plan in Tehran\u2019s hands.",
+    "subhead": "Energy +2%, software imploding. COIN -9.76% on CLARITY Act. 15-point peace plan in Tehran’s hands.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-25.pdf"
+  },
+  {
+    "date": "2026-03-26",
+    "headline": "Rejection",
+    "subhead": "Iran dismisses the 15-point plan and deploys counter-demands as the OECD quantifies the war’s toll and 6,000 US troops head for the Gulf.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-26.pdf"
   }
 ]

@@ -21,11 +21,18 @@
    - Crypto overnight moves
    - Any breaking news that moves markets
    The brief covers whatever matters most TODAY. When the dominant story is Fed policy, write about Fed policy. When it's trade wars, write about trade wars. When it's a quiet day, write a shorter brief. Never force a narrative that isn't there.
-4. **Write the brief**: Generate content with `<META>`, `<HTML_BRIEF>`, and `<PDF_PARAGRAPHS>` blocks following the guidelines below
+4. **Write the brief**: Generate content with `<META>` and `<HTML_BRIEF>` blocks following the guidelines below
 5. **Save**: Write the response to `/tmp/brief_response.txt`
-6. **Build & Deploy**: Run `FORCE_REGENERATE=1 python3 scripts/generate-brief.py --post-process /tmp/brief_response.txt`
+6. **Fact-check**: Before deploying, launch a separate agent to fact-check the brief with fresh eyes. The agent should:
+   - Read `/tmp/brief_response.txt` and the data drop (`latest-drop.txt`)
+   - Verify every percentage, price, and directional claim against the data drop
+   - Web search to verify any economic calendar dates (PCE, CPI, FOMC, earnings) — never trust a date from a secondary source without checking the official calendar (BEA, BLS, Fed)
+   - Flag any unverified comparative claims ("worst since X", "first time since Y", "Nth consecutive")
+   - Flag any compliance issues (specific price levels, direct recommendations, unhedged predictions)
+   - Return a pass/fail with specific items to fix. If items are flagged, fix them before deploying.
+7. **Build & Deploy**: Run `FORCE_REGENERATE=1 python3 scripts/generate-brief.py --post-process /tmp/brief_response.txt`
 
-The post-process step handles everything: parsing, PDF generation (ReportLab), HTML output, manifest update, auto-checkout to `main`, git commit, and push to `origin main`. This deploys directly to GitHub Pages at https://richacarson.github.io/rich-report/morning-briefs.html. No manual merge step needed.
+The post-process step handles everything: parsing, PDF generation (weasyprint), HTML output, manifest update, auto-checkout to `main`, git commit, and push to `origin main`. This deploys directly to GitHub Pages at https://richacarson.github.io/rich-report/morning-briefs.html. No manual merge step needed.
 
 **Environment**: Before running, load secrets: `source .env && export GITHUB_PUSH_TOKEN`. The `.env` file contains `GITHUB_PUSH_TOKEN` for authenticated git push to main. `FINNHUB_KEY` is stored as a GitHub repo secret and used by the Data Drop workflow — not needed locally.
 

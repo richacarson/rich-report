@@ -1,8 +1,8 @@
 [
   {
-    "date": "2026-03-03",
-    "headline": "Markets at War",
-    "subhead": "Day 4 of US-Israel-Iran conflict. Hormuz closed. Oil surging. Gold at ATH.",
+    "date": "2026-03-28",
+    "headline": "Deadline Extended",
+    "subhead": "Trump delays power-plant strikes to April 6 as Brent closes above $112, equities post a fifth consecutive weekly decline, and the Dow enters correction — Weekend Edition.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-03.pdf"
   },
@@ -16,7 +16,7 @@
   {
     "date": "2026-03-05",
     "headline": "The AI Capex Signal",
-    "subhead": "Broadcom's $100B AI forecast. S&P +0.71%. Crypto holds. Fear & Greed 22. Tariffs this week.",
+    "subhead": "Broadcom’s $100B AI forecast. S&P +0.71%. Crypto holds. Fear & Greed 22. Tariffs this week.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-03-05.pdf"
   },
@@ -93,7 +93,7 @@
   {
     "date": "2026-03-18",
     "headline": "Fed Day Reckoning",
-    "subhead": "FOMC decision day arrives as Israel eliminates Iran's intelligence chief and oil rips higher.",
+    "subhead": "FOMC decision day arrives as Israel eliminates Iran’s intelligence chief and oil rips higher.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-03-18.pdf"
   },
@@ -159,5 +159,12 @@
     "subhead": "The Nasdaq enters correction territory as Thursday’s broad selloff erases Wednesday’s gains, oil surges past $108, and Saturday’s power plant strike deadline looms.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-27.pdf"
+  },
+  {
+    "date": "2026-03-28",
+    "headline": "Deadline Extended",
+    "subhead": "Trump delays power-plant strikes to April 6 as Brent closes above $112, equities post a fifth consecutive weekly decline, and the Dow enters correction — Weekend Edition.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-28.pdf"
   }
 ]

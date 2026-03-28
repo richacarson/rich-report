@@ -218,10 +218,18 @@ function analyzeCandles(candles, currentPrice) {
   const pctFrom52wHigh = high52w ? ((currentPrice - high52w) / high52w) * 100 : null;
   const pctFrom52wLow = low52w ? ((currentPrice - low52w) / low52w) * 100 : null;
 
+  // Simple moving averages from closing prices
+  const closes = candles.closes;
+  const len = closes.length;
+  const sma50 = len >= 50 ? closes.slice(len - 50).reduce((a, b) => a + b, 0) / 50 : null;
+  const sma100 = len >= 100 ? closes.slice(len - 100).reduce((a, b) => a + b, 0) / 100 : null;
+  const sma200 = len >= 200 ? closes.slice(len - 200).reduce((a, b) => a + b, 0) / 200 : null;
+
   return {
     high52w, low52w, ytdHigh, ytdLow,
     ytdReturn, mtdReturn, wtdReturn,
-    pctFrom52wHigh, pctFrom52wLow
+    pctFrom52wHigh, pctFrom52wLow,
+    sma50, sma100, sma200
   };
 }
 
@@ -292,7 +300,13 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
     const q = Q[s], c = CA[s];
     if (q) {
       let line = `${INDEX_NAMES[s]}: ${price(q.price)} (${pct(q.changesPercentage)}) | O:${price(q.open)} H:${price(q.dayHigh)} L:${price(q.dayLow)} PC:${price(q.previousClose)}`;
-      if (c) line += ` | WTD:${pct(c.wtdReturn)} MTD:${pct(c.mtdReturn)} YTD:${pct(c.ytdReturn)} | 52wH:${price(c.high52w)} (${pct(c.pctFrom52wHigh)}) 52wL:${price(c.low52w)}`;
+      if (c) {
+        const p = q.price;
+        let ma = '';
+        if (c.sma50) ma += ` 50d:${price(c.sma50)}${p > c.sma50 ? '▲' : '▼'}`;
+        if (c.sma200) ma += ` 200d:${price(c.sma200)}${p > c.sma200 ? '▲' : '▼'}`;
+        line += ma;
+      }
       o += line + '\n';
     }
   });
@@ -348,7 +362,13 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
     const q = Q[s], c = CA[s];
     if (!q) return `${s}: — (no data)\n`;
     let line = `${s}: ${price(q.price)} (${pct(q.changesPercentage)}) O:${price(q.open)} H:${price(q.dayHigh)} L:${price(q.dayLow)} PC:${price(q.previousClose)}`;
-    if (c) line += ` | WTD:${pct(c.wtdReturn)} MTD:${pct(c.mtdReturn)} YTD:${pct(c.ytdReturn)} | 52wH:${price(c.high52w)} (${pct(c.pctFrom52wHigh)})`;
+    if (c) {
+      const p = q.price;
+      let ma = '';
+      if (c.sma50) ma += ` 50d:${price(c.sma50)}${p > c.sma50 ? '▲' : '▼'}`;
+      if (c.sma200) ma += ` 200d:${price(c.sma200)}${p > c.sma200 ? '▲' : '▼'}`;
+      line += ma;
+    }
     return line + '\n';
   }
 

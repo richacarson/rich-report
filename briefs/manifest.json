@@ -1,8 +1,15 @@
 [
   {
+    "date": "2026-03-29",
+    "headline": "New Front",
+    "subhead": "Houthis enter the Iran war, raising the specter of a third chokepoint closure as Monday approaches. Weekend Edition.",
+    "direction": "down",
+    "filename": "IOWN_Morning_Brief_2026-03-29.pdf"
+  },
+  {
     "date": "2026-03-28",
     "headline": "Deadline Extended",
-    "subhead": "Trump delays power-plant strikes to April 6 as Brent closes above $112, equities post a fifth consecutive weekly decline, and the Dow enters correction — Weekend Edition.",
+    "subhead": "Trump delays power-plant strikes to April 6 as Brent closes above $112, equities post a fifth consecutive weekly decline, and the Dow enters correction \u2014 Weekend Edition.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-03.pdf"
   },
@@ -16,7 +23,7 @@
   {
     "date": "2026-03-05",
     "headline": "The AI Capex Signal",
-    "subhead": "Broadcom’s $100B AI forecast. S&P +0.71%. Crypto holds. Fear & Greed 22. Tariffs this week.",
+    "subhead": "Broadcom\u2019s $100B AI forecast. S&P +0.71%. Crypto holds. Fear & Greed 22. Tariffs this week.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-03-05.pdf"
   },
@@ -37,7 +44,7 @@
   {
     "date": "2026-03-10",
     "headline": "The Reversal",
-    "subhead": "Oil $120→$94. S&P flips from -1.5% to +0.88%. Trump says war nearing end. G7 meets today.",
+    "subhead": "Oil $120\u2192$94. S&P flips from -1.5% to +0.88%. Trump says war nearing end. G7 meets today.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-03-10.pdf"
   },
@@ -72,7 +79,7 @@
   {
     "date": "2026-03-15",
     "headline": "Stagflation",
-    "subhead": "Q4 GDP 0.7%. Core PCE 3.1%. War goes regional—Iran hits UAE, Kuwait, Baghdad. Ceasefire rejected.",
+    "subhead": "Q4 GDP 0.7%. Core PCE 3.1%. War goes regional\u2014Iran hits UAE, Kuwait, Baghdad. Ceasefire rejected.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-15.pdf"
   },
@@ -93,14 +100,14 @@
   {
     "date": "2026-03-18",
     "headline": "Fed Day Reckoning",
-    "subhead": "FOMC decision day arrives as Israel eliminates Iran’s intelligence chief and oil rips higher.",
+    "subhead": "FOMC decision day arrives as Israel eliminates Iran\u2019s intelligence chief and oil rips higher.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-03-18.pdf"
   },
   {
     "date": "2026-03-19",
     "headline": "Fork Resolved",
-    "subhead": "The Fed held one cut but markets broke anyway — S&P plunges 1.4% as SAMREF refinery attack and $100+ oil overwhelm dovish dots.",
+    "subhead": "The Fed held one cut but markets broke anyway \u2014 S&P plunges 1.4% as SAMREF refinery attack and $100+ oil overwhelm dovish dots.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-19.pdf"
   },
@@ -114,21 +121,21 @@
   {
     "date": "2026-03-21",
     "headline": "Cracks Widen",
-    "subhead": "Day 22 brings Natanz strikes, Diego Garcia retaliation, and gold’s worst week since 2011—but Trump floats ‘winding down.’",
+    "subhead": "Day 22 brings Natanz strikes, Diego Garcia retaliation, and gold\u2019s worst week since 2011\u2014but Trump floats \u2018winding down.\u2019",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-21.pdf"
   },
   {
     "date": "2026-03-22",
     "headline": "Deadline Monday",
-    "subhead": "Weekend Edition — Trump’s 48-hour Hormuz ultimatum expires Monday evening, creating a binary setup for Tuesday’s open.",
+    "subhead": "Weekend Edition \u2014 Trump\u2019s 48-hour Hormuz ultimatum expires Monday evening, creating a binary setup for Tuesday\u2019s open.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-22.pdf"
   },
   {
     "date": "2026-03-23",
     "headline": "Ultimatum Day",
-    "subhead": "Trump’s 48-hour Hormuz deadline expires tonight as Asian markets trigger circuit breakers and Iran opens a financial warfare front.",
+    "subhead": "Trump\u2019s 48-hour Hormuz deadline expires tonight as Asian markets trigger circuit breakers and Iran opens a financial warfare front.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-23.pdf"
   },
@@ -142,28 +149,28 @@
   {
     "date": "2026-03-25",
     "headline": "Bifurcation",
-    "subhead": "Energy +2%, software imploding. COIN -9.76% on CLARITY Act. 15-point peace plan in Tehran’s hands.",
+    "subhead": "Energy +2%, software imploding. COIN -9.76% on CLARITY Act. 15-point peace plan in Tehran\u2019s hands.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-25.pdf"
   },
   {
     "date": "2026-03-26",
     "headline": "Rejection",
-    "subhead": "Iran dismisses the 15-point plan and deploys counter-demands as the OECD quantifies the war’s toll and 6,000 US troops head for the Gulf.",
+    "subhead": "Iran dismisses the 15-point plan and deploys counter-demands as the OECD quantifies the war\u2019s toll and 6,000 US troops head for the Gulf.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-26.pdf"
   },
   {
     "date": "2026-03-27",
     "headline": "Deadline Eve",
-    "subhead": "The Nasdaq enters correction territory as Thursday’s broad selloff erases Wednesday’s gains, oil surges past $108, and Saturday’s power plant strike deadline looms.",
+    "subhead": "The Nasdaq enters correction territory as Thursday\u2019s broad selloff erases Wednesday\u2019s gains, oil surges past $108, and Saturday\u2019s power plant strike deadline looms.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-27.pdf"
   },
   {
     "date": "2026-03-28",
     "headline": "Deadline Extended",
-    "subhead": "Trump delays power-plant strikes to April 6 as Brent closes above $112, equities post a fifth consecutive weekly decline, and the Dow enters correction — Weekend Edition.",
+    "subhead": "Trump delays power-plant strikes to April 6 as Brent closes above $112, equities post a fifth consecutive weekly decline, and the Dow enters correction \u2014 Weekend Edition.",
     "direction": "down",
     "filename": "IOWN_Morning_Brief_2026-03-28.pdf"
   }

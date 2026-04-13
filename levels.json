@@ -1,0 +1,18 @@
+{
+  "_comment": "Carson's active support/resistance levels. Each level has status 'active', 'hit', or 'invalidated'. The brief workflow MUST read this file before writing and reference active levels in the brief. After the data drop, check if any active levels were hit (compare against intraday H/L) and update status accordingly.",
+  "levels": [
+    {
+      "id": "spy_645_80_retracement_2026_04_13",
+      "ticker": "SPY",
+      "level": 645.80,
+      "type": "support",
+      "direction": "retracement_target",
+      "set_date": "2026-04-13",
+      "set_by": "Carson",
+      "notes": "Projecting a near-term retracement to at least $645.80 on SPY. Set after blockade announcement reversed the ceasefire rally.",
+      "status": "active",
+      "hit_date": null,
+      "hit_price": null
+    }
+  ]
+}

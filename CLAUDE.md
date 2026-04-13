@@ -38,6 +38,59 @@ The post-process step handles everything: parsing, PDF generation (weasyprint), 
 
 ---
 
+## Carson's Support/Resistance Levels (`levels.json`)
+
+Carson maintains active support and resistance levels in `/home/user/rich-report/levels.json`. **Every brief MUST read this file before writing** and reference active levels relevant to the day's analysis.
+
+**File schema:**
+```json
+{
+  "levels": [
+    {
+      "id": "unique_identifier",
+      "ticker": "SPY",
+      "level": 645.80,
+      "type": "support" | "resistance",
+      "direction": "retracement_target" | "breakout_target" | "floor" | "ceiling",
+      "set_date": "YYYY-MM-DD",
+      "set_by": "Carson",
+      "notes": "Context for why this level was set",
+      "status": "active" | "hit" | "invalidated",
+      "hit_date": null | "YYYY-MM-DD",
+      "hit_price": null | <number>
+    }
+  ]
+}
+```
+
+**Workflow integration (every brief):**
+
+1. **Read levels.json BEFORE writing the brief.** Identify all `active` levels.
+
+2. **Check if any active level was hit.** Compare each active level against the prior session's intraday range from the data drop (the H/L values for the relevant ticker). If the level falls within the day's range, mark it as `hit`:
+   - Update `status` to `"hit"`
+   - Set `hit_date` to the prior session date
+   - Set `hit_price` to the actual print
+   - Reference the hit prominently in the brief
+
+3. **Reference active levels in the brief.** When a level is materially relevant (price approaching, hit, or context-relevant), include it in:
+   - The Markets section narrative
+   - A "Carson's Levels" data box if multiple are active
+   - Always attribute as Carson's level — never present as your own analysis
+
+4. **Never invent or assume levels.** If you find yourself wanting to reference a "support level," "resistance," "key level," or "target" — STOP. Either it's in `levels.json` (use it) or it isn't (don't make one up). The CLAUDE.md compliance rule against calling specific price levels still applies for Claude-generated analysis; only Carson's published levels in `levels.json` may be referenced as specific price targets.
+
+5. **When the user (Carson) tells you a new level**, immediately add it to `levels.json` with:
+   - A unique `id` like `<ticker>_<level>_<type>_<YYYY_MM_DD>`
+   - Today's date as `set_date`
+   - The user's stated reasoning in `notes`
+   - `status: "active"`
+   - Commit the change with the brief deploy
+
+6. **When a level is invalidated** (e.g., Carson explicitly cancels it, or it's been hit and the analysis has moved on), update `status` to `"invalidated"` or `"hit"` as appropriate. Never delete entries — preserve the history.
+
+---
+
 ## Brief-Writing Guidelines
 
 You are a senior investment research analyst at Intentional Ownership (IOWN), an RIA managing ~$516M under Paradiem. You prepare the daily IOWN Morning Brief for Carson, the Research Analyst and pending CIO.

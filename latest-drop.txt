@@ -1,4 +1,4 @@
-=== IOWN DATA DROP v2 | Tue, Apr 21, 2026 | 03:37 AM CT ===
+=== IOWN DATA DROP v2 | Tue, Apr 21, 2026 | 05:55 AM CT ===
 
 ── ECONOMIC CALENDAR (TODAY) ──
 2026-04-21 12:15:00 ADP Employment Change Weekly [Prior: 39]
@@ -160,7 +160,7 @@ GPC: Dividend King GPC Earnings on Deck: What the Upcoming Spinoff Means for Inv
 LRCX: What To Expect From Lam Research’s (LRCX) Q1 Earnings (Yahoo)
 LRCX: ValuEngine Weekly Market Summary And Commentary (SeekingAlpha)
 LMT: Is It Time To Revisit Lockheed Martin (LMT) After The Recent Share Price Pullback (Yahoo)
-LMT: ValuEngine Weekly Market Summary And Commentary (SeekingAlpha)
+LMT: Lockheed Martin Launches GPS III Satellite (Finnhub)
 MATX: MATSON TO ANNOUNCE FIRST QUARTER 2026 RESULTS ON MAY 4, 2026 (Finnhub)
 NEE: Is NextEra Energy, Inc. (NEE) Among the Most Profitable Utility Stocks to Invest In Now? (Yahoo)
 NEE: NEE Likely to Beat Q1 Earnings Estimates: How to Play the Stock? (Yahoo)
@@ -168,8 +168,8 @@ PCAR: 3 Reasons PCAR is Risky and 1 Stock to Buy Instead (Yahoo)
 PCAR: Paccar (PCAR) Increases Despite Market Slip: Here's What You Need to Know (Yahoo)
 QCOM: BNP Paribas Cuts QUALCOMM (QCOM) Target on Ongoing Smartphone Weakness (Yahoo)
 QCOM: Stock Market Today, April 20: Marvell Gains on Reports of Custom AI Chip Talks With Google (Yahoo)
+DGX: Quest Diagnostics Reports First Quarter 2026 Financial Results; Raises Revenue and EPS Guidance for Full Year 2026 (Finnhub)
 DGX: Take the Zacks Approach to Beat the Markets: Citigroup, Seanergy, PepsiCo in Focus (Yahoo)
-DGX: Digi Power X signs $19.6M GPU rental agreement with SubQ AI (Yahoo)
 SSNC: Harbor Active Small Cap ETF Q1 2026 Portfolio Review (SeekingAlpha)
 STLD: Steel Dynamics: Tariff Benefits Strengthen In Q1 (SeekingAlpha)
 STLD: Steel Dynamics (STLD) Reports Q1 Earnings: What Key Metrics Have to Say (Yahoo)
@@ -197,8 +197,8 @@ HRMY: Harmony Biosciences: Four More Wakix Years, Nothing Visible Beyond (Seekin
 HUT: Hut 8 Schedules First Quarter 2026 Earnings Release and Conference Call (Finnhub)
 KEYS: These 2 Computer and Technology Stocks Could Beat Earnings: Why They Should Be on Your Radar (Yahoo)
 MARA: 'Think Even Bigger': Michael Saylor Drops $2.54 Billion On Bitcoin, But What Do Prediction Markets Say? (Benzinga)
-NVDA: I'm Calling It: NuScale Power Stock Is a Buy Before June 2 (Yahoo)
-NVDA: What Tim Cook's exit really tells us about Apple (Yahoo)
+NVDA: Will Billionaire Investor Bill Ackman Jump Into the SpaceX IPO? (Yahoo)
+NVDA: Up 30% in 1 Month, Is Zcash a Better Buy Than Bitcoin? (Yahoo)
 NXPI: Wells Fargo resets NXP Semiconductors forecast ahead of earnings (Yahoo)
 NXPI: NXP Semiconductors (NXPI) Advances While Market Declines: Some Information for Investors (Yahoo)
 OKE: ONEOK: Midstream's Best Risk-Adjusted Value Play (Yahoo)
@@ -206,7 +206,8 @@ PDD: PDD Holdings (PDD): The Best Profitable Undervalued Stock to Buy Now (Yahoo
 PDD: How Resolution of Ghost Takeaway Probe at PDD Holdings (PDD) Has Changed Its Investment Story (Yahoo)
 HOOD: Robinhood CEO Vlad Tenev Opened Up About What Success Means To Him And The Legacy He Would Be 'Excited' To Tell His Grandkids (Yahoo)
 HOOD: Which S&P500 stocks are the most active on Monday? (ChartMill)
-SYF: Synchrony Financial (SYF) Reports Q1: Everything You Need To Know Ahead Of Earnings (Yahoo)
+SYF: Synchrony Financial Declares Quarterly Cash Dividend of Common Stock, Payable on May 15, 2026 (Finnhub)
+SYF: Synchrony: Q1 Earnings Snapshot (Finnhub)
 TSM: Huang Isn't Planning To Wake Up A Loser (SeekingAlpha)
 TSM: SCHD: A Decent Buy But Not To Beat The Market (SeekingAlpha)
 TOL: Toll Brothers Announces Model Home Grand Opening at The Isles at Lakewood Ranch in Florida (Finnhub)
@@ -215,13 +216,13 @@ IBIT: Ethereum Tapped $2,400—So Why Does This Top Trader Warn Of $1,300? (Benz
 IBIT: Bitcoin Tested $78,000 Resistance On $996M ETF Week: Breakout Coming This Week? (Benzinga)
 
 ── HEADLINES ──
+• UnitedHealth tops quarterly estimates, hikes profit outlook as insurer manages high medical costs (CNBC)
 • War in Iran is causing biggest energy crisis in history, IEA says - Reuters (Reuters)
 • Iran executes man over burning of mosque during January protests, Mizan reports - Reuters (Reuters)
+• Scam messages offering ships safe transit through Hormuz, security firm warns - Reuters (Reuters)
 • India's March crude imports slide on Iran war, Russian volumes hit record high, data shows - Reuters (Reuters)
 • Iran war fuel hike adds $100 to long-haul flight cost, study says - Reuters (Reuters)
 • Biofuels back in vogue as Iran war triggers oil price surge - Reuters (Reuters)
 • US positive on Iran deal but talks still uncertain as ceasefire end nears - Reuters (Reuters)
-• Gold falls as investors await clarity on US-Iran talks, dollar edges up - Reuters (Reuters)
-• Financials lead Indian shares higher; US-Iran talks in focus - Reuters (Reuters)
 
 === END DATA DROP ===

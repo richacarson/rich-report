@@ -15,8 +15,8 @@ if (!FINNHUB_KEY) { console.error('ERROR: FINNHUB_KEY not set'); process.exit(1)
 // HOLDINGS CONFIGURATION
 // ═══════════════════════════════════════════
 
-const DIVIDEND = ['ABT','A','ADI','ATO','ADP','BKH','CAT','CHD','CL','FAST','GD','GPC','LRCX','LMT','MATX','NEE','ORI','PCAR','QCOM','DGX','SSNC','STLD','SYK','TEL','VLO'];
-const GROWTH = ['AMD','AEM','ATAT','CVX','CWAN','CNX','COIN','EIX','FINV','FTNT','GFI','SUPV','HRMY','HUT','KEYS','MARA','NVDA','NXPI','OKE','PDD','HOOD','SYF','TSM','TOL'];
+const DIVIDEND = ['ABT','ADI','ATO','ADP','BKH','CAT','CHD','CL','CTRA','FAST','GD','GPC','LRCX','LMT','NEE','NTR','ORI','PCAR','QCOM','DGX','SSNC','STLD','SYK','TEL','VLO'];
+const GROWTH = ['AMD','ATAT','CVX','CWAN','CNX','COHR','COIN','CRDO','EIX','FCX','FTNT','GFI','SUPV','HRMY','HUT','KEYS','MARA','MRVL','NVDA','NXPI','OKE','HOOD','SYF','TSM','VST'];
 const DIGITAL_ETFS = ['IBIT','ETHA'];
 const BENCHMARKS = ['DVY','IWS','IUSG'];
 const INDEX_PROXIES = ['SPY','DIA','QQQ','IWM'];

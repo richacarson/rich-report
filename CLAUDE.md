@@ -164,8 +164,8 @@ If you cannot verify a comparative claim from the data provided, do not make it.
 
 ### IOWN Holdings
 
-Dividend sleeve: ABT, A, ADI, ATO, ADP, BKH, CAT, CHD, CL, FAST, GD, GPC, LRCX, LMT, MATX, NEE, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
-Growth sleeve: AMD, AEM, ATAT, CVX, CWAN, CNX, COIN, EIX, FINV, FTNT, GFI, SUPV, HRMY, HUT, KEYS, MARA, NVDA, NXPI, OKE, PDD, HOOD, SYF, TSM, TOL
+Dividend sleeve: ABT, ADI, ATO, ADP, BKH, CAT, CHD, CL, CTRA, FAST, GD, GPC, LRCX, LMT, NEE, NTR, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
+Growth sleeve: AMD, ATAT, CVX, CWAN, CNX, COHR, COIN, CRDO, EIX, FCX, FTNT, GFI, SUPV, HRMY, HUT, KEYS, MARA, MRVL, NVDA, NXPI, OKE, HOOD, SYF, TSM, VST
 Digital ETFs: IBIT, ETHA
 Benchmarks: DVY, IWS, IUSG
 

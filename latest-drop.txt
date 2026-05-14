@@ -1,27 +1,27 @@
-=== IOWN DATA DROP v2 | Thu, May 14, 2026 | 03:39 AM CT ===
+=== IOWN DATA DROP v2 | Thu, May 14, 2026 | 08:08 AM CT ===
 
 ── ECONOMIC CALENDAR (TODAY) ──
-2026-05-14 12:30:00 Continuing Jobless Claims [Est: 1790 | Prior: 1766]
-2026-05-14 12:30:00 Export Prices MoM [Est: 1.1 | Prior: 1.6]
-2026-05-14 12:30:00 Export Prices YoY [Prior: 5.6]
-2026-05-14 12:30:00 Import Prices MoM [Est: 1 | Prior: 0.8]
-2026-05-14 12:30:00 Import Prices YoY [Prior: 2.1]
-2026-05-14 12:30:00 Initial Jobless Claims [Est: 205 | Prior: 200]
-2026-05-14 12:30:00 Jobless Claims 4-week Average [Prior: 203.25]
-2026-05-14 12:30:00 Retail Sales Control Group MoM [Est: 0.4 | Prior: 0.7]
-2026-05-14 12:30:00 Retail Sales Ex Autos MoM [Est: 0.6 | Prior: 1.9]
-2026-05-14 12:30:00 Retail Sales Ex Gas/Autos MoM [Prior: 0.6]
-2026-05-14 12:30:00 Retail Sales MoM [Est: 0.5 | Prior: 1.7]
-2026-05-14 12:30:00 Retail Sales YoY [Prior: 4]
+2026-05-14 12:30:00 Continuing Jobless Claims [Actual: 1782 | Est: 1790 | Prior: 1758]
+2026-05-14 12:30:00 Export Prices MoM [Actual: 3.3 | Est: 1.1 | Prior: 1.5]
+2026-05-14 12:30:00 Export Prices YoY [Actual: 8.8 | Prior: 5.4]
+2026-05-14 12:30:00 Import Prices MoM [Actual: 1.9 | Est: 1 | Prior: 0.9]
+2026-05-14 12:30:00 Import Prices YoY [Actual: 4.2 | Prior: 2.3]
+2026-05-14 12:30:00 Initial Jobless Claims [Actual: 211 | Est: 205 | Prior: 199]
+2026-05-14 12:30:00 Jobless Claims 4-week Average [Actual: 203.75 | Prior: 203]
+2026-05-14 12:30:00 Retail Sales Control Group MoM [Actual: 0.5 | Est: 0.4 | Prior: 0.8]
+2026-05-14 12:30:00 Retail Sales Ex Autos MoM [Actual: 0.7 | Est: 0.6 | Prior: 1.9]
+2026-05-14 12:30:00 Retail Sales Ex Gas/Autos MoM [Actual: 0.5 | Prior: 0.7]
+2026-05-14 12:30:00 Retail Sales MoM [Actual: 0.5 | Est: 0.5 | Prior: 1.6]
+2026-05-14 12:30:00 Retail Sales YoY [Actual: 4.9 | Prior: 4.2]
 2026-05-14 14:00:00 Business Inventories MoM [Est: 0.8 | Prior: 0.4]
 2026-05-14 14:00:00 Retail Inventories Ex Autos MoM [Est: 0.5 | Prior: 0.3]
-2026-05-14 14:30:00 EIA Natural Gas Stocks Change [Est: 86 | Prior: 63]
+2026-05-14 14:15:00 Fed Schmid Speech
 
 ── EARNINGS (YESTERDAY) ──
 BUDA EPS:0.05 vs Est:0.0306 | SWMR EPS:-0.28 vs Est:-0.1122 | NHICU EPS:— vs Est:— | SOWG EPS:— vs Est:— | NASO EPS:— vs Est:— | IPEX EPS:— vs Est:— | SZZL EPS:— vs Est:— | GSHR EPS:— vs Est:— | FERAU EPS:— vs Est:— | LOKVU EPS:— vs Est:— | FGMC EPS:— vs Est:— | COLA EPS:— vs Est:— | CAPN EPS:— vs Est:— | FDSB EPS:— vs Est:— | EQPT EPS:-0.11 vs Est:-0.2428
 
 ── EARNINGS (TODAY) ──
-INFQ Est:— | CCCX Est:— | MRLN Est:-0.102 | TKMO Est:— | LICT Est:— | AEI Est:— | ZSQR Est:— | MLCI Est:— | FPS Est:0.1615 | LSH Est:— | YSS Est:-0.1121 | VSNT Est:1.8176 | AIRO Est:-0.3468 | FRMI Est:-0.0493 | ATHR Est:-0.102 | ELWT Est:-0.2244 | USEA Est:-0.1224 | MCAP Est:— | SIDU Est:— | RIME Est:-0.7446
+INFQ Est:— | CCCX Est:— | MRLN Est:-0.102 | TKMO Est:— | LICT Est:— | AEI Est:— | ZSQR Est:— | MLCI Est:— | FPS Est:0.1615 | LSH Est:— | YSS Est:-0.1121 | VSNT Est:1.8176 | AIRO Est:-0.3468 | FRMI Est:-0.0493 | ATHR Est:-0.102 | ELWT Est:-0.2244 | BOF Est:— | USEA Est:-0.1224 | MCAP Est:— | SIDU Est:—
 
 ── INDICES ──
 S&P 500: $742.31 (+0.56%) | O:$738.47 H:$743.91 L:$735.47 PC:$738.18
@@ -140,13 +140,13 @@ VST: -2.90% ($142.61)
 ── IOWN HOLDINGS NEWS (24h) ──
 ABT: How The Investment Narrative For Abbott Laboratories (ABT) Is Shifting With Recent Analyst Resets (Yahoo)
 ABT: Should You Buy, Hold or Sell BSX Stock Amid Cardiovascular Boom? (Yahoo)
+ADI: Zacks Investment Ideas feature highlights Texas, Analog Devices and ON (Yahoo)
 ADI: S&P 500 and Nasdaq 100 Post New Record Highs on Chip Stock Strength (Yahoo)
-ADI: Assessing Analog Devices (ADI) Valuation After Strong Recent Share Price Momentum (Yahoo)
 ATO: Why Atmos Energy (ATO) is a Top Dividend Stock for Your Portfolio (Yahoo)
 ATO: Inflation Hits Highest Level in 3 Years: 4 Defensive Stocks to Buy (Yahoo)
 ADP: ADP National Employment Report Preliminary Estimate for April 25, 2026 (Yahoo)
-CAT: Caterpillar: A Masterclass In Execution Meeting An Irrationally Exuberant Valuation (SeekingAlpha)
-CAT: Seagate, SanDisk Stocks Get 2X ETF Boost As Themes Expands Leveraged AI Trade With 9 Funds (Benzinga)
+CAT: Latin America Data Center Construction Industry Outlook 2026-2031 with ABB, Alfa Laval, ASSA ABLOY, Axis Communications, Bosch, Bruno Generators, Caterpillar, Cummins Leading (Yahoo)
+CAT: Caterpillar (CAT) Price Target Increased by 16.79% to 900.78 (Fintel)
 CHD: Is Procter & Gamble's Baby Care Slump Dragging Overall Growth? (Yahoo)
 CL: Prediction: Colgate-Palmolive Will Jump 20% This Year (Yahoo)
 CL: OLLI vs. CL: Which Stock Is the Better Value Option? (Yahoo)
@@ -156,37 +156,40 @@ FAST: Fastenal (FAST) Down 2.9% Since Last Earnings Report: Can It Rebound? (Yah
 GD: RDW Underperforms Industry in the Past Year: How to Play the Stock? (Yahoo)
 GD: General Dynamics Expands AI, Cybersecurity Push With NightDragon Partnership (Benzinga)
 GPC: A Look At Genuine Parts (GPC) Valuation After Recent Share Price Weakness (Yahoo)
+LRCX: AI Gold Rush Goes Public - Cerebras Storms Nasdaq as Cisco Rewrites the Rulebook (ChartMill)
 LRCX: Why Lam Research (LRCX) Is Levered to AI-Driven Wafer Fab and Packaging Spending (Yahoo)
-LRCX: S&P 500 and Nasdaq 100 Post New Record Highs on Chip Stock Strength (Yahoo)
 LMT: Will New Space Interceptor and 5G Contracts Plus Leadership Shift Change Lockheed Martin's (LMT) Narrative (Yahoo)
 LMT: Here's How Much $1000 Invested In Lockheed Martin 15 Years Ago Would Be Worth Today (Yahoo)
 NEE: Is It Too Late To Consider NextEra Energy (NEE) After A 35% One Year Rally? (Yahoo)
 NEE: NextEra Energy, Inc. (NEE) Is a Trending Stock: Facts to Know Before Betting on It (Yahoo)
 NTR: Nutrien Ltd. 2026 Q1 - Results - Earnings Call Presentation (SeekingAlpha)
 NTR: Nutrien Ltd. (NTR:CA) Shareholder/Analyst Call Transcript (SeekingAlpha)
-QCOM: Trump-Xi Summit Puts Nvidia, Boeing And 500-Jet Deal In Focus (Yahoo)
-QCOM: Wall Street Is Worried About a ‘Sizzling’ Semiconductor Trade. History Says Cooling Periods Like This Set Up the Next Leg Higher (Yahoo)
+QCOM: Discover the top S&P500 movers in Thursday's pre-market session. (ChartMill)
+QCOM: Why Is Qualcomm (QCOM) Stock Soaring Today (Yahoo)
 SSNC: Diamond Hill Select Strategy Q1 2026 Quarterly Scorecard (SeekingAlpha)
 SSNC: SS&C GlobeOp Hedge Fund Performance Index and Capital Movement Index (Finnhub)
+STLD: Assessing Steel Dynamics (STLD) Valuation After Strong Recent Share Price Momentum (Yahoo)
 STLD: Jim Cramer Considers Steel Dynamics a “Great Company” (Yahoo)
 SYK: Stryker Corporation (SYK) Presents at Bank of America Global Healthcare Conference 2026 Transcript (SeekingAlpha)
 SYK: Earnings Miss: Stryker Corporation Missed EPS By 15% And Analysts Are Revising Their Forecasts (Yahoo)
+TEL: TE Connectivity CEO to present at Bernstein's Strategic Decisions Conference (Finnhub)
 TEL: 3M Expands AI Data Center Push With New Optical Connectivity Partnership (Benzinga)
 VLO: What Are Wall Street Analysts' Target Price for Valero Energy Stock? (Yahoo)
 VLO: Jim Cramer Says “Valero Will Print Money for You” (Yahoo)
-AMD: 2 Momentum  Stocks Worth Investigating and 1 We Avoid (Yahoo)
-AMD: Which AI Supercycle Stock Will Make You Richer Over the Next 10 Years? (Yahoo)
+AMD: AI Gold Rush Goes Public - Cerebras Storms Nasdaq as Cisco Rewrites the Rulebook (ChartMill)
+AMD: Zacks Investment Ideas feature highlights Texas, Analog Devices and ON (Yahoo)
 AEM: RING: Well Exposed To Established Miners, And More Well-Rounded Than GDX (SeekingAlpha)
 AEM: Agnico Eagle Mines Limited (AEM) Presents at Bank of America Global Metals, Mining & Steel Conference 2026 Transcript (SeekingAlpha)
 ATAT: Atour Lifestyle Holdings Limited (ATAT) Q1 2026 Earnings Call Transcript (SeekingAlpha)
 ATAT: Atour Lifestyle : First Quarter 2026 Earnings Conference Call Transcript (Finnhub)
+CVX: Weak Statutory Earnings May Not Tell The Whole Story For Chevron (NYSE:CVX) (Yahoo)
 CVX: Energy Stocks Have Soared. Why the Boom Can Last. (Yahoo)
-CVX: Chevron to Sell Some Asia-Pacific Assets to Japan's Eneos for $2.17 Billion (Finnhub)
 CNX: Compared to Estimates, CNX Resources (CNX) Q1 Earnings: A Look at Key Metrics (Yahoo)
 COIN: Coinbase CEO Says CLARITY Is 'Closer Than Ever' — Here's Why Crypto Investors Care (Yahoo)
 COIN: GraniteShares Launches MSTR, Coinbase ETFs As Bitcoin-Fueled Volatility Trade Heats Up (Benzinga)
-CRDO: Fundamentals Over Everything (SeekingAlpha)
-CRDO: Credo: The Market Is Missing What Meta And CoreWeave Just Confirmed (SeekingAlpha)
+CRDO: Credo Schedules Fourth Quarter and Fiscal Year 2026 Financial Results Conference Call (Finnhub)
+CRDO: Credo's Next Growth Phase Looks Much Bigger (SeekingAlpha)
+EIX: 3 Bank of America Value 10 Stocks Pay Dividends and Trade Under 10X PE (Yahoo)
 EIX: Edison International : Breaking Free from Gas Prices (Finnhub)
 FCX: Something Historic Is Quietly Lifting Commodities To Records — And It's Not Hormuz (Benzinga)
 FCX: Finlay Minerals Details Fully Funded 2026 Exploration Programs at PIL and ATTY; Involves Freeport (Yahoo)
@@ -198,34 +201,35 @@ HUT: Jacobs Awarded Sole‑Source Engineering, Procurement And Construction Mana
 KEYS: 3 Industrials Stocks That Fall Short (Yahoo)
 KEYS: Will Healthy Y/Y Revenue Growth Boost Keysight's Q2 Earnings? (Yahoo)
 MARA: Why Is Marathon Digital Stock Trading Lower Today? (Benzinga)
-MRVL: Marvell Stock Pops. Why Wall Street Sees Upside. (Yahoo)
-MRVL: US Equity Indexes Mixed as Communication Services, Tech Help Outweigh Impact of Hot Producer Prices (Yahoo)
-NVDA: Meet the AI Stock Running Rings Around Nvidia in 2026. It Could Just Be Getting Started (Yahoo)
-NVDA: Xi Tells US CEOs Accompanying Trump That China Will Open Up More (Yahoo)
+MRVL: Equity Futures Rise as Trump, Xi Kick Off High-Stakes Meeting (Yahoo)
+MRVL: Marvell's Next AI Wave Is Not Chips (SeekingAlpha)
+NVDA: Here Are Thursday’s Top Wall Street Analyst Research Calls: Commercial Metals, Doximity, Draftkings, Hut 8, Illumina, Lowe’s, TeraWulf, Starbucks, Whirlpool, Wix.com, and More (Yahoo)
+NVDA: Prediction: XRP Will Hit $5 in 2026 (Yahoo)
 NXPI: NXP Semiconductors N : Collaborates with Quanta to Accelerate Deterministic Zonal Networking for Software Defined Vehicles (Finnhub)
 NXPI: Chip Stock Strength Lifts the Broader Market (Yahoo)
 OKE: Truist Raises PT on ONEOK (OKE) Stock (Yahoo)
 HOOD: Why Cathie Wood And Robinhood Agree That Retail Investors Need Access To Private Markets (Yahoo)
 HOOD: Robinhood Markets, Inc. reports April 2026 operating data (Finnhub)
+SYF: 3 Bank of America Value 10 Stocks Pay Dividends and Trade Under 10X PE (Yahoo)
 SYF: Synchrony and CareCredit Lend a Helping Paw to College Puppy Raisers Training Canine Companions' Next Generation of Service Dogs (Yahoo)
 TSM: Alibaba, Tencent Surge: 3 Top Asian Tech Stocks For Trump-Xi Summit (SeekingAlpha)
 TSM: Fundamentals Over Everything (SeekingAlpha)
 TOL: Toll Brothers (TOL) Stock Sinks As Market Gains: Here's Why (Yahoo)
 TOL: Toll Brothers Announces Seth Ring to Succeed Rob Parahus as President and Chief Operating Officer (Yahoo)
+VST: Vistra (VST) Advances 4.5 GW Capacity Growth Amid Projected Multi-Year Load Increase (Yahoo)
 VST: Is Vistra (VST) Still a Good AI Stock to Buy? Grok Says Yes (Yahoo)
-VST: Is Trending Stock Vistra Corp. (VST) a Buy Now? (Yahoo)
 IBIT: Market Brief: Will The SpaceX IPO Pop The U.S. Stock Bubble? (SeekingAlpha)
 IBIT: Charles Schwab Rolls Out Bitcoin, Ethereum Trading As ETF Outflows Hit $233 Million (Benzinga)
 ETHA: Charles Schwab Rolls Out Bitcoin, Ethereum Trading As ETF Outflows Hit $233 Million (Benzinga)
 
 ── HEADLINES ──
-• Stressed crude oil market looks to Xi-Trump summit for Iran help - Reuters (Reuters)
-• Asia Pacific banks face growing credit risks, raise provisions as Iran war drags on - Reuters (Reuters)
-• Iran war overshadows Trump's China visit as peace talks stall - Reuters (Reuters)
-• South Korea official says unlikely anyone but Iran behind Hormuz ship attack, Yonhap reports - Reuters (Reuters)
-• As Iran war jolts Air India, Lufthansa and Cathay pounce on fast-growing market - Reuters (Reuters)
-• Gold prices steady as Trump-Xi meeting, Iran war draw focus - Reuters (Reuters)
-• Second Japan-linked oil tanker sails via Strait of Hormuz as PM asks Iran to help out - Reuters (Reuters)
-• Xi warns Trump that mishandling of Taiwan could lead to conflict - Reuters (Reuters)
+• Jim Cramer's top 10 things to watch in the stock market Thursday (CNBC)
+• Xi tells Musk, Tim Cook and other CEOs on Trump's trip: China will 'open wider' (CNBC)
+• Should you ever resign by text? Trump's FDA shake-up raises the question (CNBC)
+• Wealthy donors stand to win double tax benefit if 'Trump Accounts' allow stock donations (CNBC)
+• Latvian Prime Minister resigns over handling of Ukrainian drone incidents - Reuters (Reuters)
+• Venezuela embarks on $150 billion restructuring of debt amid political turmoil (CNBC)
+• Iran allowing transit of Chinese vessels in Strait of Hormuz, Fars news reports - Reuters (Reuters)
+• White House has few tools for gas-price relief as Iran war drags on - Reuters (Reuters)
 
 === END DATA DROP ===

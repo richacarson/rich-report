@@ -55,7 +55,7 @@ body{
   font-weight:500;
 }
 .bar-inner{
-  max-width:1100px;
+  max-width:1320px;
   margin:0 auto;
   display:flex;
   justify-content:space-between;
@@ -101,7 +101,7 @@ body{
   text-align:center;
   position:relative;
 }
-.mast-inner{max-width:880px;margin:0 auto}
+.mast-inner{max-width:1100px;margin:0 auto}
 .mast-the{
   font-family:'Newsreader',serif;
   font-style:italic;
@@ -191,7 +191,7 @@ body{
 }
 .nav.scrolled{box-shadow:0 1px 0 var(--rule),0 4px 20px rgba(24,21,52,.05)}
 .nav-inner{
-  max-width:1100px;
+  max-width:1320px;
   margin:0 auto;
   display:flex;
   justify-content:center;
@@ -235,10 +235,16 @@ body{
 
 /* ─── Main ─── */
 .main{
-  max-width:880px;
+  max-width:1320px;
   margin:0 auto;
-  padding:56px 24px 80px;
+  padding:56px 32px 80px;
 }
+
+/* Prose-style content kept narrower for readable line-length */
+.sp,
+.sec-disc,
+.refs,
+.disc{max-width:960px;margin-left:auto;margin-right:auto}
 
 /* ─── Sections ─── */
 .sec{
@@ -339,16 +345,12 @@ body{
   margin-bottom:12px;
   box-shadow:var(--shadow-sm);
   transition:all var(--t);
-  animation:fi .4s ease both;
+  opacity:1;
 }
 .bc:hover{
   box-shadow:var(--shadow-md);
   border-left-color:var(--gold-deep);
   transform:translateY(-1px);
-}
-@keyframes fi{
-  from{opacity:0;transform:translateY(6px)}
-  to{opacity:1;transform:translateY(0)}
 }
 .bh{
   font-family:'DM Sans',sans-serif;

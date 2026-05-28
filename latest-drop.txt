@@ -1,4 +1,4 @@
-=== IOWN DATA DROP v2 | Thu, May 28, 2026 | 03:45 AM CT ===
+=== IOWN DATA DROP v2 | Thu, May 28, 2026 | 06:23 AM CT ===
 
 ── ECONOMIC CALENDAR (TODAY) ──
 2026-05-28 00:00:00 Fed Jefferson Speech
@@ -22,7 +22,7 @@
 MDBH EPS:— vs Est:— | INTE EPS:— vs Est:— | COOT EPS:— vs Est:— | CSAI EPS:— vs Est:-0.0918 | VSTD EPS:— vs Est:— | MOV EPS:0.32 vs Est:0.055 | HIO EPS:— vs Est:— | SPTN EPS:— vs Est:— | CHUC EPS:— vs Est:— | GRDX EPS:-0.82 vs Est:— | DOYU EPS:— vs Est:0.6528 | NVVE EPS:— vs Est:— | GLLI EPS:— vs Est:— | FNGR EPS:— vs Est:— | CDT EPS:— vs Est:—
 
 ── EARNINGS (TODAY) ──
-COOT Est:— | BTOG Est:— | LVRLF Est:— | PKE Est:— | NRT Est:— | AWF Est:— | BOSC Est:— | FUTU Est:22.525 | TIGR Est:0.2346 | NTRB Est:— | CURR Est:— | ICCT Est:— | XNET Est:— | CHA Est:2.0513 | DXLG Est:-0.0663 | ARBE Est:-0.0714 | HQY Est:1.1255 | DLTR Est:1.5821 | PLAB Est:0.5508 | AEO Est:0.122
+COOT Est:— | BTOG Est:— | LVRLF Est:— | PKE Est:— | NRT Est:— | AWF Est:— | RMCF Est:— | BOSC Est:— | FUTU Est:22.525 | TIGR Est:0.2346 | NTRB Est:— | CURR Est:— | ICCT Est:— | XNET Est:— | CHA Est:2.0513 | DXLG Est:-0.0663 | ARBE Est:-0.0714 | HQY Est:1.1255 | DLTR Est:1.5821 | PLAB Est:0.5508
 
 ── INDICES ──
 S&P 500: $750.46 (-0.02%) | O:$750.88 H:$751.38 L:$748.22 PC:$750.59
@@ -171,10 +171,11 @@ DGX: Are Medical Stocks Lagging  Quest Diagnostics (DGX) This Year? (Yahoo)
 SSNC: Diamond Hill Select Fund Q1 2026 Portfolio Update (SeekingAlpha)
 SYK: Is Stryker (SYK) One of the Best Medical Technology Stocks to Buy Right Now Despite a Cyberattack? (Yahoo)
 SYK: Stock Market Today, May 27: Boston Scientific Plunges After Reiterating Underwhelming Full Year Growth Guidance (Yahoo)
+TEL: TE Connectivity: Growth Boosted By Data Centers But Fairly Valued (SeekingAlpha)
 VLO: ExxonMobil Seeks Guyana EPA Clearance for Ninth Stabroek Development (Yahoo)
 VLO: Stocks Mixed Awaiting Fresh Iran News (Yahoo)
 AMD: 'It's Gung-Ho, Folks' - Dimon Lets Loose While the Chip Rally Catches Its Breath and AI Earnings Deliver the Real Verdict (ChartMill)
-AMD: Exclusive-ByteDance developing custom CPU chips to support AI rollout, sources say (Yahoo)
+AMD: AMD: I Was Cautious, But The Story Has Improved (Rating Upgrade) (SeekingAlpha)
 AEM: CIBC Maintains Outperformer on Agnico Eagle Mines, Raises Price Target to $310 (Benzinga)
 AEM: ValuEngine Weekly Market Summary And Commentary (SeekingAlpha)
 ATAT: Tongcheng's Upbeat Earnings Report Fails To Discuss Anti-Trust Probe Into Major Stakeholder Trip.com (Benzinga)
@@ -185,24 +186,24 @@ COIN: Brian Armstrong Says You Can Now Route Your Paycheck Directly To Coinbase 
 COIN: Crypto Lobby Unseats Texas Lawmaker. What’s Next for Coinbase’s Legislative Push. (Yahoo)
 CRDO: No, Nvidia Is Not Cheap - Here's Why (SeekingAlpha)
 CRDO: Something Rare Is Powering The Russell 2000's Record Run, And AI Is The Reason (Benzinga)
+FCX: Freeport-McMoRan: Robust Pipeline And Significant Long-Term Potential Make It A Buy (SeekingAlpha)
 FCX: Dig For A Shiny Return From Metals Miner Freeport-McMoRan With This Strategy (Yahoo)
-FCX: FCX Leads Metal And Mining Stocks Near Buy Points On Peace Hopes (Yahoo)
 FTNT: Stocks Settle Mixed on Conflicting US-Iran Signals (Yahoo)
 FTNT: Stocks Mixed Awaiting Fresh Iran News (Yahoo)
 HUT: Billionaire Dan Loeb’s Third Point Just Took a New Position in Hut 8. What This Means for HUT Stock. (Yahoo)
 HUT: Hut 8: Richly Valued And Still Highly Dependent On Bitcoin Mining (SeekingAlpha)
 KEYS: KEYS Rides on Strength in the CSG Segment: More Upside Ahead? (Yahoo)
 KEYS: Impressive Earnings May Not Tell The Whole Story For Keysight Technologies (NYSE:KEYS) (Yahoo)
-MRVL: 'It's Gung-Ho, Folks' - Dimon Lets Loose While the Chip Rally Catches Its Breath and AI Earnings Deliver the Real Verdict (ChartMill)
-MRVL: Marvell Technology Inc (MRVL) Q1 2027 Earnings Call Highlights: Record Revenue and Strategic ... (Yahoo)
-NVDA: Why Is Crypto Crashing Today? Bitcoin, XRP, and Ethereum Slide on Fresh Iran Strikes (Yahoo)
-NVDA: 'It's Gung-Ho, Folks' - Dimon Lets Loose While the Chip Rally Catches Its Breath and AI Earnings Deliver the Real Verdict (ChartMill)
+MRVL: MRVL Q1 Deep Dive: Data Center Growth and AI Demand Drive Outlook Upgrade (Yahoo)
+MRVL: Marvell Stock Drops After Earnings Beat. It Sees Growth in Powering the AI Boom. (Yahoo)
+NVDA: NVIDIA Corp (NASDAQ:NVDA) Flashes Strong High Growth Momentum and Setup Ratings for Potential Breakout (ChartMill)
+NVDA: ByteDance making custom CPU chips to support AI rollout, sources say (Yahoo)
 NXPI: NXP Semiconductors (NXPI) Stock Drops Despite Market Gains: Important Facts to Note (Yahoo)
 NXPI: If You Invested $1000 in NXP Semiconductors a Decade Ago, This is How Much It'd Be Worth Now (Yahoo)
+OKE: ONEOK, Inc. (OKE) Presents at Bernstein 42nd Annual Strategic Decisions Conference - Slideshow (SeekingAlpha)
 OKE: ONEOK, Inc. (OKE) Presents at Bernstein 42nd Annual Strategic Decisions Conference Transcript (SeekingAlpha)
-OKE: Q1 2026 Midstream/MLP Buybacks: Steady Start To Year (SeekingAlpha)
+HOOD: Robinhood hands AI agents the keys to its trading platform and credit card (Yahoo)
 HOOD: Robinhood now lets AI trade stocks on your behalf (Yahoo)
-HOOD: Robinhood stock rises after the company allows AI agents for trading and credit card purchases (Yahoo)
 SYF: Synchrony’s Massive Buyback And Dividend Hike Could Be A Game Changer For Synchrony Financial (SYF) (Yahoo)
 SYF: A Look At Synchrony Financial’s Valuation After Recent Share Price Weakness (Yahoo)
 TSM: EWT: AI Revolution Meets The Geopolitical Shadow And Stretched Valuation (SeekingAlpha)
@@ -216,13 +217,13 @@ IBIT: Bitcoin Drops Below $76,000 And Enters Correction Phase (SeekingAlpha)
 ETHA: FETH: Missing Yield Component And Macro Uncertainty Limits Upside (SeekingAlpha)
 
 ── HEADLINES ──
+• Key energy and shipping trends after three months of Iran turmoil - Reuters (Reuters)
+• Not everybody is a loser from the Iran war. Just ask Brunei - Reuters (Reuters)
 • Morning Bid: The US-Iran ceasefire is unravelling - Reuters (Reuters)
 • Iran and US trade air strikes after Trump dismisses report of Hormuz deal - Reuters (Reuters)
 • Iran's IRGC say they targeted US airbase after strike near Bandar Abbas - Reuters (Reuters)
 • Kuwait says air defences intercepting hostile missile, drone attacks - Reuters (Reuters)
-• Gold hits two-month low as US-Iran tension stokes inflation fears - Reuters (Reuters)
-• Dollar climbs to one-week high as Gulf tensions flare - Reuters (Reuters)
-• Shares falter, oil gains as Gulf hostilities heat up - Reuters (Reuters)
-• US military strike in eastern Pacific kills two men - Reuters (Reuters)
+• Gold hits two-month low as US-Iran tension stokes inflation and rate hike fears - Reuters (Reuters)
+• Dollar edges up with Iran conflict, US rate outlook in focus - Reuters (Reuters)
 
 === END DATA DROP ===

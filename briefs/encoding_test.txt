@@ -1,1 +1,1 @@
-VGVzdCBjb250ZW50IGZvciBiaW5hcnkgZW5jb2RpbmcgY2hlY2sK
+Test content for binary encoding check

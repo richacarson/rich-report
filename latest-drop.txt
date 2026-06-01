@@ -1,11 +1,21 @@
-=== IOWN DATA DROP v2 | Sun, May 31, 2026 | 03:44 AM CT ===
+=== IOWN DATA DROP v2 | Mon, Jun 1, 2026 | 03:44 AM CT ===
 
 ── ECONOMIC CALENDAR (TODAY) ──
-2026-05-31 00:30:00 Fed Powell Speech
-2026-05-31 12:30:00 Fed Waller Speech
+2026-06-01 13:45:00 S&P Global Manufacturing PMI Final [Est: 55.3 | Prior: 54.5]
+2026-06-01 14:00:00 Construction Spending MoM [Est: 0.2 | Prior: 0.6]
+2026-06-01 14:00:00 ISM Manufacturing Employment [Prior: 46.4]
+2026-06-01 14:00:00 ISM Manufacturing New Orders [Prior: 54.1]
+2026-06-01 14:00:00 ISM Manufacturing PMI [Est: 53 | Prior: 52.7]
+2026-06-01 14:00:00 ISM Manufacturing Prices [Est: 85.5 | Prior: 84.6]
+2026-06-01 15:30:00 3-Month Bill Auction [Prior: 3.595]
+2026-06-01 15:30:00 6-Month Bill Auction [Prior: 3.65]
+
+── EARNINGS (YESTERDAY) ──
+CANG EPS:-0.67 vs Est:-0.204
 
 ── EARNINGS (TODAY) ──
-CANG Est:-0.204
+⚡ IOWN REPORTING: CRDO Est:1.0497
+LSH Est:— | CUEN Est:— | CUEN Est:— | NXP Est:— | COOT Est:— | HFUS Est:— | COOT Est:— | TESI Est:— | JF Est:— | AIMAU Est:— | VSTD Est:— | AFJK Est:— | NYMXF Est:— | BDRL Est:— | ABIT Est:— | FOTB Est:— | VLGEA Est:— | BRID Est:— | NCNA Est:— | WINT Est:—
 
 ── INDICES ──
 S&P 500: $756.48 (+0.25%) | O:$755.90 H:$758.08 L:$754.69 PC:$754.60
@@ -42,7 +52,7 @@ IBIT: $41.63 (+0.17%)
 ETHA: $15.20 (+0.07%)
 
 ── SENTIMENT ──
-Fear & Greed: 28 (Fear)
+Fear & Greed: 29 (Fear)
 
 ── DIVIDEND STRATEGY (25) ──
 ABT: $85.60 (-0.81%) O:$86.65 H:$86.73 L:$85.28 PC:$86.30
@@ -122,83 +132,62 @@ ATO: -2.25% ($169.13)
 CHD: -2.05% ($95.63)
 
 ── IOWN HOLDINGS NEWS (24h) ──
-ABT: Is ACS’s Cologuard Endorsement Reshaping the Investment Case for Abbott Laboratories (ABT)? (Yahoo)
-ABT: BSX vs. ABT: Which Medical Stock Has More Upside Potential? (Yahoo)
-ADI: Assessing Analog Devices (ADI) Valuation After Strong AI Data Center And Industrial Growth Update (Yahoo)
-ADI: Burke & Herbert Financial Services Starts 2026 With Mixed Results (SeekingAlpha)
-ATO: Burke & Herbert Financial Services Starts 2026 With Mixed Results (SeekingAlpha)
-ATO: Dividend Champion, Contender, And Challenger Highlights: Week Of May 31 (SeekingAlpha)
-ADP: Why Is ADP (ADP) Up 3.7% Since Last Earnings Report? (Yahoo)
-CAT: Is Caterpillar Stock Outperforming the Nasdaq? (Yahoo)
-CAT: Dow Jones Giants Amazon, Caterpillar Lead Five Stocks Near Buy Points (Yahoo)
-CHD: Church & Dwight Announces Miss Mouth’s Messy Eater® Brand Acquisition (Yahoo)
-CHD: Church & Dwight To Acquire Miss Mouth's Messy Eater Stain Removal Brand For ~$325M (Benzinga)
-CL: 2 Weeks in May Rekindled My Love for Stock Picking. Here’s My Daily Trading Routine. (Yahoo)
-CL: 2 Large-Cap Stocks to Target This Week and 1 We Ignore (Yahoo)
+ADI: Want to Buy Analog Devices Inc (ADI) Stock? Listen to Argus First (Yahoo)
+ADI: Semis Versus Software: Should You Follow The Investment Giants And Their 13-F Actions? (SeekingAlpha)
+ADP: Tracking Terry Smith's Fundsmith 13F Portfolio - Q1 2026 Update (SeekingAlpha)
+ADP: Jobs Data, Tech Earnings and Other Key Things to Watch this Week (Yahoo)
+CAT: Analysts Raise Price Targets on Caterpillar (CAT) as Growth Drivers Strengthen (Yahoo)
+CAT: Market concentration is creating 'fragility':  Only 60% of S&P 500 stocks are above their 200-day average (Yahoo)
+CHD: Tracking Terry Smith's Fundsmith 13F Portfolio - Q1 2026 Update (SeekingAlpha)
+CL: EU weighs freezing Russian oil price cap as Middle East war lifts crude prices (Yahoo)
 FAST: How To Invest For Secure Retirement With Big Dividends, 5.7% Yield (SeekingAlpha)
-FAST: 2 Reasons to Watch FAST and 1 to Stay Cautious (Yahoo)
-GD: Hegseth praises Asian allies for 'burden-sharing,' calls out China's role in the region (CNBC)
-GD: Forget Rocket Lab: This Aerospace Defense Titan Is a Far Smarter Valuation Play (Yahoo)
-GPC: Burke & Herbert Financial Services Starts 2026 With Mixed Results (SeekingAlpha)
-GPC: Dividend Champion, Contender, And Challenger Highlights: Week Of May 31 (SeekingAlpha)
-LRCX: Lam Research CEO Sees AI Fueling $140 Billion Chip Equipment Boom (Yahoo)
-LRCX: How The Lam Research (LRCX) Narrative Is Shifting With New Targets And WFE Spending Debates (Yahoo)
+GD: Defense spending, China in Asia and lessons from Ukraine: Takeways from the 2026 IISS Shangri-La Dialogue  (CNBC)
+LRCX: The Semiconductor Play Nobody Owns Just Lapped Wall Street’s Biggest Names (Yahoo)
+LRCX: Top Wall Street analysts see robust growth potential in these 3 stocks (CNBC)
+LMT: Defense spending, China in Asia and lessons from Ukraine: Takeways from the 2026 IISS Shangri-La Dialogue  (CNBC)
 LMT: Why Did South Korea Just Order $4.2 Billion in Military Helicopters From Boeing and Lockheed? (Yahoo)
-LMT: Lockheed Martin hits jackpot as defense spending stays strong (Yahoo)
-NEE: NextEra Energy (NEE) Price Target Raised by $1 at Barclays (Yahoo)
-NEE: XLU Investors: Watch PJM’s March 2027 Data Center Framework Decision (Yahoo)
-ORI: Burke & Herbert Financial Services Starts 2026 With Mixed Results (SeekingAlpha)
-ORI: Dividend Champion, Contender, And Challenger Highlights: Week Of May 31 (SeekingAlpha)
-PCAR: Burke & Herbert Financial Services Starts 2026 With Mixed Results (SeekingAlpha)
-PCAR: Dividend Champion, Contender, And Challenger Highlights: Week Of May 31 (SeekingAlpha)
-QCOM: QUALCOMM Stock: Is QCOM Outperforming the Technology Sector? (Yahoo)
-QCOM: Arm vs. Qualcomm: Consistent Growth vs. Revenue Volatility (Yahoo)
-DGX: Quest Diagnostics (DGX) Upgraded to Buy: Here's What You Should Know (Yahoo)
-SYK: GMED's Robotics Leasing Shift Could Build Recurring Revenue (Yahoo)
-SYK: Is Stryker (SYK) Reframing Its Innovation Edge With Pangea And Cybersecurity Investments? (Yahoo)
-TEL: Stay updated with the S&P500 stocks that are on the move in today's pre-market session. (ChartMill)
-TEL: Dell Technologies Posts Blockbuster Q1 Earnings, Joins NetApp and Other Big Stocks Moving Higher in Friday's Session (Benzinga)
+NEE: NextEra Energy (NEE) Positions for the Next Decade of Utility Growth (Yahoo)
+NEE: This Is the First Energy Stock I Plan to Buy in June (Hint: It's Not ExxonMobil) (Yahoo)
+QCOM: Nvidia Enters Windows Laptop Market, Taking On Intel and AMD (Yahoo)
+QCOM: How to Build $12,500 a Month in Dividend Income From a $2.8 Million Portfolio Without Touching the Aggressive Tier (Yahoo)
+SYK: Tracking Terry Smith's Fundsmith 13F Portfolio - Q1 2026 Update (SeekingAlpha)
+VLO: Mizuho Raises Valero Energy (VLO) Price Target by $67. Here is Why (Yahoo)
 VLO: California Carbon Rule Shift Recasts Valero Refining Costs And Risks (Yahoo)
-VLO: California eases carbon market rules amid affordability concerns (Yahoo)
-AMD: Can Arm Holdings Triple Your Money by the End of the Year? (Yahoo)
-AMD: AMD Taiwan AI Bet Tests Long Term Data Center Ambitions (Yahoo)
-CVX: Chevron's Earnings Dropped Year Over Year, but Production Surged. Here's What Investors Need to Know. (Yahoo)
-CVX: Chevron Moves to Increase Mediterranean Footprint with Greece Offshore Deal (Yahoo)
+AMD: U.S. to close loophole allowing advanced chips to Chinese firms, Reuters says (Yahoo)
+AMD: NVDA Stock Set For Strong Open Today: CEO Unveils First PC Chips At Computex 2026 (Yahoo)
+AEM: Undercovered Dozen: Aeluma, Agnico Eagle, Ciena, Rayonier And More (SeekingAlpha)
+CVX: BATL, USO, UCO Edge Higher As Oil Gains: Exxon Executive Warns Shrinking Inventories Could Send Crude To $160 (Yahoo)
+CVX: Chevron’s (CVX) Production Growth Remains Strong Despite Market Headwinds (Yahoo)
 COIN: A Look At Coinbase Global (COIN) Valuation As New Paycheck Splitting Feature Expands Its Super App Ambitions (Yahoo)
 COIN: What Might The Federal Reserve Decide After May 2026's Job Report? (SeekingAlpha)
+CRDO: Wall Street Week Ahead (SeekingAlpha)
 CRDO: Broadcom, Hewlett Packard Headline Earnings Next Week (SeekingAlpha)
-EIX: Why Is Entergy (ETR) Down 7% Since Last Earnings Report? (Yahoo)
-FCX: First Quantum Minerals (FQVLF) Soars 5.0%: Is Further Upside Left in the Stock? (Yahoo)
-FCX: Is Freeport-McMoRan Inc. (FCX) Among the Best Performing Silver Stocks So Far in 2026? (Yahoo)
-FTNT: Fortinet vs. CrowdStrike: What Comparing Revenue Trends Tells Investors (Yahoo)
-FTNT: Zscaler: Why I'm Not Buying The Dip (SeekingAlpha)
-KEYS: VIAV's NSE Business Remains Robust: Time to Stay Bullish? (Yahoo)
-MRVL: Nvidia’s latest product is a game-changer (Yahoo)
-MRVL: Bank of America resets Marvell stock price target after earnings (Yahoo)
-NVDA: Nvidia Says Big Tech Will Spend $1 Trillion in Capital Expenditures in 2027: 3 Stocks to Buy If It's Right (Yahoo)
-NVDA: Is This New Quantum Computing IPO the Best Under-the-Radar Stock of 2026? (Yahoo)
-OKE: S&P 500 Posts Monthly Gain to New High, Ninth Straight Weekly Rise (Yahoo)
-OKE: Shares of oil and gas-related companies are trading lower as crude prices pull back amid renewed optimism over potential diplomatic progress between the U.S. and Iran this weekend in Pakistan talks. (Benzinga)
-HOOD: Cathie Wood sells $12 million in surging stock (Yahoo)
-HOOD: The Impending Gold Rush for The US Perp Market (Yahoo)
-SYF: 2 Mid-Cap Stocks on Our Buy List and 1 We Turn Down (Yahoo)
-TSM: Bill Gates Once Said He Wouldn't Want To Be The Nvidia CEO: 'Jensen Doesn't Even Make His Own Chip...' (Benzinga)
-TSM: The Magnitude Of The Numbers Is Just Mindboggling: 12 U.S. Companies, $30 Trillion (SeekingAlpha)
+FTNT: I'm Calling A Bottom For Software - 3 Stocks I'm Buying (SeekingAlpha)
+FTNT: Tracking Terry Smith's Fundsmith 13F Portfolio - Q1 2026 Update (SeekingAlpha)
+MRVL: Nvidia Bets $6.5B on Photonics to Solve AI’s Next Big Bottleneck (Yahoo)
+MRVL: Marvell Thinks Agentic AI Could Trigger Another Infrastructure Boom (Yahoo)
+NVDA: U.S. to close loophole allowing advanced chips to Chinese firms, Reuters says (Yahoo)
+NVDA: Prediction: After Intel, This Artificial Intelligence (AI) Semiconductor Stock Could be Next to Secure an Investment From the Trump Administration (Yahoo)
+NXPI: NXP Semiconductors Turns More Optimistic as Auto Demand and Data Center Sales Improve (Yahoo)
+NXPI: AI Bubble Debate Gets Real as Chip Stocks Rally Turns Historic (Yahoo)
+OKE: ONEOK Loses US$6.4b Market Value But Insiders See Windfall Of US$45k (Yahoo)
+HOOD: HOOD Stock Clocks Best Month In 2026: Growth Story Intact Despite Crypto Weakness, Says Analyst (Yahoo)
+HOOD: Robinhood’s WonderFi Move And Cannabis Access Raise Valuation Questions (Yahoo)
+TSM: Applied Materials (AMAT) – Among the 10 Best Long-Term Dividend Stocks to Invest In According to Billionaires (Yahoo)
+TSM: The Tech Tug-Of-War: U.S.-China Relations And The Race For Innovation (SeekingAlpha)
 TOL: What ITB Investors Need to Watch Before Mortgage Rates Spike Again (Yahoo)
-TOL: CoStar to buy real estate data provider in $800M all-cash deal (Yahoo)
 VST: Analyst Raises Vistra (VST) Price Target by $4 (Yahoo)
 VST: XLU Investors: Watch PJM’s March 2027 Data Center Framework Decision (Yahoo)
 IBIT: Bitcoin ETFs Just Had The Worst Month Of The Year: Are Investors Rotating to Stocks? (Benzinga)
-IBIT: Bitcoin Whale Accumulation Plummets To 2022 Levels: Why The Bear Market May Get Worse First (Benzinga)
 
 ── HEADLINES ──
-• US military says it turned away blockade runner trying to reach Iranian port - Reuters (Reuters)
-• DOJ seeks Judge Eleanor Ross recusal in Georgia election case, citing reports she was disciplined (CNBC)
-• Tiny Guyana poised for big Iran oil gains and growth strains - Reuters (Reuters)
-• Net worth matters more than income when it comes to financial anxiety, survey finds (CNBC)
-• Josh Brown, counting on a new momentum strategy, thinks investors want more than index funds (CNBC)
-• 3 themes that drove stocks to another week of records — and a banner month (CNBC)
-• Will Gen Z be the generation to revive moviegoing? (CNBC)
-• Investors and labels are buying into the growing South Asian music business in the U.S. (CNBC)
+• Stocks shake off Iran jitters as AI rules supreme; oil climbs - Reuters (Reuters)
+• Trump says Iran really wants to make a deal with the US - Reuters (Reuters)
+• Morning Bid: Who needs oil when there's AI to buy? - Reuters (Reuters)
+• US says it struck Iranian military sites, Tehran responds with air base attack - Reuters (Reuters)
+• US says it struck Iranian drone command sites at the weekend - Reuters (Reuters)
+• US proposes new plan to ease Israel-Lebanon tensions amid fighting - Reuters (Reuters)
+• Gold slips on stronger dollar, oil as markets await Trump decision on Iran - Reuters (Reuters)
+• Dollar steady as markets await progress on Middle East peace talks - Reuters (Reuters)
 
 === END DATA DROP ===

@@ -512,14 +512,26 @@ async function main() {
     cryptoGlobal = g.data || {};
   } catch(e) { console.warn('  Global failed:', e.message); }
 
-  // 8) Fear & Greed + General News
+  // 8) Fear & Greed (CNN Stock Market) + General News
   console.log('[8/8] Fetching sentiment & headlines...');
   let fearGreed = null;
   try {
-    const f = await httpGet('https://api.alternative.me/fng/?limit=1');
-    fearGreed = f.data ? f.data[0] : null;
-    if (fearGreed) console.log(`  Fear & Greed: ${fearGreed.value} (${fearGreed.value_classification})`);
-  } catch(e) { console.warn('  F&G failed:', e.message); }
+    const f = await httpGet('https://production.dataviz.cnn.io/index/fearandgreed/graphdata');
+    if (f && f.fear_and_greed) {
+      fearGreed = { value: Math.round(f.fear_and_greed.score), value_classification: f.fear_and_greed.rating };
+      console.log(`  Fear & Greed (CNN): ${fearGreed.value} (${fearGreed.value_classification})`);
+    }
+  } catch(e) {
+    console.warn('  CNN F&G failed, trying alternative...', e.message);
+    try {
+      const f2 = await httpGet('https://api.alternative.me/fng/?limit=1');
+      fearGreed = f2.data ? f2.data[0] : null;
+      if (fearGreed) {
+        fearGreed.value_classification = fearGreed.value_classification + ' (Crypto)';
+        console.log(`  Fear & Greed (Crypto fallback): ${fearGreed.value} (${fearGreed.value_classification})`);
+      }
+    } catch(e2) { console.warn('  F&G fallback also failed:', e2.message); }
+  }
 
   let news = [];
   try {

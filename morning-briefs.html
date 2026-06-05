@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IOWN Morning Brief</title>
+<title>FCI Morning Brief</title>
 <link rel="icon" type="image/png" sizes="32x32" href="briefs/favicon-32.png">
 <link rel="icon" type="image/x-icon" href="briefs/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="briefs/apple-touch-icon.png">
@@ -234,7 +234,7 @@
     position: relative;
   }
   .bc .pullquote::before {
-    content: 'IOWN TACTICAL';
+    content: 'FCI TACTICAL';
     position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
     font-family: 'DM Sans', sans-serif; font-size: 8px; font-style: normal;
     font-weight: 600; letter-spacing: 2.5px; color: var(--gray-400);
@@ -358,7 +358,7 @@
   <div class="gate-box">
     <div class="gate-rule"></div>
     <div class="gate-title">Morning Brief</div>
-    <div class="gate-sub">Intentional Ownership</div>
+    <div class="gate-sub">Family Capital Investments</div>
     <input type="password" class="gate-input" id="gatePass" placeholder="Password" autofocus />
     <button class="gate-btn" onclick="tryAuth()">Enter</button>
     <div class="gate-error" id="gateError"></div>
@@ -374,7 +374,7 @@
     <div class="mast-rule-top"></div>
     <div class="mast-rule-thin"></div>
     <div class="mast-meta">
-      <span>Intentional Ownership</span>
+      <span>Family Capital Investments</span>
       <span id="mastDate">Loading&hellip;</span>
       <span>Investment Committee</span>
     </div>
@@ -396,7 +396,7 @@
   </div>
 
   <div class="app-foot">
-    <a href="https://intentionalownership.com">intentionalownership.com</a> &nbsp;·&nbsp; Research Reveals Opportunities &nbsp;·&nbsp; (985) 727-0770
+    <a href="https://paradiem.com">paradiem.com</a> &nbsp;·&nbsp; Research Reveals Opportunities &nbsp;·&nbsp; (985) 727-0770
   </div>
 
   <a class="pdf-float" id="pdfFloat" href="#" download style="display:none">
@@ -409,9 +409,9 @@
 /* ══════ AUTH ══════ */
 const HASH='1163a0013453d999380b32225cdcaa183f5d3f675d55a18872c4bbafdc0fd36c';
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}
-async function tryAuth(){const i=document.getElementById('gatePass'),e=document.getElementById('gateError');if(await sha256(i.value)===HASH){try{localStorage.setItem('iown_auth','1')}catch(x){}unlock()}else{i.classList.add('error');e.textContent='Incorrect password';setTimeout(()=>{i.classList.remove('error');e.textContent=''},1500)}}
+async function tryAuth(){const i=document.getElementById('gatePass'),e=document.getElementById('gateError');if(await sha256(i.value)===HASH){try{localStorage.setItem('fci_auth','1')}catch(x){}unlock()}else{i.classList.add('error');e.textContent='Incorrect password';setTimeout(()=>{i.classList.remove('error');e.textContent=''},1500)}}
 function unlock(){document.getElementById('gate').classList.add('hidden');document.getElementById('app').classList.add('visible');init()}
-try{if(localStorage.getItem('iown_auth')==='1'){unlock()}}catch(x){}
+try{if(localStorage.getItem('fci_auth')==='1'){unlock()}}catch(x){}
 document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')tryAuth()});
 
 /* ══════ APP ══════ */
@@ -490,7 +490,7 @@ async function selectBrief(date){
         html=html.slice(0,pos)+banner+html.slice(pos);
       }else{html=banner+html}
     }
-    body.innerHTML=html+`<div class="brief-disc">Paradiem, LLC dba Intentional Ownership (&ldquo;IOWN&rdquo;) is a registered investment advisor. Advisory services are only offered to clients or prospective clients where Paradiem/IOWN and its representatives are properly licensed or exempt from licensure. The information provided is for educational and informational purposes only and does not constitute investment advice.</div>`;
+    body.innerHTML=html+`<div class="brief-disc">Paradiem, LLC dba Family Capital Investments (&ldquo;FCI&rdquo;) is a registered investment advisor. Advisory services are only offered to clients or prospective clients where Paradiem/FCI and its representatives are properly licensed or exempt from licensure. The information provided is for educational and informational purposes only and does not constitute investment advice.</div>`;
   }catch(e){body.innerHTML=`<div class="brief-loading">HTML version not yet available.${pp?`<br><br><a class="pdf-float" href="${pp}" target="_blank" style="position:static;display:inline-flex;box-shadow:none">Download PDF</a>`:''}</div>`}
 
   // Hoist bullets out of section-start so headers span columns and bullets flow into columns

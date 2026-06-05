@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-IOWN Automated Morning Brief Generator
+FCI Automated Morning Brief Generator
 
 Modes:
   --prep           Gather data and print the assembled prompt to stdout (for Claude Code)
@@ -29,7 +29,7 @@ REPO_ROOT = Path(__file__).parent.parent
 BRIEFS_DIR = REPO_ROOT / "briefs"
 LATEST_DROP = REPO_ROOT / "latest-drop.txt"
 MANIFEST_PATH = BRIEFS_DIR / "manifest.json"
-LOGO_SRC = REPO_ROOT / "scripts" / "IOWN_Logo_1.png"
+LOGO_SRC = REPO_ROOT / "scripts" / "Paradiem_Logo.png"
 
 CT = timezone(timedelta(hours=-6))  # Central Standard Time (always UTC-6)
 TODAY = datetime.now(CT)
@@ -119,21 +119,21 @@ def fetch_news_headlines():
 # SYSTEM PROMPT
 # ═══════════════════════════════════════════
 
-SYSTEM_PROMPT = r"""You are a senior investment research analyst at Intentional Ownership (IOWN), an RIA managing ~$516M under Paradiem. You prepare the daily IOWN Morning Brief for Carson, the Research Analyst and pending CIO.
+SYSTEM_PROMPT = r"""You are a senior investment research analyst at Family Capital Investments (FCI), an RIA managing ~$516M under Paradiem. You prepare the daily FCI Morning Brief for Carson, the Research Analyst and pending CIO.
 
 ═══ WRITING STYLE ═══
 
 Direct, analytical, no fluff. Write like a trusted colleague handing Carson a one-page briefing sheet. Approximately 5 minutes of reading time. Opinionated and investment-relevant — not raw news aggregation. Include technical indicators (moving averages, RSI, ETF flows) where applicable. Integrate analysis across sections — the brief should read as one cohesive argument, not three disconnected sections.
 
-Every data point and observation should be filtered through: "What does this mean for IOWN's holdings and thesis?" Do not write general market commentary — write analysis that helps the investment committee make decisions about the portfolio. When discussing macro moves, connect them to specific IOWN positions or sleeves. When discussing geopolitics, connect them to portfolio exposure (energy, semis, digital assets, defense, etc.).
+Every data point and observation should be filtered through: "What does this mean for FCI's holdings and thesis?" Do not write general market commentary — write analysis that helps the investment committee make decisions about the portfolio. When discussing macro moves, connect them to specific FCI positions or sleeves. When discussing geopolitics, connect them to portfolio exposure (energy, semis, digital assets, defense, etc.).
 
-IOWN philosophy references (use naturally, don't force):
+FCI philosophy references (use naturally, don't force):
 - Research Reveals Opportunities
 - Think Like an Owner
 - Avoid Erosion
 - Simplicity Over Complexity
 
-The core IOWN investment thesis centers on "physical world matters" — emphasizing physical AI infrastructure, energy value, and real-world industrial themes.
+The core FCI investment thesis centers on "physical world matters" — emphasizing physical AI infrastructure, energy value, and real-world industrial themes.
 
 ═══ TONE & COMPLIANCE ═══
 
@@ -188,7 +188,7 @@ NEVER make comparative claims you cannot verify against the data drop and prior 
 
 If you cannot verify a comparative claim from the data provided, do not make it. State the fact without the comparison. "S&P fell 0.25%" is always safe. "S&P posted its smallest decline in a week" requires proof.
 
-═══ IOWN HOLDINGS ═══
+═══ FCI HOLDINGS ═══
 
 Dividend sleeve: ABT, ADI, ATO, ADP, BKH, CAT, CHD, CL, DVN, FAST, GD, GPC, LRCX, LMT, NEE, NTR, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
 Growth sleeve: AMD, AEM, ATAT, CVX, CWAN, CNX, COIN, CRDO, EIX, FCX, FTNT, SUPV, HRMY, HUT, KEYS, MARA, MRVL, NVDA, NXPI, OKE, HOOD, SYF, TSM, TOL, VST
@@ -236,16 +236,16 @@ SNAPSHOT DIV (must be first element):
 
 THREE CONTENT SECTIONS:
 
-1. Markets (id="markets") — macro, indices, oil, rates, Fed, sector rotation, moving averages. Always connect moves to IOWN holdings and sleeves.
-2. Geopolitics (id="geopolitics") — the dominant macro/geopolitical theme affecting markets and IOWN portfolio positioning. This may be armed conflict, trade policy, sanctions, elections, regulatory shifts, central bank coordination, or any other non-market force driving prices. Adapt the section to whatever matters most — do not force a war narrative when the dominant story is something else.
-3. On Our Radar (id="radar") — 3 to 6 items synthesizing the day's themes into observations relevant to IOWN's portfolio. Each item should connect to specific holdings or sleeves. On quiet days, 3-4 strong items are better than 6 padded ones.
+1. Markets (id="markets") — macro, indices, oil, rates, Fed, sector rotation, moving averages. Always connect moves to FCI holdings and sleeves.
+2. Geopolitics (id="geopolitics") — the dominant macro/geopolitical theme affecting markets and FCI portfolio positioning. This may be armed conflict, trade policy, sanctions, elections, regulatory shifts, central bank coordination, or any other non-market force driving prices. Adapt the section to whatever matters most — do not force a war narrative when the dominant story is something else.
+3. On Our Radar (id="radar") — 3 to 6 items synthesizing the day's themes into observations relevant to FCI's portfolio. Each item should connect to specific holdings or sleeves. On quiet days, 3-4 strong items are better than 6 padded ones.
 
 HTML STRUCTURE RULES:
 - Use section-start wrapper divs with section-label, h2, section-rule
 - Bullet content uses: <div class="bullet"><div class="bullet-heading">Title</div><div class="bullet-body">Text</div></div>
 - First bullet is inside section-start div; subsequent bullets are siblings outside it
 - Data boxes: <div class="data-box"><div class="data-row"><span class="data-label">Label</span><span class="data-val up">Value</span></div></div>
-- Pullquotes: <div class="pullquote">Text with <b>IOWN philosophy reference.</b></div>
+- Pullquotes: <div class="pullquote">Text with <b>FCI philosophy reference.</b></div>
 - Radar items: <div class="radar-item"><b>1. Title.</b> Details...</div>
 - Radar items 1-2 are standalone (inside section-start or direct children)
 - Radar items 3-4 go in a <div class="radar-group">
@@ -261,7 +261,7 @@ Available styles:
 - "rule" — horizontal rule after section header (text should be "")
 - "lead" — bold opening paragraph for each section
 - "body" — regular body text paragraphs
-- "pq" — italic IOWN Tactical pullquote (green text, indented) — used for key tactical insights and philosophy references
+- "pq" — italic FCI Tactical pullquote (green text, indented) — used for key tactical insights and philosophy references
 - "radar" — On Our Radar items (slightly smaller, indented)
 - "small" — disclaimer footer
 - "spacer" — gap between sections (text should be "")
@@ -277,10 +277,10 @@ Text formatting rules:
 - Do NOT use HTML entities in PDF paragraphs — use Unicode directly
 
 Content guidance for PDF:
-- MARKETS section: 1 lead paragraph + 3-5 body paragraphs + 1 pullquote (IOWN Tactical)
+- MARKETS section: 1 lead paragraph + 3-5 body paragraphs + 1 pullquote (FCI Tactical)
 - GEOPOLITICS section: 1 lead paragraph + 2-3 body paragraphs
 - ON OUR RADAR section: 3 to 6 radar items, each starting with <b>N. Title.</b> — prefer fewer strong items over padding
-- End with disclaimer: "For internal IOWN investment committee use only. Not investment advice. Information from public sources believed reliable. Past performance not indicative of future results. IOWN is an RIA under Paradiem."
+- End with disclaimer: "For internal FCI investment committee use only. Not investment advice. Information from public sources believed reliable. Past performance not indicative of future results. FCI is an RIA under Paradiem."
 
 ═══ SAMPLE PDF PARAGRAPH CONTENT (for tone/style reference) ═══
 
@@ -291,7 +291,7 @@ Body style example:
 "The catalyst: Iran\u2019s new supreme leader Mojtaba Khamenei issued his first statement, vowing to keep the Strait of Hormuz closed as a tool to pressure the enemy and continue attacks on Gulf Arab neighbors. That single statement sent WTI up 9.72% to $95.73 and Brent up 9.22% to $100.46."
 
 Pullquote style example:
-"IOWN Tactical: S&amp;P at 6,673 (SPY $666.06). Down ~13% from January ATH of 7,003. The 200-day moving average is at ~6,596\u2014hasn\u2019t been broken in 10 months. That\u2019s the technical line in the sand. Our \u201320% buy trigger is at ~5,600. Research Reveals Opportunities\u2014discipline over impulse."
+"FCI Tactical: S&amp;P at 6,673 (SPY $666.06). Down ~13% from January ATH of 7,003. The 200-day moving average is at ~6,596\u2014hasn\u2019t been broken in 10 months. That\u2019s the technical line in the sand. Our \u201320% buy trigger is at ~5,600. Research Reveals Opportunities\u2014discipline over impulse."
 
 Radar style example:
 "<b>1. The 200DMA at 6,596 is the level to watch.</b> S&amp;P at 6,673\u2014just 77 points above. This level hasn\u2019t been broken in 10 months. Our \u201320% buy trigger is ~5,600\u2014still 16% below. Patience remains the discipline."
@@ -314,7 +314,7 @@ This brief will be read by the investment committee before market open. Frame ac
 - Overnight futures, Asian and European session moves, and pre-market movers provide forward-looking context for today's open.
 - The committee is reading this to prepare for the trading day ahead — emphasize what to watch today, not just what happened yesterday.
 
-Generate the IOWN Morning Brief.
+Generate the FCI Morning Brief.
 
 <DATA_DROP>
 {data_drop}
@@ -363,8 +363,8 @@ def generate_pdf(meta, html_content, output_path=None):
     """Generate PDF from HTML brief content using weasyprint (matches web styling)."""
     import weasyprint
 
-    logo_path = (REPO_ROOT / "scripts" / "iown_logo_processed.png").as_uri()
-    pdf_output = output_path or str(BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf")
+    logo_path = (REPO_ROOT / "scripts" / "paradiem_logo_processed.png").as_uri()
+    pdf_output = output_path or str(BRIEFS_DIR / f"FCI_Morning_Brief_{DATE_STR}.pdf")
     hl_color = "#3D4A2E" if meta.get("direction") == "up" else "#9B2C2C"
 
     # Split each section into its own .bc container so page breaks work
@@ -393,7 +393,7 @@ def generate_pdf(meta, html_content, output_path=None):
     size: letter;
     margin: 0.6in 0.65in 0.55in;
     @bottom-left {{
-      content: "CONFIDENTIAL  |  Intentional Ownership (IOWN)  |  RIA  |  Paradiem";
+      content: "CONFIDENTIAL  |  Family Capital Investments (FCI)  |  RIA  |  Paradiem";
       font-family: 'DM Sans', sans-serif;
       font-size: 6pt;
       color: #8A8A84;
@@ -410,7 +410,7 @@ def generate_pdf(meta, html_content, output_path=None):
   }}
   @page :not(:first) {{
     @top-left {{
-      content: "IOWN MORNING BRIEF";
+      content: "FCI MORNING BRIEF";
       font-family: 'DM Sans', sans-serif;
       font-size: 6pt;
       color: #8A8A84;
@@ -645,11 +645,11 @@ def generate_pdf(meta, html_content, output_path=None):
   <div class="mast-rule-top"></div>
   <div class="mast-rule-thin"></div>
   <div class="mast-meta">
-    <span>Intentional Ownership</span>
+    <span>Family Capital Investments</span>
     <span>{DATE_DISPLAY}</span>
     <span>Investment Committee</span>
   </div>
-  <img class="mast-logo" src="{logo_path}" alt="IOWN">
+  <img class="mast-logo" src="{logo_path}" alt="Paradiem">
   <div class="mast-title">The Morning Brief</div>
   <div class="mast-date">{DATE_DISPLAY}</div>
   <div class="mast-rule-bottom"></div>
@@ -665,9 +665,9 @@ def generate_pdf(meta, html_content, output_path=None):
   {html_content}
 
   <div class="brief-disc">
-    For internal IOWN investment committee use only. Not investment advice.
+    For internal FCI investment committee use only. Not investment advice.
     Information from public sources believed reliable. Past performance not indicative of future results.
-    IOWN is an RIA under Paradiem.
+    FCI is an RIA under Paradiem.
   </div>
 </div>
 
@@ -685,7 +685,7 @@ def generate_pdf(meta, html_content, output_path=None):
 # ═══════════════════════════════════════════
 
 def process_logo():
-    logo_processed = REPO_ROOT / "scripts" / "iown_logo_processed.png"
+    logo_processed = REPO_ROOT / "scripts" / "paradiem_logo_processed.png"
     if logo_processed.exists():
         print("Logo already processed, skipping")
         return
@@ -709,7 +709,7 @@ def update_manifest(meta):
     manifest.append({
         "date": DATE_STR, "headline": meta["headline"],
         "subhead": meta["subhead"], "direction": meta["direction"],
-        "filename": f"IOWN_Morning_Brief_{DATE_STR}.pdf"
+        "filename": f"FCI_Morning_Brief_{DATE_STR}.pdf"
     })
     manifest.sort(key=lambda e: e["date"])
     MANIFEST_PATH.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -731,10 +731,10 @@ def git_commit_and_push(meta):
                         f"https://{push_token}@github.com/richacarson/rich-report.git"],
                        capture_output=True, text=True, cwd=str(REPO_ROOT))
 
-    files = [f"briefs/{DATE_STR}.html", f"briefs/IOWN_Morning_Brief_{DATE_STR}.pdf", "briefs/manifest.json"]
+    files = [f"briefs/{DATE_STR}.html", f"briefs/FCI_Morning_Brief_{DATE_STR}.pdf", "briefs/manifest.json"]
     subprocess.run(["git", "add"] + files, cwd=str(REPO_ROOT), check=True)
     result = subprocess.run(
-        ["git", "commit", "-m", f"IOWN Morning Brief \u2014 {TODAY.strftime('%B')} {TODAY.day}, {TODAY.year}: {meta['headline']}"],
+        ["git", "commit", "-m", f"FCI Morning Brief \u2014 {TODAY.strftime('%B')} {TODAY.day}, {TODAY.year}: {meta['headline']}"],
         capture_output=True, text=True, cwd=str(REPO_ROOT)
     )
     if result.returncode != 0:
@@ -756,7 +756,7 @@ def git_commit_and_push(meta):
 
 def post_process(response_file):
     """Read Claude Code's response from a file and generate PDF/HTML/manifest/git push."""
-    print(f"═══ IOWN Morning Brief — Post-Process ═══")
+    print(f"═══ FCI Morning Brief — Post-Process ═══")
     print(f"Date: {DATE_STR} ({DAY_NAME})")
     print(f"Response file: {response_file}\n")
 
@@ -816,7 +816,7 @@ def prep():
 # ═══════════════════════════════════════════
 
 def main():
-    parser = argparse.ArgumentParser(description="IOWN Morning Brief Generator")
+    parser = argparse.ArgumentParser(description="FCI Morning Brief Generator")
     parser.add_argument("--prep", action="store_true",
                         help="Gather data and print assembled prompt to stdout")
     parser.add_argument("--post-process", metavar="FILE",
@@ -834,11 +834,11 @@ def main():
     # Legacy full mode (data gather → Claude API → PDF/HTML/git)
     if not ANTHROPIC_API_KEY:
         print("ERROR: ANTHROPIC_API_KEY not set (required for legacy mode)"); sys.exit(1)
-    print(f"═══ IOWN Morning Brief Generator (Legacy Mode) ═══")
+    print(f"═══ FCI Morning Brief Generator (Legacy Mode) ═══")
     print(f"Date: {DATE_STR} ({DAY_NAME})\n")
 
     html_path = BRIEFS_DIR / f"{DATE_STR}.html"
-    pdf_path = BRIEFS_DIR / f"IOWN_Morning_Brief_{DATE_STR}.pdf"
+    pdf_path = BRIEFS_DIR / f"FCI_Morning_Brief_{DATE_STR}.pdf"
     if html_path.exists() and pdf_path.exists() and not os.environ.get("FORCE_REGENERATE"):
         print(f"Brief exists for {DATE_STR}. Set FORCE_REGENERATE=1 to overwrite."); sys.exit(0)
 

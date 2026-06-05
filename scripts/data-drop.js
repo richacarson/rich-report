@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// IOWN Data Drop v2 — GitHub Actions auto-fetcher
+// FCI Data Drop v2 — GitHub Actions auto-fetcher
 // Pulls: 75 tickers (quotes + candles), earnings calendar, economic calendar,
 // company news for 51 holdings, crypto, sentiment, WTD/MTD/YTD/52wk data
 // Outputs latest-drop.txt
@@ -254,7 +254,7 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
   const ds = now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Chicago' });
   const ts = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Chicago' });
 
-  let o = `=== IOWN DATA DROP v2 | ${ds} | ${ts} CT ===\n\n`;
+  let o = `=== FCI DATA DROP v2 | ${ds} | ${ts} CT ===\n\n`;
 
   // ── ECONOMIC CALENDAR ──
   if (econToday.length) {
@@ -275,11 +275,11 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
   if (earningsYesterday.length || earningsToday.length) {
     if (earningsYesterday.length) {
       o += '── EARNINGS (YESTERDAY) ──\n';
-      // Flag IOWN holdings
+      // Flag FCI holdings
       const iownYesterday = earningsYesterday.filter(e => ALL_HOLDINGS.includes(e.symbol));
       const otherYesterday = earningsYesterday.filter(e => !ALL_HOLDINGS.includes(e.symbol));
       if (iownYesterday.length) {
-        o += '⚡ IOWN: ' + iownYesterday.map(e => {
+        o += '⚡ FCI: ' + iownYesterday.map(e => {
           const beat = e.epsActual != null && e.epsEstimate != null ? (e.epsActual > e.epsEstimate ? 'BEAT' : e.epsActual < e.epsEstimate ? 'MISS' : 'INLINE') : '';
           return `${e.symbol} EPS:${e.epsActual || '—'} vs ${e.epsEstimate || '—'} ${beat}`;
         }).join(' | ') + '\n';
@@ -289,7 +289,7 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
     if (earningsToday.length) {
       o += '── EARNINGS (TODAY) ──\n';
       const iownToday = earningsToday.filter(e => ALL_HOLDINGS.includes(e.symbol));
-      if (iownToday.length) o += '⚡ IOWN REPORTING: ' + iownToday.map(e => `${e.symbol} Est:${e.epsEstimate || '—'}`).join(' | ') + '\n';
+      if (iownToday.length) o += '⚡ FCI REPORTING: ' + iownToday.map(e => `${e.symbol} Est:${e.epsEstimate || '—'}`).join(' | ') + '\n';
       o += earningsToday.slice(0, 20).map(e => `${e.symbol} Est:${e.epsEstimate || '—'}`).join(' | ') + '\n\n';
     }
   }
@@ -404,14 +404,14 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
   const hq = allH.map(s => ({ s, q: Q[s] })).filter(x => x.q)
     .sort((a, b) => (b.q.changesPercentage || 0) - (a.q.changesPercentage || 0));
 
-  o += '── TOP 5 IOWN MOVERS ──\n';
+  o += '── TOP 5 FCI MOVERS ──\n';
   hq.slice(0, 5).forEach(({ s, q }) => {
     const c = CA[s];
     let line = `${s}: ${pct(q.changesPercentage)} (${price(q.price)})`;
     if (c) line += ` | WTD:${pct(c.wtdReturn)} from52wH:${pct(c.pctFrom52wHigh)}`;
     o += line + '\n';
   });
-  o += '\n── BOTTOM 5 IOWN MOVERS ──\n';
+  o += '\n── BOTTOM 5 FCI MOVERS ──\n';
   hq.slice(-5).reverse().forEach(({ s, q }) => {
     const c = CA[s];
     let line = `${s}: ${pct(q.changesPercentage)} (${price(q.price)})`;
@@ -423,7 +423,7 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
   // ── HOLDINGS NEWS ──
   const newsSymbols = Object.keys(holdingNews).filter(s => holdingNews[s].length > 0);
   if (newsSymbols.length) {
-    o += '── IOWN HOLDINGS NEWS (24h) ──\n';
+    o += '── FCI HOLDINGS NEWS (24h) ──\n';
     newsSymbols.forEach(s => {
       holdingNews[s].slice(0, 2).forEach(n => {
         o += `${s}: ${n.headline} (${n.source})\n`;
@@ -448,7 +448,7 @@ function buildOutput(Q, CA, crypto, cryptoGlobal, fearGreed, news, earningsYeste
 // ═══════════════════════════════════════════
 
 async function main() {
-  console.log('=== IOWN Data Drop v2 ===\n');
+  console.log('=== FCI Data Drop v2 ===\n');
   const t0 = Date.now();
   const now = new Date();
 

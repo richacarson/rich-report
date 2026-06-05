@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IOWN Data Drop</title>
+<title>FCI Data Drop</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -68,10 +68,10 @@
 <body>
 <div class="shell">
   <div class="masthead">
-    <h1>IOWN Data Drop</h1>
+    <h1>FCI Data Drop</h1>
     <span class="tag">Morning Brief Fuel</span>
   </div>
-  <div class="masthead-sub">Intentional Ownership · Paradiem · 51 Holdings + Crypto + Commodities + Sentiment</div>
+  <div class="masthead-sub">Family Capital Investments · Paradiem · 51 Holdings + Crypto + Commodities + Sentiment</div>
 
   <div class="key-section">
     <label>Finnhub API Key (stored locally — enter once)</label>
@@ -96,7 +96,7 @@
     <div class="output-label">Formatted Data Drop — Copy & Paste into Claude</div>
     <div class="output-box" id="outputBox"></div>
   </div>
-  <div class="foot">Confidential · IOWN · RIA · Paradiem</div>
+  <div class="foot">Confidential · FCI · RIA · Paradiem</div>
 </div>
 <div class="copied-toast" id="toast">Copied to clipboard</div>
 
@@ -251,7 +251,7 @@ function buildOutput() {
   const now = new Date();
   const ds = now.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
   const ts = now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
-  let o = `=== IOWN DATA DROP | ${ds} | ${ts} ===\n\n`;
+  let o = `=== FCI DATA DROP | ${ds} | ${ts} ===\n\n`;
 
   o += '── INDICES ──\n';
   INDEX_PROXIES.forEach(s => { const q=Q[s]; if(q) o+=`${INDEX_NAMES[s]}: ${price(q.price)} (${pct(q.changesPercentage)}) | O:${price(q.open)} H:${price(q.dayHigh)} L:${price(q.dayLow)} PC:${price(q.previousClose)}\n`; });
@@ -289,9 +289,9 @@ function buildOutput() {
 
   const allH=[...DIVIDEND,...GROWTH,...DIGITAL_ETFS];
   const hq=allH.map(s=>({s,q:Q[s]})).filter(x=>x.q).sort((a,b)=>(b.q.changesPercentage||0)-(a.q.changesPercentage||0));
-  o += '\n── TOP 5 IOWN MOVERS ──\n';
+  o += '\n── TOP 5 FCI MOVERS ──\n';
   hq.slice(0,5).forEach(({s,q})=>{ o+=`${s}: ${pct(q.changesPercentage)} (${price(q.price)})\n`; });
-  o += '\n── BOTTOM 5 IOWN MOVERS ──\n';
+  o += '\n── BOTTOM 5 FCI MOVERS ──\n';
   hq.slice(-5).reverse().forEach(({s,q})=>{ o+=`${s}: ${pct(q.changesPercentage)} (${price(q.price)})\n`; });
 
   if(DATA.news&&DATA.news.length){ o+='\n── HEADLINES ──\n'; DATA.news.forEach(n=>{ o+=`• ${n.headline} (${n.source})\n`; }); }

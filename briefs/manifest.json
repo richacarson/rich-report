@@ -593,5 +593,12 @@
     "subhead": "Dow and Russell led a broad rotation Thursday as AVGO weighed on the Nasdaq; today&rsquo;s May Employment Situation is the last release before the FOMC blackout.",
     "direction": "up",
     "filename": "IOWN_Morning_Brief_2026-06-05.pdf"
+  },
+  {
+    "date": "2026-06-06",
+    "headline": "Tech Routed",
+    "subhead": "Week in Review: A 172K May payrolls beat broke the AI multiple Friday, with the Nasdaq printing its largest single-session decline since April 2025.",
+    "direction": "down",
+    "filename": "FCI_Morning_Brief_2026-06-06.pdf"
   }
 ]

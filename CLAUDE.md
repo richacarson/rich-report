@@ -11,6 +11,8 @@
    git pull origin main
    ```
    The workflow uses `FINNHUB_KEY` from GitHub repo secrets to fetch 75 tickers, earnings, economic calendar, holdings news, crypto, and sentiment. It commits `latest-drop.txt` to main automatically.
+   
+   **IMPORTANT**: The Fear & Greed index in the data drop is the **CNN stock market** Fear & Greed Index, NOT the crypto Fear & Greed Index. If the data drop shows "(Crypto)" next to the F&G value, the CNN endpoint failed and fell back to the crypto index — note this in the brief and web search for the current CNN stock market F&G instead.
 2. **Prep**: Run `python3 scripts/generate-brief.py --prep` to get assembled context (data drop + news + prior briefs)
 3. **Research**: Web search for the day's most important developments. Cast a wide net — do NOT fixate on any single storyline. Search for:
    - Overnight futures, Asian/European session moves, pre-market movers

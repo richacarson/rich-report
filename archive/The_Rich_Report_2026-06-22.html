@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>The Rich Report &mdash; JUNE 22, 2026</title>
 <meta name="description" content="Weekly intelligence from Paradiem: U.S. economics, digital assets, geopolitics, and portfolio coverage.">
-<meta name="theme-color" content="#181534">
+<meta name="theme-color" content="#171738">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -14,21 +14,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 :root{
-  --cream:#FAF8F4;
-  --cream-deep:#F4F0E8;
-  --paper:#FFFEFB;
-  --navy:#1F1B1A;
-  --navy-soft:#3A3531;
-  --navy-mute:#6F6862;
-  --navy-faint:#EDE9E2;
-  --gold:#2D5040;
-  --gold-deep:#1F3B2F;
-  --gold-soft:#E8EFEA;
-  --rule:#E8E2D0;
-  --rule-strong:#C9C0A8;
-  --shadow-sm:0 1px 3px rgba(31,27,26,.06);
-  --shadow-md:0 4px 16px rgba(31,27,26,.08);
-  --shadow-lg:0 12px 40px rgba(31,27,26,.12);
+  --cream:#F4EFE4;
+  --cream-deep:#FAF7F2;
+  --paper:#FAF7F2;
+  --navy:#171738;
+  --navy-soft:#8B7355;
+  --navy-mute:#8B7355;
+  --navy-faint:#B8B4AC;
+  --gold:#C9A84C;
+  --gold-deep:#C9A84C;
+  --gold-soft:#FAF7F2;
+  --rule:#B8B4AC;
+  --rule-strong:#B8B4AC;
+  --shadow-sm:0 1px 3px rgba(23,23,56,.06);
+  --shadow-md:0 4px 16px rgba(23,23,56,.08);
+  --shadow-lg:0 12px 40px rgba(23,23,56,.12);
   --t:.3s cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -76,8 +76,8 @@ body{
 }
 .bar-brand:hover{opacity:1}
 .bar-brand:hover img{opacity:1}
-.bar-meta{display:flex;gap:14px;align-items:center;color:#C9C4D5}
-.bar-meta a{color:#C9C4D5;text-decoration:none;transition:color var(--t)}
+.bar-meta{display:flex;gap:14px;align-items:center;color:#B8B4AC}
+.bar-meta a{color:#B8B4AC;text-decoration:none;transition:color var(--t)}
 .bar-meta a:hover{color:var(--gold)}
 .bar-meta .dot{opacity:.5}
 
@@ -168,7 +168,7 @@ body{
   border-bottom:1px solid var(--rule);
   transition:box-shadow var(--t);
 }
-.nav.scrolled{box-shadow:0 1px 0 var(--rule),0 4px 20px rgba(31,27,26,.05)}
+.nav.scrolled{box-shadow:0 1px 0 var(--rule),0 4px 20px rgba(23,23,56,.05)}
 .nav-inner{
   max-width:1320px;
   margin:0 auto;
@@ -208,7 +208,7 @@ body{
 }
 .np--dl:hover{
   background:var(--gold);
-  color:var(--cream);
+  color:var(--navy);
   border-color:var(--gold);
 }
 
@@ -279,7 +279,7 @@ body{
   transition:transform var(--t);
 }
 .sec.open .sec-tog{background:var(--gold);border-color:var(--gold)}
-.sec.open .sec-tog svg{stroke:var(--cream);transform:rotate(180deg)}
+.sec.open .sec-tog svg{stroke:var(--navy);transform:rotate(180deg)}
 
 .sec-body{
   display:grid;
@@ -415,7 +415,7 @@ body{
   font-weight:700;
   letter-spacing:1.5px;
   text-transform:uppercase;
-  color:var(--cream);
+  color:var(--navy);
   background:var(--gold);
   padding:3px 8px;
   border-radius:2px;
@@ -490,7 +490,7 @@ body{
 /* ─── Footer ─── */
 .ftr{
   background:var(--navy);
-  color:#C9C4D5;
+  color:#B8B4AC;
   text-align:center;
   padding:40px 24px;
   font-family:'DM Sans',sans-serif;
@@ -530,7 +530,7 @@ body{
 .ftr a:hover{color:var(--cream)}
 .ftr-meta{
   margin-top:8px;
-  color:#7E7891;
+  color:#B8B4AC;
   font-size:10px;
   letter-spacing:1.5px;
 }
@@ -548,7 +548,7 @@ body{
   padding:14px 22px;
   border-radius:2px;
   background:var(--gold);
-  color:var(--cream);
+  color:var(--navy);
   text-decoration:none;
   font-family:'DM Sans',sans-serif;
   font-size:11px;
@@ -561,7 +561,7 @@ body{
 }
 .fab a:hover{
   background:var(--gold-deep);
-  color:var(--cream);
+  color:var(--navy);
   border-color:var(--gold-deep);
   transform:translateY(-2px);
 }
@@ -585,7 +585,7 @@ body{
 .btt.vis{opacity:1;pointer-events:auto}
 .btt:hover{background:var(--gold);border-color:var(--gold)}
 .btt svg{width:14px;height:14px;stroke:var(--navy);transition:stroke var(--t)}
-.btt:hover svg{stroke:var(--cream)}
+.btt:hover svg{stroke:var(--navy)}
 
 /* ─── Desktop ─── */
 @media(min-width:880px){

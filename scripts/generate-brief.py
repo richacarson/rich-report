@@ -368,14 +368,16 @@ def generate_pdf(meta, html_content, output_path=None):
     hl_color = "#3D4A2E" if meta.get("direction") == "up" else "#9B2C2C"
 
     # Split each section into its own .bc container so page breaks work
-    section_break = '</div>\n<div class="bc section-page-break">\n'
+    # NOTE: weasyprint layout assertion triggers on page-break-before at container
+    # boundaries; use a marker div that CSS targets with break-before to work around it.
+    section_break = '</div>\n<div class="bc pgbrk">\n'
     html_content = re.sub(
         r'(<!-- ═+\s*(?:GEOPOLITICS|ON OUR RADAR)\s*═+ -->)',
         section_break + r'\1',
         html_content
     )
     # Fallback: match section-start divs containing geopolitics/radar IDs
-    if 'section-page-break' not in html_content:
+    if 'class="bc pgbrk"' not in html_content:
         html_content = re.sub(
             r'(<div class="section-start">\s*<div class="section-label" id="(?:geopolitics|radar)">)',
             section_break + r'\1',

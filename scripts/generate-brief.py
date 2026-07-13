@@ -190,8 +190,8 @@ If you cannot verify a comparative claim from the data provided, do not make it.
 
 ═══ FCI HOLDINGS ═══
 
-Dividend sleeve: ABT, ADI, ATO, ADP, BKH, CAT, CHD, CL, DVN, FAST, GD, GPC, LRCX, LMT, NEE, NTR, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
-Growth sleeve: AMD, AEM, ATAT, CVX, CWAN, CNX, COIN, CRDO, EIX, FCX, FTNT, SUPV, HRMY, HUT, KEYS, MARA, MRVL, NVDA, NXPI, OKE, HOOD, SYF, TSM, TOL, VST
+Dividend sleeve: ABT, ADI, ATO, ADP, CAT, CEG, CHD, CL, DGX, FAST, GD, GPC, LRCX, LMT, NEE, NTR, NWG, ORI, PCAR, QCOM, SPGI, SSNC, STLD, SYK, TEL
+Growth sleeve: AMD, AEM, ATAT, CVX, CNX, CRDO, EIX, FCX, FTNT, HRMY, HOOD, HUT, KEYS, MARA, MRVL, NOW, NVDA, NXPI, OKE, SOFI, SYF, TOL, TSM, VST, YMM
 Digital ETFs: IBIT, ETHA
 Benchmarks: DVY, IWS, IUSG
 

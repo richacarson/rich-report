@@ -166,10 +166,19 @@ If you cannot verify a comparative claim from the data provided, do not make it.
 
 ### FCI Holdings
 
-Dividend sleeve: ABT, ADI, ATO, ADP, BKH, CAT, CHD, CL, DVN, FAST, GD, GPC, LRCX, LMT, NEE, NTR, ORI, PCAR, QCOM, DGX, SSNC, STLD, SYK, TEL, VLO
-Growth sleeve: AMD, AEM, ATAT, CVX, CWAN, CNX, COIN, CRDO, EIX, FCX, FTNT, SUPV, HRMY, HUT, KEYS, MARA, MRVL, NVDA, NXPI, OKE, HOOD, SYF, TSM, TOL, VST
+Dividend sleeve: ABT, ADI, ATO, ADP, CAT, CEG, CHD, CL, DGX, FAST, GD, GPC, LRCX, LMT, NEE, NTR, NWG, ORI, PCAR, QCOM, SPGI, SSNC, STLD, SYK, TEL
+Growth sleeve: AMD, AEM, ATAT, CVX, CNX, CRDO, EIX, FCX, FTNT, HRMY, HOOD, HUT, KEYS, MARA, MRVL, NOW, NVDA, NXPI, OKE, SOFI, SYF, TOL, TSM, VST, YMM
 Digital ETFs: IBIT, ETHA
 Benchmarks: DVY, IWS, IUSG
+
+### Bear Market Deployment Tranches
+
+FCI does NOT trim positions. Reserves are deployed in two tranches during bear markets:
+
+- **-25% drawdown**: Deploy 70% of reserves. Highest expected-value tranche — 87% of historical bears (1929-2024) reach this level. 87% hit rate × 33% recovery return = 29¢ per $1 deployed.
+- **-40% drawdown**: Deploy remaining 30% of reserves. 32% of bears reach this level — deep value with +67% average recovery return.
+
+The -25%/-40% pair skips the -35% tier (dominated on both axes) and the -50% tier (too rare to justify reserving capital). Never reference trimming or selling — FCI is a buy-and-hold strategy with tactical deployment at predetermined drawdown levels.
 
 ### Narrative Continuity
 

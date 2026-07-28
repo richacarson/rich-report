@@ -1,185 +1,210 @@
-=== FCI DATA DROP v2 | Mon, Jul 27, 2026 | 03:43 AM CT ===
+=== FCI DATA DROP v2 | Tue, Jul 28, 2026 | 03:43 AM CT ===
+
+── EARNINGS (YESTERDAY) ──
+ADNH EPS:— vs Est:— | AGYS EPS:0.49 vs Est:0.4104 | AHT EPS:— vs Est:-7.8477 | AIDG EPS:— vs Est:— | AMED EPS:— vs Est:1.5453 | AMKR EPS:0.7 vs Est:0.491 | APLD EPS:-0.39 vs Est:-0.22 | ARI EPS:— vs Est:-0.3575 | ARLP EPS:0.65 vs Est:0.6452 | ASA EPS:— vs Est:— | BCAL EPS:0.44 vs Est:0.4107 | BCOW EPS:— vs Est:— | BGFV EPS:— vs Est:— | BLX EPS:1.77 vs Est:— | BMRC EPS:0.58 vs Est:0.5255
 
 ── EARNINGS (TODAY) ──
-AGYS Est:0.4104 | AHT Est:-7.8477 | AMED Est:1.5453 | AMKR Est:0.4833 | AMNF Est:0.1479 | APLD Est:-0.22 | ARLP Est:0.6452 | ASA Est:— | BCAL Est:0.4107 | BGFV Est:— | BLX Est:— | BMRC Est:0.5255 | BOH Est:1.4753 | BRO Est:1.0935 | BRX Est:0.2491 | BSRR Est:0.9094 | CBK Est:0.707 | CBKM Est:— | CBNK Est:0.8384 | CDNS Est:2.0959
+⚡ FCI REPORTING: NXPI Est:3.5654 | PCAR Est:1.3812 | SPGI Est:4.8532
+AAT Est:0.101 | AB Est:0.8554 | ABG Est:6.37 | ACGL Est:2.4829 | ACHC Est:0.3538 | ACR Est:0.1784 | AKR Est:0.0505 | ALKS Est:-0.0248 | AMT Est:1.5769 | APAM Est:0.9282 | ASH Est:0.9953 | AWI Est:2.2706 | AXS Est:3.3041 | AXTA Est:0.6657 | BA Est:-0.3139 | BE Est:0.418 | BG Est:2.0079 | BRSP Est:0.153 | BUSE Est:0.653 | BXP Est:0.4069
 
 ── INDICES ──
-S&P 500: $738.93 (+0.10%) | O:$738.51 H:$743.72 L:$737.29 PC:$738.18
-Dow: $518.76 (+0.48%) | O:$517.28 H:$520.56 L:$516.27 PC:$516.26
-Nasdaq: $684.23 (-1.12%) | O:$690.41 H:$692.63 L:$682.48 PC:$691.96
-Russell 2K: $291.17 (-0.32%) | O:$293.41 H:$293.97 L:$290.48 PC:$292.09
-UVXY (VIX proxy): $25.09 (-2.18%)
+S&P 500: $739.09 (+0.02%) | O:$744.91 H:$745.53 L:$735.87 PC:$738.93
+Dow: $521.26 (+0.48%) | O:$524.70 H:$525.34 L:$519.29 PC:$518.76
+Nasdaq: $682.12 (-0.31%) | O:$691.68 H:$692.30 L:$675.95 PC:$684.23
+Russell 2K: $292.91 (+0.60%) | O:$293.98 H:$295.52 L:$291.11 PC:$291.17
+UVXY (VIX proxy): $24.77 (-1.28%)
 
 ── RATES ──
-TLT (20Y Bond): $83.25 (+0.10%) PC:$83.17
+TLT (20Y Bond): $83.75 (+0.60%) PC:$83.25
 
 ── SECTORS ──
-Real Estate (XLRE): +2.22% | $45.95
-Materials (XLB): +1.93% | $51.26
-Staples (XLP): +1.11% | $84.13
-Comm Svcs (XLC): +0.87% | $106.30
-Financials (XLF): +0.86% | $56.31
-Healthcare (XLV): +0.70% | $162.57
-Discret. (XLY): +0.60% | $109.41
-Energy (XLE): +0.40% | $59.62
-Industrials (XLI): +0.40% | $182.66
-Utilities (XLU): +0.22% | $46.29
-Tech (XLK): -1.44% | $175.88
+Staples (XLP): +1.46% | $85.36
+Discret. (XLY): +1.31% | $110.84
+Comm Svcs (XLC): +1.28% | $107.66
+Financials (XLF): +1.01% | $56.88
+Healthcare (XLV): +0.51% | $163.40
+Industrials (XLI): +0.30% | $183.20
+Materials (XLB): +0.25% | $51.39
+Real Estate (XLRE): -0.41% | $45.76
+Tech (XLK): -0.90% | $174.30
+Utilities (XLU): -1.32% | $45.68
+Energy (XLE): -2.11% | $58.36
 
 ── COMMODITIES ──
-Gold (GLD): $371.90 (+0.10%)
-Silver (SLV): $52.59 (+1.02%)
-WTI Oil (USO): $136.69 (-2.01%)
-Nat Gas (UNG): $10.55 (-0.57%)
-Brent Oil (BNO): $52.58 (-1.63%)
+Gold (GLD): $374.63 (+0.73%)
+Silver (SLV): $52.93 (+0.65%)
+WTI Oil (USO): $124.76 (-8.73%)
+Nat Gas (UNG): $10.11 (-4.17%)
+Brent Oil (BNO): $48.72 (-7.34%)
 
 ── CRYPTO ──
-IBIT: $36.35 (-0.82%)
-ETHA: $14.04 (-0.50%)
+IBIT: $36.77 (+1.16%)
+ETHA: $14.71 (+4.77%)
 
 ── SENTIMENT ──
-Fear & Greed: 30 (Fear (Crypto))
+Fear & Greed: 29 (Fear (Crypto))
 
 ── DIVIDEND STRATEGY (25) ──
-ABT: $103.06 (+2.29%) O:$101.50 H:$104.17 L:$101.50 PC:$100.75
-ADI: $371.86 (-2.19%) O:$374.63 H:$379.58 L:$366.84 PC:$380.20
-ATO: $179.22 (+0.66%) O:$179.09 H:$180.00 L:$178.10 PC:$178.04
-ADP: $250.09 (+2.97%) O:$244.56 H:$250.84 L:$243.57 PC:$242.88
-CAT: $888.73 (-0.65%) O:$895.00 H:$902.82 L:$881.19 PC:$894.54
-CEG: $274.35 (-0.45%) O:$276.00 H:$279.60 L:$272.74 PC:$275.60
-CHD: $97.64 (+1.51%) O:$96.45 H:$97.76 L:$96.23 PC:$96.19
-CL: $90.75 (+0.74%) O:$90.00 H:$91.11 L:$89.88 PC:$90.08
-DGX: $227.86 (-0.02%) O:$228.00 H:$233.21 L:$223.42 PC:$227.90
-FAST: $47.02 (+1.89%) O:$46.09 H:$47.09 L:$46.01 PC:$46.15
-GD: $386.75 (+1.30%) O:$383.97 H:$388.12 L:$382.14 PC:$381.79
-GPC: $124.21 (+3.47%) O:$120.02 H:$124.36 L:$120.02 PC:$120.05
-LRCX: $305.21 (-4.56%) O:$312.62 H:$319.70 L:$301.68 PC:$319.78
-LMT: $582.60 (+2.46%) O:$568.59 H:$588.41 L:$568.59 PC:$568.59
-NEE: $89.78 (-0.01%) O:$90.91 H:$90.91 L:$88.43 PC:$89.79
-NTR: $68.10 (-0.64%) O:$68.32 H:$68.52 L:$67.63 PC:$68.54
-NWG: $17.97 (+0.62%) O:$17.99 H:$18.11 L:$17.93 PC:$17.86
-ORI: $42.29 (+2.35%) O:$40.73 H:$42.31 L:$40.73 PC:$41.32
-PCAR: $132.24 (+1.14%) O:$130.72 H:$133.90 L:$130.46 PC:$130.75
-QCOM: $166.97 (-2.42%) O:$169.69 H:$171.10 L:$165.77 PC:$171.11
-SPGI: $426.40 (+1.52%) O:$424.51 H:$427.67 L:$420.01 PC:$420.00
-SSNC: $73.88 (+10.35%) O:$72.25 H:$75.46 L:$71.21 PC:$66.95
-STLD: $247.11 (+2.72%) O:$240.94 H:$247.68 L:$239.21 PC:$240.57
-SYK: $330.25 (+3.54%) O:$325.08 H:$330.81 L:$324.01 PC:$318.97
-TEL: $202.94 (+2.09%) O:$198.91 H:$203.44 L:$197.67 PC:$198.79
+ABT: $104.49 (+1.39%) O:$104.09 H:$105.86 L:$103.38 PC:$103.06
+ADI: $371.89 (+0.01%) O:$372.77 H:$376.80 L:$361.67 PC:$371.86
+ATO: $178.22 (-0.56%) O:$180.79 H:$180.79 L:$177.57 PC:$179.22
+ADP: $254.98 (+1.96%) O:$251.18 H:$257.74 L:$251.18 PC:$250.09
+CAT: $873.28 (-1.74%) O:$887.50 H:$894.02 L:$839.58 PC:$888.73
+CEG: $270.00 (-1.59%) O:$276.00 H:$277.19 L:$267.74 PC:$274.35
+CHD: $98.70 (+1.09%) O:$97.91 H:$99.58 L:$97.90 PC:$97.64
+CL: $91.98 (+1.36%) O:$91.25 H:$92.81 L:$90.84 PC:$90.75
+DGX: $231.84 (+1.75%) O:$225.95 H:$231.95 L:$224.97 PC:$227.86
+FAST: $47.64 (+1.32%) O:$47.71 H:$47.76 L:$46.96 PC:$47.02
+GD: $389.14 (+0.62%) O:$389.10 H:$392.57 L:$386.47 PC:$386.75
+GPC: $127.70 (+2.81%) O:$125.00 H:$128.79 L:$124.25 PC:$124.21
+LRCX: $291.61 (-4.46%) O:$306.31 H:$309.50 L:$278.45 PC:$305.21
+LMT: $580.00 (-0.45%) O:$581.88 H:$587.99 L:$578.00 PC:$582.60
+NEE: $88.83 (-1.06%) O:$89.66 H:$90.16 L:$88.29 PC:$89.78
+NTR: $67.40 (-1.03%) O:$66.95 H:$67.87 L:$65.76 PC:$68.10
+NWG: $18.31 (+1.89%) O:$18.27 H:$18.36 L:$18.05 PC:$17.97
+ORI: $43.07 (+1.84%) O:$42.50 H:$43.42 L:$42.20 PC:$42.29
+PCAR: $133.44 (+0.91%) O:$132.82 H:$134.27 L:$131.42 PC:$132.24
+QCOM: $170.04 (+1.84%) O:$169.77 H:$171.19 L:$165.29 PC:$166.97
+SPGI: $439.83 (+3.15%) O:$433.00 H:$442.99 L:$431.80 PC:$426.40
+SSNC: $75.04 (+1.57%) O:$74.30 H:$76.08 L:$73.59 PC:$73.88
+STLD: $250.27 (+1.28%) O:$246.49 H:$250.84 L:$244.88 PC:$247.11
+SYK: $336.74 (+1.97%) O:$332.82 H:$338.79 L:$331.92 PC:$330.25
+TEL: $207.58 (+2.29%) O:$204.69 H:$207.66 L:$203.04 PC:$202.94
 
 ── GROWTH HYBRID (24) ──
-AMD: $521.95 (-3.29%) O:$546.92 H:$549.00 L:$518.00 PC:$539.69
-AEM: $145.13 (+0.43%) O:$145.28 H:$146.89 L:$143.89 PC:$144.51
-ATAT: $31.95 (+1.56%) O:$31.58 H:$32.21 L:$31.58 PC:$31.46
-CVX: $194.79 (+0.19%) O:$194.46 H:$196.87 L:$193.80 PC:$194.42
-CNX: $34.29 (-0.49%) O:$34.60 H:$34.99 L:$34.22 PC:$34.46
-CRDO: $213.15 (-9.87%) O:$231.32 H:$231.32 L:$209.55 PC:$236.50
-EIX: $79.75 (+0.14%) O:$79.96 H:$80.76 L:$79.36 PC:$79.64
-FCX: $62.60 (-1.42%) O:$62.56 H:$62.99 L:$61.05 PC:$63.50
-FTNT: $152.37 (+0.55%) O:$152.70 H:$154.32 L:$151.48 PC:$151.54
-HRMY: $35.32 (-1.34%) O:$35.97 H:$35.97 L:$35.21 PC:$35.80
-HOOD: $94.91 (-6.57%) O:$100.07 H:$100.08 L:$93.03 PC:$101.58
-HUT: $109.99 (-6.53%) O:$116.26 H:$117.98 L:$109.00 PC:$117.67
-KEYS: $318.67 (-1.99%) O:$323.63 H:$324.70 L:$315.32 PC:$325.13
-MARA: $12.12 (-5.09%) O:$12.54 H:$12.73 L:$12.12 PC:$12.77
-MRVL: $194.23 (-7.21%) O:$202.91 H:$206.06 L:$191.29 PC:$209.32
-NOW: $98.78 (+7.44%) O:$94.92 H:$98.92 L:$94.87 PC:$91.94
-NVDA: $206.84 (-0.92%) O:$207.45 H:$211.91 L:$204.81 PC:$208.76
-NXPI: $269.24 (-2.90%) O:$273.72 H:$278.19 L:$267.01 PC:$277.29
-OKE: $93.16 (-0.08%) O:$93.47 H:$95.88 L:$93.07 PC:$93.23
-SOFI: $16.46 (-1.14%) O:$16.72 H:$16.82 L:$16.33 PC:$16.65
-SYF: $72.90 (+1.57%) O:$71.19 H:$73.83 L:$71.01 PC:$71.77
-TOL: $149.87 (+2.27%) O:$146.94 H:$152.26 L:$146.30 PC:$146.55
-TSM: $403.41 (-2.93%) O:$411.35 H:$412.92 L:$400.80 PC:$415.58
-VST: $163.38 (-3.31%) O:$168.69 H:$169.76 L:$162.31 PC:$168.98
-YMM: $9.21 (+1.54%) O:$9.05 H:$9.25 L:$9.03 PC:$9.07
+AMD: $494.95 (-5.17%) O:$527.50 H:$528.00 L:$476.93 PC:$521.95
+AEM: $145.96 (+0.57%) O:$146.71 H:$147.99 L:$144.17 PC:$145.13
+ATAT: $33.55 (+5.01%) O:$32.39 H:$33.61 L:$32.20 PC:$31.95
+CVX: $190.00 (-2.46%) O:$188.67 H:$192.49 L:$188.67 PC:$194.79
+CNX: $33.75 (-1.57%) O:$33.84 H:$34.20 L:$33.65 PC:$34.29
+CRDO: $208.14 (-2.35%) O:$216.95 H:$220.00 L:$197.01 PC:$213.15
+EIX: $78.64 (-1.39%) O:$79.23 H:$79.78 L:$78.24 PC:$79.75
+FCX: $62.72 (+0.19%) O:$63.53 H:$63.53 L:$61.18 PC:$62.60
+FTNT: $152.38 (+0.01%) O:$157.13 H:$157.13 L:$151.68 PC:$152.37
+HRMY: $36.01 (+1.95%) O:$35.63 H:$36.52 L:$35.36 PC:$35.32
+HOOD: $95.65 (+0.78%) O:$96.98 H:$99.45 L:$93.20 PC:$94.91
+HUT: $104.59 (-4.91%) O:$111.80 H:$112.60 L:$100.88 PC:$109.99
+KEYS: $313.68 (-1.57%) O:$321.25 H:$321.81 L:$305.77 PC:$318.67
+MARA: $11.77 (-2.89%) O:$12.27 H:$12.33 L:$11.44 PC:$12.12
+MRVL: $189.17 (-2.61%) O:$198.72 H:$199.79 L:$181.76 PC:$194.23
+NOW: $105.56 (+6.86%) O:$101.87 H:$108.15 L:$100.35 PC:$98.78
+NVDA: $196.51 (-4.99%) O:$208.20 H:$208.75 L:$195.44 PC:$206.84
+NXPI: $267.67 (-0.58%) O:$272.71 H:$276.88 L:$262.17 PC:$269.24
+OKE: $89.46 (-3.97%) O:$90.86 H:$91.72 L:$89.39 PC:$93.16
+SOFI: $16.88 (+2.55%) O:$16.94 H:$17.50 L:$16.69 PC:$16.46
+SYF: $75.31 (+3.31%) O:$73.85 H:$75.39 L:$73.60 PC:$72.90
+TOL: $151.01 (+0.76%) O:$152.43 H:$154.39 L:$150.57 PC:$149.87
+TSM: $399.09 (-1.07%) O:$406.07 H:$407.43 L:$388.80 PC:$403.41
+VST: $157.08 (-3.86%) O:$165.50 H:$166.15 L:$155.54 PC:$163.38
+YMM: $9.31 (+1.09%) O:$9.26 H:$9.34 L:$9.12 PC:$9.21
 
 ── DIGITAL ASSET ETFs ──
-IBIT: $36.35 (-0.82%) O:$36.43 H:$36.46 L:$36.05 PC:$36.65
-ETHA: $14.04 (-0.50%) O:$14.07 H:$14.10 L:$13.92 PC:$14.11
+IBIT: $36.77 (+1.16%) O:$36.74 H:$37.20 L:$36.44 PC:$36.35
+ETHA: $14.71 (+4.77%) O:$14.72 H:$14.92 L:$14.46 PC:$14.04
 
 ── BENCHMARKS ──
-DVY: $162.99 (+1.31%) PC:$160.88
-IWS: $166.48 (+0.94%) PC:$164.93
-IUSG: $181.70 (-0.60%) PC:$182.80
+DVY: $163.27 (+0.17%) PC:$162.99
+IWS: $167.48 (+0.60%) PC:$166.48
+IUSG: $181.20 (-0.27%) PC:$181.70
 
 ── TOP 5 FCI MOVERS ──
-SSNC: +10.35% ($73.88)
-NOW: +7.44% ($98.78)
-SYK: +3.54% ($330.25)
-GPC: +3.47% ($124.21)
-ADP: +2.97% ($250.09)
+NOW: +6.86% ($105.56)
+ATAT: +5.01% ($33.55)
+ETHA: +4.77% ($14.71)
+SYF: +3.31% ($75.31)
+SPGI: +3.15% ($439.83)
 
 ── BOTTOM 5 FCI MOVERS ──
-CRDO: -9.87% ($213.15)
-MRVL: -7.21% ($194.23)
-HOOD: -6.57% ($94.91)
-HUT: -6.53% ($109.99)
-MARA: -5.09% ($12.12)
+AMD: -5.17% ($494.95)
+NVDA: -4.99% ($196.51)
+HUT: -4.91% ($104.59)
+LRCX: -4.46% ($291.61)
+OKE: -3.97% ($89.46)
 
 ── FCI HOLDINGS NEWS (24h) ──
-ABT: Best Dividend Kings: July 2026 (SeekingAlpha)
-ABT: Why Wall Street Can't Get Enough of This Dividend King (Yahoo)
-ADP: Best Dividend Kings: July 2026 (SeekingAlpha)
-CAT: China’s Rare Earth Strategy Is Forcing a U.S. Manufacturing Revolution (Yahoo)
-CAT: Caterpillar Stock Is Up 100% in a Year. Here's the Data Center Math Behind the Rally. (Yahoo)
-CEG: Tracking Philippe Laffont's Coatue Management Portfolio - Q1 2026 Update (SeekingAlpha)
-CL: Best Dividend Kings: July 2026 (SeekingAlpha)
-CL: This Dividend King Stock Just Offered a Superb Buy-the-Dip Opportunity (Yahoo)
+ABT: Abbott (ABT) Lands Exclusive Rights To FDA Approved Blood Based CRC Test (Yahoo)
+ABT: Abbott (ABT) Raised Its Profit Forecast. What’s Driving Its Growth? (Yahoo)
+ADI: Is MPWR Stock a Smart Investment Option Before Q2 Earnings Release? (Yahoo)
+ADP: ADP (ADP) Reports Earnings Tomorrow: What To Expect (Yahoo)
+ADP: INTU Down 60%: Is Intuit's Proven Price Floor About To Break? (Yahoo)
+CAT: Caterpillar (CAT) Stock Looks Slightly Above Fair Value Today (Yahoo)
+CAT: Caterpillar (CAT) Faces Rare Earth Squeeze As China Export Curbs Reset Supply Chains (Yahoo)
+CEG: Constellation Energy Corporation (CEG) Stock Drops Despite Market Gains: Important Facts to Note (Yahoo)
+CEG: Brokers Suggest Investing in Constellation Energy Corporation (CEG): Read This Before Placing a Bet (Yahoo)
+CHD: How Reynolds Is Adapting to Commodity Inflation and Digital Growth (Yahoo)
+CHD: Is REYN Stock Attractive After Its Recent Rally and Earnings Beat? (Yahoo)
+CL: Colgate's Pre-Q2 Earnings: What's Likely to Shape the Results? (Yahoo)
+CL: 5 Dividend Kings Continued to Pay and Raise Dividends Through Every Market Crash Since Black Monday (Yahoo)
+DGX: Equinix Stock Has A Message For Management (Yahoo)
 DGX: Why Quest Diagnostics Stock Climbed This Past Week (Yahoo)
-DGX: Why Quest Diagnostics (DGX) Is Up 8.2% After Raising 2026 Guidance And Boosting Buybacks (Yahoo)
-GD: Does RTX Stock Chart Its Own Course? (Yahoo)
-GPC: Best Dividend Kings: July 2026 (SeekingAlpha)
-LRCX: Tracking Philippe Laffont's Coatue Management Portfolio - Q1 2026 Update (SeekingAlpha)
-LRCX: Earnings Volatility Watch: 12 Stocks With Double-Digit Implied Moves This Week (Benzinga)
-LMT: Does RTX Stock Chart Its Own Course? (Yahoo)
-LMT: Inside the S&P 500 AI boom, industrials are getting as rich as tech stocks (CNBC)
-NEE: NextEra Energy vs Brookfield Renewable: The Better Dividend Stock (Yahoo)
-NEE: NextEra Energy Got Cheaper While The AI Buildout Pushed Its Backlog To 35.1 GW (SeekingAlpha)
+GD: Ford Wants to Build the Army’s New Tactical Truck. What the Push Into Defense Means for the Stock. (Yahoo)
+GD: Ford and GM Look to Defense for New Growth (Yahoo)
+GPC: Ford, PACCAR, OSK & ABG: Can They Beat Q2 Earnings Estimates? (Yahoo)
+GPC: Why Genuine Parts (GPC) International Revenue Trends Deserve Your Attention (Yahoo)
+LRCX: Why J.P. Morgan Says the ASML Stock Selloff Is ‘Disproportionate’ (Yahoo)
+LRCX: Stay informed with the top movers within the S&P500 index on Monday. (ChartMill)
+LMT: Lockheed Martin: Missiles Make Valuation Attractive Again (SeekingAlpha)
+LMT: The Gap Between GE Stock And Its Own Numbers (Yahoo)
+NEE: AI Energy Bottleneck: Buy GE Vernova or NextEra Energy on AI Pivot? (Yahoo)
+NEE: NEE Q2 Earnings Call Highlights Power Demand Growth (Yahoo)
+NTR: Barclays Maintains Overweight on Nutrien, Lowers Price Target to $81 (Benzinga)
 PCAR: PACCAR Earnings: What To Look For From PCAR (Yahoo)
-QCOM: QQQ And Tech Earnings: They Can't All Win The CapEx Arms Race (SeekingAlpha)
-QCOM: Tracking Philippe Laffont's Coatue Management Portfolio - Q1 2026 Update (SeekingAlpha)
-SPGI: Does RTX Stock Chart Its Own Course? (Yahoo)
-SPGI: S&P Global (SPGI) Q2 Earnings Report Preview: What To Look For (Yahoo)
+QCOM: Navitas Semiconductor Corporation (NVTS) Reports Q2 Loss, Beats Revenue Estimates (Yahoo)
+QCOM: Update: Wall Street Wavers as Oil Slides; Fed Decision, Major Earnings in Focus (Yahoo)
+SPGI: ADBE Showered Owners With Cash. The Stock Still Lagged The Market (Yahoo)
+SPGI: This Congressman Slammed Elon Musk — Then Bought SpaceX Stock (Benzinga)
+SSNC: SS&C Technologies: Strong Q2 Underlines The Stock's Undervaluation (SeekingAlpha)
 SSNC: SS&C Technologies: Strong Results, Attractive Valuation, And Lingering Debt Concerns (SeekingAlpha)
-STLD: Steel Dynamics (NASDAQ:STLD): A Growth at a Reasonable Price Stock (ChartMill)
-AMD: How Lisa Su Has Positioned AMD to Be a Big AI Winner and Why the Stock Is a Buy (Yahoo)
-AMD: UBS hurries to reset AMD stock target on key AI Day signals (Yahoo)
-AEM: Tracking John Paulson's Paulson & Company Portfolio - Q1 2026 Update (SeekingAlpha)
-CVX: Why a 15% Yield on Blue Chip Stocks Worries Even Income Investors (Yahoo)
-CVX: 4 Energy Stocks With 20+ Years of Consecutive Dividend Growth (Yahoo)
-CNX: CNX Resources (CNX) Could Be 12% Undervalued Ahead Of June 2026 Earnings (Yahoo)
-EIX: The 3.4% Income Play That Beats the Dogs of the Dow Strategy (Yahoo)
-FCX: Freeport-McMoRan Inc. (FCX) and Digital Realty Trust, Inc. (DLR) Highlight the Companies Cashing In on AI Infrastructure (Yahoo)
-FTNT: Earnings Volatility Watch: 12 Stocks With Double-Digit Implied Moves This Week (Benzinga)
-FTNT: Fortinet (FTNT) Heads Into Q2 Earnings As AI Security Optimism Meets A Pricey Valuation (Yahoo)
-HOOD: Robinhood Bets on 3 Crypto Sectors as Blockchain Fees Hit $25 Million (Yahoo)
-HOOD: Is Money Rotating Back Into Bitcoin and Ethereum ETFs While XRP and HYPE Funds Fade? (Yahoo)
-MRVL: Marvell Technology vs. UiPath: What Do the Quarterly Revenue Trends of These Artificial Intelligence Companies Tell Investors? (Yahoo)
-MRVL: Down 34% From Its Highs, Is Marvell Technology a Buy on the Dip? (Yahoo)
-NOW: Lucidya expands global leadership team, recruiting senior talent from ServiceNow, Qualtrics, Brandwatch, Talkdesk, and Genesys (Yahoo)
-NOW: ServiceNow (NOW) Teams Up With TeamViewer As Experian Expands AI Platform Use (Yahoo)
-NVDA: Netflix Is Down 41% in 1 Year. Could the Sell-Off Be Nearing an End? (Yahoo)
-NVDA: Fed Chair Kevin Warsh Faces a Committee Where 9 of 19 Members Are Signaling Higher Interest Rates This Year (Yahoo)
-OKE: Buy 4 Barron's Better Bets (Than T-Bills) Out Of 11 'Safer' July DiviDogs (SeekingAlpha)
-SOFI: SoFi Technologies: Great Execution At A Discount (SeekingAlpha)
-SOFI: SoFi Technologies Q2 Preview: Product Expansions, Weak Consumer Macros And A Tough Growth Ask (SeekingAlpha)
-TOL: How Toll Brothers’ New Luxury Communities and Design Studio Expansion Could Shape TOL’s Investor Story (Yahoo)
-TSM: Tracking Philippe Laffont's Coatue Management Portfolio - Q1 2026 Update (SeekingAlpha)
-TSM: Tracking Lone Pine Capital Portfolio - Q1 2026 Update (SeekingAlpha)
-VST: Vistra Corp.'s Strategic Edge: Capitalizing On Rising Energy Demand (SeekingAlpha)
-VST: Tracking Lone Pine Capital Portfolio - Q1 2026 Update (SeekingAlpha)
-IBIT: Tracking John Paulson's Paulson & Company Portfolio - Q1 2026 Update (SeekingAlpha)
-IBIT: ETF Zoo: Leveraged Lunacy Surpasses $65B in Gains (Yahoo)
+STLD: Why Cleveland-Cliffs Stock Jumped Despite Its Latest Quarterly Loss (Yahoo)
+SYK: J&J's MedTech Performance Slows in Q2: Will Sales Improve in H2? (Yahoo)
+SYK: PAHC vs. SYK: Which Stock Is the Better Value Option? (Yahoo)
+TEL: 3 Reasons Growth Investors Will Love TE Connectivity (TEL) (Yahoo)
+TEL: Is Amphenol Stock a Smart Buy Before Q2 Earnings Report? (Yahoo)
+AMD: AI Memory Stocks on Rocky Ground: 3 Reasons SK Hynix Fell 13% (Yahoo)
+AMD: SNDK, NVDA, SKHY, ASML Stocks Extend Slide Overnight Amid China's AI Challenge, Tech Rotation (Yahoo)
+CVX: Chevron (CVX) Meets US Officials Over Protecting Kazakhstan Oil Assets (Yahoo)
+CVX: Why Chevron Stock Slumped Today (Yahoo)
+CNX: Diamondback Energy (FANG) Reports Next Week: Wall Street Expects Earnings Growth (Yahoo)
+CNX: 3 Market-Beating Stocks to Research Further (Yahoo)
+EIX: American Water to Report Q2 Earnings: What's in Store for the Stock? (Yahoo)
+EIX: DTE Energy Gears Up to Report Q2 Earnings: What's in the Cards? (Yahoo)
+FCX: The Next Fort Knox? Why the Army is Going All-In On Rare Earths (Yahoo)
+FCX: SCCO Q2 Earnings Beat on Strong Metal Prices Despite Low Volumes (Yahoo)
+FTNT: Equinix Stock Has A Message For Management (Yahoo)
+FTNT: Intel Just Secured a Huge Customer for Its Foundry Business (Yahoo)
+HOOD: HOOD Stock Dips Overnight: Robinhood Opens Ventures Fund II Roadshow To Retail Investors (Yahoo)
+HOOD: Fanatics Pushes Into Prediction Markets (Yahoo)
+HUT: Hut 8 Stock Trades 65% Above Its 200-Day Average Ahead of Earnings (Benzinga)
+KEYS: The London Company QTD Mid Cap Q2 2026 Contributors, Detractors And Trades (SeekingAlpha)
+KEYS: Keysight Certifies Electromagnetic Design Software for Intel Foundry’s Latest Processes (Yahoo)
+MRVL: Marvell Technology vs. UiPath: Which Tech Stock Is a Better Buy in 2026? (Yahoo)
+MRVL: Marvell Technology vs. Planet Labs: Which Growth Stock Is a Better Buy in 2026, the Artificial Intelligence Company or the Rising Star of the Space-Based Economy? (Yahoo)
+NOW: Stock Market Today, July 27: Dow Rises on Oil Retreat, and Sandisk Plunges 11% on Memory Weakness (Yahoo)
+NOW: Stay informed with the top movers within the S&P500 index on Monday. (ChartMill)
+NVDA: Rocket Lab Has Fallen 58% From Its High While Wall Street's Average Target Sits 79% Above the Price. One Side Is Badly Wrong. (Yahoo)
+NVDA: Nvidia invests $5bn in researcher who plotted OpenAI coup (Yahoo)
+NXPI: NXP Semiconductors (NXPI) Q2 Earnings: What To Expect (Yahoo)
+NXPI: Nokia Stock Is Gaining Monday: What's Going On? (Benzinga)
+OKE: ONEOK (OKE) Affirms Dividend Ahead Of Earnings, Is It Still Below Fair Value? (Yahoo)
+OKE: Oneok Inc. (OKE) Stock Falls Amid Market Uptick: What Investors Need to Know (Yahoo)
+SOFI: Wise Group shares are trading lower amid volatility following its Nasdaq listing. (Benzinga)
+TOL: Toll Brothers Announces Final Opportunity to Own a Luxury Condominium at Mira Villa in Las Vegas (Yahoo)
+TOL: Toll Brothers Inc. (TOL) Is a Trending Stock: Facts to Know Before Betting on It (Yahoo)
+TSM: TSMC Deserves Much More Respect From The Market (SeekingAlpha)
+TSM: TSMC: AI Demand Visibility Is Intact, But Margin Dilution Will Weigh On Sentiment (SeekingAlpha)
+VST: Nuclear Operators Deliver Explosive Growth at Reasonable Prices (ChartMill)
+VST: TD Cowen Maintains Buy on Vistra, Lowers Price Target to $222 (Benzinga)
+IBIT: Metaplanet: Same Playbook As Strategy But With The Weaker Structure (SeekingAlpha)
+IBIT: QUICK SPARK: Bitcoin ETF Selloff Deepens: $465 Million Flees in Two Days, IBIT Leads Exodus (Benzinga)
 
 ── HEADLINES ──
-• Morning Bid: Markets dare to hope as US, Iran put war on hold - Reuters (Reuters)
-• Indian rupee heads for steepest rise in three weeks as oil falls - Reuters (Reuters)
-• Gold gains over 1% on pause in US-Iran fighting; Fed decision looms - Reuters (Reuters)
-• Crude oil futures are pricing market adaptability, not hopeful Iran peace - Reuters (Reuters)
-• Shares, bonds bounce in Asia as oil skids - Reuters (Reuters)
-• Dollar pulls back as US-Iran attacks pause, oil drops - Reuters (Reuters)
-• Red Sea shipping slows after Houthi attack on Saudi Arabia, data shows - Reuters (Reuters)
-• Oil prices drop after US, Iran pause fighting over weekend - Reuters (Reuters)
+• Apple ends day as world's most valuable company, passing Nvidia (CNBC)
+• Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade (CNBC)
+• From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week (CNBC)
+• More tech pain means gains elsewhere. What's winning in Monday's mixed market (CNBC)
+• JetBlue overhauls fare options, from basic first to flexible economy. Here's what to know (CNBC)
+• Why Boeing and Corning are moving in opposite directions and what to expect next (CNBC)
+• Sam Altman to meet with Trump administration, Senators this week. Here's what he plans to say (CNBC)
+• We're buying more of a slumping industrial stock and a hard-hit chipmaker (CNBC)
 
 === END DATA DROP ===

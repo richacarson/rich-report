@@ -1,7 +1,7 @@
-=== FCI DATA DROP v2 | Sun, Aug 16, 2026 | 03:44 AM CT ===
+=== FCI DATA DROP v2 | Mon, Aug 17, 2026 | 03:43 AM CT ===
 
-── EARNINGS (YESTERDAY) ──
-ALLR EPS:— vs Est:-0.255 | ATHR EPS:— vs Est:-0.1224
+── EARNINGS (TODAY) ──
+AGPU Est:— | AHRO Est:— | AIDG Est:— | AIHS Est:— | ANNX Est:-0.2438 | AREC Est:-0.0918 | ATEK Est:— | AXIM Est:— | AXXA Est:— | AZIO Est:— | BASA Est:— | BBW Est:0.7045 | BRST Est:— | BTO Est:— | BYNO Est:— | CAHO Est:— | CBAT Est:-0.0612 | CETY Est:— | CHMX Est:— | CLNN Est:-0.3754
 
 ── INDICES ──
 S&P 500: $776.34 (-0.20%) | O:$778.54 H:$778.80 L:$775.43 PC:$777.88
@@ -38,7 +38,7 @@ IBIT: $35.63 (-0.70%)
 ETHA: $14.18 (-0.35%)
 
 ── SENTIMENT ──
-Fear & Greed: 34 (Fear (Crypto))
+Fear & Greed: 31 (Fear (Crypto))
 
 ── DIVIDEND STRATEGY (25) ──
 ABT: $111.25 (-0.02%) O:$111.49 H:$111.97 L:$110.79 PC:$111.27
@@ -119,67 +119,32 @@ STLD: -1.83% ($255.77)
 
 ── FCI HOLDINGS NEWS (24h) ──
 ABT: How To Invest $100,000 In A Retiree's SWAN Income Portfolio (SeekingAlpha)
-ABT: Boston Scientific: A Deep Dive Into The Headwinds And Why I See A Recovery Ahead (SeekingAlpha)
-ADI: How To Earn $500 A Month From Analog Devices Stock Ahead Of Q3 Earnings (Benzinga)
-ATO: Dividend Champion, Contender, And Challenger Highlights: Week August 16 (SeekingAlpha)
-ADP: Automatic Data Processing: Scoop Up This Dividend Growth Gem Now (SeekingAlpha)
+ADI: Wall Street Week Ahead (SeekingAlpha)
 CAT: How To Invest $100,000 In A Retiree's SWAN Income Portfolio (SeekingAlpha)
-CAT: What's going on in today's session: dow jones movers (ChartMill)
 CEG: Which Stocks Will Rise With The AI Boom? Part II: Electricity May Be The Longer Trade (SeekingAlpha)
-CEG: Dividend Champion, Contender, And Challenger Highlights: Week August 16 (SeekingAlpha)
-FAST: Here’s How Much You Would Have Made Owning Fastenal Stock In The Last 10 Years (Benzinga)
+CHD: Church & Dwight: Volume-Driven Growth And Margin Recovery Support A Buy (SeekingAlpha)
+CL: Church & Dwight: Volume-Driven Growth And Margin Recovery Support A Buy (SeekingAlpha)
+DGX: IHF: Healthcare Dashboard For August (SeekingAlpha)
 LRCX: Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More (Benzinga)
-LRCX: Third Point Dissolves Share Stake In Lam Research (Benzinga)
 LMT: Defense Rally at a Crossroads: Lockheed, RTX, and Northrop Earnings to Test the Sector's Momentum (ChartMill)
-LMT: $1000 Invested In Lockheed Martin 15 Years Ago Would Be Worth This Much Today (Benzinga)
 NEE: Which Stocks Will Rise With The AI Boom? Part II: Electricity May Be The Longer Trade (SeekingAlpha)
-NEE: NextEra Energy: Positive Developments Continue (SeekingAlpha)
-NTR: MOO: Farm Cycle Recovery And Long Term Food Security (SeekingAlpha)
-NTR: Following Yara International and Nutrien's Expansion in Fertigation and Water-Soluble Formulations, New Study Projects 7.8% CAGR for Specialty Fertilizers (Yahoo)
-QCOM: Viking Global Investors Reports Share Stake Of 1.5 Mln Shares In Qualcomm Inc (Benzinga)
-SPGI: Bill Ackman Exits Alphabet, Raises Bets on Microsoft & Meta (Benzinga)
-SPGI: SanDisk's Investor Day Puts NAND Center Stage as the 30-Year Quietly Prices In Fiscal Reality (ChartMill)
+SPGI: Tracking Bill Ackman's Pershing Square 13F Portfolio - Q2 2026 Update (SeekingAlpha)
+SPGI: Bill Ackman Is Buying These 4 Stocks: I Ranked Their Moats (SeekingAlpha)
 STLD: Steel Dynamics (NASDAQ:STLD) Combines Strong Growth with Bull Flag Technical Setup (ChartMill)
-SYK: Boston Scientific: A Deep Dive Into The Headwinds And Why I See A Recovery Ahead (SeekingAlpha)
-SYK: Stryker (NYSE:SYK): A Quality Investment for Long-Term Investors (ChartMill)
-TEL: Dividend Champion, Contender, And Challenger Highlights: Week August 16 (SeekingAlpha)
 AMD: Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More (Benzinga)
 AMD: Stanley Druckenmiller Bets Big on AMZN, AMD — Dumps AVGO, INTC and MU in Q2 (Benzinga)
 AEM: Precious Metals Royalty And Streaming Companies - July 2026 Report (SeekingAlpha)
-AEM: After-Hours Losers Aug. 8, 2016: TUBE Down 24.2%, MODN 16.4%, NPTN 15.6%, MXL 15.5%, TWER 14%, MTW 12%, ROG 9%, IAG 7.9%, KNDI 5.7% (Benzinga)
+CVX: Consumer Data Trips Up Wall Street's Rally as MDxHealth Snatches a Lifeline and Anthropic Redraws the AI Ceiling (ChartMill)
 CVX: Alibaba, Walmart To Headline Earnings Next Week, FOMC Minutes Of Meeting In Focus (SeekingAlpha)
-CVX: Tracking Berkshire Hathaway Portfolio - Q2 2026 Update (SeekingAlpha)
-CRDO: 5 AI Stocks with Strong Growth to Buy on the Rebound (Benzinga)
 FTNT: Fortinet (NASDAQ:FTNT) Stands Out as a Quality Investment (ChartMill)
-FTNT: Gapping S&P500 stocks in Friday's session (ChartMill)
-HOOD: Top S&P500 movers in Friday's session (ChartMill)
-HOOD: Robinhood Exec Says AI Boom Could Keep Stocks Ripping Higher but Bonds Could Crash the Party (Benzinga)
 KEYS: Earnings Volatility Watch: Wolfspeed and 9 Other Stocks Could Swing Up to 17% this Week (Benzinga)
-KEYS: Keysight Technologies (KEYS) Could Be 8% Undervalued Following OCP APAC Summit (Yahoo)
 MRVL: What Moved Markets This Week (SeekingAlpha)
-MRVL: 5 AI Stocks with Strong Growth to Buy on the Rebound (Benzinga)
-NOW: ServiceNow: Great Company At A Fair Price, But I Need More Margin Of Safety (SeekingAlpha)
-NOW: Gapping S&P500 stocks in Friday's session (ChartMill)
 NVDA: Eli Lilly Is Building a Weight Loss Drug for Every Kind of Patient (Yahoo)
 NVDA: Iren Won't Have to Raise Capital for Much Longer After the Horizon 1 Delivery (Yahoo)
-SOFI: SoFi Technologies (SOFI) Rolls Out Three New Private Market Funds (Yahoo)
-SOFI: SoFi's Growth Looks Unstoppable, But One Weak Segment Keeps Me From A Strong Buy (SeekingAlpha)
 TSM: Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More (Benzinga)
 TSM: Stanley Druckenmiller Bets Big on AMZN, AMD — Dumps AVGO, INTC and MU in Q2 (Benzinga)
 VST: Which Stocks Will Rise With The AI Boom? Part II: Electricity May Be The Longer Trade (SeekingAlpha)
-VST: Micron and 15 Other Stocks To Play The AI Buildout Race: They Are Still 20% Below Highs (Benzinga)
-IBIT: QUICK SPARK: Morgan Stanley, JPMorgan Load Up on Bitcoin, Ethereum ETFs (Benzinga)
-IBIT: Chart Of The Day: The Great 'Hot Money' Migration (SeekingAlpha)
-ETHA: QUICK SPARK: Morgan Stanley, JPMorgan Load Up on Bitcoin, Ethereum ETFs (Benzinga)
-
-── HEADLINES ──
-• Iran disputes Qatar, Kuwait accounts of captured Iranian personnel - Reuters (Reuters)
-• Qatar denies detaining Iranian pilots, says it found remains of one - Reuters (Reuters)
-• Lebanon says Israeli strikes in south of the country kill at least 11​​​ - Reuters (Reuters)
-• Yemen's Mocha port halts operations after Houthi attacks, port director says - Reuters (Reuters)
-• Taliban mark five years in power as aid groups warn of crisis - Reuters (Reuters)
-• Israeli strike kills seven in south Lebanon, state news reports​ - Reuters (Reuters)
-• Inflation moderated as Intel and Nvidia fueled the AI trade in last week's market (CNBC)
-• PODCAST: Indonesia quake, Jason Arday dies, gas prices and Mount Etna - Reuters (Reuters)
+IBIT: BLOX: Bitcoin May Be Forming A Bottom, Collect Weekly Income In The Meantime (SeekingAlpha)
+ETHA: BLOX: Bitcoin May Be Forming A Bottom, Collect Weekly Income In The Meantime (SeekingAlpha)
 
 === END DATA DROP ===

@@ -1,30 +1,22 @@
-=== FCI DATA DROP v2 | Sun, Aug 30, 2026 | 03:43 AM CT ===
+=== FCI DATA DROP v2 | Mon, Aug 31, 2026 | 03:54 AM CT ===
+
+── EARNINGS (TODAY) ──
+AIJTY Est:— | CANG Est:-0.918 | CCG Est:0.0111 | CISS Est:— | FRO Est:2.6231 | HZRBY Est:— | INTJ Est:— | JGH Est:— | JMM Est:— | JRS Est:— | KF Est:— | LDXC Est:— | LX Est:— | NPCT Est:— | PCN Est:— | PNBI Est:— | PXS Est:0.202 | QQQX Est:— | RCS Est:— | RMM Est:—
 
 ── INDICES ──
-S&P 500: $769.35 (-0.23%) | O:$771.76 H:$775.30 L:$768.31 PC:$771.10
 Dow: $535.06 (-0.03%) | O:$536.53 H:$537.73 L:$534.40 PC:$535.22
-Nasdaq: $716.43 (-0.65%) | O:$719.74 H:$724.13 L:$715.09 PC:$721.11
 Russell 2K: $295.75 (-1.35%) | O:$299.70 H:$300.39 L:$295.67 PC:$299.81
-UVXY (VIX proxy): $18.45 (+1.65%)
 
 ── RATES ──
 TLT (20Y Bond): $82.88 (-0.30%) PC:$83.13
 
 ── SECTORS ──
 Comm Svcs (XLC): +1.42% | $112.99
-Discret. (XLY): +1.15% | $117.21
-Energy (XLE): +0.63% | $62.68
 Staples (XLP): +0.43% | $85.45
 Financials (XLF): +0.38% | $58.10
-Materials (XLB): -0.09% | $53.18
-Healthcare (XLV): -0.24% | $171.16
-Real Estate (XLRE): -0.40% | $44.48
-Industrials (XLI): -0.93% | $177.14
-Utilities (XLU): -1.04% | $42.73
 Tech (XLK): -1.55% | $185.69
 
 ── COMMODITIES ──
-Gold (GLD): $408.89 (-3.24%)
 Silver (SLV): $60.02 (-4.38%)
 WTI Oil (USO): $129.70 (-0.24%)
 Nat Gas (UNG): $10.33 (-0.96%)
@@ -32,159 +24,106 @@ Brent Oil (BNO): $51.48 (-0.44%)
 
 ── CRYPTO ──
 IBIT: $43.90 (-3.07%)
-ETHA: $18.37 (-2.65%)
 
 ── SENTIMENT ──
-Fear & Greed: 69 (Greed (Crypto))
+Fear & Greed: 62 (Greed (Crypto))
 
 ── DIVIDEND STRATEGY (25) ──
-ABT: $112.47 (+0.79%) O:$111.60 H:$112.75 L:$111.11 PC:$111.59
-ADI: $361.78 (-3.40%) O:$374.14 H:$374.14 L:$359.54 PC:$374.52
+ABT: — (no data)
+ADI: — (no data)
 ATO: $166.65 (-0.34%) O:$168.35 H:$168.35 L:$166.38 PC:$167.22
-ADP: $287.48 (+0.98%) O:$285.00 H:$287.86 L:$285.00 PC:$284.68
-CAT: $800.25 (-2.05%) O:$819.01 H:$821.23 L:$799.17 PC:$817.00
-CEG: $276.75 (-2.00%) O:$281.53 H:$284.19 L:$275.99 PC:$282.41
-CHD: $101.26 (-1.08%) O:$102.52 H:$102.69 L:$101.08 PC:$102.37
-CL: $90.75 (-0.23%) O:$91.40 H:$91.66 L:$90.50 PC:$90.96
-DGX: $242.76 (-0.76%) O:$245.17 H:$245.28 L:$242.27 PC:$244.61
+ADP: — (no data)
+CAT: — (no data)
+CEG: — (no data)
+CHD: — (no data)
+CL: — (no data)
+DGX: — (no data)
 FAST: $49.78 (-2.65%) O:$51.50 H:$51.52 L:$49.73 PC:$51.13
-GD: $379.32 (-0.19%) O:$381.07 H:$381.08 L:$377.66 PC:$380.06
-GPC: $137.51 (+0.59%) O:$137.34 H:$137.54 L:$135.39 PC:$136.70
-LRCX: $301.90 (-5.24%) O:$318.03 H:$318.29 L:$301.05 PC:$318.58
+GD: — (no data)
+GPC: — (no data)
+LRCX: — (no data)
 LMT: $563.85 (-0.36%) O:$567.97 H:$568.42 L:$560.72 PC:$565.89
 NEE: $81.84 (-1.95%) O:$82.92 H:$82.98 L:$81.33 PC:$83.47
 NTR: $73.51 (+0.62%) O:$73.50 H:$75.09 L:$73.14 PC:$73.06
 NWG: $18.38 (-0.43%) O:$18.45 H:$18.45 L:$18.32 PC:$18.46
-ORI: $42.07 (-0.40%) O:$42.42 H:$42.55 L:$41.94 PC:$42.24
+ORI: — (no data)
 PCAR: $125.34 (-0.95%) O:$127.77 H:$127.77 L:$124.51 PC:$126.54
-QCOM: $164.19 (-0.36%) O:$164.59 H:$165.49 L:$161.90 PC:$164.78
+QCOM: — (no data)
 SPGI: $442.89 (+1.72%) O:$436.00 H:$444.56 L:$436.00 PC:$435.39
-SSNC: $83.42 (-0.06%) O:$83.59 H:$84.00 L:$83.27 PC:$83.47
-STLD: $234.66 (-0.50%) O:$237.14 H:$239.37 L:$232.02 PC:$235.84
+SSNC: — (no data)
+STLD: — (no data)
 SYK: $330.69 (+2.66%) O:$322.61 H:$332.72 L:$322.12 PC:$322.12
-TEL: $202.66 (-0.17%) O:$203.20 H:$204.49 L:$200.02 PC:$203.00
+TEL: — (no data)
 
 ── GROWTH HYBRID (24) ──
-AMD: $465.58 (-2.33%) O:$472.52 H:$478.75 L:$465.29 PC:$476.67
-AEM: $206.25 (-4.27%) O:$216.31 H:$216.32 L:$204.80 PC:$215.44
-ATAT: $35.50 (+2.33%) O:$34.85 H:$35.70 L:$34.71 PC:$34.69
-CVX: $201.86 (+1.05%) O:$199.98 H:$202.24 L:$199.56 PC:$199.77
-CNX: $36.20 (+0.25%) O:$36.32 H:$36.61 L:$36.09 PC:$36.11
-CRDO: $232.75 (-3.12%) O:$238.57 H:$240.49 L:$228.60 PC:$240.24
+AMD: — (no data)
+AEM: — (no data)
+ATAT: — (no data)
+CVX: — (no data)
+CNX: — (no data)
+CRDO: — (no data)
 EIX: $70.17 (-4.76%) O:$74.64 H:$75.30 L:$68.94 PC:$73.68
-FCX: $76.45 (-2.51%) O:$78.56 H:$78.73 L:$75.90 PC:$78.42
+FCX: — (no data)
 FTNT: $166.00 (-3.92%) O:$172.58 H:$173.00 L:$162.68 PC:$172.78
-HRMY: $39.21 (-1.66%) O:$39.69 H:$39.69 L:$39.13 PC:$39.87
-HOOD: $104.26 (-5.01%) O:$108.66 H:$110.50 L:$104.15 PC:$109.76
+HRMY: — (no data)
+HOOD: — (no data)
 HUT: $79.42 (-8.85%) O:$85.20 H:$86.30 L:$78.55 PC:$87.13
-KEYS: $319.97 (-1.80%) O:$324.41 H:$325.86 L:$318.05 PC:$325.82
+KEYS: — (no data)
 MARA: $10.67 (-10.11%) O:$11.53 H:$11.60 L:$10.56 PC:$11.87
-MRVL: $216.62 (-10.28%) O:$225.25 H:$228.88 L:$215.55 PC:$241.45
-NOW: $144.71 (+4.54%) O:$138.48 H:$145.72 L:$137.80 PC:$138.43
+MRVL: — (no data)
+NOW: — (no data)
 NVDA: $217.55 (-4.58%) O:$227.36 H:$229.26 L:$216.81 PC:$227.98
-NXPI: $223.58 (-1.01%) O:$225.66 H:$225.84 L:$220.55 PC:$225.86
-OKE: $94.76 (+0.04%) O:$95.25 H:$95.88 L:$94.55 PC:$94.72
-SOFI: $18.06 (-5.84%) O:$19.20 H:$19.50 L:$18.03 PC:$19.18
+NXPI: — (no data)
+OKE: — (no data)
+SOFI: — (no data)
 SYF: $78.05 (-2.35%) O:$80.07 H:$80.89 L:$78.03 PC:$79.93
-TOL: $146.22 (+0.75%) O:$146.56 H:$149.19 L:$144.34 PC:$145.13
+TOL: — (no data)
 TSM: $417.52 (-2.29%) O:$427.49 H:$429.12 L:$417.32 PC:$427.30
-VST: $137.09 (-1.95%) O:$140.89 H:$141.10 L:$136.61 PC:$139.81
-YMM: $8.81 (+0.46%) O:$8.81 H:$8.89 L:$8.73 PC:$8.77
+VST: — (no data)
+YMM: — (no data)
 
 ── DIGITAL ASSET ETFs ──
 IBIT: $43.90 (-3.07%) O:$44.87 H:$45.27 L:$43.52 PC:$45.29
-ETHA: $18.37 (-2.65%) O:$18.87 H:$19.07 L:$18.16 PC:$18.87
+ETHA: — (no data)
 
 ── BENCHMARKS ──
-DVY: $163.80 (-0.03%) PC:$163.85
 IWS: $170.75 (-0.64%) PC:$171.85
-IUSG: $191.23 (-0.58%) PC:$192.35
 
 ── TOP 5 FCI MOVERS ──
-NOW: +4.54% ($144.71)
 SYK: +2.66% ($330.69)
-ATAT: +2.33% ($35.50)
 SPGI: +1.72% ($442.89)
-CVX: +1.05% ($201.86)
+NTR: +0.62% ($73.51)
+ATO: -0.34% ($166.65)
+LMT: -0.36% ($563.85)
 
 ── BOTTOM 5 FCI MOVERS ──
-MRVL: -10.28% ($216.62)
 MARA: -10.11% ($10.67)
 HUT: -8.85% ($79.42)
-SOFI: -5.84% ($18.06)
-LRCX: -5.24% ($301.90)
+EIX: -4.76% ($70.17)
+NVDA: -4.58% ($217.55)
+FTNT: -3.92% ($166.00)
 
 ── FCI HOLDINGS NEWS (24h) ──
-ABT: Best Dividend Aristocrats For September 2026 (SeekingAlpha)
 ADI: Texas Instruments: The Upcycle Everyone Waited For Might Finally Be Here (SeekingAlpha)
-ADI: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
-ATO: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
+ADP: Tracking Terry Smith's Fundsmith 13F Portfolio - Q2 2026 Update (SeekingAlpha)
 ADP: Automatic Data Processing (NASDAQ:ADP): A Dividend Quality Play for Income Investors (ChartMill)
-ADP: Best Dividend Aristocrats For September 2026 (SeekingAlpha)
-CAT: What's going on in today's session: dow jones movers (ChartMill)
-CAT: Stay informed with the top movers within the dow jones index on Friday. (ChartMill)
-CEG: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
-CEG: Nvidia Warns Of AI Power Bottleneck — And Bloom Energy Could Benefit (Benzinga)
-CHD: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
+CHD: Tracking Terry Smith's Fundsmith 13F Portfolio - Q2 2026 Update (SeekingAlpha)
 CL: Why The Fed Might Raise Rates Despite August Job Declines (SeekingAlpha)
-FAST: Best Dividend Aristocrats For September 2026 (SeekingAlpha)
 GD: Why The Fed Might Raise Rates Despite August Job Declines (SeekingAlpha)
-GPC: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
-GPC: Best Dividend Aristocrats For September 2026 (SeekingAlpha)
-LRCX: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
+LRCX: Dividend Announcements: August 22-28, 2026 (SeekingAlpha)
+LMT: Microsoft Among 14 Dividend Growth Companies To Announce Annual Dividend Increases In September (SeekingAlpha)
 LMT: Why The Fed Might Raise Rates Despite August Job Declines (SeekingAlpha)
-LMT: Lockheed Martin: The Missile Supercycle Could Drive A Re-Rating (Rating Upgrade) (SeekingAlpha)
-NEE: Best Dividend Aristocrats For September 2026 (SeekingAlpha)
-ORI: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
-PCAR: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
-PCAR: If You Invested $100 In PACCAR Stock 5 Years Ago, You Would Have This Much Today (Benzinga)
-QCOM: Broadcom, Palo Alto Networks Headline Earnings Amid A Tight Economic Calendar (SeekingAlpha)
-QCOM: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
-SPGI: Best Dividend Aristocrats For September 2026 (SeekingAlpha)
-SSNC: Dividend Champion, Contender, And Challenger Highlights: Week August 30 (SeekingAlpha)
-AMD: Two Tech Stocks Take The Season (SeekingAlpha)
-AMD: What Moved Markets This Week (SeekingAlpha)
-AEM: Hycroft Mining Holding shares are trading lower after the company reported worse-than-expected Q1 EPS results. (Benzinga)
-AEM: Warsh's Remarks Are Sinking Mining Stocks: Here's Why (Benzinga)
-CVX: Chevron: Current Venezuelan Possible Agreement Is Not A Near-Term Solution (SeekingAlpha)
-CVX: What's going on in today's session: dow jones movers (ChartMill)
-CRDO: Credo Technology (NASDAQ:CRDO) Shows High-Growth Leadership and Momentum on CANSLIM Screen (ChartMill)
-EIX: What's going on in today's session: S&P500 movers (ChartMill)
-EIX: UPDATE: KCRA 3 News Network Reports "California Lawmakers Block Newsom's Push To Prevent Insurance Companies From Suing Utilities That Cause Wildfires" (Benzinga)
-FCX: Finlay announces expanded 2026 PIL Drill Program with increase to 4,400 meters (Yahoo)
-FTNT: Top S&P500 movers in Friday's session (ChartMill)
-FTNT: What's going on in today's session: S&P500 gap up and gap down stocks (ChartMill)
-HOOD: 10 Financials Stocks Whale Activity In Today’s Session (Benzinga)
-HOOD: Shares of crypto-related companies are trading higher amid a rise in Bitcoin. The digital currency is experiencing strength after President Trump said he would extend a ceasefire with Iran. (Benzinga)
-HUT: 10 Information Technology Stocks Whale Activity In Today’s Session (Benzinga)
-HUT: Billionaire Activist Investor Dan Loeb's Third Point Builds 4-Stock Bitcoin-To-AI Basket (Benzinga)
-MARA: MARA Holdings Stock Slides Amid Bitcoin Pullback: What's Happening? (Benzinga)
-MRVL: 5 Stocks Investors Couldn't Stop Buzzing About This Week: NVDA, MRVL, CRM and More (Benzinga)
-MRVL: Benzinga Bulls and Bears: Nvidia, CrowdStrike, Intuit (Benzinga)
-NOW: ServiceNow Has Quietly Shaken Off The AI Apocalyptic Fears (SeekingAlpha)
-NOW: What Moved Markets This Week (SeekingAlpha)
-NVDA: Buy Nvidia: Thinking Differently About AI Value Creation (SeekingAlpha)
-NVDA: Two Tech Stocks Take The Season (SeekingAlpha)
-OKE: ONEOK: This 4.5%-Yielding AI Energy Play Is Still Undervalued (SeekingAlpha)
-OKE: 10-14% Yielding Monthly Dividend Machines To Supercharge Your Early Retirement (SeekingAlpha)
-SOFI: 10 Financials Stocks Whale Activity In Today’s Session (Benzinga)
-SOFI: SoFi Stock Edges Lower Friday: What's Going On? (Benzinga)
-SYF: Synchrony Financial (NYSE:SYF) Flashes a High-Quality Breakout Setup (ChartMill)
-TOL: Keefe, Bruyette & Woods Maintains Outperform on Toll Brothers, Raises Price Target to $170 (Benzinga)
-TSM: Cathie Wood Trims AMD After a 120% Rally — Is the AI Trade Getting Too Crowded? (Benzinga)
-TSM: Taiwan Semiconductor (NYSE:TSM) Combines High Growth Momentum with a Breakout Setup (ChartMill)
-IBIT: QUICK SPARK: Hedgeye Launches Bitcoin ETF with a Dynamic Hedge (Benzinga)
-IBIT: Gold, Bitcoin Sink: September Rate Hike Odds Jump to 60% After Warsh's Hawkish Speech (Benzinga)
-ETHA: QUICK SPARK: $477M Flows Into Bitcoin, Ethereum ETFs as 9-Day Crypto Buying Streak Rolls On (Benzinga)
+STLD: What new tariff walls in U.S.-Canada trade war mean for the economy's critical metals (CNBC)
+IBIT: SCHD And QQQ: The New 60-40 Portfolio (Bitcoin And Gold Edition) (SeekingAlpha)
 
 ── HEADLINES ──
-• Trump administration weighs Yosemite land swap for private developer’s access road (CNBC)
-• Egypt's Banque Misr reviews US Iran sanctions notice, UAE central bank launches urgent examination - Reuters (Reuters)
-• National Park Service backs Trump’s 250-foot arch despite ‘adverse effects’ on historic sites (CNBC)
-• Israeli settlers stage new attack on home in West Bank's Qusra, witnesses say - Reuters (Reuters)
-• Bessent says disorderly yen moves can destabilize global markets - Reuters (Reuters)
-• We're in the midst of an 'Imax awakening,' CEO says. How the company makes millions (CNBC)
-• The big lesson from this week's earnings: The AI buildout is not a zero-sum game (CNBC)
-• US military families ride 'roller coaster of emotions' over six months of Iran war - Reuters (Reuters)
+• Iran dismisses Trump's post of attack on key energy hub of Kharg - Reuters (Reuters)
+• UAE denies Al Minhad Air Base was targeted after Iran says it attacked base - Reuters (Reuters)
+• Morning Bid: Oil climbs as missiles fly in the Gulf - Reuters (Reuters)
+• Indian shares set for cautious start; MSCI rejig, HDFC Bank in focus - Reuters (Reuters)
+• Trump says Iran's Kharg is being 'blown to smithereens', but gives no details - Reuters (Reuters)
+• Shares ease in Asia as oil climbs, yields stay high - Reuters (Reuters)
+• Bessent expects new US secondary sanctions weekly, aiming to increase pressure on Iran - Reuters (Reuters)
+• Iran's IRGC says it launched attack on two US bases in Jordan - Reuters (Reuters)
 
 === END DATA DROP ===

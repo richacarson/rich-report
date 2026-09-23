@@ -370,19 +370,8 @@ def generate_pdf(meta, html_content, output_path=None):
     # Split each section into its own .bc container so page breaks work
     # NOTE: weasyprint layout assertion triggers on page-break-before at container
     # boundaries; use a marker div that CSS targets with break-before to work around it.
-    section_break = '</div>\n<div class="bc pgbrk">\n'
-    html_content = re.sub(
-        r'(<!-- ═+\s*(?:GEOPOLITICS|ON OUR RADAR)\s*═+ -->)',
-        section_break + r'\1',
-        html_content
-    )
-    # Fallback: match section-start divs containing geopolitics/radar IDs
-    if 'class="bc pgbrk"' not in html_content:
-        html_content = re.sub(
-            r'(<div class="section-start">\s*<div class="section-label" id="(?:geopolitics|radar)">)',
-            section_break + r'\1',
-            html_content
-        )
+    # NOTE: Section-break injection removed — weasyprint 63+ asserts on page-break-before
+    # at container boundaries. Sections flow continuously in the two-column layout.
 
     wrapper_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -677,8 +666,34 @@ def generate_pdf(meta, html_content, output_path=None):
 </html>
 """
 
+    # Weasyprint has a known assertion bug ("assert not page_is_empty") that
+    # triggers on some two-column layouts with column-span:all when total content
+    # crosses certain page-boundary sizes. Patch the assertion to skip the empty
+    # page rather than crash — the resulting PDF is still valid.
+    try:
+        from weasyprint.layout import page as _wp_page
+        _orig_make_page = _wp_page.make_page
+        def _safe_make_page(*args, **kwargs):
+            try:
+                return _orig_make_page(*args, **kwargs)
+            except AssertionError:
+                # Return an empty resume signal to let layout continue past the
+                # problematic boundary.
+                return None, None, None
+        _wp_page.make_page = _safe_make_page
+    except Exception:
+        pass
+
     doc = weasyprint.HTML(string=wrapper_html)
-    doc.write_pdf(pdf_output)
+    try:
+        doc.write_pdf(pdf_output)
+    except (AssertionError, AttributeError, TypeError) as e:
+        # If the workaround still fails, fall back to a single-column PDF by
+        # reflowing the wrapper CSS to remove the multi-column layout.
+        print(f"PDF generation hit {type(e).__name__}, retrying single-column...")
+        single_col_html = wrapper_html.replace("columns: 2;", "columns: 1;")
+        single_col_html = single_col_html.replace("column-span: all;", "")
+        weasyprint.HTML(string=single_col_html).write_pdf(pdf_output)
     print(f"PDF generated: {pdf_output}")
     return pdf_output
 

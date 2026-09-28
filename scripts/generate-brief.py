@@ -367,20 +367,32 @@ def generate_pdf(meta, html_content, output_path=None):
     pdf_output = output_path or str(BRIEFS_DIR / f"FCI_Morning_Brief_{DATE_STR}.pdf")
     hl_color = "#3D4A2E" if meta.get("direction") == "up" else "#9B2C2C"
 
-    # Split each section into its own .bc container so page breaks work
-    # NOTE: weasyprint layout assertion triggers on page-break-before at container
-    # boundaries; use a marker div that CSS targets with break-before to work around it.
-    section_break = '</div>\n<div class="bc pgbrk">\n'
+    # Split each section into its own .bc container so page breaks work.
+    # Radar goes into a single-column .bc-radar container to avoid weasyprint
+    # layout assertions on column-span: all with overflowing content.
+    section_break_geo = '</div>\n<div class="bc pgbrk">\n'
+    section_break_radar = '</div>\n<div class="bc-radar pgbrk">\n'
     html_content = re.sub(
-        r'(<!-- ═+\s*(?:GEOPOLITICS|ON OUR RADAR)\s*═+ -->)',
-        section_break + r'\1',
+        r'(<!-- ═+\s*GEOPOLITICS\s*═+ -->)',
+        section_break_geo + r'\1',
+        html_content
+    )
+    html_content = re.sub(
+        r'(<!-- ═+\s*ON OUR RADAR\s*═+ -->)',
+        section_break_radar + r'\1',
         html_content
     )
     # Fallback: match section-start divs containing geopolitics/radar IDs
     if 'class="bc pgbrk"' not in html_content:
         html_content = re.sub(
-            r'(<div class="section-start">\s*<div class="section-label" id="(?:geopolitics|radar)">)',
-            section_break + r'\1',
+            r'(<div class="section-start">\s*<div class="section-label" id="geopolitics">)',
+            section_break_geo + r'\1',
+            html_content
+        )
+    if 'class="bc-radar pgbrk"' not in html_content:
+        html_content = re.sub(
+            r'(<div class="section-start">\s*<div class="section-label" id="radar">)',
+            section_break_radar + r'\1',
             html_content
         )
 
@@ -512,6 +524,10 @@ def generate_pdf(meta, html_content, output_path=None):
     columns: 2; column-gap: 24pt; column-rule: 0.75pt solid var(--gray-200);
     padding-top: 6pt;
   }}
+  /* Single-column container for radar section (avoids weasyprint layout bug) */
+  .bc-radar {{
+    padding-top: 6pt;
+  }}
 
   /* ── Section headers ── */
   .bc .section-start {{
@@ -607,15 +623,29 @@ def generate_pdf(meta, html_content, output_path=None):
   .bc .snap-val.dn {{ color: var(--red); }}
 
   /* ── Radar items ── */
-  .bc .radar-item {{
-    column-span: all;
+  .bc .radar-item, .bc-radar .radar-item {{
     padding: 6pt 0 6pt 10pt; margin: 0 0 8pt;
     border-left: 2pt solid var(--gray-900);
     font-size: 9pt; line-height: 1.5; color: var(--gray-700);
+    break-inside: avoid;
   }}
-  .bc .radar-item b:first-child {{ color: var(--gray-900); font-size: 9.5pt; }}
-  .bc .radar-item em {{ font-style: italic; }}
-  .bc .radar-group {{ break-inside: avoid; }}
+  .bc .radar-item {{ column-span: all; }}
+  .bc .radar-item b:first-child, .bc-radar .radar-item b:first-child {{ color: var(--gray-900); font-size: 9.5pt; }}
+  .bc .radar-item em, .bc-radar .radar-item em {{ font-style: italic; }}
+  .bc .radar-group, .bc-radar .radar-group {{ break-inside: avoid; }}
+  .bc-radar .section-start, .bc-radar .section-label, .bc-radar h2, .bc-radar .section-rule {{ break-inside: avoid; }}
+  .bc-radar .section-label {{
+    font-family: 'DM Sans', sans-serif; font-size: 5.5pt; color: var(--gray-400);
+    letter-spacing: 1.8pt; text-transform: uppercase; margin-top: 14pt;
+    padding-top: 4pt; border-top: 0.75pt solid var(--gray-300);
+  }}
+  .bc-radar h2 {{
+    font-family: 'Cormorant Garamond', serif; font-size: 15pt; font-weight: 700;
+    color: var(--gray-900); margin: 2pt 0 0; line-height: 1.15;
+  }}
+  .bc-radar .section-rule {{
+    height: 2pt; background: var(--gray-900); margin: 5pt 0 10pt;
+  }}
 
   /* ── Disclaimer ── */
   .brief-disc {{
